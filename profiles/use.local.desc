@@ -64,7 +64,6 @@ app-admin/diamond:mongo - Enable MongoDB support
 app-admin/diamond:redis - Enable Redis support
 app-admin/diradm:automount - Support for automount data in LDAP
 app-admin/diradm:irixpasswd - Support for storing separate IRIX passwords
-app-admin/ego:zsh-completion - Enable ZSH completion
 app-admin/elektra:augeas - Enable plugin for reading and writing configuration files with help from Augeas
 app-admin/elektra:ini - Enable new, advanced ini support
 app-admin/elektra:simpleini - Enable simpleini support
@@ -334,7 +333,6 @@ app-doc/tldp-howto:html - Install multi-chapter HTML docs
 app-doc/tldp-howto:htmlsingle - Install all-on-one-page HTML docs
 app-doc/tldp-howto:pdf - Install pdf docs
 app-doc/tldp-howto:text - Install plain-text docs
-app-editors/atom-bin:system-node - Use node.js system implementation instead of the built-in one.
 app-emulation/bochs:3dnow - Enable support for emulating 3DNow! instructions (incomplete)
 app-emulation/bochs:avx - Enable support for emulating Advanced Vector Extensions (AVX)
 app-emulation/bochs:debugger - Enable debugger (slows down emulation)
@@ -3537,27 +3535,6 @@ media-gfx/ufraw:timezone - enable DST correction for file timestamps
 media-gfx/xpaint:pgf - Support for loading PGF images
 media-gfx/xsane:ocr - Enable support for Optical Character Recognition reader
 media-gfx/yafaray:blender - install media-gfx/blender scripts
-media-plugins/deadbeef-plugins-meta:archive - Reading media files from archived files
-media-plugins/deadbeef-plugins-meta:bookmark-manager - Resume playing files (after closing player) from the last timestamp
-media-plugins/deadbeef-plugins-meta:bs2b - bs2b dsp support. Useful for headphones
-media-plugins/deadbeef-plugins-meta:decast - Subscription for the podcasts
-media-plugins/deadbeef-plugins-meta:filebrowser - File browser plugin
-media-plugins/deadbeef-plugins-meta:gnome-mmkeys - Gnome multimedia keys support
-media-plugins/deadbeef-plugins-meta:infobar - Download and show lyrics
-media-plugins/deadbeef-plugins-meta:jack - Jack audio support
-media-plugins/deadbeef-plugins-meta:librarybrowser - File browser plugin that resemble foobar2k music library
-media-plugins/deadbeef-plugins-meta:mpris - MPRIS support
-media-plugins/deadbeef-plugins-meta:musical-spectrum - Draws musical spectrum for current track
-media-plugins/deadbeef-plugins-meta:opus - Ogg opus decoder support
-media-plugins/deadbeef-plugins-meta:quick-search - Quick search support
-media-plugins/deadbeef-plugins-meta:replaygain-control - Advanced control of replaygain
-media-plugins/deadbeef-plugins-meta:soxr - Sox resampler
-media-plugins/deadbeef-plugins-meta:spectrogram - Draws spectrogram for current track
-media-plugins/deadbeef-plugins-meta:statusnotifier - Provides tray icon in plasma5 (implements StatusNotifierItem)
-media-plugins/deadbeef-plugins-meta:stereo-widener - Widens stereo
-media-plugins/deadbeef-plugins-meta:vk - Play music from vk.com social network
-media-plugins/deadbeef-plugins-meta:vu-meter - Draws vu meter for current track
-media-plugins/deadbeef-plugins-meta:waveform-seekbar - Draws waveform seekbar for current track
 media-radio/ax25-tools:X - Enable some X based configuration tools.
 media-radio/fldigi:hamlib - Enables support by the Hamlib amateur radio rig control library to get/set frequency and mode of the ham radio in use
 media-radio/tucnak2:ftdi - Enable support for FTDI USB chips
@@ -3566,64 +3543,6 @@ media-radio/unixcw:ncurses - Enables building the curses based morse code tutor 
 media-radio/xastir:festival - Enable text to speech synthesizer
 media-radio/xastir:gdal - Support for some further map formats
 media-radio/xastir:geotiff - Install geotiff support. Allows using USGS DRG topo maps or other types of geotiff mapes/images
-media-sound/deadbeef:aac - Advanced Audio Coding (AAC) plugin
-media-sound/deadbeef:adplug - Adplug plugin
-media-sound/deadbeef:alac - Apple Lossless Audio Codec (ALAC) plugin
-media-sound/deadbeef:cdda - Compact Disc Digital Audio (CDDA) plugin
-media-sound/deadbeef:converter - Support for converting media files
-media-sound/deadbeef:cover - Album artwork plugin
-media-sound/deadbeef:cover-imlib2 - Album artwork (with support for imlib2) plugin
-media-sound/deadbeef:cover-network - Plugin for downloading album artwork from internet
-media-sound/deadbeef:curl - cURL plugin
-media-sound/deadbeef:dts - Digital Theater System (DTS) plugin
-media-sound/deadbeef:dumb - Tracker music (MOD, S3M, XM, IT, STM, 669, PTM, PSM, MTM, DSM, ASYLUM AMF, UMX, J2B) plugin
-media-sound/deadbeef:equalizer - Equalizer plugin
-media-sound/deadbeef:ffmpeg - FFmpeg plugin
-media-sound/deadbeef:flac - Free Lossless Audio Codec (FLAC) plugin
-media-sound/deadbeef:gme - Game Music Emu (NSF, AY and other formats) plugin
-media-sound/deadbeef:gtk2 - GTK2 based user interface
-media-sound/deadbeef:gtk3 - GTK3 based user interface
-media-sound/deadbeef:hotkeys - Hotkeys support plugin
-media-sound/deadbeef:lastfm - Last.fm scrobbling plugin
-media-sound/deadbeef:libav - Libav plugin
-media-sound/deadbeef:libnotify - Notification daemon support plugin
-media-sound/deadbeef:libsamplerate - Sample rate conversion plugin
-media-sound/deadbeef:m3u - m3u playlist plugin
-media-sound/deadbeef:mac - Monkey's Audio plugin
-media-sound/deadbeef:mad - MPEG-1/2/2.5 Layer 3 (MP3) support through mad/libmad
-media-sound/deadbeef:midi - midi support (via timidity) plugin
-media-sound/deadbeef:mms - Microsoft Media Server (MMS) plugin
-media-sound/deadbeef:mono2stereo - mono2stereo plugin
-media-sound/deadbeef:mp3 - MPEG-1/2/2.5 Layer 3 (MP3) support plugin. It is a virtual use for mad/libmad or mpg123/libmpg123 since deadbeef 0.6.3
-media-sound/deadbeef:mpg123 - MPEG-1/2/2.5 Layer 3 (MP3) support through mpg123/libmpg123
-media-sound/deadbeef:nls - Native Language Support (NLS)
-media-sound/deadbeef:nullout - NULL output plugin
-media-sound/deadbeef:oss - Open Sound System (OSS) output plugin
-media-sound/deadbeef:playlist-browser - Playlist browser user interface plugin
-media-sound/deadbeef:psf - AOSDK-based PSF(QSF,SSF,DSF) plugin
-media-sound/deadbeef:pulseaudio - PulseAudio output plugin
-media-sound/deadbeef:sc68 - Atari ST and Amiga music plugin
-media-sound/deadbeef:shell-exec - Support for running shell commands
-media-sound/deadbeef:shn - Shorten (SHN) plugin
-media-sound/deadbeef:sid - Commodore64 SID music player plugin
-media-sound/deadbeef:sndfile - PCM wave support (via libsndfile) plugin
-media-sound/deadbeef:tta - True Audio TTA plugin
-media-sound/deadbeef:unity - Gnome Unity support
-media-sound/deadbeef:vorbis - Ogg Vorbis plugin
-media-sound/deadbeef:vtx - Libayemy VTX ZX-Spectrum music player plugin
-media-sound/deadbeef:wavpack - WavPack plugin
-media-sound/deadbeef:wma - Windows media audio plugin
-media-sound/deadbeef:zip - vfs_zip plugin
-media-sound/renoise:icons - Install icons and desktop menu entries
-media-sound/renoise-demo:icons - Install icons and desktop menu entries
-media-sound/rubyripper:cdrdao - Add support for advanced toc scanning using app-cdr/cdrdao
-media-sound/rubyripper:cli - Build command line interface rubyripper
-media-sound/rubyripper:normalize - Add support for normalizing audio file volume levels
-media-sound/rubyripper:wav - Add support for wavegain
-media-sound/squeezelite:aac - Supports streaming AAC from the server, utilising media-libs/faad2
-media-sound/squeezelite:flac - Supports streaming FLAC from the server, utilising media-libs/flac
-media-sound/squeezelite:mp3 - Supports streaming MP3 from the server, utilising media-libs/libmad
-media-sound/squeezelite:vorbis - Supports streaming Ogg/Vorbis from the server, utilising media-libs/libvorbis
 media-tv/gentoo-vdr-scripts:nvram - Add support for using nvram-wakeup to set wakeup time in bios
 media-tv/kodi:airplay - enable AirPlay support
 media-tv/kodi:bluray - Enable playback of Blu-ray filesystems
@@ -3718,7 +3637,6 @@ media-tv/xmltv:uk_bleb - Britain tv listing grabber
 media-tv/xmltv:uk_rt - Britain alternative tv listing grabber
 media-tv/xmltv:uk_tvguide - UK and Ireland tv listing grabber using TV Guide website
 media-tv/xmltv:za - South Africa tv listing grabber
-media-video/lives:libvisual - Enable libvisual support
 net-analyzer/2ping:server - Install the server init scripts.
 net-analyzer/aimsniff:http - Install the WAS (Web AIM Sniff) frontend
 net-analyzer/argus-clients:ft - Enable support for flow packets through net-analyzer/flow-tools
@@ -6342,8 +6260,6 @@ sys-kernel/aufs-sources:experimental - Apply experimental patches; for more info
 sys-kernel/aufs-sources:module - Patch kernel to allow aufs being build as a module.
 sys-kernel/aufs-sources:vanilla - Use vanilla kernel sources without applying genpatches. WARNING: This flag will drop all support from the Gentoo Kernel Security team
 sys-kernel/ck-sources:deblob - Remove binary blobs from kernel sources to provide libre license compliance.
-sys-kernel/debian-sources:binary - Builds and installs kernel automatically
-sys-kernel/debian-sources:rt - Applies the CONFIG_PREEMPT_RT patch series
 sys-kernel/dracut:debug - Module installing additional tools like strace, file editor, ssh and more
 sys-kernel/genkernel-next:cryptsetup - Enable support for Luks disk enrcyption using sys-fs/cryptsetup
 sys-kernel/genkernel-next:dmraid - Enable support for DMRAID (include dmraid dependency)
@@ -6709,13 +6625,49 @@ www-servers/xsp:net35 - use .NET 3.5 Framework
 www-servers/xsp:net40 - use .NET 4.0 Framework
 www-servers/xsp:net45 - use .NET 4.5 Framework
 x11-apps/copyq:webkit - enables the application to use advanced HTML rendering and fetching remote images and other data
+x11-apps/intel-gpu-tools:python - Install python based register dumper utilities
+x11-apps/intel-gpu-tools:test-programs - Install test programs for DRM driver development
+x11-apps/intel-gpu-tools:unwind - Provide automatic stack traces on test failures
 x11-apps/mesa-progs:egl - Build EGL utilities
 x11-apps/mesa-progs:gles2 - Build OpenGL ES 2 utilities
+x11-apps/xdm:consolekit - Enable native sys-auth/consolekit support
+x11-apps/xdm:xdm-auth - Enable XDM-AUTHENTICATION-1 support
+x11-apps/xdpyinfo:dmx - Builds support for Distributed Multiheaded X x11-base/xorg-server
+x11-apps/xinit:minimal - Control dependencies on legacy apps (xterm, twm, ...). Safe to enable if you use a modern desktop environment.
+x11-apps/xsm:rsh - This allows the use of rsh (remote shell) and rcp (remote copy).
+x11-base/xorg-server:dmx - Build the Distributed Multiheaded X server
+x11-base/xorg-server:glamor - Enable Glamor OpenGL 2D acceleration
+x11-base/xorg-server:kdrive - Build the kdrive X servers
+x11-base/xorg-server:tslib - Build with tslib support for touchscreen devices
+x11-base/xorg-server:unwind - Enable libunwind usage for backtraces
+x11-base/xorg-server:xephyr - Build the Xephyr server
+x11-base/xorg-server:xnest - Build the Xnest server
+x11-base/xorg-server:xorg - Build the Xorg X server (HIGHLY RECOMMENDED)
+x11-base/xorg-server:xvfb - Build the Xvfb server
 x11-drivers/ati-drivers:disable-watermark - Do a potentially dangerous binary search and replace to disable watermark
 x11-drivers/ati-drivers:modules - Build the kernel modules
 x11-drivers/ati-drivers:pax_kernel - Enable pax kernel specific patches
 x11-drivers/ati-drivers:qt4 - Install qt4 dependent optional tools (e.g Catalyst Control Panel)
 x11-drivers/ati-drivers:vaapi - Enabled Video Acceleration API
+x11-drivers/nvidia-drivers:X - Install the X.org driver, OpenGL libraries, XvMC libraries, and VDPAU libraries
+x11-drivers/nvidia-drivers:compat - Install non-GLVND libGL for backwards compatibility
+x11-drivers/nvidia-drivers:driver - Install the kernel driver module
+x11-drivers/nvidia-drivers:gtk2 - Install nvidia-settings with support for GTK+ 2
+x11-drivers/nvidia-drivers:gtk3 - Install nvidia-settings with support for GTK+ 3
+x11-drivers/nvidia-drivers:kms - Enable support for kernel mode setting (KMS)
+x11-drivers/nvidia-drivers:pax_kernel - PaX patches from the PaX project
+x11-drivers/nvidia-drivers:tools - Install additional tools such as nvidia-settings
+x11-drivers/nvidia-drivers:uvm - Install the Unified Memory kernel module (nvidia-uvm) for sharing memory between CPU and GPU in CUDA programs
+x11-drivers/xf86-video-amdgpu:glamor - Enable Glamor OpenGL 2D acceleration
+x11-drivers/xf86-video-ati:glamor - Enable Glamor OpenGL 2D acceleration
+x11-drivers/xf86-video-geode:ztv - Enable building the V4L2 ZTV driver
+x11-drivers/xf86-video-intel:dri3 - Use DRI3 by default
+x11-drivers/xf86-video-intel:sna - Enable SandyBridge's New Acceleration (useful on all chipsets, not just SandyBridge)
+x11-drivers/xf86-video-intel:uxa - Enable UMA Acceleration Architecture
+x11-drivers/xf86-video-intel:xvmc - Enables X-Video Motion Compensation support
+x11-drivers/xf86-video-nouveau:glamor - Enable Glamor OpenGL 2D acceleration
+x11-drivers/xf86-video-openchrome:viaregtool - Install registers dumper tool
+x11-drivers/xf86-video-qxl:xspice - Build the xspice driver
 x11-libs/agg:gpc - Enable gpc polygon clipper library
 x11-libs/cairo:gles2 - Build the OpenGL ES 2 backend
 x11-libs/cairo:glib - Compile with GLib Object System support
@@ -6733,16 +6685,30 @@ x11-libs/gtkmathview:mathml - Install additional fonts for proper mathml support
 x11-libs/gtkmathview:t1lib - Enable media-libs/t1lib support
 x11-libs/gtksourceview:glade - Install a glade catalog file
 x11-libs/libQGLViewer:designer - Installs dev-qt/designer plugin.
+x11-libs/libSM:uuid - Use UUID for session identification instead of IP address and system time.
+x11-libs/libXaw:deprecated - Install deprecated Xaw6 library.
+x11-libs/libXfont:bzip2 - Support bzip2 compressed PCF fonts.
+x11-libs/libXfont:truetype - Use media-libs/freetype for font rasterization.
+x11-libs/libXfont2:bzip2 - Support bzip2 compressed PCF fonts.
+x11-libs/libXfont2:truetype - Use media-libs/freetype for font rasterization.
 x11-libs/libaosd:pango - Enable the textual helpers (requires pangocairo).
 x11-libs/libaosd:tools - Install the aosd_cat tool (requires glib-2.0).
 x11-libs/libdesktop-agnostic:gconf - Enable GConf as configuration backend
 x11-libs/libdesktop-agnostic:glade - Install the Glade catalog for the desktop-agnotstic GTK widgets.
+x11-libs/libdrm:libkms - Enable building of libkms, a library for applications to interface with KMS
+x11-libs/libdrm:valgrind - Compile in valgrind memory hints
 x11-libs/libqxt:berkdb - Build the QxtBerkeley module
 x11-libs/libqxt:sql - Build the QxtSql module
 x11-libs/libqxt:web - Build the QxtWeb module
 x11-libs/libqxt:zeroconf - Build the QxtZeroconf module
+x11-libs/libva:drm - Enables VA/DRM API support.
+x11-libs/libva:egl - Enables EGL support.
+x11-libs/libva:utils - Install VA-API utility programs.
+x11-libs/libva-intel-driver:drm - Enables VA/DRM API support.
 x11-libs/libwnck:tools - Install wnckprop-3 and wnck-urgency-monitor-3 command-line tools
+x11-libs/libxcb:xkb - Enable the XCB keyboard extension
 x11-libs/motif:motif22-compatibility - Compatibility with Open Motif 2.2
+x11-libs/pixman:loongson2f - Enable Loongson2f MMI optimizations.
 x11-libs/qscintilla:designer - Build plugin for Qt Designer
 x11-libs/qwt:designer - Installs dev-qt/designer plugin.
 x11-libs/qwt:mathml - Use the MathML renderer of the Qt solutions package.
@@ -6751,6 +6717,7 @@ x11-libs/wxGTK:gnome - Use gnome-base/libgnomeprintui for printing tasks.
 x11-libs/wxGTK:gstreamer - Enable the wxMediaCtrl class for playing audio and video through gstreamer.
 x11-libs/wxGTK:sdl - Use Simple Directmedia Layer (media-libs/libsdl) for audio.
 x11-misc/alock:doc - Build and install manpage with app-text/asciidoc.
+x11-misc/bumblebee:bbswitch - Add dependency on sys-power/bbswitch for PM feature
 x11-misc/cdm:consolekit - Enable native consolekit support
 x11-misc/colord:argyllcms - Enable ArgyllCMS sensor
 x11-misc/colord:extra-print-profiles - Generate extra print profiles. Warning: significant build time and memory requirements.
