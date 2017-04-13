@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DEPEND=dev-vcs/git
+DESCRIPTION=Firmware for Atheros ar9170-based WiFi USB adapters (ar9170usb module)
+EAPI=5
+HOMEPAGE=http://wireless.kernel.org/en/users/Drivers/ar9170#open_firmware
+KEYWORDS=~*
+LICENSE=atheros-firmware
+RDEPEND=|| ( virtual/udev sys-apps/hotplug )
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=e79b575f4da825dac34519ea73a70050

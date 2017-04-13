@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install setup test
+DEPEND=test? ( dev-util/checkbashisms || ( >=dev-lang/python-2.7.5-r2:2.7 ) )
+DESCRIPTION=Backup and recovery utilities for GitHub Enterprise
+EAPI=6
+HOMEPAGE=https://github.com/github/backup-utils
+IUSE=test
+KEYWORDS=~amd64
+LICENSE=MIT
+RDEPEND=net-misc/rsync
+SLOT=0
+SRC_URI=https://github.com/github/backup-utils/archive/v2.7.0.tar.gz -> github-backup-utils-2.7.0.tar.gz
+_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	python-any-r1	be89e882151ba4b847089b860d79729c	python-utils-r1	a166d0f5815d7f1e67bb60a196f1bf7e	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=43cc84dab669778bc57dd847b0bce505

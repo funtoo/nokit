@@ -1,0 +1,10 @@
+DEFINED_PHASES=compile install
+DESCRIPTION=Converts Japanese text between kanji, kana, and romaji
+EAPI=5
+HOMEPAGE=http://kakasi.namazu.org/
+KEYWORDS=alpha amd64 ia64 ppc ppc64 sparc x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris
+LICENSE=GPL-2
+SLOT=0
+SRC_URI=http://kakasi.namazu.org/stable/kakasi-2.3.4.tar.gz
+_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=f18afdd73b9cc1a430576f7d9e892db6

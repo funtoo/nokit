@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install postinst postrm prepare unpack
+DEPEND=dev-vcs/git
+DESCRIPTION=Stores, retrieves, generates, and synchronizes passwords securely
+EAPI=5
+HOMEPAGE=https://www.passwordstore.org/
+IUSE=+git X zsh-completion fish-completion emacs dmenu importers elibc_Darwin
+LICENSE=GPL-2
+RDEPEND=app-crypt/gnupg media-gfx/qrencode >=app-text/tree-1.7.0 git? ( dev-vcs/git ) X? ( x11-misc/xclip ) elibc_Darwin? ( app-misc/getopt ) zsh-completion? ( app-shells/gentoo-zsh-completions ) fish-completion? ( app-shells/fish ) dmenu? ( x11-misc/dmenu x11-misc/xdotool ) emacs? ( virtual/emacs )
+SLOT=0
+_eclasses_=bash-completion-r1	acf715fa09463f043fbfdc1640f3fb85	elisp-common	19ff54b35acd0bf2a14831a308a57753	git-2	7af5d170bfc02983b4bcd3167dc5edd4	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=dd00f61f08e6baf3d47682d67e0d211c

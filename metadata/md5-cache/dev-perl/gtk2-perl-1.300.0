@@ -1,0 +1,7 @@
+DEFINED_PHASES=-
+DESCRIPTION=dummy package of gtk2-perl
+EAPI=0
+KEYWORDS=*
+RDEPEND=dev-perl/Gtk2
+SLOT=0
+_md5_=39b7dfbbd9419db337f4db7841b5581f

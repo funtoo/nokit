@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst prepare pretend test unpack
+DEPEND=>=dev-cpp/libxmlpp-2.33.1:2.6 >=dev-libs/boost-1.42 dev-libs/libpcre[cxx] media-fonts/liberation-fonts media-libs/libpng media-libs/libsdl >=sys-devel/gcc-4.6.0[cxx] <sys-devel/llvm-3.7:0 >=sys-devel/llvm-3.4:0 x11-libs/cairo x11-libs/gtk+:2 x11-libs/libX11 x11-libs/pango curl? ( net-misc/curl ) ffmpeg? ( virtual/ffmpeg ) !gles? ( >=media-libs/glew-1.5.3 virtual/opengl ) gles? ( media-libs/mesa[gles2] ) pulseaudio? ( media-sound/pulseaudio ) rtmp? ( media-video/rtmpdump ) virtual/jpeg amd64? ( dev-lang/nasm ) x86? ( dev-lang/nasm ) virtual/pkgconfig sys-devel/make >=dev-util/cmake-3.6.3 app-arch/unzip
+DESCRIPTION=High performance flash player
+EAPI=5
+HOMEPAGE=http://lightspark.sourceforge.net/
+IUSE=curl ffmpeg gles nsplugin profile pulseaudio rtmp sdl
+KEYWORDS=~amd64 ~x86
+LICENSE=LGPL-3
+RDEPEND=>=dev-cpp/libxmlpp-2.33.1:2.6 >=dev-libs/boost-1.42 dev-libs/libpcre[cxx] media-fonts/liberation-fonts media-libs/libpng media-libs/libsdl >=sys-devel/gcc-4.6.0[cxx] <sys-devel/llvm-3.7:0 >=sys-devel/llvm-3.4:0 x11-libs/cairo x11-libs/gtk+:2 x11-libs/libX11 x11-libs/pango curl? ( net-misc/curl ) ffmpeg? ( virtual/ffmpeg ) !gles? ( >=media-libs/glew-1.5.3 virtual/opengl ) gles? ( media-libs/mesa[gles2] ) pulseaudio? ( media-sound/pulseaudio ) rtmp? ( media-video/rtmpdump ) virtual/jpeg
+SLOT=0
+SRC_URI=mirror://gentoo/lightspark-0.7.2_p20150318.tar.gz
+_eclasses_=cmake-utils	014267c4475c1a625ecec5b16e0db1e6	epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	flag-o-matic	35067884fbff37bc0c8e7421c5315558	ltprune	2770eed66a9b8ef944714cd0e968182e	mozextension	e5d920147bfccf4930062e462e2a417d	multilib	165fc17c38d1b11dac2008280dab6e80	multiprocessing	284a473719153462f3e974d86c8cb81c	nsplugins	2049586e425364a1c5bdb004205d1758	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=e183c479d35f6d7ace69afbc087c05cc

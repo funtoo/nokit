@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install prepare
+DEPEND=net-libs/libpcap
+DESCRIPTION=Mass IP port scanner
+EAPI=5
+HOMEPAGE=https://github.com/robertdavidgraham/masscan
+KEYWORDS=~amd64 ~x86
+LICENSE=AGPL-3
+RDEPEND=net-libs/libpcap
+SLOT=0
+SRC_URI=https://github.com/robertdavidgraham/masscan/archive/1.0.3.tar.gz -> masscan-1.0.3.tar.gz
+_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=439aa0293f4c9ecee8d5eb7c8fa1e9e0

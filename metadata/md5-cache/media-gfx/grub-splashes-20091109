@@ -1,0 +1,10 @@
+DEFINED_PHASES=install postinst postrm preinst prerm unpack
+DESCRIPTION=Collection of grub splashes
+EAPI=6
+HOMEPAGE=https://dev.gentoo.org/~welp/grub-splashes.xml
+KEYWORDS=amd64 x86 ~x86-fbsd
+LICENSE=GPL-2 Artistic-2
+SLOT=0
+SRC_URI=mirror://gentoo/grub-splashes-0.1.tar.gz http://www.kde-look.org/CONTENT/content-files/49074-natural_gentoo-8.0.tar.gz http://www.kde-look.org/CONTENT/content-files/98478-gentoo-splash.xpm.gz
+_eclasses_=mount-boot	ea24b511b0ad59831d0151aa634dfad2
+_md5_=9b68e6305a11189a1f03733d3aff17a1

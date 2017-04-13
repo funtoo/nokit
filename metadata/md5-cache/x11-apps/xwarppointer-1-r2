@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install prepare
+DEPEND=x11-libs/libX11
+DESCRIPTION=Program to move the mouse cursor
+EAPI=5
+HOMEPAGE=http://www.ishiboo.com/~nirva/Projects/xwarppointer/
+KEYWORDS=amd64 ppc x86
+LICENSE=MIT
+RDEPEND=x11-libs/libX11
+SLOT=0
+SRC_URI=http://www.ishiboo.com/~nirva/Projects/xwarppointer/xwarppointer.tar.gz
+_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=44a2590748e6b4587cb990fc7b43378e

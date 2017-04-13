@@ -1,0 +1,42 @@
+#!/sbin/runscript
+# Distributed under the terms of the GNU General Public License v2
+
+DIRSRV_EXEC="/usr/sbin/ns-slapd"
+PID_DIRECTORY="/run/dirsrv"
+DIRSRV_CONF_DIR="/etc/dirsrv"
+DS_INSTANCE=${DIRSRV_CONF_DIR}/slapd-${SERVER_ID}
+altpidfile=${PID_DIRECTORY}/${SERVER_ID}.pid.alt
+pidfile=${PID_DIRECTORY}/${SERVER_ID}.pid
+
+depend() {
+	need net logger
+	use dns
+	provide dirsvr ldap
+}
+
+checkconfig() {
+	if [ -z "${DS_INSTANCE}" ]; then
+		eerror "Cannot find ${DS_INSTANCE}. Please set SERVER_ID in /etc/conf.d/$RC_SVCNAME."
+		eend 1
+	fi
+}
+
+start() {
+	checkconfig || return 1
+	install -d /run/dirsrv -o dirsrv -g dirsrv
+	install -d /var/lock/dirsrv/slapd-${SERVER_ID} -o dirsrv -g dirsrv
+	rm -f $pidfile $altpidfile
+	ebegin "Starting 389 Directory Server, ID: ${SERVER_ID}"
+	start-stop-daemon --start --quiet --pidfile $pidfile \
+		--exec ${DIRSRV_EXEC} -- -D ${DS_INSTANCE} \
+		-i $pidfile -w $altpidfile
+}
+
+stop() {
+	checkconfig || return 1
+	ebegin "Stopping 389 Directory Server, ID: ${SERVER_ID}"
+	start-stop-daemon --stop --quiet \
+		--pidfile $pidfile \
+		--exec ${DIRSRV_EXEC}
+	eend ${?}
+}

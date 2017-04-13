@@ -1,0 +1,12 @@
+DEFINED_PHASES=install setup
+DEPEND=>=dev-php/PEAR-MDB2-2.5.0_beta3 || ( dev-lang/php[oci8] dev-lang/php[oci8-instant-client] ) dev-lang/php >=dev-php/pear-1.8.1
+DESCRIPTION=Database Abstraction Layer, oci8 driver
+EAPI=2
+HOMEPAGE=http://pear.php.net/MDB2_Driver_oci8
+KEYWORDS=-* amd64 x86
+LICENSE=BSD
+RDEPEND=>=dev-php/PEAR-MDB2-2.5.0_beta3 || ( dev-lang/php[oci8] dev-lang/php[oci8-instant-client] ) dev-lang/php >=dev-php/pear-1.8.1
+SLOT=0
+SRC_URI=http://pear.php.net/get/MDB2_Driver_oci8-1.5.0b3.tgz
+_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	php-pear-r1	5ed7690006b53587145608c30ed10798	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=a8c0d29b642a72443324e4e9f70b4ca7

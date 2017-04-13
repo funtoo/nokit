@@ -1,0 +1,10 @@
+DEFINED_PHASES=compile install
+DESCRIPTION=GIF colourmap steganography
+EAPI=0
+HOMEPAGE=http://www.darkside.com.au/gifshuffle/
+KEYWORDS=~amd64 ~x86
+LICENSE=public-domain
+SLOT=0
+SRC_URI=http://www.darkside.com.au/gifshuffle/gifshuffle.tar.gz
+_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=cd28cb277d72737bccff73f12b1a26c5

@@ -1,0 +1,12 @@
+DEFINED_PHASES=configure install prepare setup
+DEPEND=net-analyzer/net-snmp >=app-portage/elt-patches-20170317 !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.15:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4
+DESCRIPTION=Additional Nagios plugins for monitoring SNMP capable devices
+EAPI=4
+HOMEPAGE=http://nagios.manubulon.com
+KEYWORDS=amd64 ~ppc ppc64 ~sparc x86
+LICENSE=GPL-2
+RDEPEND=net-analyzer/net-snmp
+SLOT=0
+SRC_URI=http://nagios.manubulon.com/nagios-plugins-snmp-0.6.0.tgz
+_eclasses_=autotools	07e71b3b5690738ef7e8bc097077e00c	libtool	e32ea84bf82cf8987965b574672dba93	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	user	e10ccb95af96d45f86016fa982a949bb
+_md5_=90c2f72facaa3f195ce810b944c7701c

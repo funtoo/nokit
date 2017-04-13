@@ -1,0 +1,13 @@
+DEFINED_PHASES=configure install postinst preinst prepare setup
+DEPEND=!net-misc/openswan gmp? ( >=dev-libs/gmp-4.1.5:= ) gcrypt? ( dev-libs/libgcrypt:0 ) caps? ( sys-libs/libcap ) curl? ( net-misc/curl ) ldap? ( net-nds/openldap ) openssl? ( >=dev-libs/openssl-0.9.8:=[-bindist] ) mysql? ( virtual/mysql ) sqlite? ( >=dev-db/sqlite-3.3.1 ) networkmanager? ( net-misc/networkmanager ) pam? ( sys-libs/pam ) strongswan_plugins_unbound? ( net-dns/unbound net-libs/ldns ) virtual/linux-sources sys-kernel/linux-headers virtual/pkgconfig
+DESCRIPTION=IPsec-based VPN solution focused on security and ease of use, supporting IKEv1/IKEv2 and MOBIKE
+EAPI=5
+HOMEPAGE=http://www.strongswan.org/
+IUSE=+caps curl +constraints debug dhcp eap farp gcrypt +gmp ldap mysql networkmanager +non-root +openssl selinux sqlite pam pkcs11 +strongswan_plugins_led +strongswan_plugins_lookip +strongswan_plugins_systime-fix +strongswan_plugins_unity +strongswan_plugins_vici strongswan_plugins_blowfish strongswan_plugins_ccm strongswan_plugins_ctr strongswan_plugins_gcm strongswan_plugins_ha strongswan_plugins_ipseckey strongswan_plugins_ntru strongswan_plugins_padlock strongswan_plugins_rdrand strongswan_plugins_unbound strongswan_plugins_whitelist
+KEYWORDS=~amd64 ~arm ~ppc ~ppc64 ~x86
+LICENSE=GPL-2 RSA DES
+RDEPEND=!net-misc/openswan gmp? ( >=dev-libs/gmp-4.1.5:= ) gcrypt? ( dev-libs/libgcrypt:0 ) caps? ( sys-libs/libcap ) curl? ( net-misc/curl ) ldap? ( net-nds/openldap ) openssl? ( >=dev-libs/openssl-0.9.8:=[-bindist] ) mysql? ( virtual/mysql ) sqlite? ( >=dev-db/sqlite-3.3.1 ) networkmanager? ( net-misc/networkmanager ) pam? ( sys-libs/pam ) strongswan_plugins_unbound? ( net-dns/unbound net-libs/ldns ) virtual/logger sys-apps/iproute2 !net-vpn/libreswan selinux? ( sec-policy/selinux-ipsec )
+SLOT=0
+SRC_URI=http://download.strongswan.org/strongswan-5.5.1.tar.bz2
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	linux-info	ca370deef9d44125d829f2eb6ebc83e0	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	systemd	ec2e9154031d942186c75c0aabb41900	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	user	e10ccb95af96d45f86016fa982a949bb	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=0288ad9858e44bfc29d81421dfdc534f

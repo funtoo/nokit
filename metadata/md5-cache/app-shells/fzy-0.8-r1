@@ -1,0 +1,9 @@
+DEFINED_PHASES=configure install
+DESCRIPTION=A better fuzzy finder, dmenu-like solution for cli
+EAPI=5
+HOMEPAGE=https://github.com/jhawthorn/fzy
+KEYWORDS=~x86 ~amd64
+LICENSE=MIT
+SLOT=0
+SRC_URI=https://github.com/jhawthorn/fzy/archive/0.8.tar.gz -> fzy-0.8.tar.gz
+_md5_=cb111133d17bfba0547d3f5d2e824085

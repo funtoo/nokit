@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm preinst prepare
+DEPEND=dev-libs/cbang[ChakraCore] net-libs/ChakraCore dev-qt/qtcore:4 dev-qt/qtopengl:4 dev-qt/qtgui:4 x11-libs/cairo dev-util/scons >=sys-apps/sed-4
+DESCRIPTION=Open-Source Simulation & Computer Aided Machining - A 3-axis CNC GCode simulator
+EAPI=6
+HOMEPAGE=https://github.com/CauldronDevelopmentLLC/CAMotics
+IUSE=examples
+KEYWORDS=~*
+LICENSE=GPL-2+
+RDEPEND=dev-libs/cbang[ChakraCore] net-libs/ChakraCore dev-qt/qtcore:4 dev-qt/qtopengl:4 dev-qt/qtgui:4 x11-libs/cairo
+SLOT=0
+SRC_URI=https://github.com/CauldronDevelopmentLLC/CAMotics/archive/1.1.0-release.tar.gz -> CAMotics-1.1.0.tar.gz
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	gnome2-utils	6d2af8c7ab84825693c3f065a37b923c	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	multiprocessing	284a473719153462f3e974d86c8cb81c	scons-utils	fcace052aef60e6b0eb3023c26aa585a	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	xdg-utils	b9389dfad0ee8f8e0b2a41b79fcf7120
+_md5_=40cf9028e8104dd4166a05a27ef0dbd3

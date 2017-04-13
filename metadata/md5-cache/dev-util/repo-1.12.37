@@ -1,0 +1,11 @@
+DEFINED_PHASES=install
+DESCRIPTION=Google tool for managing git, particularly multiple repos
+EAPI=6
+HOMEPAGE=https://android.googlesource.com/tools/repo
+IUSE=python_targets_python2_7
+KEYWORDS=~amd64 ~x86
+LICENSE=Apache-2.0
+SLOT=0
+SRC_URI=https://android.googlesource.com/tools/repo/+archive/v1.12.37.tar.gz
+_eclasses_=multibuild	742139c87a9fa3766f0c2b155e5522bf	multilib	165fc17c38d1b11dac2008280dab6e80	python-r1	0c067f080a047742ffac024b16895b45	python-utils-r1	a166d0f5815d7f1e67bb60a196f1bf7e	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=3e3bc1f82b3ed62e76b7834ab71d79cd

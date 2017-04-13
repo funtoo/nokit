@@ -1,0 +1,13 @@
+DEFINED_PHASES=configure install prepare
+DEPEND=sys-libs/ncurses:= ssl? ( !libressl? ( dev-libs/openssl:0= ) libressl? ( dev-libs/libressl:0= ) ) X? ( x11-libs/libXt )
+DESCRIPTION=Telnet client for the IBM AS/400 that emulates 5250 terminals and printers
+EAPI=6
+HOMEPAGE=http://tn5250.sourceforge.net/
+IUSE=X libressl ssl
+KEYWORDS=amd64 ppc ~sparc x86
+LICENSE=LGPL-2.1
+RDEPEND=sys-libs/ncurses:= ssl? ( !libressl? ( dev-libs/openssl:0= ) libressl? ( dev-libs/libressl:0= ) )
+SLOT=0
+SRC_URI=mirror://sourceforge/tn5250/tn5250-0.17.4.tar.gz
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=f82ce888cd997a4eb9a2ff9ddb434670

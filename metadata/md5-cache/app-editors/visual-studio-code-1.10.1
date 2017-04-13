@@ -1,0 +1,13 @@
+DEFINED_PHASES=install postinst
+DEPEND=>=media-libs/libpng-1.2.46 >=x11-libs/gtk+-2.24.8-r1:2 x11-libs/cairo gnome-base/gconf
+DESCRIPTION=Multiplatform Visual Studio Code from Microsoft
+EAPI=6
+HOMEPAGE=https://code.visualstudio.com
+KEYWORDS=~x86 ~amd64
+LICENSE=Microsoft
+RDEPEND=>=media-libs/libpng-1.2.46 >=x11-libs/gtk+-2.24.8-r1:2 x11-libs/cairo gnome-base/gconf
+RESTRICT=mirror strip
+SLOT=0
+SRC_URI=x86? ( https://az764295.vo.msecnd.net/stable/653f8733dd5a5c43d66d7168b4701f94d72b62e5/code-stable-code_1.10.1-1488414356_i386.tar.gz -> visual-studio-code-1.10.1_i386.tar.gz ) amd64? ( https://az764295.vo.msecnd.net/stable/653f8733dd5a5c43d66d7168b4701f94d72b62e5/code-stable-code_1.10.1-1488415350_amd64.tar.gz -> visual-studio-code-1.10.1_amd64.tar.gz )
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	pax-utils	4c2654a34ebe732e85fda354f6ee642f	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=8383743ca5ba35f9afa0504fb6689e30

@@ -1,0 +1,12 @@
+DEFINED_PHASES=configure prepare
+DEPEND=!x11-wm/wmfs x11-libs/libSM x11-libs/libX11 x11-libs/libXft imlib2? ( media-libs/imlib2 ) xinerama? ( x11-libs/libXinerama ) xrandr? ( x11-libs/libXrandr )
+DESCRIPTION=Windows Manager From Scratch
+EAPI=5
+HOMEPAGE=http://wmfs.info
+IUSE=imlib2 xinerama xrandr
+KEYWORDS=~*
+LICENSE=BSD
+RDEPEND=!x11-wm/wmfs x11-libs/libSM x11-libs/libX11 x11-libs/libXft imlib2? ( media-libs/imlib2 ) xinerama? ( x11-libs/libXinerama ) xrandr? ( x11-libs/libXrandr )
+SLOT=0
+SRC_URI=https://github.com/xorg62/wmfs/archive/3c701a9b349980034ffdbbc3e46664c5e24b37e4.tar.gz -> wmfs2-20130814.tar.gz
+_md5_=53a208684a9eefcbec10c0012fa6d960

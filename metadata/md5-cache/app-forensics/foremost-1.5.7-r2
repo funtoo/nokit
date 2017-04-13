@@ -1,0 +1,10 @@
+DEFINED_PHASES=compile install prepare
+DESCRIPTION=A console program to recover files based on their headers and footers
+EAPI=4
+HOMEPAGE=http://foremost.sourceforge.net/
+KEYWORDS=amd64 ppc x86
+LICENSE=public-domain
+SLOT=0
+SRC_URI=http://foremost.sourceforge.net/pkg/foremost-1.5.7.tar.gz
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=f47d9d0e8360c67c70fca4bd2004c11e

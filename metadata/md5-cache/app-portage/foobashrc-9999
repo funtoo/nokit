@@ -1,0 +1,9 @@
+DEFINED_PHASES=install postinst unpack
+DEPEND=dev-vcs/git
+EAPI=5
+HOMEPAGE=https://github.com/slashbeast/foobashrc
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
+_md5_=98810875e7a2460d7d67443da9e1da6f

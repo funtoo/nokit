@@ -1,0 +1,12 @@
+DEFINED_PHASES=install setup
+DEPEND=dev-lang/php:* >=dev-php/pear-1.9.0
+DESCRIPTION=The Symfony YAML Component
+EAPI=5
+HOMEPAGE=http://pear.symfony-project.com/
+KEYWORDS=amd64 hppa x86
+LICENSE=MIT
+RDEPEND=dev-lang/php:* >=dev-php/pear-1.9.0
+SLOT=0
+SRC_URI=http://pear.symfony-project.com/get/YAML-1.0.6.tgz
+_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	php-pear-lib-r1	01ef764388da73bc8c11774543b6ca37	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=20eb9affff664c64cffe2e5d29862b21

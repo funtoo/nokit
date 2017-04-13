@@ -1,0 +1,7 @@
+DEFINED_PHASES=-
+DESCRIPTION=Virtual for Java Development Kit (JDK)
+EAPI=5
+KEYWORDS=*
+RDEPEND=|| ( =dev-java/oracle-jdk-bin-1.8.0* dev-java/icedtea:8 dev-java/icedtea-bin:8 )
+SLOT=1.8
+_md5_=d7fd7bbbb20133a320884c2a267d74d3

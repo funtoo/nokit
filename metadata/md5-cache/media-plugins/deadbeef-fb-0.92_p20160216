@@ -1,0 +1,15 @@
+DEFINED_PHASES=configure install prepare
+DEPEND=!media-plugins/deadbeef-librarybrowser:0 >=app-portage/elt-patches-20170317 !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.15:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4 media-sound/deadbeef:0 gtk2? ( media-sound/deadbeef:0[gtk2] ) gtk3? ( media-sound/deadbeef:0[gtk3] )
+DESCRIPTION=DeaDBeeF filebrowser plugin
+EAPI=5
+HOMEPAGE=https://gitlab.com/zykure/deadbeef-fb
+IUSE=debug +gtk2 gtk3
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2
+RDEPEND=!media-plugins/deadbeef-librarybrowser:0 media-sound/deadbeef:0 gtk2? ( media-sound/deadbeef:0[gtk2] ) gtk3? ( media-sound/deadbeef:0[gtk3] )
+REQUIRED_USE=|| ( gtk2 gtk3 )
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://gitlab.com/zykure/deadbeef-fb/repository/archive.tar.gz?ref=20160216 -> deadbeef-fb-0.92_p20160216.tar.gz
+_eclasses_=autotools	07e71b3b5690738ef7e8bc097077e00c	deadbeef-plugins	16bcde3107386bd9cbfbb6bd528cb53a	epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	libtool	e32ea84bf82cf8987965b574672dba93	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=1cf87b31028c0b19314e14a116bf8939

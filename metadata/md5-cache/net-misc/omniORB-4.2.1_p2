@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install prepare setup
+DEPEND=python_targets_python2_7? ( >=dev-lang/python-2.7.5-r2:2.7 ) >=dev-lang/python-exec-2:=[python_targets_python2_7(-)?,-python_single_target_jython2_7(-),-python_single_target_pypy(-),-python_single_target_pypy3(-),-python_single_target_python3_4(-),-python_single_target_python3_5(-),-python_single_target_python3_6(-),python_single_target_python2_7(+)] ssl? ( dev-libs/openssl:0= )
+DESCRIPTION=A robust, high-performance CORBA 2 ORB
+EAPI=6
+HOMEPAGE=http://omniorb.sourceforge.net/
+IUSE=doc ipv6 ssl python_targets_python2_7
+KEYWORDS=~amd64 ~ppc ~ppc64 ~sparc ~x86
+LICENSE=LGPL-2 GPL-2
+RDEPEND=python_targets_python2_7? ( >=dev-lang/python-2.7.5-r2:2.7 ) >=dev-lang/python-exec-2:=[python_targets_python2_7(-)?,-python_single_target_jython2_7(-),-python_single_target_pypy(-),-python_single_target_pypy3(-),-python_single_target_python3_4(-),-python_single_target_python3_5(-),-python_single_target_python3_6(-),python_single_target_python2_7(+)] ssl? ( dev-libs/openssl:0= )
+REQUIRED_USE=python_targets_python2_7
+SLOT=0
+SRC_URI=mirror://sourceforge/omniorb/omniORB-4.2.1-2.tar.bz2
+_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	python-single-r1	c3e54dd0dc1e70c6252f2551a55bf053	python-utils-r1	a166d0f5815d7f1e67bb60a196f1bf7e	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=2969b63829e9a085192f463d208ecebd

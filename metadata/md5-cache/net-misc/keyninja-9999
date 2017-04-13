@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DEPEND=dev-vcs/git
+DESCRIPTION=Damn lightweight solution to share one ssh-agent between shells.
+EAPI=5
+HOMEPAGE=https://github.com/slashbeast/keyninja
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=app-shells/bash-4.0.0
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
+_md5_=50bca6dfc20071b7db6cb81186081272

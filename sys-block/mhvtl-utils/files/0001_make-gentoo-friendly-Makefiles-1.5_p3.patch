@@ -1,0 +1,11 @@
+--- man/Makefile.old	2015-07-27 07:53:40.727083071 -0400
++++ man/Makefile	2015-07-27 07:53:56.530169881 -0400
+@@ -37,7 +37,7 @@
+ 
+ PREFIX ?= /usr
+ USR ?= vtl
+-SUSER = root
++SUSER =  $(SUSER)
+ GROUP ?= vtl
+ MHVTL_HOME_PATH ?= /opt/mhvtl
+ MHVTL_CONFIG_PATH ?= /etc/mhvtl
