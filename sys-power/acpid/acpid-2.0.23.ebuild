@@ -1,36 +1,28 @@
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="5"
-
+EAPI=5
 inherit linux-info systemd
 
 DESCRIPTION="Daemon for Advanced Configuration and Power Interface"
-HOMEPAGE="http://sourceforge.net/projects/acpid2"
+HOMEPAGE="https://sourceforge.net/projects/acpid2"
 SRC_URI="mirror://sourceforge/${PN}2/${P}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="*"
-IUSE="selinux systemd"
+KEYWORDS="amd64 ia64 x86"
+IUSE="selinux"
 
 RDEPEND="selinux? ( sec-policy/selinux-apm )"
-DEPEND="${RDEPEND}
-		>=sys-kernel/linux-headers-3
-		systemd? ( sys-apps/systemd )"
+DEPEND=">=sys-kernel/linux-headers-3"
 
-pre_src_compile() {
+pkg_pretend() {
 	local CONFIG_CHECK="~INPUT_EVDEV"
 	local WARNING_INPUT_EVDEV="CONFIG_INPUT_EVDEV is required for ACPI button event support."
 	[[ ${MERGE_TYPE} != buildonly ]] && check_extra_config
 }
 
-src_prepare() {
-	# From Funtoo:
-	# 	https://bugs.funtoo.org/browse/FL-1329
-	# 	https://bugs.funtoo.org/browse/FL-1439
-	epatch "${FILESDIR}"/patches/rename-gnome-power-management-system-process.patch
-	epatch "${FILESDIR}"/patches/add-cinnamon-power-management-system-process.patch
-}
+pkg_setup() { :; }
 
 src_configure() {
 	econf --docdir=/usr/share/doc/${PF}
@@ -53,9 +45,7 @@ src_install() {
 	newinitd "${FILESDIR}"/${PN}-2.0.16-init.d ${PN}
 	newconfd "${FILESDIR}"/${PN}-2.0.16-conf.d ${PN}
 
-	if use systemd ; then
-		systemd_dounit "${FILESDIR}"/systemd/${PN}.{service,socket}
-	fi
+	systemd_dounit "${FILESDIR}"/systemd/${PN}.{service,socket}
 }
 
 pkg_postinst() {
@@ -63,7 +53,7 @@ pkg_postinst() {
 		elog
 		elog "You may wish to read the Gentoo Linux Power Management Guide,"
 		elog "which can be found online at:"
-		elog "http://www.gentoo.org/doc/en/power-management-guide.xml"
+		elog "https://www.gentoo.org/doc/en/power-management-guide.xml"
 		elog
 	fi
 

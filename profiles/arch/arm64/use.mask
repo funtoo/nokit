@@ -119,7 +119,6 @@ lasi
 schroedinger
 hardened
 frei0r
-libvirt
 pdfannotextractor
 prelude
 mssql
@@ -186,7 +185,6 @@ ace
 qt4
 R
 sdl
-slang
 tk
 vim-syntax
 

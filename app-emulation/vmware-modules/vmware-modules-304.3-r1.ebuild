@@ -1,6 +1,5 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=5
 
@@ -101,10 +100,6 @@ src_prepare() {
 	kernel_is ge 4 2 0 && epatch "${FILESDIR}/${PV_MAJOR}-4.2-03-vsock.patch"
 	kernel_is ge 4 3 0 && epatch "${FILESDIR}/${PV_MAJOR}-4.3-00-misc_deregister.patch"
 	kernel_is ge 4 5 0 && epatch "${FILESDIR}/${PV_MAJOR}-4.5-00-get_link.patch"
-	kernel_is ge 4 6 0 && epatch "${FILESDIR}/${PV_MAJOR}-4.6-00-user-pages.patch"
-	kernel_is ge 4 7 0 && epatch "${FILESDIR}/${PV_MAJOR}-4.7-00-trans_start.patch"
-	kernel_is ge 4 7 0 && epatch "${FILESDIR}/${PV_MAJOR}-4.7-01-readlink_copy.patch"
-	kernel_is ge 4 8 0 && epatch "${FILESDIR}/${PV_MAJOR}-4.8-00-nr_anon_mapped.patch"
 
 	# Allow user patches so they can support RC kernels and whatever else
 	epatch_user

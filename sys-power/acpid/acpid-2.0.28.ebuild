@@ -1,7 +1,8 @@
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
-inherit linux-info
+inherit linux-info systemd
 
 DESCRIPTION="Daemon for Advanced Configuration and Power Interface"
 HOMEPAGE="https://sourceforge.net/projects/acpid2"
@@ -9,7 +10,7 @@ SRC_URI="mirror://sourceforge/${PN}2/${P}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ia64 ~x86"
+KEYWORDS="amd64 ia64 x86"
 IUSE="selinux"
 
 RDEPEND="selinux? ( sec-policy/selinux-apm )"
@@ -24,9 +25,8 @@ pkg_pretend() {
 pkg_setup() { :; }
 
 PATCHES=(
-	"${FILESDIR}"/${PV}/rename-gnome-power-management-system-process.patch #FL-1329
-	"${FILESDIR}"/${PV}/add-cinnamon-power-management-system-process.patch #FL-1439
-	"${FILESDIR}"/${PV}/${PN}-2.0.25-kde4.patch #515088
+	"${FILESDIR}"/${PN}-2.0.25-kde4.patch #515088
+	"${FILESDIR}"/${PN}-2.0.25-add_mate-power-manager.patch #538590
 )
 
 src_install() {
@@ -37,15 +37,16 @@ src_install() {
 	rm -f "${D}"/usr/share/doc/${PF}/COPYING || die
 
 	exeinto /etc/acpi
-	newexe "${FILESDIR}"/${PV}/${PN}-1.0.6-default.sh-r1 default.sh
+	newexe "${FILESDIR}"/${PN}-1.0.6-default.sh default.sh
 	exeinto /etc/acpi/actions
 	newexe samples/powerbtn/powerbtn.sh powerbtn.sh
 	insinto /etc/acpi/events
-	newins "${FILESDIR}"/${PV}/${PN}-1.0.4-default default
+	newins "${FILESDIR}"/${PN}-1.0.4-default default
 
-	newinitd "${FILESDIR}"/${PV}/${PN}-2.0.26-init.d ${PN}
-	newconfd "${FILESDIR}"/${PV}/${PN}-2.0.16-conf.d ${PN}
+	newinitd "${FILESDIR}"/${PN}-2.0.26-init.d ${PN}
+	newconfd "${FILESDIR}"/${PN}-2.0.16-conf.d ${PN}
 
+	systemd_dounit "${FILESDIR}"/systemd/${PN}.{service,socket}
 }
 
 pkg_postinst() {
@@ -57,4 +58,11 @@ pkg_postinst() {
 		elog
 	fi
 
+	# files/systemd/acpid.socket -> ListenStream=/run/acpid.socket
+	mkdir -p "${ROOT%/}"/run
+
+	if ! grep -qs "^tmpfs.*/run " "${ROOT%/}"/proc/mounts ; then
+		echo
+		ewarn "You should reboot the system now to get /run mounted with tmpfs!"
+	fi
 }

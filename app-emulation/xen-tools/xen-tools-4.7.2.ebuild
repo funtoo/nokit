@@ -18,7 +18,7 @@ if [[ $PV == *9999 ]]; then
 	EGIT_REPO_URI="git://xenbits.xen.org/${REPO}"
 	S="${WORKDIR}/${REPO}"
 else
-	KEYWORDS="~amd64 ~arm ~arm64 ~x86"
+	KEYWORDS="amd64 ~arm ~arm64 x86"
 	UPSTREAM_VER=0
 	SECURITY_VER=25
 	# xen-tools's gentoo patches tarball
@@ -77,6 +77,7 @@ COMMON_DEPEND="
 	dev-libs/libaio
 	dev-libs/libgcrypt:0
 	sys-libs/zlib
+	${PYTHON_DEPS}
 "
 
 DEPEND="${COMMON_DEPEND}
@@ -84,7 +85,6 @@ DEPEND="${COMMON_DEPEND}
 	x86? ( sys-devel/dev86
 		sys-power/iasl )
 	pam? ( dev-python/pypam[${PYTHON_USEDEP}] )
-	${PYTHON_DEPS}
 	api? ( dev-libs/libxml2
 		net-misc/curl )
 	ovmf? (
@@ -185,7 +185,7 @@ src_prepare() {
 		EPATCH_SUFFIX="patch"
 		EPATCH_FORCE="yes"
 
-		source "${WORKDIR}"/patches-security/${PV}.conf
+		source "${WORKDIR}"/patches-security/${PV}.conf || die
 
 		for i in ${XEN_SECURITY_MAIN}; do
 			epatch "${WORKDIR}"/patches-security/xen/$i
@@ -215,7 +215,7 @@ src_prepare() {
 	# Gentoo's patchset
 	if [[ -n ${GENTOO_VER} && -n ${GENTOO_GPV} ]]; then
 		einfo "Try to apply Gentoo specific patch set"
-		source "${FILESDIR}"/gentoo-patches.conf
+		source "${FILESDIR}"/gentoo-patches.conf || die
 		_gpv=_gpv_${PN/-/_}_${PV//./}_${GENTOO_GPV}
 		for i in ${!_gpv}; do
 			EPATCH_SUFFIX="patch" \

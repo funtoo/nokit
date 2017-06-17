@@ -29,7 +29,7 @@ D3D9_DIR="${WORKDIR}/wine-d3d9-patches-${D3D9_P}"
 WDC_V="20150204"
 WINE_DESKTOP_COMMON_P="wine-desktop-common-${WDC_V}"
 
-DESCRIPTION="Free implementation of Windows(tm) on Unix"
+DESCRIPTION="Free implementation of Windows(tm) on Unix, with Gallium Nine patchset"
 HOMEPAGE="http://www.winehq.org/"
 SRC_URI="${SRC_URI}
 	https://github.com/NP-Hardass/wine-desktop-common/archive/${WDC_V}.tar.gz -> ${WINE_DESKTOP_COMMON_P}.tar.gz
@@ -93,7 +93,7 @@ COMMON_DEPEND="
 		virtual/glu[${MULTILIB_USEDEP}]
 		virtual/opengl[${MULTILIB_USEDEP}]
 	)
-	osmesa? ( media-libs/mesa[osmesa,${MULTILIB_USEDEP}] )
+	osmesa? ( >=media-libs/mesa-13[osmesa,${MULTILIB_USEDEP}] )
 	pcap? ( net-libs/libpcap[${MULTILIB_USEDEP}] )
 	png? ( media-libs/libpng:0=[${MULTILIB_USEDEP}] )
 	pulseaudio? ( media-sound/pulseaudio[${MULTILIB_USEDEP}] )
@@ -321,7 +321,6 @@ src_prepare() {
 	local PATCHES=(
 		"${FILESDIR}"/${MY_PN}-1.5.26-winegcc.patch #260726
 		"${FILESDIR}"/${MY_PN}-1.9.5-multilib-portage.patch #395615
-		"${FILESDIR}"/${MY_PN}-1.7.12-osmesa-check.patch #429386
 		"${FILESDIR}"/${MY_PN}-1.6-memset-O3.patch #480508
 		"${FILESDIR}"/${MY_PN}-2.0-multislot-apploader.patch
 	)

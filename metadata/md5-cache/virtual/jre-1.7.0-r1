@@ -1,7 +1,0 @@
-DEFINED_PHASES=-
-DESCRIPTION=Virtual for Java Runtime Environment (JRE)
-EAPI=5
-KEYWORDS=*
-RDEPEND=|| ( =dev-java/oracle-jre-bin-1.7.0* =virtual/jdk-1.7.0* )
-SLOT=1.7
-_md5_=e1cc179acebd761a405f29c986407ccf

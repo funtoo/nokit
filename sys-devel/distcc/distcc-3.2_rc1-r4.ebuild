@@ -1,6 +1,5 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=5
 
@@ -136,10 +135,6 @@ src_install() {
 	keepdir "${DCCC_PATH}" || die
 
 	dobin "${T}/distcc-config" || die
-
-	# create the distccd pid directory
-	keepdir /var/run/distccd || die
-	fowners distcc:daemon /var/run/distccd || die
 
 	if use gnome || use gtk; then
 		einfo "Renaming /usr/bin/distccmon-gnome to /usr/bin/distccmon-gui"

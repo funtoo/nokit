@@ -1,2 +1,0 @@
-# arguments for docker-registry
-command_args="--collector.textfile.directory=/etc/prometheus-exporter"

@@ -48,7 +48,7 @@ fi
 PYTHON_ECLASS=""
 CATKIN_PYTHON_USEDEP=""
 if [ -n "${PYTHON_COMPAT}" ] ; then
-	PYTHON_ECLASS="python-r1 python-utils-r1"
+	PYTHON_ECLASS="python-r1"
 fi
 
 inherit ${SCM} ${PYTHON_ECLASS} cmake-utils flag-o-matic
@@ -57,17 +57,18 @@ CATKIN_DO_PYTHON_MULTIBUILD=""
 if [ -n "${PYTHON_COMPAT}" ] ; then
 	CATKIN_PYTHON_USEDEP="[${PYTHON_USEDEP}]"
 	CATKIN_DO_PYTHON_MULTIBUILD="yes"
+	REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 fi
 
 IUSE="test"
-RDEPEND="
+RDEPEND=""
+DEPEND="${RDEPEND}
 	dev-util/catkin${CATKIN_PYTHON_USEDEP}
 	dev-python/empy${CATKIN_PYTHON_USEDEP}
 "
-DEPEND="${RDEPEND}"
 
 if [ -n "${CATKIN_DO_PYTHON_MULTIBUILD}" ] ; then
-	RDEPEND="${RDEPEND} dev-lang/python-exec:2 ${PYTHON_DEPS}"
+	RDEPEND="${RDEPEND} ${PYTHON_DEPS}"
 	DEPEND="${DEPEND} ${PYTHON_DEPS}"
 fi
 

@@ -1,6 +1,19 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
+# Sergei Trofimovich <slyfox@gentoo.org> (10 Jun 2017)
+# media-libs/libilbc has not been ported to ia64, bug #610546
+media-video/ffmpeg libilbc
+
+# Sergei Trofimovich <slyfox@gentoo.org> (06 Jun 2017)
+# Mask USE=rados for net-analyzer/rrdtool since sys-cluster/ceph is not
+# keyworded (bug #549516)
+net-analyzer/rrdtool rados
+
+# Jason Zaman <perfinion@gentoo.org> (09 May 2017)
+# x11-libs/libXpresent is not keyworded on ia64
+xfce-base/xfwm4 xpresent
+
 # Alexis Ballier <aballier@gentoo.org> (4 Mar 2017)
 # gst-plugins-x264 is not stable on ia64
 media-plugins/gst-plugins-meta x264

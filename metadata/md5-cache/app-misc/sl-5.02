@@ -5,9 +5,9 @@ EAPI=6
 HOMEPAGE=http://www.tkl.iis.u-tokyo.ac.jp/~toyoda/index_e.html https://github.com/mtoyoda/sl/
 IUSE=l10n_ja
 KEYWORDS=alpha amd64 hppa ppc ppc64 sparc x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos
-LICENSE=freedist
+LICENSE=Toyoda
 RDEPEND=sys-libs/ncurses:0=
 SLOT=0
 SRC_URI=https://github.com/mtoyoda/sl/archive/5.02.tar.gz -> sl-5.02.tar.gz
-_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
-_md5_=f08186511ee5c2054af177c0a4163cc6
+_eclasses_=multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	772b26a6baefb4c8c5e0c1fc724508b7
+_md5_=2de2e68c9c26eabe4e721b9a14f48d08

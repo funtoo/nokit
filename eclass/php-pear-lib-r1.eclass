@@ -1,6 +1,11 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
+# @DEAD
+# This eclass should not be used as most packages that did
+# are now broken since ${FILESDIR} could easily be referenced in
+# pkg_setup.
+
 # @ECLASS: php-pear-lib-r1.eclass
 # @MAINTAINER:
 # Gentoo PHP team <php-bugs@gentoo.org>

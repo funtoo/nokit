@@ -1,8 +1,0 @@
-DEFINED_PHASES=-
-DESCRIPTION=Virtual package for FFmpeg implementation
-EAPI=4
-IUSE=X +encode gsm jpeg2k mp3 opus sdl speex theora threads truetype vaapi vdpau x264
-KEYWORDS=~*
-RDEPEND=>=media-video/ffmpeg-1.0:0[X?,encode?,gsm?,jpeg2k?,mp3?,opus?,sdl?,speex?,theora?,threads?,truetype?,vaapi?,vdpau?,x264?]
-SLOT=0
-_md5_=fe45be18e1f1d1bdcafcb1342d5e7fba

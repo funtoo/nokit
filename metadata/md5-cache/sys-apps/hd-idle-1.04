@@ -1,9 +1,0 @@
-DEFINED_PHASES=-
-DESCRIPTION=A utility to spin-down disks after specified period of time. (when hdparm -B/J is not enough)
-EAPI=5
-HOMEPAGE=http://hd-idle.sourceforge.net/
-KEYWORDS=~amd64 ~x86
-LICENSE=GPL-2
-SLOT=0
-SRC_URI=mirror://sourceforge/hd-idle/hd-idle-1.04.tgz
-_md5_=e4ccab15dc7f740be1ca3c10661482b5
