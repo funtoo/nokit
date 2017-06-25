@@ -1,8 +1,0 @@
-[Unit]
-Description=Entropy key daemon
-
-[Service]
-ExecStart=/usr/libexec/ekeyd 
-
-[Install]
-WantedBy=multi-user.target
