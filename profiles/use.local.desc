@@ -307,7 +307,8 @@ app-emulation/docker:device-mapper - Enables dependencies for the "devicemapper"
 app-emulation/docker:experimental - Enable features labelled by upstream to be of "experimental" quality and not yet ready for general consumption.
 app-emulation/docker:overlay - Enables dependencies for the "overlay" graph driver, including necessary kernel flags.
 app-emulation/docker:pkcs11 - Enables pkcs-11 support.
-app-emulation/docker-runc:apparmor - Enable AppArmor support.
+app-emulation/docker-runc:ambient - Enable support for ambient capability
+app-emulation/docker-runc:apparmor - Enable AppArmor support
 app-emulation/dosemu:fluidsynth - use media-sound/fluidsynth for MIDI emulation
 app-emulation/e-uae:capslib - Add CAPS library support
 app-emulation/e-uae:sdl-sound - Use media-libs/sdl-sound for audio output
@@ -772,6 +773,9 @@ app-shells/mpv-bash-completion:luajit - Use dev-lang/luajit instead of dev-lang/
 app-shells/pdsh:rsh - This allows the use of rsh (remote shell) and rcp (remote copy) for authoring websites. sftp is a much more secure protocol and is preferred.
 app-shells/scsh-install-lib:scsh - Use a non-FHS directory layout
 app-shells/shish:diet - Use dev-libs/dietlibc
+gnome-extra/cinnamon-settings-daemon:colord - Support color management using x11-misc/colord
+gnome-extra/nemo:packagekit - Use packagekit to search for programs to open unknown file types
+gnome-extra/nemo:tracker - Add support for app-misc/tracker search
 gnustep-apps/gemas:projectcenter - Build and install plugin for gnustep-apps/projectcenter
 gnustep-apps/gnumail:emoticon - Enable extra Emoticon Bundle to see smiley's in e-mail messages
 gnustep-apps/gworkspace:gwmetadata - Enable the metadata indexing and searching system
