@@ -898,8 +898,6 @@ sys-apps/s390-tools:pfm - build the cpacfstats tool
 sys-apps/s390-tools:zfcpdump - build the kernel disk dumping utility
 sys-apps/s390-tools:zlib - build the zgetdump utility
 sys-apps/selinux-python:audit - Enable support for sys-process/audit and use the audit_* functions (like audit_getuid instead of getuid())
-sys-apps/smartmontools:minimal - Do not install the monitoring daemon and associated scripts.
-sys-apps/smartmontools:update_drivedb - Install a script to update the drivedb file.
 sys-apps/superiotool:pci - Support for PCI-attached "Super I/Os" (e.g. in VIA VT82686A/B).
 sys-apps/systemd:apparmor - Enable AppArmor support
 sys-apps/systemd:audit - Enable support for sys-process/audit
@@ -920,7 +918,6 @@ sys-apps/systemd:qrcode - Enable qrcode output support in journal
 sys-apps/systemd:sysv-utils - Install sysvinit compatibility symlinks and manpages for init, telinit, halt, poweroff, reboot, runlevel, and shutdown
 sys-apps/systemd:vanilla - Disable Gentoo-specific behavior and compatibility quirks
 sys-apps/systemd:xkb - Validate XKB keymap in logind
-sys-apps/tcp-wrappers:netgroups - Support matching NIS (host) netgroup names via the @netgroup syntax (if you don't know what this means, you most likely do not need it)
 sys-apps/timer_entropyd:debug - Enable printf debugging and logging to the syslog at DEBUG level
 sys-apps/tuxonice-userui:fbsplash - Add support for framebuffer splash
 sys-apps/usb_modeswitch:jimtcl - Use dev-lang/jimtcl instead of dev-lang/tcl for smaller memory footprint
@@ -1202,8 +1199,6 @@ sys-fs/owfs:fuse - Enable building the FUSE-based OWFS client (owfs)
 sys-fs/owfs:httpd - Enable building the OWFS web server (owhttpd)
 sys-fs/owfs:parport - Enable support for the DS1410E parallel port adapter
 sys-fs/owfs:zeroconf - Enables support for zero-configuration networking via net-dns/avahi
-sys-fs/quota:netlink - Compile daemon receiving quota messages via netlink
-sys-fs/quota:rpc - Enable quota interaction via RPC
 sys-fs/squashfs-tools:lz4 - Enable support for LZ4 compression using app-arch/lz4
 sys-fs/squashfs-tools:xz - Enable support for XZ ("LZMA2") compression using app-arch/xz-utils
 sys-fs/squashfuse:lz4 - Enable support for lz4 compression
@@ -1318,9 +1313,6 @@ sys-power/suspend:crypt - Allows suspend and resume from encrypted disk
 sys-power/suspend:fbsplash - Add support for framebuffer splash
 sys-process/audit:gssapi - Enable GSSAPI support
 sys-process/criu:setproctitle - Make process titles of service workers to be more verbose
-sys-process/cronie:anacron - Install the periodic anacron command scheduler.
-sys-process/cronie:inotify - Enable inotify filesystem monitoring support.
-sys-process/lsof:rpc - support looking up RPC service info
 sys-process/systemd-cron:cron-boot - Include support for the boot timer.
 sys-process/systemd-cron:etc-crontab-systemd - Use dedicated /etc/crontab-systemd instead of parsing /etc/crontab
 sys-process/systemd-cron:minutely - Support /etc/cron.minutely
