@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=5
 
@@ -15,6 +16,8 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha amd64 ~sparc x86"
 
+IUSE=""
+
 CDEPEND="
 	dev-libs/beecrypt
 	net-firewall/iptables
@@ -25,8 +28,7 @@ DEPEND="
 	${CDEPEND}
 	>dev-libs/dietlibc-0.33"
 
-RDEPEND="
-	${CDEPEND}"
+RDEPEND="${CDEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 

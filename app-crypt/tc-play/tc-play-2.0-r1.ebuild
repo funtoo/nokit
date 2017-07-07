@@ -1,9 +1,10 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
-EAPI=6
+EAPI=5
 
-inherit toolchain-funcs multilib-minimal
+inherit toolchain-funcs multilib
 
 DESCRIPTION="a free, pretty much fully featured and stable TrueCrypt implementation"
 HOMEPAGE="https://github.com/bwalex/tc-play"
@@ -25,14 +26,6 @@ DEPEND="
 		libressl? ( dev-libs/libressl:0= )
 	)"
 RDEPEND="${DEPEND}"
-
-DOCS=(
-	README.md
-)
-
-PATCHES=(
-	"${FILESDIR}/${P}-build.patch"
-)
 
 pkg_setup() {
 	local backend="openssl"
@@ -59,4 +52,5 @@ src_install() {
 		"${EXTRA_MAKE_FLAGS[@]}" \
 		install_program \
 		DESTDIR="${ED}"
+	dodoc README.md
 }

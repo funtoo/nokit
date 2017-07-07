@@ -1,4 +1,5 @@
 # for bcron
+# $Id$
 
 # Global variables
 SHELL=/bin/bash

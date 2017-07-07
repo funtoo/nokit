@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=5
 
@@ -11,10 +12,10 @@ SRC_URI=""
 
 LICENSE="UoI-NCSA"
 SLOT="0/3.5"
-KEYWORDS="~ppc-macos ~x64-macos ~x86-macos"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86 ~amd64-fbsd ~x86-fbsd ~x64-freebsd ~amd64-linux ~arm-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos"
+IUSE="debug multitarget python +static-analyzer"
 
-RDEPEND="~sys-devel/llvm-${PV}[clang(-),${MULTILIB_USEDEP}]"
+RDEPEND="~sys-devel/llvm-${PV}[clang(-),debug=,multitarget?,python?,static-analyzer,${MULTILIB_USEDEP}]"
 
 # Please keep this package around since it's quite likely that we'll
 # return to separate LLVM & clang ebuilds when the cmake build system

@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 inherit cannadic eutils multilib
 
@@ -12,7 +13,7 @@ SRC_URI="mirror://sourceforge.jp/canna/9565/${MY_P}.tar.bz2"
 
 LICENSE="MIT GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ppc ~ppc64 ~sparc ~x86"
 IUSE="doc"
 
 DEPEND=">=sys-apps/sed-4
@@ -22,7 +23,7 @@ DEPEND=">=sys-apps/sed-4
 		app-text/ghostscript-gpl
 		>=dev-texlive/texlive-langcjk-2010
 		dev-texlive/texlive-fontsextra
-		|| ( dev-texlive/texlive-plaingeneric dev-texlive/texlive-genericrecommended )
+		dev-texlive/texlive-genericrecommended
 		dev-texlive/texlive-latexrecommended
 	)"
 RDEPEND=""

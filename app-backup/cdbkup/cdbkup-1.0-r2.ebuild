@@ -1,5 +1,6 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=6
 
@@ -23,7 +24,6 @@ RDEPEND="${DEPEND}
 src_prepare() {
 	default
 	sed -i -e "s:doc/cdbkup:doc/${P}:" Makefile.in || die
-	sed -i -e 's/make /$(MAKE) /' Makefile.in || die
 }
 
 src_configure() {

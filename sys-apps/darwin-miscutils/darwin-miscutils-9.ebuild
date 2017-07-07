@@ -1,7 +1,8 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
-EAPI="6"
+EAPI="3"
 
 inherit toolchain-funcs eutils
 
@@ -25,8 +26,6 @@ S=${WORKDIR}
 src_prepare() {
 	cd "${S}"/shell_cmds-${SHELL_VER}
 	epatch "${FILESDIR}"/${PN}-6-w64.patch
-
-	eapply_user
 }
 
 src_compile() {

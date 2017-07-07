@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI="5"
 
@@ -54,7 +55,7 @@ src_install() {
 	newepochins sbin
 
 	insinto /etc/epoch/
-	newins "${FILESDIR}"/${PN}-1.0-epoch.conf epoch.conf
+	newins "${FILESDIR}"/${PN}-1.0_rc1-epoch.conf epoch.conf
 }
 
 pkg_postinst() {

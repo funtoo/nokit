@@ -1,34 +1,30 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
-EAPI="6"
-
-inherit toolchain-funcs
+inherit eutils
 
 DESCRIPTION="Wrapper to use lufs modules with fuse kernel support"
-HOMEPAGE="http://fuse.sourceforge.net/"
 SRC_URI="mirror://sourceforge/fuse/${P}.tar.gz"
-
+HOMEPAGE="http://fuse.sourceforge.net/"
 LICENSE="GPL-2"
+DEPEND="!<sys-fs/lufs-0.9.7-r3
+		>=sys-fs/fuse-1.3"
+KEYWORDS="x86 ppc ~amd64"
 SLOT="0"
-KEYWORDS="~amd64 ppc x86"
 IUSE=""
 
-DEPEND="!<sys-fs/lufs-0.9.7-r3
-	>=sys-fs/fuse-1.3"
-
-PATCHES=(
-	"${FILESDIR}"/lufis-allow-uid-and-gid-addon.patch
-)
-
-src_compile() {
-	emake CC="$(tc-getCC)"
+src_unpack() {
+	unpack ${A}
+	cd ${S}
+	epatch ${FILESDIR}/lufis-allow-uid-and-gid-addon.patch
 }
 
 src_install() {
 	dobin lufis
-	dodoc README ChangeLog
+	dodoc README COPYING ChangeLog
 
 	insinto /usr/include/lufs/
-	doins fs.h proto.h
+	doins fs.h
+	doins proto.h
 }

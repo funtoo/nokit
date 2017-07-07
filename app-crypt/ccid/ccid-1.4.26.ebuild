@@ -1,11 +1,12 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
-EAPI=6
+EAPI=5
 
 STUPID_NUM="4205"
 
-inherit toolchain-funcs udev
+inherit eutils toolchain-funcs udev autotools-utils
 
 DESCRIPTION="CCID free software driver"
 HOMEPAGE="http://pcsclite.alioth.debian.org/ccid.html"
@@ -13,7 +14,7 @@ SRC_URI="http://alioth.debian.org/frs/download.php/file/${STUPID_NUM}/${P}.tar.b
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 arm hppa ~ia64 ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="twinserial kobil-midentity +usb"
 
 RDEPEND=">=sys-apps/pcsc-lite-1.8.3
@@ -24,22 +25,25 @@ DEPEND="${RDEPEND}
 DOCS=( README AUTHORS )
 
 src_configure() {
-	econf \
-		LEX=: \
-		$(use_enable twinserial) \
+	local myeconfargs=(
+		LEX=:
+		$(use_enable twinserial)
 		$(use_enable usb libusb)
+	)
+
+	autotools-utils_src_configure
 }
 
 src_compile() {
-	default
-	use kobil-midentity && emake -C contrib/Kobil_mIDentity_switch
+	autotools-utils_src_compile
+	use kobil-midentity && autotools-utils_src_compile contrib/Kobil_mIDentity_switch
 }
 
 src_install() {
-	default
+	autotools-utils_src_install
 
 	if use kobil-midentity; then
-		dosbin contrib/Kobil_mIDentity_switch/Kobil_mIDentity_switch
+		dosbin "${BUILD_DIR}"/contrib/Kobil_mIDentity_switch/Kobil_mIDentity_switch
 		doman contrib/Kobil_mIDentity_switch/Kobil_mIDentity_switch.8
 	fi
 

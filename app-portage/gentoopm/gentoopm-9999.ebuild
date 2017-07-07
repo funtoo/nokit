@@ -1,8 +1,9 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=6
-PYTHON_COMPAT=( python{2_7,3_4,3_5,3_6} pypy )
+PYTHON_COMPAT=( python{2_7,3_4,3_5} pypy )
 
 EGIT_REPO_URI="https://github.com/mgorny/gentoopm.git"
 inherit distutils-r1 git-r3
@@ -18,16 +19,16 @@ IUSE="doc"
 
 RDEPEND="
 	|| (
-		>=sys-apps/pkgcore-0.9.4[${PYTHON_USEDEP}]
+		sys-apps/pkgcore[${PYTHON_USEDEP}]
 		>=sys-apps/portage-2.1.10.3[${PYTHON_USEDEP}]
-		>=sys-apps/paludis-3.0.0_pre20170219[python,${PYTHON_USEDEP}] )"
+		>=sys-apps/paludis-2.6.0[python,${PYTHON_USEDEP}] )"
 DEPEND="doc? ( dev-python/epydoc[$(python_gen_usedep python2_7)] )"
 PDEPEND="app-eselect/eselect-package-manager"
 
 REQUIRED_USE="doc? ( $(python_gen_useflags python2_7) )"
 
 src_configure() {
-	use doc && DISTUTILS_ALL_SUBPHASE_IMPLS=( python2.7 )
+	use doc && DISTUTILS_ALL_SUBPHASE_IMPLS=( python2_7 )
 	distutils-r1_src_configure
 }
 

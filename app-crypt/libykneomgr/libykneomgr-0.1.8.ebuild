@@ -1,9 +1,10 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
-EAPI=6
+EAPI=5
 
-inherit udev
+inherit autotools-utils udev
 
 DESCRIPTION="YubiKey NEO CCID Manager C Library"
 HOMEPAGE="https://developers.yubico.com/libykneomgr/"
@@ -22,7 +23,10 @@ RDEPEND="${RDEPEND}
 	>=app-crypt/ccid-1.4.18[usb]"
 
 src_configure() {
-	econf \
-		--with-backend=pcsc \
+	local myeconfargs=(
+		--with-backend=pcsc
 		--disable-static
+	)
+
+	autotools-utils_src_configure
 }

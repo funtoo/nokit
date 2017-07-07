@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=5
 inherit cmake-utils eutils
@@ -32,6 +33,7 @@ src_configure() {
 	export CC=clang
 	export CXX=clang++
 
+	export PREFIX=/usr
 	local mycmakeargs=(
 		-DGNUSTEP_CONFIG=GNUSTEP_CONFIG-NOTFOUND
 		$(cmake-utils_use boehm-gc BOEHM_GC)

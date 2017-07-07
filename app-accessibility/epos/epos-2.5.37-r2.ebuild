@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=5
 
@@ -14,8 +15,7 @@ SLOT="0"
 KEYWORDS="alpha amd64 hppa ia64 ppc ppc64 x86"
 IUSE=""
 
-DEPEND=">=app-text/sgmltools-lite-3.0.3-r9
-	dev-util/byacc"
+DEPEND=">=app-text/sgmltools-lite-3.0.3-r9"
 RDEPEND=""
 
 src_prepare() {
@@ -32,8 +32,7 @@ src_prepare() {
 src_configure() {
 	econf \
 		--enable-charsets \
-		--disable-portaudio \
-		YACC=byacc
+		--disable-portaudio
 }
 
 src_install() {

@@ -1,11 +1,12 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
-EAPI=6
+EAPI=5
 
-inherit eutils flag-o-matic autotools git-r3
+inherit eutils flag-o-matic autotools git-2
 
-DESCRIPTION="TCP daemon and set of libraries for usbredir protocol (redirecting USB traffic)"
+DESCRIPTION="A simple TCP daemon and set of libraries for the usbredir protocol (redirecting USB traffic)"
 HOMEPAGE="http://spice-space.org/page/UsbRedir"
 EGIT_REPO_URI="https://anongit.freedesktop.org/git/spice/usbredir.git"
 
@@ -20,15 +21,11 @@ DEPEND="${RDEPEND}
 
 DOCS="ChangeLog README* TODO *.txt"
 
-src_prepare() {
-	default
-	eautoreconf
-}
+EGIT_BOOTSTRAP="eautoreconf"
 
 src_configure() {
 	# https://bugs.freedesktop.org/show_bug.cgi?id=54643
 	append-cflags -Wno-error
-
 	econf $(use_enable static-libs static)
 }
 

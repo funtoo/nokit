@@ -1,5 +1,6 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=5
 
@@ -14,13 +15,14 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 ~ppc x86"
-IUSE="gnome gtk qt4"
+IUSE="gnome gtk kde qt4"
 
 RDEPEND="
 	>=dev-python/hachoir-core-1.3[${PYTHON_USEDEP}]
 	>=dev-python/hachoir-parser-1.3[${PYTHON_USEDEP}]
 	gtk? ( >=dev-python/pygtk-2.0[${PYTHON_USEDEP}] )
 	gnome? ( gnome-base/nautilus gnome-extra/zenity )
+	kde? ( kde-apps/konqueror )
 	qt4? ( dev-python/PyQt4[${PYTHON_USEDEP}] )"
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
@@ -49,6 +51,12 @@ python_install_all() {
 	if use gnome; then
 		exeinto /usr/share/nautilus-scripts
 		doexe gnome/hachoir
+	fi
+
+	if use kde; then
+		dobin kde/hachoir-metadata-kde
+		insinto /usr/share/apps/konqueror/servicemenus
+		doins kde/hachoir.desktop
 	fi
 }
 

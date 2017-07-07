@@ -1,9 +1,10 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
-EAPI=6
+EAPI=5
 
-inherit autotools ltprune
+inherit autotools eutils
 
 MY_P="${P/-tpm-/_tpm_}"
 
@@ -20,23 +21,15 @@ RDEPEND="
 	>=app-crypt/trousers-0.2.8"
 DEPEND="${RDEPEND}"
 
-DOCS=(
-	openssl.cnf.sample
-)
-
-PATCHES=(
-	"${FILESDIR}/${P}-build.patch"
-)
-
 S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
-	default
 	mv configure.in configure.ac || die
+	epatch "${FILESDIR}/${P}-build.patch"
 	eautoreconf
 }
 
 src_install() {
 	default
-	prune_libtool_files --modules
+	dodoc openssl.cnf.sample
 }

@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=6
 
@@ -8,22 +9,20 @@ PYTHON_REQ_USE="sqlite"
 
 inherit flag-o-matic multiprocessing python-single-r1 toolchain-funcs versionator
 
-MY_V="${PN^^}$(get_version_component_range 1)"
-
 DESCRIPTION="Tianocore UEFI Development kit"
 HOMEPAGE="http://www.tianocore.org/edk2/"
+MY_V="${PN^^}$(get_version_component_range 1)"
 SRC_URI="https://github.com/tianocore/${PN}/releases/download/${MY_V}/${MY_V}.Complete.MyWorkSpace.zip"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc examples"
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
-RDEPEND="${PYTHON_DEPS}"
-DEPEND="${RDEPEND}
-	app-arch/unzip
-	dev-lang/nasm"
+DEPEND="app-arch/unzip
+	dev-lang/nasm
+	${PYTHON_DEPS}"
+REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 S="${WORKDIR}/MyWorkSpace"
 

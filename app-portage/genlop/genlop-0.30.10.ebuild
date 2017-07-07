@@ -1,12 +1,13 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=5
 
 inherit bash-completion-r1
 
 DESCRIPTION="A nice emerge.log parser"
-HOMEPAGE="https://wiki.gentoo.org/wiki/Project:Perl"
+HOMEPAGE="https://www.gentoo.org/proj/en/perl"
 SRC_URI="https://dev.gentoo.org/~dilfridge/distfiles/${P}.tar.gz"
 
 LICENSE="GPL-2"

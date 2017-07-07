@@ -1,5 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=5
 
@@ -43,19 +44,13 @@ src_prepare() {
 	sed -i \
 		-e "/^LANGUAGES =/ s/=.*/= $(l10n_get_locales)/" \
 		src/po/Makefile || die
-	sed -i \
-		-e 's:\<pkg-config\>:${PKG_CONFIG}:' \
-		src/Makefile src/gui/Makefile || die
 }
 
 src_compile() {
-	tc-export CC CXX AR PKG_CONFIG
+	tc-export CC CXX AR
 	use static && append-ldflags -static
 
-	# Need two sep make statements to avoid parallel build issues. #588174
-	local sqlite=$(usex sqlite 1 0)
-	emake SQLITE=${sqlite} all
-	use gtk && emake SQLITE=${sqlite} gui
+	emake SQLITE=$(usex sqlite 1 0) all $(usex gtk 'gui' '')
 }
 
 src_install() {

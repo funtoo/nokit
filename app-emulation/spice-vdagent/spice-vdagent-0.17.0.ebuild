@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=6
 
@@ -11,7 +12,7 @@ SRC_URI="http://spice-space.org/download/releases/${P}.tar.bz2"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="+consolekit selinux systemd"
 
 CDEPEND="
@@ -30,8 +31,8 @@ RDEPEND="${CDEPEND}
 	selinux? ( sec-policy/selinux-vdagent )"
 
 CONFIG_CHECK="~INPUT_UINPUT ~VIRTIO_CONSOLE"
-ERROR_INPUT_UINPUT="User level input support (INPUT_UINPUT) is required"
-ERROR_VIRTIO_CONSOLE="VirtIO console/serial device support (VIRTIO_CONSOLE) is required"
+ERROR_INPUT_UINPUT="User level input support is required"
+ERROR_VIRTIO_CONSOLE="VirtIO console/serial device support is required"
 
 PATCHES=( "${FILESDIR}"/${PN}-0.17.0-add-missing-stub-function.patch )
 
@@ -54,7 +55,7 @@ src_configure() {
 src_install() {
 	default
 
-	cd "${ED}" && rmdir -p var/run/spice-vdagentd || die
+	rm -rf "${ED%/}"/etc/{rc,tmpfiles}.d || die
 
 	keepdir /var/log/spice-vdagentd
 

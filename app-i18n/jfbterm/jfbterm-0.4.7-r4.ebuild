@@ -1,9 +1,8 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
-EAPI=6
-
-inherit autotools flag-o-matic
+inherit flag-o-matic eutils autotools
 
 DESCRIPTION="The J Framebuffer Terminal/Multilingual Enhancement with UTF-8 support"
 HOMEPAGE="http://jfbterm.sourceforge.jp/"
@@ -14,39 +13,34 @@ SLOT="0"
 KEYWORDS="amd64 ppc ppc64 sparc x86"
 IUSE="debug"
 
-DEPEND="sys-libs/ncurses:0"
-RDEPEND="
-	media-fonts/unifont
+DEPEND=">=sys-libs/ncurses-5.6"
+RDEPEND="media-fonts/unifont
 	media-fonts/font-misc-misc
 	media-fonts/intlfonts"
 
-PATCHES=(
-	"${FILESDIR}"/${P}-sigchld-debian.patch
-	"${FILESDIR}"/${P}-no-kernel-headers.patch
-	"${FILESDIR}"/${P}-gentoo.patch
-	"${FILESDIR}"/${P}-wrong-inline-gcc5.patch
-)
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	epatch "${FILESDIR}/${P}-sigchld-debian.patch"
+	epatch "${FILESDIR}/${P}-no-kernel-headers.patch"
+	epatch "${FILESDIR}/${P}-gentoo.patch"
 
-src_prepare() {
-	default
-	mv configure.{in,ac} || die
 	eautoreconf
 }
 
-src_configure() {
-	econf $(use_enable debug)
+src_compile() {
+	econf $(use_enable debug) || die "econf failed"
+	emake || die "emake failed"
 }
 
 src_install() {
 	dodir /etc /usr/share/fonts/jfbterm
-	default
+	emake -j1 DESTDIR="${D}" install || die "emake install failed"
 
-	mv "${ED%/}"/etc/jfbterm.conf{.sample,} || die
+	mv "${D}"/etc/jfbterm.conf{.sample,}
 
-	doman jfbterm.1 jfbterm.conf.5
+	doman jfbterm.1 jfbterm.conf.5 || die "doman failed"
 
-	# install example config files
-	docinto examples
-	dodoc jfbterm.conf.sample*
-	docompress -x /usr/share/doc/${PF}/examples
+	dodoc AUTHORS ChangeLog NEWS README* jfbterm.conf.sample* \
+		|| die "dodoc failed"
 }

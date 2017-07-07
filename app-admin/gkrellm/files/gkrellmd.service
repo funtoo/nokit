@@ -4,7 +4,7 @@ Documentation=man:gkrellmd(1)
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/gkrellmd
+ExecStart=/usr/sbin/gkrellmd
 
 [Install]
 WantedBy=multi-user.target

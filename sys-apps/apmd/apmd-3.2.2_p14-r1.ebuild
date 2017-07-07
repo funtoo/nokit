@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=5
 inherit eutils multilib toolchain-funcs
@@ -9,7 +10,7 @@ MY_P=${PN}_${MY_PV}
 PATCHV=${PV#*_p}
 
 DESCRIPTION="Advanced Power Management Daemon"
-HOMEPAGE="https://packages.qa.debian.org/a/apmd.html"
+HOMEPAGE="http://packages.qa.debian.org/a/apmd.html"
 SRC_URI="mirror://debian/pool/main/a/apmd/${MY_P}.orig.tar.gz
 	mirror://debian/pool/main/a/apmd/${MY_P}-${PATCHV}.diff.gz"
 

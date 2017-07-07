@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI="5"
 PYTHON_COMPAT=( python{2_7,3_4} )
@@ -16,7 +17,6 @@ SELNX_VER="${PV}"
 SEPOL_VER="${PV}"
 
 IUSE="audit pam dbus"
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 DESCRIPTION="SELinux core utilities"
 HOMEPAGE="https://github.com/SELinuxProject/selinux/wiki"
@@ -40,10 +40,10 @@ fi
 LICENSE="GPL-2"
 SLOT="0"
 
-DEPEND=">=sys-libs/libselinux-${SELNX_VER}:=[python,${PYTHON_USEDEP}]
+DEPEND=">=sys-libs/libselinux-${SELNX_VER}:=[python]
 	>=sys-libs/glibc-2.4
 	>=sys-libs/libcap-1.10-r10:=
-	>=sys-libs/libsemanage-${SEMNG_VER}:=[python,${PYTHON_USEDEP}]
+	>=sys-libs/libsemanage-${SEMNG_VER}:=[python]
 	sys-libs/libcap-ng:=
 	>=sys-libs/libsepol-${SEPOL_VER}:=
 	sys-devel/gettext
@@ -52,7 +52,7 @@ DEPEND=">=sys-libs/libselinux-${SELNX_VER}:=[python,${PYTHON_USEDEP}]
 		sys-apps/dbus
 		dev-libs/dbus-glib:=
 	)
-	audit? ( >=sys-process/audit-1.5.1[python,${PYTHON_USEDEP}] )
+	audit? ( >=sys-process/audit-1.5.1 )
 	pam? ( sys-libs/pam:= )
 	${PYTHON_DEPS}"
 
@@ -61,7 +61,7 @@ DEPEND=">=sys-libs/libselinux-${SELNX_VER}:=[python,${PYTHON_USEDEP}]
 
 # pax-utils for scanelf used by rlpkg
 RDEPEND="${DEPEND}
-	dev-python/sepolgen[${PYTHON_USEDEP}]
+	dev-python/sepolgen
 	app-misc/pax-utils
 	!<sys-apps/openrc-0.14"
 

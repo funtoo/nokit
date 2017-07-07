@@ -1,53 +1,58 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
-EAPI=6
+EAPI=5
 
-inherit cmake-utils udev
+CMAKE_IN_SOURCE_BUILD="true"
+
+inherit autotools eutils cmake-utils udev
 
 if [[ ${PV} != 9999 ]]; then
 	SRC_URI="https://github.com/Benjamin-Dobell/Heimdall/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64"
 	S="${WORKDIR}/Heimdall-${PV}"
 else
-	inherit git-r3
+	inherit git-2
 	EGIT_REPO_URI="git://github.com/Benjamin-Dobell/Heimdall.git
 		https://github.com/Benjamin-Dobell/Heimdall.git"
 fi
 
 DESCRIPTION="Tool suite used to flash firmware onto Samsung Galaxy S devices"
-HOMEPAGE="http://glassechidna.com.au/heimdall/"
+HOMEPAGE="http://www.glassechidna.com.au/products/heimdall/"
 
 LICENSE="MIT"
 SLOT="0"
-IUSE="qt5"
+IUSE="qt5 static-libs"
 
 # virtual/libusb is not precise enough
-RDEPEND="
-	>=dev-libs/libusb-1.0.18:1=
-	qt5? (
-		dev-qt/qtcore:5=
-		dev-qt/qtgui:5=
-		dev-qt/qtwidgets:5=
-	)
-	sys-libs/zlib
-"
+RDEPEND=">=dev-libs/libusb-1.0.18:1=[static-libs=]
+	qt5? ( dev-qt/qtwidgets:5 )"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
+src_prepare() {
+	if ! use qt5 ; then
+		sed '/heimdall-frontend/d' \
+			-i CMakeLists.txt || die
+	fi
+}
+
 src_configure() {
-	local mycmakeargs=(
-		-DDISABLE_FRONTEND="$(usex !qt5)"
-	)
-	cmake-utils_src_configure
+	cmake-utils_src_configure \
+		$(cmake-utils_use_use static-libs STATIC_LIBS)
+}
+
+src_compile() {
+	cmake-utils_src_compile
 }
 
 src_install() {
-	dobin "${BUILD_DIR}"/bin/heimdall
-	use qt5 && dobin "${BUILD_DIR}"/bin/heimdall-frontend
+	# cmake-utils_src_install doesn't work
+	dobin "${S}"/bin/${PN}
+	use qt5 && dobin "${S}"/bin/${PN}-frontend
 
-	insinto "$(get_udevdir)/rules.d"
-	doins heimdall/60-heimdall.rules
-
-	dodoc README.md Linux/README
+	insinto $(get_udevdir)/rules.d
+	doins "${S}"/${PN}/60-${PN}.rules
+	dodoc Linux/README
 }

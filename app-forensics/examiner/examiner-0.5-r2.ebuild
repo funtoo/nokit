@@ -1,11 +1,12 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI="4"
 
 inherit eutils
 
-DESCRIPTION="Utilizes the objdump command to disassemble and comment foreign binaries"
+DESCRIPTION="Application that utilizes the objdump command to disassemble and comment foreign executable binaries"
 HOMEPAGE="http://www.academicunderground.org/examiner/"
 SRC_URI="http://www.academicunderground.org/examiner/${P}.tar.gz"
 SLOT="0"

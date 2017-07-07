@@ -1,12 +1,13 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
-EAPI=6
+EAPI=4
 
 inherit cmake-utils
 
 DESCRIPTION="Diagnostic and recovery tool for block devices"
-HOMEPAGE="https://whdd.github.io"
+HOMEPAGE="https://github.com/krieger-od/whdd"
 SRC_URI="https://github.com/krieger-od/${PN}/tarball/${PV} -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
@@ -16,7 +17,7 @@ IUSE=""
 
 DEPEND="
 	dev-util/dialog
-	sys-libs/ncurses:0[unicode]"
+	sys-libs/ncurses[unicode]"
 RDEPEND="${DEPEND}
 	sys-apps/smartmontools"
 

@@ -1,4 +1,5 @@
 @version: 3.6
+# $Id$
 #
 # Syslog-ng default configuration file for Gentoo FreeBSD
 #

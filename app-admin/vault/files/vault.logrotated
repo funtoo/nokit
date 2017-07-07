@@ -1,4 +1,5 @@
 /var/log/vault/vault.log {
+	su vault vault
 	missingok
 	size 5M
 	rotate 3

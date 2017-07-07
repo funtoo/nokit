@@ -1,5 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
+# $Id$
 #
 # This file must contain a InitiatorName entry!
 # white space is significent here!

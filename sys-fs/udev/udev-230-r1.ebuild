@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=6
 
@@ -120,8 +121,6 @@ src_prepare() {
 
 	# stub out the am_path_libcrypt function
 	echo 'AC_DEFUN([AM_PATH_LIBGCRYPT],[:])' > m4/gcrypt.m4
-
-	eapply "${FILESDIR}"/232-0002-build-sys-add-check-for-gperf-lookup-function-signat.patch
 
 	# apply user patches
 	eapply_user

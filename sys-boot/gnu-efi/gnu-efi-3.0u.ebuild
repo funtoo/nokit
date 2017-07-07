@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=5
 
@@ -12,12 +13,7 @@ HOMEPAGE="http://developer.intel.com/technology/efi"
 SRC_URI="mirror://sourceforge/gnu-efi/${MY_P}.orig.tar.gz
 	mirror://debian/pool/main/g/gnu-efi/${PN}_${DEB_VER}.diff.gz"
 
-# inc/, lib/ dirs (README.efilib)
-# - BSD-2
-# gnuefi dir:
-# - BSD (3-cluase): crt0-efi-ia32.S
-# - GPL-2+ : setjmp_ia32.S
-LICENSE="GPL-2+ BSD BSD-2"
+LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ia64 ~x86"
 IUSE=""

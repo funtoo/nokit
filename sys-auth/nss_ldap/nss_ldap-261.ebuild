@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 inherit fixheadtails eutils multilib autotools
 
@@ -73,7 +74,7 @@ src_install() {
 	doins ldap.conf
 
 	dodoc ldap.conf ANNOUNCE NEWS ChangeLog AUTHORS \
-		CVSVersionInfo.txt README nsswitch.ldap certutil
+		COPYING CVSVersionInfo.txt README nsswitch.ldap certutil
 	docinto docs; dodoc doc/*
 }
 

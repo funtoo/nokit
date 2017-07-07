@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI="4"
 
@@ -7,7 +8,7 @@ inherit toolchain-funcs
 
 MY_P="${P/-/}"
 
-DESCRIPTION="Run a network service at low privilege level and restricted file system access"
+DESCRIPTION="run a network service at low privilege level and with restricted file system access"
 HOMEPAGE="ftp://ftp.porcupine.org/pub/security/index.html"
 SRC_URI="ftp://ftp.porcupine.org/pub/security/${MY_P}.tar.gz"
 

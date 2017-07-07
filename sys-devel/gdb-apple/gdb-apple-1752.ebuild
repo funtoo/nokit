@@ -1,7 +1,8 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
-EAPI="6"
+EAPI="3"
 
 inherit eutils flag-o-matic
 
@@ -30,8 +31,6 @@ src_prepare() {
 	epatch "${FILESDIR}"/${PN}-1518-darwin8-9.patch
 	epatch "${FILESDIR}"/${PN}-1705-darwin8-10.patch
 	[[ ${CHOST} == *-darwin8 ]] && epatch "${FILESDIR}"/${PN}-1518-darwin8.patch
-
-	eapply_user
 }
 
 src_configure() {

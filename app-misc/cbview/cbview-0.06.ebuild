@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 DESCRIPTION="viewer/converter for CBR/CBZ comic book archives"
 HOMEPAGE="http://elvine.org/code/cbview/"
@@ -10,7 +11,7 @@ SLOT="0"
 KEYWORDS="~x86 ~ppc ~amd64"
 IUSE=""
 
-DEPEND="dev-perl/Gtk2
+DEPEND="dev-perl/gtk2-perl
 	dev-perl/String-ShellQuote
 	app-arch/unrar
 	app-arch/unzip"

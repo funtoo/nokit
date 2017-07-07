@@ -1,9 +1,10 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
-EAPI="6"
+EAPI="2"
 
-inherit toolchain-funcs
+inherit eutils toolchain-funcs
 
 DESCRIPTION="GPGstats calculates statistics on the keys in your key-ring"
 HOMEPAGE="http://www.vanheusden.com/gpgstats/"
@@ -15,15 +16,14 @@ IUSE=""
 RDEPEND="app-crypt/gpgme"
 DEPEND="${RDEPEND}"
 
-PATCHES=(
-	"${FILESDIR}/${P}-flags.patch"
-)
+src_prepare() {
+	epatch "${FILESDIR}/${P}-flags.patch"
+}
 
 src_compile() {
-	emake CC="$(tc-getCC)" CXX="$(tc-getCXX)" DEBUG=
+	emake CC="$(tc-getCC)" CXX="$(tc-getCXX)" DEBUG= || die "emake failed"
 }
 
 src_install() {
-	einstalldocs
-	dobin gpgstats
+	dobin gpgstats || die "dobin gpgstas failed"
 }

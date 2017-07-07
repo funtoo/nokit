@@ -1,5 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=5
 
@@ -23,10 +24,10 @@ DEPEND="${RDEPEND}
 PATCHES=(
 	"${FILESDIR}"/${P}-as-needed.patch
 	"${FILESDIR}"/${P}-man.patch
-)
+	)
 
 src_prepare() {
-	epatch "${PATCHES[@]}"
+	epatch ${PATCHES[@]}
 	# removing -s flag as portage does the stripping part and add support
 	# for custom LDFLAGS. Plus correct for --as-needed
 	sed \

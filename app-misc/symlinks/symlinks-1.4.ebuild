@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 inherit flag-o-matic eutils toolchain-funcs
 
@@ -7,7 +8,7 @@ DESCRIPTION="Scans for and fixes broken or messy symlinks"
 HOMEPAGE="http://www.ibiblio.org/pub/linux/utils/file/"
 SRC_URI="http://www.ibiblio.org/pub/linux/utils/file/${P}.tar.gz"
 
-LICENSE="symlinks"
+LICENSE="freedist"
 SLOT="0"
 KEYWORDS="alpha amd64 ~arm hppa ia64 ppc ppc64 sparc x86"
 IUSE="static"

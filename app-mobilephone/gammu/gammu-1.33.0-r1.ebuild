@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=5
 
@@ -8,7 +9,7 @@ PYTHON_COMPAT=( python2_7 )
 inherit eutils cmake-utils python-single-r1
 
 DESCRIPTION="A tool to handle your cellular phone"
-HOMEPAGE="https://www.wammu.eu/"
+HOMEPAGE="http://www.wammu.eu/"
 SRC_URI="http://dl.cihar.com/${PN}/releases/${P}.tar.bz2"
 
 LICENSE="GPL-2"

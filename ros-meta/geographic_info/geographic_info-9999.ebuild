@@ -1,7 +1,9 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=5
+CATKIN_HAS_MESSAGES=yes
 ROS_REPO_URI="https://github.com/ros-geographic-info/geographic_info"
 VER_PREFIX=${PN}-
 KEYWORDS="~amd64"

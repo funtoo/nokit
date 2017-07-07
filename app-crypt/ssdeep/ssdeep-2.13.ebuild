@@ -1,9 +1,11 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
-EAPI=6
+EAPI=5
+AUTOTOOLS_AUTORECONF=1
 
-inherit autotools multilib-minimal
+inherit autotools-multilib
 
 DESCRIPTION="Computes context triggered piecewise hashes (fuzzy hashes)"
 HOMEPAGE="http://ssdeep.sourceforge.net/"
@@ -14,20 +16,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="static-libs"
 
-DOCS=(
-	AUTHORS ChangeLog FILEFORMAT NEWS README TODO
-)
+DOCS=( AUTHORS ChangeLog FILEFORMAT NEWS README TODO )
 
-PATCHES=(
-	"${FILESDIR}/${PN}-2.10-shared.patch"
-)
-
-src_prepare() {
-	default
-	eautoreconf
-}
-
-multilib_src_configure() {
-	ECONF_SOURCE=${S} \
-		econf
-}
+PATCHES=( "${FILESDIR}"/${PN}-2.10-shared.patch )

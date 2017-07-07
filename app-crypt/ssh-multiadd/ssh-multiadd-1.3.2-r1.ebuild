@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=5
 
@@ -15,12 +16,9 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 ppc x86"
 IUSE="X"
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 DEPEND=""
-RDEPEND="
-	${PYTHON_DEPS}
-	X? ( >=net-misc/x11-ssh-askpass-1.2.2 )"
+RDEPEND="X? ( >=net-misc/x11-ssh-askpass-1.2.2 )"
 
 src_prepare() {
 	python_fix_shebang .

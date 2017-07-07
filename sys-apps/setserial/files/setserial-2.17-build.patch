@@ -1,5 +1,5 @@
---- a/Makefile.in
-+++ b/Makefile.in
+--- Makefile.in
++++ Makefile.in
 @@ -20,7 +20,7 @@
  all: setserial setserial.cat
  

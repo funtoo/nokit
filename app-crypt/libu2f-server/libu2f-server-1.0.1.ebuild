@@ -1,5 +1,6 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=6
 
@@ -12,11 +13,10 @@ SRC_URI="https://developers.yubico.com/${PN}/Releases/${P}.tar.xz"
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="libressl static-libs test"
+IUSE="static-libs test"
 
 RDEPEND="
-	!libressl? ( dev-libs/openssl:0=[${MULTILIB_USEDEP}] )
-	libressl? ( dev-libs/libressl:=[${MULTILIB_USEDEP}] )
+	dev-libs/openssl:0=[${MULTILIB_USEDEP}]
 	dev-libs/hidapi[${MULTILIB_USEDEP}]
 	dev-libs/json-c[${MULTILIB_USEDEP}]
 "

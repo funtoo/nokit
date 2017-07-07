@@ -1,5 +1,6 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=6
 inherit autotools eutils toolchain-funcs flag-o-matic
@@ -84,18 +85,12 @@ DEPEND="${RDEPEND}
 	x11-proto/videoproto
 	nls? ( sys-devel/gettext )"
 
-PATCHES=(
+PATCH=(
 	"${FILESDIR}"/${P}-autotools.patch
 )
 	#"${FILESDIR}"/vice_rath.txt
 
 src_prepare() {
-	if use ffmpeg && has_version ">=media-video/ffmpeg-3" ; then
-		PATCHES+=(
-			"${FILESDIR}"/${PN}-31580-ffmpeg-build.patch
-		)
-	fi
-
 	default
 	sed -i \
 		-e 's/building//' \

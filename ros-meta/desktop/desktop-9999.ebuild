@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=5
 
@@ -18,6 +19,7 @@ RDEPEND="
 	ros-meta/robot
 	ros-meta/viz
 	dev-ros/roslint
+	dev-ros/urdf_tutorial
 	ros-meta/visualization_tutorials
 "
 DEPEND="${RDEPEND}"
