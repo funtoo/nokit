@@ -1,6 +1,5 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 PYTHON_COMPAT=( python{2_7,3_4,3_5} )
@@ -15,6 +14,7 @@ SRC_URI="https://dev.gentoo.org/~radhermit/distfiles/${P}.bz2"
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="amd64 x86 ~x64-macos"
+REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="${PYTHON_DEPS}"
 

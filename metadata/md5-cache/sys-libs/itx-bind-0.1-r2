@@ -1,9 +1,0 @@
-DEFINED_PHASES=install
-DESCRIPTION=the bind library for interix
-EAPI=2
-HOMEPAGE=https://dev.gentoo.org/~mduft
-KEYWORDS=-* ~x86-interix
-LICENSE=ISC BSD-4
-SLOT=0
-_eclasses_=multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
-_md5_=f24e61327e1b6bb3b40d54c32db01e08

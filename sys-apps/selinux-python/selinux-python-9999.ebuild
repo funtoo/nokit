@@ -1,6 +1,5 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI="6"
 PYTHON_COMPAT=( python{2_7,3_4,3_5} )
@@ -10,12 +9,13 @@ inherit python-r1 toolchain-funcs
 
 MY_P="${P//_/-}"
 
-MY_RELEASEDATE="20161014"
+MY_RELEASEDATE="20170630"
 SEPOL_VER="${PV}"
 SELNX_VER="${PV}"
 SEMNG_VER="${PV}"
 
 IUSE="audit pam dbus"
+REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 DESCRIPTION="SELinux core utilities"
 HOMEPAGE="https://github.com/SELinuxProject/selinux/wiki"
@@ -62,9 +62,10 @@ src_compile() {
 
 src_install() {
 	installation() {
-		emake -C "${BUILD_DIR}" DESTDIR="${D}" \
+		emake -C "${BUILD_DIR}" \
+			DESTDIR="${D}" \
 			LIBDIR="\$(PREFIX)/$(get_libdir)" \
-			PYLIBVER="${EPYTHON}" \
+			LIBSEPOLA="/usr/$(get_libdir)/libsepol.a" \
 			install
 		python_optimize
 	}

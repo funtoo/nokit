@@ -1,17 +1,9 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI="4"
+EAPI=6
 
-DESCRIPTION="Virtual for LeechCraft plugins, displaying quarks in small size somewhere near screen end"
-HOMEPAGE=""
-SRC_URI=""
-
-LICENSE=""
+DESCRIPTION="Virtual for LeechCraft plugins displaying quarks near window edges"
 SLOT="0"
-KEYWORDS=""
-IUSE=""
 
-RDEPEND="app-leechcraft/lc-sb2"
-DEPEND=""
+RDEPEND="~app-leechcraft/lc-sb2-${PV}"

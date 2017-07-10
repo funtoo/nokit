@@ -1,6 +1,5 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=5
 PERL_EXPORT_PHASE_FUNCTIONS=no
@@ -19,6 +18,7 @@ DOCS=( AUTHORS ChangeLog NEWS README )
 PATCHES=(
 	"${FILESDIR}/${P}-ricedown.patch"
 	"${FILESDIR}/${P}-perl.patch"
+	"${FILESDIR}/${P}-gcc6.patch"
 )
 AUTOTOOLS_AUTORECONF=yes
 

@@ -1,11 +1,11 @@
-DEFINED_PHASES=install postinst
+DEFINED_PHASES=install postinst unpack
 DEPEND=sys-devel/binutils-config
 DESCRIPTION=Host OS native assembler as and static linker ld
-EAPI=3
+EAPI=6
 HOMEPAGE=https://prefix.gentoo.org/
-KEYWORDS=~ppc-aix ~x86-interix ~ppc-macos ~x64-macos ~x86-macos ~x64-solaris ~x86-solaris
+KEYWORDS=~ppc-aix ~ppc-macos ~x64-macos ~x86-macos ~x64-solaris ~x86-solaris
 LICENSE=GPL-2
 RDEPEND=sys-devel/binutils-config
 SLOT=0
 _eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
-_md5_=77f6e9407138b45bdfe384474f529017
+_md5_=85a20b01f74596776f2f533e9639c405

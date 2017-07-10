@@ -1,6 +1,5 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=4
 MY_P=${PN}_${PV}
@@ -8,7 +7,7 @@ MY_P=${PN}_${PV}
 inherit flag-o-matic qt4-r2
 
 DESCRIPTION="a feature-rich and complete software application to manage CD/DVD images"
-HOMEPAGE="https://sourceforge.net/projects/${PN}/"
+HOMEPAGE="https://sourceforge.net/projects/acetoneiso/"
 SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
 
 LICENSE="GPL-3"

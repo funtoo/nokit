@@ -1,6 +1,5 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
@@ -14,7 +13,7 @@ SRC_URI="mirror://gentoo/${MY_P}.tar.bz2
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~arm ~arm-linux ~ppc-aix ~x64-freebsd ~x86-freebsd ~hppa-hpux ~ia64-hpux ~x86-interix ~amd64-linux ~ia64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~m68k-mint ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris ~x86-winnt"
+KEYWORDS="~arm ~ppc-aix ~x64-cygwin ~amd64-linux ~arm-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~m68k-mint ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris ~x86-winnt"
 
 RDEPEND="sys-apps/gentoo-functions"
 DEPEND="${RDEPEND}"
@@ -28,6 +27,22 @@ pkg_preinst() {
 	rm -f "${EROOT}"/etc/._cfg????_gentoo-release
 }
 
+src_prepare() {
+	if use prefix-chain; then
+		epatch "${FILESDIR}"/baselayout-${PV}-prefix-chaining.patch
+
+		# need to set the PKG_CONFIG_PATH globally for this prefix, when
+		# chaining is enabled, since pkg-config may not be installed locally,
+		# but still .pc files should be found for all RDEPENDable prefixes in
+		# the chain.
+		echo "PKG_CONFIG_PATH=\"/usr/lib/pkgconfig:/usr/share/pkgconfig\"" >> etc/env.d/00basic
+		echo "PORTAGE_OVERRIDE_EPREFIX=\"${EPREFIX}\"" >> etc/env.d/00basic
+		echo "PORTAGE_CONFIGROOT=\"${EPREFIX}\"" >> etc/env.d/00basic
+		echo "EPREFIX=\"${EPREFIX}\"" >> etc/env.d/00basic
+	fi
+	default
+}
+
 src_install() {
 	# make functions.sh available in /etc/init.d (from gentoo-functions)
 	# Note: we cannot replace the symlink with a file here, or Portage will
@@ -39,9 +54,13 @@ src_install() {
 	sed \
 		-e "/PATH=/!s:/\(etc\|usr/bin\|bin\):\"${EPREFIX}\"/\1:g" \
 		-e "/PATH=/s|\([:\"]\)/|\1${EPREFIX}/|g" \
-		-e "/PATH=.*\/sbin/s|\"$|:/usr/sbin:/sbin\"|" \
-		-e "/PATH=.*\/bin/s|\"$|:/usr/bin:/bin\"|" \
 		etc/profile > "${ED}"/etc/profile || die
+	if ! use prefix-chain; then
+		sed \
+			-e "/PATH=.*\/sbin/s|\"$|:/usr/sbin:/sbin\"|" \
+			-e "/PATH=.*\/bin/s|\"$|:/usr/bin:/bin\"|" \
+			-i "${ED}"/etc/profile || die
+	fi
 	dodir etc/env.d
 	sed \
 		-e "s:/\(etc/env.d\|opt\|usr\):${EPREFIX}/\1:g" \

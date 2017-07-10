@@ -1,6 +1,5 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI="5"
 PYTHON_COMPAT=( python2_7 )
@@ -27,7 +26,7 @@ RDEPEND="${PYTHON_DEPS}
 	>=dev-python/oauth2client-1.4.11[${PYTHON_USEDEP}]"
 
 DEPEND="${PYTHON_DEPS}
-	dev-python/setuptools"
+	dev-python/setuptools[${PYTHON_USEDEP}]"
 
 src_install() {
 	distutils-r1_src_install

@@ -1,6 +1,5 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI="5"
 PYTHON_COMPAT=( python2_7 python3_4 )
@@ -16,6 +15,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 ~arm ~arm64 ~mips x86"
 IUSE="X debug java python"
+REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
 COMMONDEPEND=">=sys-libs/libsepol-2.4
 	>=sys-libs/libselinux-2.4

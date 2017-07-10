@@ -1,6 +1,5 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI="2"
 
@@ -12,7 +11,7 @@ SRC_URI="ftp://ftp:${PN}.org@${PN}.org/downloads/${P}/${P}.tar.gz"
 
 LICENSE="BSD public-domain"
 SLOT="0"
-KEYWORDS="amd64 hppa x86 ~x86-fbsd"
+KEYWORDS="amd64 ~arm64 hppa x86 ~x86-fbsd"
 IUSE="static-libs"
 
 RDEPEND="<sys-cluster/corosync-2.0.0"

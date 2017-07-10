@@ -1,6 +1,5 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=5
 
@@ -12,7 +11,7 @@ SRC_URI="https://dev.gentoo.org/~blueness/f2fs-tools/${P}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0/0"
-KEYWORDS="amd64 arm ~mips ~ppc ~ppc64 x86"
+KEYWORDS="amd64 arm ~mips ppc ppc64 x86"
 IUSE=""
 
 src_prepare() {

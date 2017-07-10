@@ -1,6 +1,5 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=5
 
@@ -8,7 +7,7 @@ PYTHON_COMPAT=( python2_7 )
 
 inherit bash-completion-r1 eutils multilib python-single-r1
 
-DESCRIPTION="Framework which enables integration with the Security Content Automation Protocol (SCAP)"
+DESCRIPTION="Framework which enables integration with Security Content Automation Protocol"
 HOMEPAGE="http://www.open-scap.org/"
 if [[ "${PV}" != "9999" ]];
 then
@@ -22,7 +21,7 @@ else
 	S="${WORKDIR}/${PN}"
 fi
 
-LICENSE="LGPL-2.1"
+LICENSE="LGPL-2.1+"
 SLOT="0"
 IUSE="acl caps debug doc gconf ldap nss pcre perl python rpm selinux sce sql test xattr"
 #RESTRICT="test"

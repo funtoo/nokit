@@ -1,6 +1,5 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
@@ -16,7 +15,7 @@ SRC_URI="http://www.acpica.org/sites/acpica/files/${MY_P}.tar.gz
 
 LICENSE="iASL"
 SLOT="0"
-KEYWORDS="amd64 ~ppc x86 ~amd64-fbsd ~x86-fbsd"
+KEYWORDS="amd64 ppc x86 ~amd64-fbsd ~x86-fbsd"
 IUSE="test"
 
 DEPEND="sys-devel/bison

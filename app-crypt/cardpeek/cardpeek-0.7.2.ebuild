@@ -1,10 +1,7 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
-
-inherit eutils
+EAPI=6
 
 DESCRIPTION="Tool to read the contents of smartcards"
 HOMEPAGE="http://pannetrat.com/Cardpeek"
@@ -17,8 +14,7 @@ IUSE="libressl"
 
 RDEPEND=">=x11-libs/gtk+-2.12:2
 	sys-apps/pcsc-lite
-	=dev-lang/lua-5.1*
-	dev-libs/openssl
+	dev-lang/lua:0
 	!libressl? ( dev-libs/openssl:0= )
 	libressl? ( dev-libs/libressl:0= )"
 

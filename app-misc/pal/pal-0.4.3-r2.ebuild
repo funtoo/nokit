@@ -1,6 +1,5 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 inherit prefix toolchain-funcs
@@ -11,7 +10,7 @@ SRC_URI="mirror://sourceforge/palcal/${P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~ppc ~x86 ~x86-interix ~amd64-linux ~x86-linux ~x86-macos"
+KEYWORDS="~amd64 ~hppa ~ppc ~x86 ~amd64-linux ~x86-linux ~x86-macos"
 IUSE="nls"
 
 RDEPEND="

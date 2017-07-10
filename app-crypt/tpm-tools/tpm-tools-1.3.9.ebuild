@@ -1,10 +1,9 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
-inherit autotools eutils flag-o-matic
+inherit autotools flag-o-matic ltprune
 
 DESCRIPTION="TrouSerS' support tools for the Trusted Platform Modules"
 HOMEPAGE="http://trousers.sourceforge.net"
@@ -12,7 +11,7 @@ SRC_URI="mirror://sourceforge/trousers/${PN}/${P}.tar.gz"
 
 LICENSE="CPL-1.0"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm64 ~m68k ~s390 ~sh ~x86"
+KEYWORDS="amd64 ~arm arm64 ~m68k ~s390 ~sh x86"
 IUSE="libressl nls pkcs11 debug"
 
 COMMON_DEPEND="

@@ -4,10 +4,10 @@ DESCRIPTION=Linux kernel laptop_mode user-space utilities
 EAPI=6
 HOMEPAGE=https://github.com/rickysarraf/laptop-mode-tools/wiki
 IUSE=+acpi apm bluetooth scsi
-KEYWORDS=~amd64 ~ppc ~x86
+KEYWORDS=amd64 ppc x86
 LICENSE=GPL-2
 RDEPEND=net-wireless/wireless-tools sys-apps/iproute2 sys-apps/ethtool sys-apps/hdparm sys-apps/which acpi? ( sys-power/acpid ) apm? ( sys-apps/apmd ) bluetooth? ( net-wireless/bluez:= ) scsi? ( sys-apps/sdparm )
 SLOT=0
 SRC_URI=https://github.com/rickysarraf/laptop-mode-tools/releases/download/1.70/laptop-mode-tools_1.70.tar.gz
-_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	systemd	5b6ca8b2fc1307ca593223f327342c96	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	udev	73058269b3e70e34e084fa3981282338
-_md5_=5fe47e88c829b36d579d28bce96e8cd8
+_eclasses_=multilib	97f470f374f2e94ccab04a2fb21d811e	systemd	e12dd5e3cf1f359292cea2a70abeba5f	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	udev	d91cac2c73b94629cad2daea66e0d182
+_md5_=32a3870cdb92083b4c7656dfe4cc0d60
