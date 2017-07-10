@@ -1,6 +1,5 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 PYTHON_COMPAT=( python2_7 )
@@ -89,7 +88,7 @@ RESTRICT="x86? ( test )"
 python_prepare() {
 	# this test fails because it trys to "pip install distribute"
 	rm tests/unit/{modules,states}/zcbuildout_test.py \
-		tests/unit/modules/{rh_ip,win_network,random_org}_test.py || die
+		tests/unit/modules/{rh_ip,win_network}_test.py || die
 
 	# apparently libcloud does not know about this?
 	rm tests/unit/cloud/clouds/dimensiondata_test.py || die

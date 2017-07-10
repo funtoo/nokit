@@ -1,6 +1,5 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI="5"
 PYTHON_COMPAT=( python2_7 )
@@ -34,6 +33,7 @@ LICENSE="BSD ipadic public-domain unicode"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="emacs fcitx +ibus +qt4 renderer test"
+REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="app-i18n/tegaki-zinnia-japanese
 	dev-libs/glib:2

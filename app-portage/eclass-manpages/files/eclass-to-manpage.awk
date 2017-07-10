@@ -1,6 +1,5 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 # This awk converts the comment documentation found in eclasses
 # into man pages for easier/nicer reading.
@@ -371,7 +370,7 @@ function handle_footer() {
 	print ".SH \"REPORTING BUGS\""
 	print reporting_bugs
 	print ".SH \"FILES\""
-	print ".BR " eclassdir "/" eclass
+	print ".BR " eclass
 	print ".SH \"SEE ALSO\""
 	print ".BR ebuild (5)"
 	print pre_text(gensub("@ECLASS@", eclass, 1, vcs_url))
@@ -382,9 +381,6 @@ function handle_footer() {
 #
 BEGIN {
 	state = "header"
-	if (ECLASSDIR == "")
-		ECLASSDIR = "/usr/portage/eclass"
-	eclassdir = ECLASSDIR
 	reporting_bugs = "Please report bugs via http://bugs.gentoo.org/"
 	vcs_url = "https://gitweb.gentoo.org/repo/gentoo.git/log/eclass/@ECLASS@"
 }

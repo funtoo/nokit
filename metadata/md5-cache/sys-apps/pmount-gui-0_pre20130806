@@ -9,4 +9,4 @@ RDEPEND=x11-libs/gtk+:2 sys-apps/pmount virtual/udev
 SLOT=0
 SRC_URI=https://dev.gentoo.org/~ssuominen/pmount-gui-0_pre20130806.tar.xz
 _eclasses_=multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
-_md5_=9152c39f40096bc658ea99edd930a199
+_md5_=87a6648e3c5de3361b31180dd132237f

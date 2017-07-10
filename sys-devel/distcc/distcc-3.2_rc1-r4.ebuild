@@ -1,6 +1,5 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=5
 
@@ -15,7 +14,7 @@ SRC_URI="https://distcc.googlecode.com/files/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm ~arm64 hppa ia64 ~m68k ~mips ppc ppc64 s390 ~sh sparc x86 ~sparc-fbsd ~x86-fbsd"
+KEYWORDS="alpha amd64 arm arm64 hppa ia64 ~m68k ~mips ppc ppc64 s390 ~sh sparc x86 ~sparc-fbsd ~x86-fbsd"
 IUSE="crossdev gnome gssapi gtk hardened ipv6 selinux xinetd zeroconf"
 
 RESTRICT="test"
@@ -136,10 +135,6 @@ src_install() {
 	keepdir "${DCCC_PATH}" || die
 
 	dobin "${T}/distcc-config" || die
-
-	# create the distccd pid directory
-	keepdir /var/run/distccd || die
-	fowners distcc:daemon /var/run/distccd || die
 
 	if use gnome || use gtk; then
 		einfo "Renaming /usr/bin/distccmon-gnome to /usr/bin/distccmon-gui"

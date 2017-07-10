@@ -9,4 +9,4 @@ RDEPEND=net-libs/liblockfile
 SLOT=0
 SRC_URI=mirror://debian/pool/main/l/lockfile-progs/lockfile-progs_0.1.17.tar.gz
 _eclasses_=multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
-_md5_=29609fb675455a2704435d4332e48e9e
+_md5_=909fcf7a798cac894ac56b00adfda46c

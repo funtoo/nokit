@@ -1,7 +1,6 @@
 #!/sbin/openrc-run
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 depend() {
 	use dns ldap net slapd
@@ -44,20 +43,16 @@ start() {
 		;;
 		esac
 		done < /etc/nsswitch.conf`
-	local pidfile="$(strings /usr/sbin/nscd | grep nscd.pid)"
-	mkdir -p "$(dirname ${pidfile})"
-	save_options pidfile "${pidfile}"
+	mkdir -p "$(dirname ${PIDFILE:-/var/run/nscd/nscd.pid})"
 	start-stop-daemon --start --quiet \
-		--exec /usr/sbin/nscd --pidfile "${pidfile}" \
+		--exec /usr/sbin/nscd --pidfile "${PIDFILE:-/var/run/nscd/nscd.pid}" \
 		-- $secure
 	eend $?
 }
 
 stop() {
-	local pidfile="$(get_options pidfile)"
-	[ -n "${pidfile}" ] && pidfile="--pidfile ${pidfile}"
 	ebegin "Shutting down Name Service Cache Daemon"
-	start-stop-daemon --stop --quiet --exec /usr/sbin/nscd ${pidfile}
+	start-stop-daemon --stop --quiet --exec /usr/sbin/nscd --pidfile "${PIDFILE:-/var/run/nscd/nscd.pid}"
 	eend $?
 }
 

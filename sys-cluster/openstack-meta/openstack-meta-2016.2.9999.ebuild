@@ -1,6 +1,5 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
@@ -15,7 +14,7 @@ IUSE="cinder glance heat keystone neutron nova swift"
 DEPEND=""
 RDEPEND="
 	keystone? ( ~sys-auth/keystone-${PV} )
-	swift? ( || ( ~sys-cluster/swift-2.9.0 ~sys-cluster/swift-2.10.0 ) )
+	swift? ( ~sys-cluster/swift-2.10.0 )
 	neutron? ( ~sys-cluster/neutron-${PV} )
 	glance? ( ~app-admin/glance-${PV} )
 	cinder? ( ~sys-cluster/cinder-${PV} )

@@ -1,6 +1,5 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
@@ -29,5 +28,5 @@ src_configure() {
 
 src_install() {
 	default
-	rm "${ED}"/usr/lib/*.la || die
+	rm -f "${ED}"/usr/lib/*.la || die
 }

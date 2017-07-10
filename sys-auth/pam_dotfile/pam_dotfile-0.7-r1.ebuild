@@ -1,6 +1,5 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 inherit eutils pam autotools
 
@@ -26,7 +25,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	EPATCH_SUFFIX="patch" epatch ${WORKDIR}/${PV}
+	EPATCH_SUFFIX="patch" epatch "${WORKDIR}/${PV}"
 
 	AT_M4DIR="${WORKDIR}/${PV}/m4" eautoreconf
 }

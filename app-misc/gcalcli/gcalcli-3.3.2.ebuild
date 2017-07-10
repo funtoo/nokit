@@ -1,6 +1,5 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=5
 # google-api-python-client only supports these
@@ -16,12 +15,14 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
-DEPEND="dev-python/python-dateutil[${PYTHON_USEDEP}]
-		 dev-python/google-api-python-client[${PYTHON_USEDEP}]
-		 dev-python/gdata[${PYTHON_USEDEP}]
-		 dev-python/vobject[${PYTHON_USEDEP}]"
-RDEPEND="${DEPEND}"
+RDEPEND="${PYTHON_DEPS}
+	dev-python/python-dateutil[${PYTHON_USEDEP}]
+	dev-python/google-api-python-client[${PYTHON_USEDEP}]
+	dev-python/gdata[${PYTHON_USEDEP}]
+	dev-python/vobject[${PYTHON_USEDEP}]"
+DEPEND="${RDEPEND}"
 
 src_install() {
 	dodoc -r ChangeLog README.md docs

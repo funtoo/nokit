@@ -1,6 +1,5 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 inherit autotools eutils toolchain-funcs flag-o-matic
@@ -11,7 +10,7 @@ SRC_URI="mirror://sourceforge/vice-emu/releases/${P}.tar.gz"
 
 LICENSE="GPL-2+"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="Xaw3d alsa ethernet ffmpeg fullscreen +gtk ipv6 lame nls oss png pulseaudio sdl +sdlsound threads vte zlib"
 
 # upstream says gtk3 and sdl2 shouldn't be exposed yet.
@@ -85,12 +84,18 @@ DEPEND="${RDEPEND}
 	x11-proto/videoproto
 	nls? ( sys-devel/gettext )"
 
-PATCH=(
+PATCHES=(
 	"${FILESDIR}"/${P}-autotools.patch
 )
 	#"${FILESDIR}"/vice_rath.txt
 
 src_prepare() {
+	if use ffmpeg && has_version ">=media-video/ffmpeg-3" ; then
+		PATCHES+=(
+			"${FILESDIR}"/${PN}-31580-ffmpeg-build.patch
+		)
+	fi
+
 	default
 	sed -i \
 		-e 's/building//' \

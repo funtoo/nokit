@@ -1,6 +1,5 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
@@ -12,7 +11,7 @@ SRC_URI="https://kernel.org/pub/linux/utils/kernel/ipvsadm/ipvsadm-${PV}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ia64 ppc ppc64 ~s390 sparc x86"
+KEYWORDS="amd64 ia64 ppc ppc64 ~s390 sparc x86"
 IUSE="static-libs"
 
 RDEPEND=">=sys-libs/ncurses-5.2:*

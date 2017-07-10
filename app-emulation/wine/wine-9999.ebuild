@@ -1,6 +1,5 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
@@ -16,15 +15,15 @@ if [[ ${PV} == "9999" ]] ; then
 	SRC_URI=""
 	#KEYWORDS=""
 else
-	MAJOR_V=$(get_version_component_range 1-2)
-	SRC_URI="https://dl.winehq.org/wine/source/${MAJOR_V}/${P}.tar.bz2"
+	MAJOR_V=$(get_version_component_range 1)
+	SRC_URI="https://dl.winehq.org/wine/source/${MAJOR_V}.x/${P}.tar.xz"
 	KEYWORDS="-* ~amd64 ~x86 ~x86-fbsd"
 fi
 
 VANILLA_GV="2.47"
-VANILLA_MV="4.6.3"
+VANILLA_MV="4.6.4"
 STAGING_GV="2.47"
-STAGING_MV="4.6.3"
+STAGING_MV="4.6.4"
 [[ ${MAJOR_V} == "1.8" ]] && SUFFIX="-unofficial"
 STAGING_P="wine-staging-${PV}"
 STAGING_DIR="${WORKDIR}/${STAGING_P}${SUFFIX}"
@@ -247,6 +246,29 @@ wine_compiler_check() {
 wine_build_environment_check() {
 	[[ ${MERGE_TYPE} = "binary" ]] && return 0
 
+	if use abi_x86_64; then
+		if tc-is-gcc && [[ $(gcc-major-version) -lt 4 || ( $(gcc-major-version) -eq 4 && $(gcc-minor-version) -lt 4 ) ]]; then
+			eerror "You need gcc-4.4+ to compile 64-bit wine"
+			die
+		elif tc-is-clang && [[ $(clang-major-version) -lt 3 || ( $(clang-major-version) -eq 3 && $(clang-minor-version) -lt 8 ) ]]; then
+			eerror "You need clang-3.8+ to compile 64-bit wine"
+			die
+		fi
+	fi
+	if tc-is-gcc && [[ $(gcc-major-version) -eq 5 && $(gcc-minor-version) -le 3 ]]; then
+		ewarn "GCC-5.0-5.3 suffered from compiler bugs and are no longer supported by"
+		ewarn "Gentoo's Toolchain Team. If your ebuild fails the compiler checks in"
+		ewarn "the configure phase, either update your compiler or switch to <5.0 || >=5.4"
+	fi
+	if tc-is-gcc && [[ $(gcc-major-version) -eq 5 && $(gcc-minor-version) -eq 4 ]]; then
+		if has "-march=i686" ${CFLAGS} && ! has "-mtune=generic" ${CFLAGS}; then
+			ewarn "Compilation can hang with CFLAGS=\"-march=i686\".  You can temporarily work"
+			ewarn "around this by adding \"-mtune=generic\" to your CFLAGS for wine."
+			ewarn "See package.env in man 5 portage for more information on how to do this."
+			ewarn "See https://bugs.gentoo.org/show_bug.cgi?id=613128 for more details"
+		fi
+	fi
+
 	if use abi_x86_32 && use opencl && [[ "$(eselect opencl show 2> /dev/null)" == "intel" ]]; then
 		eerror "You cannot build wine with USE=opencl because intel-ocl-sdk is 64-bit only."
 		eerror "See https://bugs.gentoo.org/487864 for more details."
@@ -277,7 +299,6 @@ wine_env_vcs_vars() {
 }
 
 pkg_pretend() {
-	wine_compiler_check || die
 	wine_build_environment_check || die
 
 	# Verify OSS support
@@ -336,17 +357,14 @@ src_prepare() {
 	local PATCHES=(
 		"${FILESDIR}"/${PN}-1.5.26-winegcc.patch #260726
 		"${FILESDIR}"/${PN}-1.9.5-multilib-portage.patch #395615
-		"${FILESDIR}"/${PN}-1.7.12-osmesa-check.patch #429386
 		"${FILESDIR}"/${PN}-1.6-memset-O3.patch #480508
-
-		# https://bugs.winehq.org/show_bug.cgi?id=42132
-		"${FILESDIR}"/${PN}-2.0_rc3-flex263.patch
 	)
 	if use staging; then
 		ewarn "Applying the Wine-Staging patchset. Any bug reports to the"
 		ewarn "Wine bugzilla should explicitly state that staging was used."
 
 		local STAGING_EXCLUDE=""
+		STAGING_EXCLUDE="${STAGING_EXCLUDE} -W winhlp32-Flex_Workaround" # Avoid double patching https://bugs.winehq.org/show_bug.cgi?id=42132
 		use pipelight || STAGING_EXCLUDE="${STAGING_EXCLUDE} -W Pipelight"
 
 		# Launch wine-staging patcher in a subshell, using eapply as a backend, and gitapply.sh as a backend for binary patches
@@ -392,6 +410,8 @@ src_prepare() {
 }
 
 src_configure() {
+	wine_compiler_check || die
+
 	export LDCONFIG=/bin/true
 	use custom-cflags || strip-flags
 

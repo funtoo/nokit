@@ -18,6 +18,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~ia64 ~ppc ~ppc64 ~x86"
 IUSE="aio glusterfs gnuplot gtk numa rbd rdma static zlib"
+REQUIRED_USE="gnuplot? ( ${PYTHON_REQUIRED_USE} )"
 
 # GTK+:2 does not offer static libaries.
 LIB_DEPEND="aio? ( dev-libs/libaio[static-libs(+)] )
@@ -39,9 +40,10 @@ RDEPEND+="
 S="${WORKDIR}/${MY_P}"
 
 PATCHES=(
-	# "${FILESDIR}"/fio-2.8-sysmacros.patch #580592
 	"${FILESDIR}"/fio-2.2.13-libmtd.patch
+	"${FILESDIR}"/fio-2.2.15-rdma.patch #542640
 )
+
 src_prepare() {
 	sed -i '/^DEBUGFLAGS/s: -D_FORTIFY_SOURCE=2::g' Makefile || die
 
@@ -66,6 +68,7 @@ src_configure() {
 		$(usex gtk '--enable-gfio' '') \
 		$(usex numa '' '--disable-numa') \
 		$(usex rbd '' '--disable-rbd') \
+		$(usex rdma '' '--disable-rdma') \
 		$(usex static '--build-static' '')
 	echo "$@"
 	"$@" || die 'configure failed'

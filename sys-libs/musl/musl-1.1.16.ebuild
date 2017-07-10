@@ -1,6 +1,5 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
@@ -18,7 +17,7 @@ else
 	http://dev.gentoo.org/~blueness/musl-misc/getconf.c
 	http://dev.gentoo.org/~blueness/musl-misc/getent.c
 	http://dev.gentoo.org/~blueness/musl-misc/iconv.c"
-	KEYWORDS="-* ~amd64 ~arm ~mips ~ppc ~x86"
+	KEYWORDS="-* amd64 arm ~mips ppc x86"
 fi
 
 export CBUILD=${CBUILD:-${CHOST}}

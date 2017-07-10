@@ -1,8 +1,7 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI="3"
+EAPI="6"
 
 inherit eutils
 
@@ -15,12 +14,16 @@ SLOT="0"
 
 AIX_V='aix-2'
 
-KEYWORDS="~ppc-aix ~x86-interix ~ppc-macos ~x64-macos ~x86-macos ~x64-solaris ~x86-solaris"
+KEYWORDS="~ppc-aix ~ppc-macos ~x64-macos ~x86-macos ~x64-solaris ~x86-solaris"
 
 IUSE=""
 
 DEPEND="sys-devel/binutils-config"
 RDEPEND="${DEPEND}"
+
+src_unpack() {
+	mkdir -p "${S}"
+}
 
 src_install() {
 	LIBPATH=/usr/$(get_libdir)/binutils/${CHOST}/native-${PV}

@@ -11,10 +11,10 @@ app-accessibility/simon:opencv - Use media-libs/opencv
 app-accessibility/simon:pim - Use kde-apps/kdepimlibs
 app-accessibility/simon:sphinx - Build sphinx backend (pulls app-accessibility/julius if disabled
 app-accessibility/speechd-el:brltty - brltty support
-app-admin/ansible:keyczar - Enable accelerated mode for old ssh clients/servers
 app-admin/bcfg2:cheetah - Include dev-python/cheetah support
 app-admin/bcfg2:genshi - Include dev-python/genshi support
 app-admin/bcfg2:server - Installs scripts to be used on the server-side of this app
+app-admin/calamares:pythonqt - Enable PythonQt-based module interface
 app-admin/clsync:cgroups - Use cgroups to limit /dev access.
 app-admin/clsync:cluster - Enable clustering support (allows master-master clsync on multiple hosts). Not fully implemented yet.
 app-admin/clsync:control-socket - Enable AF_UNIX control socket support.
@@ -35,7 +35,6 @@ app-admin/conky:eve - Enable support for the eve-online skill monitor
 app-admin/conky:ical - Enable support for events from iCalendar (RFC 5545) files using dev-libs/libical
 app-admin/conky:iostats - Enable support for per-task I/O statistics
 app-admin/conky:irc - Enable support for displaying everything from an irc channel using net-libs/libircclient
-app-admin/conky:lua - Enable if you want Lua scripting support
 app-admin/conky:lua-cairo - Enable if you want Lua Cairo bindings
 app-admin/conky:lua-imlib - Enable if you want Lua Imlib2 bindings
 app-admin/conky:lua-rsvg - Enable if you want Lua RSVG bindings
@@ -69,17 +68,21 @@ app-admin/glance:swift - Adds swift storage support
 app-admin/gtkdiskfree:gtk2 - Support GTK+ 2.x instead of GTK+ 3.x
 app-admin/hddtemp:network-cron - Monthly cronjob to update hddtemp.db.
 app-admin/keepass:aot - Generate native code at build time, rather than runtime.
+app-admin/keepassxc:autotype - Add support to autotype the passwords into other applications
+app-admin/keepassxc:http - Add http support
+app-admin/keepassxc:yubikey - Enable database unlocking via YubiKey.
 app-admin/lastpass-cli:X - Use x11-misc/xclip or x11-misc/xsel to copy passwords to the clipboard.
 app-admin/lastpass-cli:pinentry - Use app-crypt/pinentry to prompt for passwords.
 app-admin/logrotate:acl - Installs acl support
+app-admin/logrotate:bzip2 - Compresses rotated log files with bzip2 instead of gzip
 app-admin/logrotate:cron - Installs cron file
 app-admin/logrotate:selinux - Installs Security Enhanced Linux support
-app-admin/logstash-bin:all-plugins - contains the standard distribution package plus all plugins
 app-admin/matter:entropy - Add Entropy support
 app-admin/mcollective:client - Install client utilities
 app-admin/mms-agent:monitoring - Install the monitoring agent
 app-admin/packagekit-base:command-not-found - Enable packagekit support on shell "command not found"
 app-admin/packagekit-base:cron - Install cron script for auto-update
+app-admin/packagekit-base:elogind - Enable elogind support to get user session
 app-admin/packagekit-base:entropy - Enable Entropy backend
 app-admin/pass:X - Use x11-misc/xclip to copy passwords to the clipboard.
 app-admin/pass:dmenu - Add support for x11-misc/dmenu with the 'passmenu' program.
@@ -93,8 +96,10 @@ app-admin/prelude-manager:dbx - Enables Prelude Manager storing Prelude alerts i
 app-admin/prelude-manager:tcpwrapper - Enables Prelude Manager using tcp wrapper. It requires sys-apps/tcp-wrappers .
 app-admin/puppet:augeas - Enable augeas support
 app-admin/puppet:diff - Enable diff support
+app-admin/puppet:experimental - Add patches for things in testing
 app-admin/puppet:rrdtool - Enable rrdtool support
 app-admin/puppet:shadow - Enable shadow support
+app-admin/puppet-agent:experimental - Add patches for things in testing
 app-admin/puppet-agent:puppetdb - Adds puppetdb support
 app-admin/puppetserver:puppetdb - Adds support for connecting to puppetdb
 app-admin/pwgen:livecd - Install init script for root password scrambling on boot
@@ -103,9 +108,10 @@ app-admin/rsyslog:elasticsearch - Build the Elasticsearch output module (require
 app-admin/rsyslog:gcrypt - Add support for encrypted log files using dev-libs/libgcrypt
 app-admin/rsyslog:grok - Build the grok modify module (requires dev-libs/grok)
 app-admin/rsyslog:jemalloc - Use dev-libs/jemalloc for allocations.
-app-admin/rsyslog:kafka - Build the Apache Kafka output module (requires dev-libs/librdkafka)
+app-admin/rsyslog:kafka - Build the Apache Kafka input/output module (requires dev-libs/librdkafka)
 app-admin/rsyslog:kerberos - Build the GSSAPI input and output module (requires virtual/krb5)
 app-admin/rsyslog:libressl - Use dev-libs/libressl for building the rfc5424hmac modify module (requires rfc5424hmac USE flag)
+app-admin/rsyslog:mdblookup - Build the MaxMind DB lookup message modify plugin using dev-libs/libmaxminddb
 app-admin/rsyslog:mongodb - Build the MongoDB output module (requires dev-libs/libmongo-client)
 app-admin/rsyslog:mysql - Build the MySQL database output module (requires virtual/mysql)
 app-admin/rsyslog:normalize - Build the normalize modify module (requires dev-libs/libee and dev-libs/liblognorm)
@@ -157,7 +163,6 @@ app-admin/syslog-ng:pacct - Enable support for reading Process Accounting files 
 app-admin/syslog-ng:redis - Enable support for Redis destinations
 app-admin/syslog-ng:smtp - Enable support for SMTP destinations
 app-admin/syslog-ng:spoof-source - Enable support for spoofed source addresses
-app-admin/sysstat:cron - Install /etc/cron.d script to periodically run sar
 app-admin/sysstat:isag - Install isag, the Interactive System Activity Graph tool
 app-admin/systemrescuecd-x86:isohybrid - Pass downloaded images through isohybrid in order to make it possible to copy them directly to USB media and boot (requires sys-boot/syslinux at build time).
 app-admin/testdisk:ewf - Include ewf library
@@ -217,7 +222,6 @@ app-backup/bareos:scsi-crypto - Enable low level SCSI crypto support
 app-backup/bareos:sql-pooling - Enable SQL pooling support
 app-backup/bareos:storage-daemon - Install storage daemon (bareos-sd)
 app-backup/borgbackup:fuse - Mount archive as a FUSE filesystem.
-app-backup/boxbackup:client-only - Disable server support, and just build a client
 app-backup/btrbk:pv - Use sys-apps/pv to enable progress bar functionality
 app-backup/bup:web - Support browsing backups via a web interface
 app-backup/dar:dar32 - Enables --enable-mode=32 option, which replace infinite by 32 bit integers
@@ -236,27 +240,26 @@ app-backup/snapper:lvm - Enable LVM thinprovisioned snapshots support sys-fs/lvm
 app-backup/snapper:xattr - Add support for getting and setting POSIX extended attributes, through sys-apps/attr.
 app-backup/tsm:tsm_cit - IBM Tivoli Common Inventory Technology
 app-backup/tsm:tsm_hw - Difference snapshot support for NetApp and N-Series file servers
+app-backup/zbackup:tartool - Install tartool utility
 app-benchmarks/filebench:auto-completion - Enable command-line autocompletion using dev-libs/libtecla.
 app-benchmarks/httperf:idleconn - Build with the idleconn program
 app-benchmarks/jmeter:beanshell - Enable BeanShell scripting support
 app-benchmarks/ramspeed:pic - Force shared libraries to be built as PIC (this is slower)
 app-benchmarks/sysbench:aio - Enable libaio support
-app-cdr/backlite:mplayer - Add support for mplayer preview in addition to X11 and phonon
 app-cdr/cdemu:cdemu-daemon - Pull app-cdr/cdemu-daemon dependency, useful in chroot environment (bug #315491). Do not disable until you know what you are doing.
 app-cdr/cdrdao:gcdmaster - Enable building of gcdmaster application
-app-cdr/cdrkit:hfs - Provide building of HFS (Apple) CD-images
 app-cdr/cuetools:extras - Install additional script that tag files based on cue/toc file information
 app-cdr/dvdisaster:debug - Enable memory debugging.
 app-cdr/gaffitter:scripts - Install additional gaffitter scripts for external programs
-app-cdr/k3b:emovix - Enable burning support for eMoviX images
 app-cdr/mirage2iso:pinentry - Support app-crypt/pinentry password input backend.
-app-crypt/aespipe:asm - Enable assebly modules
+app-crypt/aespipe:asm - Enable assembly modules
 app-crypt/aespipe:cpu_flags_x86_padlock - Use VIA padlock instructions, detected at run time, code still works on non-padlock processors
 app-crypt/ccid:kobil-midentity - Build and install Kobil_mIDentity_switch tool
 app-crypt/ccid:twinserial - Enable twinserial reader
 app-crypt/codecrypt:cryptopp - Build algorithms that need Crypto++ support dev-libs/crypto++
 app-crypt/eid-mw:dialogs - Enable "askaccess" dialog box, by using x11-libs/gtk+
 app-crypt/eid-mw:gtk - All dialogs are available, by using x11-libs/gtk+
+app-crypt/eid-mw:p11-kit - Support for app-crypt/p11-kit.
 app-crypt/eid-mw:xpi - Build and install an extension for Mozilla browsers.
 app-crypt/ekeyd:minimal - Only install the ekey-egd-linux service rather than the full ekeyd package.
 app-crypt/ekeyd:munin - Install a plugin for net-analyzer/munin to graph statistical data from ekeyd.
@@ -286,10 +289,9 @@ app-crypt/qca:softstore - Enable softstore plugin
 app-crypt/rhash:openssl - Add support for hashes from dev-libs/openssl
 app-crypt/tpm-tools:pkcs11 - Build Token data management utilities based on OpenCryptoki's (dev-libs/opencryptoki) PKCS#11 implementation.
 app-crypt/veracrypt:asm - Enable assembly for optimization
-app-crypt/zuluCrypt:gnome - Enable support for the freedesktop.org Secret Service API via app-crypt/libsecret. This does not control the gui!
-app-crypt/zuluCrypt:gui - Whether to build the QT gui. Highly recommended.
-app-crypt/zuluCrypt:kde - Enable support for KDE, e.g. via kde-apps/kwalletd. This does not control the gui, but NEEDS GUI ENABLED!
-app-crypt/zuluCrypt:udev - Whether udev will be consulted when deciding if a volume is system or not.
+app-crypt/zuluCrypt:gnome - Enable support for the freedesktop.org Secret Service API via app-crypt/libsecret
+app-crypt/zuluCrypt:kwallet - Enable encrypted storage of passwords with kde-frameworks/kwallet
+app-crypt/zuluCrypt:udev - Whether udev will be consulted when deciding if a volume is system or not
 app-emulation/bochs:3dnow - Enable support for emulating 3DNow! instructions (incomplete)
 app-emulation/bochs:avx - Enable support for emulating Advanced Vector Extensions (AVX)
 app-emulation/bochs:debugger - Enable debugger (slows down emulation)
@@ -301,9 +303,10 @@ app-emulation/docker:aufs - Enables dependencies for the "aufs" graph driver, in
 app-emulation/docker:btrfs - Enables dependencies for the "btrfs" graph driver, including necessary kernel flags.
 app-emulation/docker:container-init - Makes the a staticly-linked init system tini available inside a container.
 app-emulation/docker:device-mapper - Enables dependencies for the "devicemapper" graph driver, including necessary kernel flags.
-app-emulation/docker:experimental - Enable features labelled by upstream to be of "experimental" quality and not yet ready for general consumption.
 app-emulation/docker:overlay - Enables dependencies for the "overlay" graph driver, including necessary kernel flags.
 app-emulation/docker:pkcs11 - Enables pkcs-11 support.
+app-emulation/docker-runc:ambient - Enable support for ambient capability
+app-emulation/docker-runc:apparmor - Enable AppArmor support
 app-emulation/dosemu:fluidsynth - use media-sound/fluidsynth for MIDI emulation
 app-emulation/e-uae:capslib - Add CAPS library support
 app-emulation/e-uae:sdl-sound - Use media-libs/sdl-sound for audio output
@@ -384,14 +387,12 @@ app-emulation/qemu:sdl2 - Use libsdl2 instead of libsdl
 app-emulation/qemu:snappy - Enable support for snappy compression
 app-emulation/qemu:spice - Enable Spice protocol support via app-emulation/spice
 app-emulation/qemu:ssh - Enable SSH based block device support via net-libs/libssh2
-app-emulation/qemu:static - Enables both 'static-softmmu' and 'static-user'
-app-emulation/qemu:static-softmmu - Builds the Software MMU (system) targets as static binaries
+app-emulation/qemu:static - Build the User and Software MMU (system) targets as well as tools as static binaries
 app-emulation/qemu:static-user - Build the User targets as static binaries
 app-emulation/qemu:systemtap - Enable SystemTAP/DTrace tracing
 app-emulation/qemu:tci - Enable the TCG Interpreter which can speed up or slowdown workloads depending on the host and guest CPUs being emulated. In the future it will be a runtime option but for now its compile time.
 app-emulation/qemu:usb - Enable USB passthrough via dev-libs/libusb
 app-emulation/qemu:usbredir - Use sys-apps/usbredir to redirect USB devices to another machine over TCP
-app-emulation/qemu:uuid - Enable UUID support in the vdi block driver
 app-emulation/qemu:vde - Enable VDE-based networking
 app-emulation/qemu:vhost-net - Enable accelerated networking using vhost-net, see http://www.linux-kvm.org/page/VhostNet
 app-emulation/qemu:virgl - Enable experimental Virgil 3d (virtual software GPU)
@@ -400,6 +401,7 @@ app-emulation/qemu:vte - Enable terminal support (x11-libs/vte) in the GTK+ inte
 app-emulation/qemu:xattr - Add support for getting and setting POSIX extended attributes, through sys-apps/attr. Requisite for the virtfs backend.
 app-emulation/qemu:xen - Enables support for Xen backends
 app-emulation/qemu:xfs - Support xfsctl() notification and syncing for XFS backed virtual disks.
+app-emulation/qt-virt-manager:smartcard - Enable smartcard remoting using app-emulation/libcacard
 app-emulation/rkt:actool - Install the actool for ACI manipulation
 app-emulation/rkt:rkt_stage1_coreos - Download and use a prebuilt stage1.aci from CoreOS
 app-emulation/rkt:rkt_stage1_fly - Build stage1-fly.aci
@@ -408,6 +410,7 @@ app-emulation/rkt:rkt_stage1_kvm - This flag has been replaced by the rkt_stage1
 app-emulation/rkt:rkt_stage1_kvm_lkvm - Build stage1-kvm-lkvm.aci
 app-emulation/rkt:rkt_stage1_kvm_qemu - Build stage1-kvm-qemu.aci
 app-emulation/rkt:rkt_stage1_src - Build the stage1.aci from source
+app-emulation/runc:ambient - Enable support for ambient capabilities set (Requires Linux kernel 4.3 or later).
 app-emulation/runc:apparmor - Enable AppArmor support.
 app-emulation/runv:libvirt - Enable support for KVM via libvirt
 app-emulation/runv:xen - Enable support for the Xen Hypervisor
@@ -425,10 +428,9 @@ app-emulation/virt-manager:sasl - Depend on the proper libraries needed to conne
 app-emulation/virt-viewer:spice - Support connecting to SPICE-enabled virtual machines.
 app-emulation/virt-viewer:vnc - Support connecting to VNC-enabled virtual machines.
 app-emulation/virt-what:dmi - Use sys-apps/dmidecode to read firmware data
-app-emulation/virtualbox:additions - Install Guest System Tools ISO
-app-emulation/virtualbox:extensions - Install extension module packages
 app-emulation/virtualbox:headless - Build without any graphic frontend
 app-emulation/virtualbox:lvm - Build VBoxVolInfo that needs devicemapper from sys-fs/lvm2.
+app-emulation/virtualbox:pax_kernel - Apply patch needed for pax enabled kernels.
 app-emulation/virtualbox:sdk - Enable building of SDK
 app-emulation/virtualbox:udev - Controls installation of special USB udev rules.
 app-emulation/virtualbox:vboxwebsrv - Build and install the VirtualBox webservice
@@ -472,6 +474,80 @@ app-emulation/wine:samba - Add support for NTLM auth. see http://wiki.winehq.org
 app-emulation/wine:staging - Apply Wine-Staging patches for advanced feature support that haven't made it into upstream Wine yet
 app-emulation/wine:themes - Support GTK+:3 window theming through Wine-Staging
 app-emulation/wine:udev - Use virtual/libudev to provide plug and play support
+app-emulation/wine-any:capi - Enable ISDN support via CAPI
+app-emulation/wine-any:custom-cflags - Bypass strip-flags; use at your own peril
+app-emulation/wine-any:d3d9 - Apply highly experimental patches for Gallium Nine support. This patch may break some applications.
+app-emulation/wine-any:dos - Pull in games-emulation/dosbox to run DOS applications
+app-emulation/wine-any:gecko - Add support for the Gecko engine when using iexplore
+app-emulation/wine-any:gstreamer - Use media-libs/gstreamer to provide DirectShow functionality;
+app-emulation/wine-any:mono - Add support for .NET using Wine's Mono add-on
+app-emulation/wine-any:netapi - Use libnetapi from net-fs/samba to support Windows networks in netapi32.dll
+app-emulation/wine-any:opencl - Enable OpenCL support
+app-emulation/wine-any:osmesa - Add support for OpenGL in bitmaps using libOSMesa
+app-emulation/wine-any:pcap - Support packet capture software (e.g. wireshark)
+app-emulation/wine-any:perl - Install helpers written in perl (winedump/winemaker)
+app-emulation/wine-any:pipelight - Apply Wine-Staging patches for Pipelight/Silverlight support
+app-emulation/wine-any:prelink - Run prelink on DLLs during build; For versions before wine-1.7.55 or hardened, do not disable if you do not know what this means as it can break things at runtime
+app-emulation/wine-any:realtime - Pull in sys-auth/rtkit for low-latency pulseaudio support
+app-emulation/wine-any:run-exes - Use Wine to open and run .EXE and .MSI files
+app-emulation/wine-any:s3tc - Pull in media-libs/libtxc_dxtn for DXTn texture compression, needed for many games
+app-emulation/wine-any:samba - Add support for NTLM auth. see http://wiki.winehq.org/NtlmAuthSetupGuide and http://wiki.winehq.org/NtlmSigningAndSealing
+app-emulation/wine-any:staging - Apply Wine-Staging patches for advanced feature support that haven't made it into upstream Wine yet
+app-emulation/wine-any:themes - Support GTK+:3 window theming through Wine-Staging
+app-emulation/wine-any:udev - Use virtual/libudev to provide plug and play support
+app-emulation/wine-d3d9:capi - Enable ISDN support via CAPI
+app-emulation/wine-d3d9:custom-cflags - Bypass strip-flags; use at your own peril
+app-emulation/wine-d3d9:d3d9 - Apply highly experimental patches for Gallium Nine support. This patch may break some applications.
+app-emulation/wine-d3d9:dos - Pull in games-emulation/dosbox to run DOS applications
+app-emulation/wine-d3d9:gecko - Add support for the Gecko engine when using iexplore
+app-emulation/wine-d3d9:gstreamer - Use media-libs/gstreamer to provide DirectShow functionality;
+app-emulation/wine-d3d9:mono - Add support for .NET using Wine's Mono add-on
+app-emulation/wine-d3d9:netapi - Use libnetapi from net-fs/samba to support Windows networks in netapi32.dll
+app-emulation/wine-d3d9:opencl - Enable OpenCL support
+app-emulation/wine-d3d9:osmesa - Add support for OpenGL in bitmaps using libOSMesa
+app-emulation/wine-d3d9:pcap - Support packet capture software (e.g. wireshark)
+app-emulation/wine-d3d9:perl - Install helpers written in perl (winedump/winemaker)
+app-emulation/wine-d3d9:prelink - Run prelink on DLLs during build; For versions before wine-1.7.55 or hardened, do not disable if you do not know what this means as it can break things at runtime
+app-emulation/wine-d3d9:realtime - Pull in sys-auth/rtkit for low-latency pulseaudio support
+app-emulation/wine-d3d9:run-exes - Use Wine to open and run .EXE and .MSI files
+app-emulation/wine-d3d9:samba - Add support for NTLM auth. see http://wiki.winehq.org/NtlmAuthSetupGuide and http://wiki.winehq.org/NtlmSigningAndSealing
+app-emulation/wine-d3d9:udev - Use virtual/libudev to provide plug and play support
+app-emulation/wine-staging:capi - Enable ISDN support via CAPI
+app-emulation/wine-staging:custom-cflags - Bypass strip-flags; use at your own peril
+app-emulation/wine-staging:dos - Pull in games-emulation/dosbox to run DOS applications
+app-emulation/wine-staging:gecko - Add support for the Gecko engine when using iexplore
+app-emulation/wine-staging:gstreamer - Use media-libs/gstreamer to provide DirectShow functionality;
+app-emulation/wine-staging:mono - Add support for .NET using Wine's Mono add-on
+app-emulation/wine-staging:netapi - Use libnetapi from net-fs/samba to support Windows networks in netapi32.dll
+app-emulation/wine-staging:opencl - Enable OpenCL support
+app-emulation/wine-staging:osmesa - Add support for OpenGL in bitmaps using libOSMesa
+app-emulation/wine-staging:pcap - Support packet capture software (e.g. wireshark)
+app-emulation/wine-staging:perl - Install helpers written in perl (winedump/winemaker)
+app-emulation/wine-staging:pipelight - Apply Wine-Staging patches for Pipelight/Silverlight support
+app-emulation/wine-staging:prelink - Run prelink on DLLs during build; For versions before wine-1.7.55 or hardened, do not disable if you do not know what this means as it can break things at runtime
+app-emulation/wine-staging:realtime - Pull in sys-auth/rtkit for low-latency pulseaudio support
+app-emulation/wine-staging:run-exes - Use Wine to open and run .EXE and .MSI files
+app-emulation/wine-staging:s3tc - Pull in media-libs/libtxc_dxtn for DXTn texture compression, needed for many games
+app-emulation/wine-staging:samba - Add support for NTLM auth. see http://wiki.winehq.org/NtlmAuthSetupGuide and http://wiki.winehq.org/NtlmSigningAndSealing
+app-emulation/wine-staging:staging - Apply Wine-Staging patches for advanced feature support that haven't made it into upstream Wine yet
+app-emulation/wine-staging:themes - Support GTK+:3 window theming through Wine-Staging
+app-emulation/wine-staging:udev - Use virtual/libudev to provide plug and play support
+app-emulation/wine-vanilla:capi - Enable ISDN support via CAPI
+app-emulation/wine-vanilla:custom-cflags - Bypass strip-flags; use at your own peril
+app-emulation/wine-vanilla:dos - Pull in games-emulation/dosbox to run DOS applications
+app-emulation/wine-vanilla:gecko - Add support for the Gecko engine when using iexplore
+app-emulation/wine-vanilla:gstreamer - Use media-libs/gstreamer to provide DirectShow functionality;
+app-emulation/wine-vanilla:mono - Add support for .NET using Wine's Mono add-on
+app-emulation/wine-vanilla:netapi - Use libnetapi from net-fs/samba to support Windows networks in netapi32.dll
+app-emulation/wine-vanilla:opencl - Enable OpenCL support
+app-emulation/wine-vanilla:osmesa - Add support for OpenGL in bitmaps using libOSMesa
+app-emulation/wine-vanilla:pcap - Support packet capture software (e.g. wireshark)
+app-emulation/wine-vanilla:perl - Install helpers written in perl (winedump/winemaker)
+app-emulation/wine-vanilla:prelink - Run prelink on DLLs during build; For versions before wine-1.7.55 or hardened, do not disable if you do not know what this means as it can break things at runtime
+app-emulation/wine-vanilla:realtime - Pull in sys-auth/rtkit for low-latency pulseaudio support
+app-emulation/wine-vanilla:run-exes - Use Wine to open and run .EXE and .MSI files
+app-emulation/wine-vanilla:samba - Add support for NTLM auth. see http://wiki.winehq.org/NtlmAuthSetupGuide and http://wiki.winehq.org/NtlmSigningAndSealing
+app-emulation/wine-vanilla:udev - Use virtual/libudev to provide plug and play support
 app-emulation/winetricks:rar - Pull in app-arch/unrar for extraction of rar-compressed game files
 app-emulation/x48:readline - Enables support for libreadline
 app-emulation/xe-guest-utilities:xenstore - Use xenstore binaries bundled by Citrix instead of building app-emulation/xen-tools
@@ -493,7 +569,8 @@ app-emulation/xtrs:ls-dos - Install LS-DOS disk images for Model 4P
 app-forensics/afflib:fuse - Enable extra fuse thingies
 app-forensics/afflib:qemu - Enable qemu stuff
 app-forensics/afflib:s3 - Enable support for Amazon S3
-app-forensics/aide:prelink - Enable support for sys-devel/prelink
+app-forensics/aide:e2fs - Enable support for checking file attributes on ext2/ext3/ext4 filesystems
+app-forensics/aide:prelink - Bypass prelinking when calculating checksums
 app-forensics/chkrootkit:cron - Install cron script for weekly rootkit scans
 app-forensics/libewf:bfio - Enables libbfio for chaining file in file handling
 app-forensics/libewf:ewf - Enables the v1 API
@@ -516,6 +593,7 @@ app-forensics/quickfuzz:pki - support PKI formats
 app-forensics/sleuthkit:aff - Enable extra aff formats
 app-forensics/sleuthkit:ewf - Enable libewf support
 app-i18n/anthy:canna-2ch - Enable support for app-dicts/canna-2ch
+app-i18n/canna:canuum - Build canuum
 app-i18n/fcitx:autostart - Enable XDG-compatible autostart of Fcitx
 app-i18n/fcitx:enchant - Enable Enchant backend (using app-text/enchant) for spelling hinting
 app-i18n/fcitx:gtk2 - Install input method module for GTK+ 2
@@ -537,8 +615,6 @@ app-i18n/ibus-libpinyin:opencc - Enable support for app-i18n/opencc
 app-i18n/ibus-m17n:gtk - Build the preference interfaces, based on x11-libs/gtk+ (GTK+ 2).
 app-i18n/ibus-pinyin:boost - Compile against dev-libs/boost libraries
 app-i18n/ibus-unikey:gtk3 - Enable support for gtk+3
-app-i18n/im-ja:anthy - Support for Anthy input method
-app-i18n/im-ja:skk - Support for SKK input method
 app-i18n/imsettings:gconf - Enable GConf support
 app-i18n/imsettings:gtk3 - Enable support for x11-libs/gtk+:3
 app-i18n/imsettings:xfconf - Enable integration in the Xfce desktop environment with xfce-base/xfconf
@@ -553,7 +629,6 @@ app-i18n/scim:gtk3 - Enable support for x11-libs/gtk+:3
 app-i18n/scim-anthy:gtk3 - Enable support for x11-libs/gtk+:3
 app-i18n/scim-anthy:kasumi - Use Anthy dictionary maintenance tool (app-dicts/kasumi)
 app-i18n/tomoe:hyperestraier - Enable support for app-text/hyperestraier
-app-i18n/translate-shell:fribidi - Enable RTL language support
 app-i18n/translate-shell:tts - Enable text-to-speech support
 app-i18n/uim:anthy - Enable support for app-i18n/anthy input method
 app-i18n/uim:eb - Enable support for dev-libs/eb
@@ -574,6 +649,7 @@ app-misc/blink1:server - Build and install REST API server (currently hard-coded
 app-misc/blink1:tool - Build and install command-line tool blink1-tool
 app-misc/byobu:screen - Use app-misc/screen as the default backend
 app-misc/ddccontrol:pci - enable direct PCI memory access (the setuid ddcpci util)
+app-misc/ddcutil:enable-api-libs - Enables the C/C++ API.
 app-misc/ddcutil:usb-monitor - Adds support for monitors attached via USB.
 app-misc/ddcutil:user-permissions - Adds a udev rules to allow non-root users in the i2c group to access the /dev/i2c-* devices. If usb-monitor is selected, users will need to be added to the video group to access the USB monitor. Otherwise, only root will be able to use ddcutil.
 app-misc/digitemp:ds2490 - Build support for the ds2490 sensor
@@ -596,7 +672,6 @@ app-misc/gourmet:spell - Enable support for the spell check plugin
 app-misc/gourmet:web - Enable support for the web import plugin
 app-misc/gramps:geo - Enable rendering of geographical data using sci-geosciences/osm-gps-map.
 app-misc/gramps:reports - All external software that is needed for graphical reports will be installed
-app-misc/gramps:webkit - Use Webkit-based rendering for geographical data view.
 app-misc/graphlcd-base:g15 - Add support for app-misc/g15daemon driver (e.g. Logitech G15 Keybord)
 app-misc/irtrans-irserver:mono - Enable mono support
 app-misc/jq:oniguruma - Use dev-libs/oniguruma for regular expression support
@@ -610,6 +685,7 @@ app-misc/lcdproc:nfs - Adds support for NFS file system
 app-misc/lcdproc:seamless-hbars - Try to avoid gaps in horizontal bars
 app-misc/linux-logo:nls - Add Native Language Support (using gettext - GNU locale utilities)
 app-misc/lirc:audio - Support using an audio device connected to an IR receiver
+app-misc/lirc:devinput - Support the devinput input device
 app-misc/lirc:ftdi - Support FTDI devices
 app-misc/lirc:gtk - Include GTK support which enables the use of lirc-setup
 app-misc/lirc:hardware-carrier - The transmitter device generates its clock signal in hardware
@@ -617,6 +693,7 @@ app-misc/lirc:iguanair - Support iguanaIR devices
 app-misc/lirc:inputlirc - Add a dependency on app-misc/inputlircd
 app-misc/lirc:irman - Add a dependency on media-libs/libirman
 app-misc/lirc:transmitter - Add transmitter support to some lirc-drivers (e.g. serial)
+app-misc/lirc:uinput - Enable support for uinput
 app-misc/mc:edit - Compile and install the mcedit application
 app-misc/mc:mclib - Compile and install the libmc.so shared library
 app-misc/mc:sftp - Add support for sftp (uses net-libs/libssh2 for it).
@@ -625,6 +702,7 @@ app-misc/mc:xdg - Toggles mc's config dir location. Enable for $XDG_CONFIG_HOME/
 app-misc/mosquitto:bridge - Enable bridge support in the MQTT broker.
 app-misc/mosquitto:persistence - Store messages and subscriptions to a file.
 app-misc/mosquitto:srv - Include SRV lookup support.
+app-misc/mosquitto:websockets - Support the WebSocket protocol.
 app-misc/muttprint:doc - Builds documentation
 app-misc/neofetch:X - Enable support for detecting DEs, WMs, screen resolutions, and showing images from an X terminal
 app-misc/note:general - Add support for ascii flatfile backend
@@ -632,22 +710,8 @@ app-misc/note:text - Add support for text backend
 app-misc/openastro:jpeg - Enable exporting Astrological Charts to jpeg
 app-misc/openastro:png - Enable exporting Astrological Charts to png
 app-misc/recoll:camelcase - Enable indexing for camelCase sentences and words
-app-misc/recoll:chm - Index chm files
-app-misc/recoll:dvi - Index dvi files
-app-misc/recoll:ics - Index iCalendar files
-app-misc/recoll:info - Index GNU info files
 app-misc/recoll:inotify - Use the Linux Kernel notification subsystem for monitoring file alterations in realtime
-app-misc/recoll:lyx - Index Latex lyx files
-app-misc/recoll:msdoc - Index Microsoft Word documents
-app-misc/recoll:msppt - Index Microsoft PowerPoint documents
-app-misc/recoll:msxls - Index Microsoft Excel documents
-app-misc/recoll:pdf - Index PDF documents
-app-misc/recoll:rtf - Index Microsoft RTF documents
 app-misc/recoll:session - Stop monitoring file alterations when X11 session terminates
-app-misc/recoll:sound - Index audio files
-app-misc/recoll:tex - Index TeX files
-app-misc/recoll:wordperfect - Index WordPerfect documents
-app-misc/recoll:xml - Index several XML-based formats (Abiword, FictionBook, Kword, Office OpenXML, OpenDocument, SVG)
 app-misc/rlwrap:debug - Enable debug
 app-misc/screenfetch:X - Use the media-gfx/scrot package to take screenshots
 app-misc/sphinx:id64 - use 64-bit document and word IDs
@@ -685,16 +749,8 @@ app-pda/gtkpod:clutter - Enable clutter support for displaying coverart
 app-portage/conf-update:colordiff - Use colors when displaying diffs (app-misc/colordiff)
 app-portage/conf-update:libressl - Enable SSL connections and crypto functions using dev-libs/libressl
 app-portage/eix:debug - Build with upstream's CXXFLAGS/LDFLAGS for debugging support; not recommended for normal use.
-app-portage/eix:dep - Make DEP=true the default which enables support for {,R,P}DEPEND but requires roughly double disk and memory.
 app-portage/eix:doc - Create description of the eix cache file additionally in html format
-app-portage/eix:optimization - Accept upstream's choices for CXXFLAGS/LDFLAGS for optimization. Absense of this USE flag does not strip user's *FLAGS
-app-portage/eix:required-use - Make REQUIRED_USE=true the default which enables support for REQUIRED_USE but requires more disk and memory.
-app-portage/eix:security - This adds some checks which can prevent certain exploits if e.g. the eix code has a bug. If you use the hardened toolchain, using this flag does not increase security and can even lead to problems.
 app-portage/eix:sqlite - Compile in support for portage's sqlite backend; to actually use it you need additional configuration of portage and eix
-app-portage/eix:strong-optimization - Adds several more agressive CXXFLAGS/LDFLAGS for optimization like graphite (if available). May cause trouble with some buggy compiler versions. Absense of this USE flag does not strip user's *FLAGS
-app-portage/eix:strong-security - Add many checks to prevent exploits if eix code has a bug. This will slow down eix considerably. Use only if you are paranoid or have reasons to suspect a bug.
-app-portage/eix:swap-remote - Swap role of remote addresses in eix-remote, making the data from gpo.zugaina.org the first choice.
-app-portage/eix:tools - Create separate binary for script helper tools; useful if they are called extremely often
 app-portage/g-sorcery:bson - Support BSON file format for package DB
 app-portage/layman:bazaar - Support dev-vcs/bzr based overlays
 app-portage/layman:cvs - Support dev-vcs/cvs based overlays
@@ -714,7 +770,6 @@ app-shells/mpv-bash-completion:luajit - Use dev-lang/luajit instead of dev-lang/
 app-shells/pdsh:rsh - This allows the use of rsh (remote shell) and rcp (remote copy) for authoring websites. sftp is a much more secure protocol and is preferred.
 app-shells/scsh-install-lib:scsh - Use a non-FHS directory layout
 app-shells/shish:diet - Use dev-libs/dietlibc
-app-shells/tcsh:catalogs - Add support for NLS catalogs
 gnome-extra/cinnamon-settings-daemon:colord - Support color management using x11-misc/colord
 gnome-extra/nemo:packagekit - Use packagekit to search for programs to open unknown file types
 gnome-extra/nemo:tracker - Add support for app-misc/tracker search
@@ -728,8 +783,8 @@ gnustep-base/gnustep-gui:speech - Audio support using app-accessibility/flite
 gnustep-base/gnustep-make:libobjc2 - Enables use of the GNUstep Objective-C runtime (gnustep-base/libobjc2) with non-fragile ABI and sys-devel/clang compiler
 gnustep-base/gnustep-make:native-exceptions - Enables use of the native Objective-C exception support (@try/@catch/@finally) built-in objective-c exceptions with compilers that support it
 gnustep-base/libobjc2:boehm-gc - Enable Hans Boehm's garbage collector (dev-libs/boehm-gc). Not recommended by upstream
+sys-apps/accountsservice:elogind - Use sys-auth/elogind instead of sys-auth/consolekit for session tracking
 sys-apps/accountsservice:systemd - Use sys-apps/systemd instead of sys-auth/consolekit for session tracking
-sys-apps/baselayout-prefix:prefix-chaining - install in a chained Prefix environment
 sys-apps/dstat:wifi - Enable wireless network functions
 sys-apps/duc:X - Use X11 for the GUI instead of OpenGL. This is the recommended option
 sys-apps/duc:cairo - Build support for exporting to PNG and PDF with x11-libs/cairo
@@ -746,6 +801,7 @@ sys-apps/etckeeper:cron - Install cron script
 sys-apps/firejail:apparmor - Enable support for custom AppArmor profiles
 sys-apps/firejail:bind - Enable custom bind mounts
 sys-apps/firejail:chroot - Enable chrooting to custom directory
+sys-apps/firejail:contrib - Install contrib scripts
 sys-apps/firejail:file-transfer - Enable file transfers between sandboxes and the host system
 sys-apps/firejail:network - Enable networking features
 sys-apps/firejail:network-restricted - Grant access to --interface, --net=ethXXX and --netfilter only to root user; regular users are only allowed --net=none
@@ -786,11 +842,15 @@ sys-apps/flashrom:tools - Install additional tools
 sys-apps/flashrom:usbblaster - Enable support for Altera USB-Blaster dongles
 sys-apps/flashrom:usbblaster_spi - Enable support for Altera USB-Blaster dongles
 sys-apps/flashrom:wiki - Enable wiki informations, like supported devices etc.
+sys-apps/fwupd:colorhug - Enable ColorHug support through x11-misc/colord package.
+sys-apps/fwupd:dell - Enable Dell-specific support.
+sys-apps/fwupd:elf - Enable libelf support through dev-libs/libelf package.
+sys-apps/fwupd:man - Build and install man pages
+sys-apps/fwupd:uefi - Enable UEFI support
 sys-apps/hwdata-gentoo:binary-drivers - Adds support for ATI/NVIDIA binary drivers
 sys-apps/hwloc:cuda - Enable CUDA device discovery
 sys-apps/hwloc:gl - Enable GL display device discovery (NVCtrl)
 sys-apps/hwloc:numa - Add support for numa memory allocation
-sys-apps/hwloc:opencl - Enable OpenCL device discovery (AMD only)
 sys-apps/hwloc:pci - Enable PCI device discovery using libpci
 sys-apps/hwloc:plugins - Build hwloc components as plugins so that the hwloc core library does not directly depend on their dependencies (for instance the libpci library)
 sys-apps/ibm-powerpc-utils:rtas - Add support for the Run Time Abstraction Services (RTAS)
@@ -804,8 +864,12 @@ sys-apps/linux-misc-apps:usbip - Include USB/IP binaries to replace net-misc/usb
 sys-apps/lm_sensors:sensord - Enable sensord - a daemon that can be used to periodically log sensor readings from hardware health-monitoring chips
 sys-apps/memtest86:serial - Compile with serial console support
 sys-apps/memtest86+:floppy - Install a script to create floppy disks containing memtest86+ binaries.
+sys-apps/memtest86+:iso - Compile an ISO image
 sys-apps/memtest86+:serial - Compile with serial console support
 sys-apps/moreutils:perl - Install scripts written in Perl
+sys-apps/nix:etc_profile - Install /etc/profile.d/ entry to inject nix support for all users.
+sys-apps/nix:gc - Enable garbage collection in the Nix expression evaluator (use dev-libs/boehm-gc).
+sys-apps/nix:sodium - Use dev-libs/libsodium for cryptography
 sys-apps/pacman:gpg - Support verifying packages signed with GPG using app-crypt/gpgme
 sys-apps/paludis:pbins - Enable binary package support. Adds dependency upon app-arch/libarchive
 sys-apps/paludis:pink - Use a less boring colourscheme than the default
@@ -844,6 +908,7 @@ sys-apps/systemd:http - Enable embedded HTTP server in journald
 sys-apps/systemd:importd - Enable import daemon
 sys-apps/systemd:kdbus - Connect to kernel dbus (KDBUS) instead of userspace dbus if available
 sys-apps/systemd:kmod - Enable kernel module loading via sys-apps/kmod
+sys-apps/systemd:libidn2 - If IDN support is enabled, use net-dns/libidn2 instead of net-dns/libidn
 sys-apps/systemd:lz4 - Enable lz4 compression for the journal
 sys-apps/systemd:nat - Enable support for network address translation in networkd
 sys-apps/systemd:qrcode - Enable qrcode output support in journal
@@ -913,14 +978,14 @@ sys-boot/lilo:pxeserial - Avoid character echo on PXE serial console
 sys-boot/plymouth:gdm - Enables smooth transition to GDM
 sys-boot/plymouth:libkms - Provides abstraction to the DRM drivers (intel, nouveau and vmwgfx at this moment)
 sys-boot/plymouth:pango - Adds support for printing text on splash screen and text prompts, e.g. for password
-sys-boot/refind:btrfs - Builds the EFI binary btrfs filesystem driver
-sys-boot/refind:ext2 - Builds the EFI binary ext2 filesystem driver
-sys-boot/refind:ext4 - Builds the EFI binary ext4 filesystem driver
-sys-boot/refind:gnuefi - Compile using GNU-EFI instead of Tianocore
-sys-boot/refind:hfs - Builds the EFI binary hfs filesystem driver
-sys-boot/refind:iso9660 - Builds the EFI binary iso9660 filesystem driver
-sys-boot/refind:ntfs - Builds the EFI binary ntfs filesystem driver
-sys-boot/refind:reiserfs - Builds the EFI binary reiserfs filesystem driver
+sys-boot/refind:btrfs - Construire le gestionnaire EFI pour le système de fichier btrfs
+sys-boot/refind:ext2 - Construire le gestionnaire EFI pour le système de fichier ext2
+sys-boot/refind:ext4 - Construire le gestionnaire EFI pour le système de fichier ext4
+sys-boot/refind:gnuefi - Compiler en utilisant GNU-EFI au lieu de Tianocore
+sys-boot/refind:hfs - Construire le gestionnaire EFI pour le système de fichier hfs
+sys-boot/refind:iso9660 - Construire le gestionnaire EFI pour le système de fichier iso9660
+sys-boot/refind:ntfs - Construire le gestionnaire EFI pour le système de fichier ntfs
+sys-boot/refind:reiserfs - Construire le gestionnaire EFI pour le système de fichier reiserfs
 sys-cluster/ceph:babeltrace - Add support for LTTng babeltrace
 sys-cluster/ceph:cephfs - Build support for cephfs, a POSIX compatible filesystem built on top of ceph
 sys-cluster/ceph:cryptopp - Use dev-libs/crypto++ for cryptography
@@ -944,7 +1009,6 @@ sys-cluster/charm:syncft - Compile with Charm++ fault tolerance support
 sys-cluster/charm:tcp - Use TCP (instead of UPD) for socket communication
 sys-cluster/cinder:api - Installs the initscripts for the cinder api service
 sys-cluster/cinder:iscsi - Allow using an iSCSI remote storage server as pool for disk image storage
-sys-cluster/cinder:lio - Enable lio storage backend support
 sys-cluster/cinder:lvm - Allow using the Logical Volume Manager (sys-fs/lvm2) as pool for disk image storage
 sys-cluster/cinder:memcached - Installs the memcached server
 sys-cluster/cinder:rdma - Enable rdma storage backend support
@@ -952,7 +1016,6 @@ sys-cluster/cinder:scheduler - Installs the initscripts for the cinder scheduler
 sys-cluster/cinder:tcp - Enables tcp support for the iscsi backend
 sys-cluster/cinder:tgt - Enable tgt storage backend support
 sys-cluster/cinder:volume - Installs the initscripts for the cinder volume service
-sys-cluster/cluster-glue:large-cluster - Extend messages length limits for resource heavy clusters
 sys-cluster/cluster-glue:libnet - Force use of net-libs/libnet
 sys-cluster/corosync:infiniband - Enable Infiniband RDMA transport support
 sys-cluster/drbd:heartbeat - Enable Heartbeat integration
@@ -966,7 +1029,6 @@ sys-cluster/gearmand:memcache - Support memcache daemon (via dev-libs/libmemcach
 sys-cluster/gearmand:tokyocabinet - Support dev-db/tokyocabinet for the queue storage.
 sys-cluster/glusterfs:bd-xlator - Enable the blockdevice translator (requires sys-fs/lvm2)
 sys-cluster/glusterfs:crypt-xlator - Enable the encryption translator
-sys-cluster/glusterfs:extras - Install extra helper scripts
 sys-cluster/glusterfs:fuse - Add FUSE mount helper
 sys-cluster/glusterfs:georeplication - Enable support for georeplication (requires dev-lang/python)
 sys-cluster/glusterfs:glupy - Enable support for translators written in Python
@@ -1028,6 +1090,7 @@ sys-cluster/pacemaker:heartbeat - Enable sys-cluster/heartbeat support.
 sys-cluster/pacemaker:smtp - Enable SMTP support via net-libs/libesmtp
 sys-cluster/resource-agents:libnet - Force use of net-libs/libnet
 sys-cluster/resource-agents:rgmanager - Install resources for sys-cluster/rgmanager
+sys-cluster/singularity:slurm - Compile spank plugin for sys-cluster/slurm
 sys-cluster/slurm:multiple-slurmd - Allow multiple slurmd to run
 sys-cluster/slurm:munge - Enable authentication via munge
 sys-cluster/slurm:torque - Enable perl scripts that emulates pbs (qstat, qsub etc.)
@@ -1036,26 +1099,27 @@ sys-cluster/swift:container - adds swift container support
 sys-cluster/swift:memcached - adds memcached support
 sys-cluster/swift:object - adds swift object support
 sys-cluster/swift:proxy - adds swift proxy support
-sys-cluster/sx:client - Access the SX Cluster from this machine via its Nginx server. Also responsible for tools required to run the server.
-sys-cluster/sx:ipv6 - Enable support for communication via IPv6.
-sys-cluster/sx:server - Enable SX's server component.
-sys-cluster/sx:ssl - Enable communication security via OpenSSL.
+sys-cluster/torque:autorun - Enable the AUTORUN_JOBS codebase
 sys-cluster/torque:cgroups - Enable pbs_mom to use linux cgroups to isolate jobs
 sys-cluster/torque:cpusets - Enable pbs_mom to utilize linux cpusets if available
 sys-cluster/torque:drmaa - Enable the Distributed Resource Management Application API
 sys-cluster/torque:munge - Enable authentication via munge
 sys-cluster/torque:nvidia - Enable management of Nvidia GPUs
+sys-cluster/torque:quickcommit - Enable the QUICKCOMMIT codebase
 sys-cluster/torque:server - Enable compilation of pbs_server and pbs_sched
 sys-cluster/vzctl:ploop - Add support for ploop devices via sys-cluster/ploop
 sys-cluster/vzctl:vzmigrate - Add support for container migration
+sys-devel/binutils-apple:classic - Use nm, otool, etc. from this ebuild instead of llvm-based tools
 sys-devel/binutils-apple:libcxx - Add support for libcxx
 sys-devel/binutils-apple:lto - Add support for Link-Time Optimization with LLVM
 sys-devel/binutils-apple:multitarget - Compile for non-standard target architectures (ppc and ppc64) -- experimental, Gentoo only
+sys-devel/binutils-apple:tapi - Build against sys-libs/tapi
 sys-devel/binutils-hppa64:multitarget - Adds support to binutils for cross compiling (does not work with gas)
 sys-devel/clang:default-compiler-rt - Use compiler-rt instead of libgcc as the default rtlib for clang
 sys-devel/clang:default-libcxx - Use libc++ instead of libstdc++ as the default stdlib for clang
 sys-devel/clang:multitarget - Build all host targets (default: host only)
 sys-devel/clang:static-analyzer - Install the Clang static analyzer
+sys-devel/clang:z3 - Enable the static analyzer constraint manager backend using sci-mathematics/z3
 sys-devel/clang-runtime:compiler-rt - Install sys-libs/compiler-rt for -rtlib=compiler-rt
 sys-devel/clang-runtime:libcxx - Install sys-libs/libcxx for -stdlib=libc++
 sys-devel/clang-runtime:openmp - Install sys-libs/libomp for -fopenmp support
@@ -1108,6 +1172,7 @@ sys-freebsd/freebsd-usbin:audit - Build auditing tools.
 sys-freebsd/freebsd-usbin:floppy - Enable floppy disk utilities (fdcontrol, fdformat, fdread, fdwrite).
 sys-freebsd/freebsd-usbin:netware - Build libraries and tools to work with NetWare protocols (IPX and NCP).
 sys-freebsd/freebsd-usbin:zfs - Enable ZFS support.
+sys-fs/cryfs:update-check - Enable automatic checking for updates and security vulnerabilities
 sys-fs/ecryptfs-utils:gpg - Enable app-crypt/gnupg key module
 sys-fs/ecryptfs-utils:openssl - Enable dev-libs/openssl key module
 sys-fs/ecryptfs-utils:pkcs11 - Enable PKCS#11 (Smartcards) key module
@@ -1131,7 +1196,6 @@ sys-fs/owfs:ftpd - Enable building the OWFS FTP server (owftpd)
 sys-fs/owfs:fuse - Enable building the FUSE-based OWFS client (owfs)
 sys-fs/owfs:httpd - Enable building the OWFS web server (owhttpd)
 sys-fs/owfs:parport - Enable support for the DS1410E parallel port adapter
-sys-fs/owfs:server - Enable building the OWFS server (owserver)
 sys-fs/owfs:zeroconf - Enables support for zero-configuration networking via net-dns/avahi
 sys-fs/squashfs-tools:lz4 - Enable support for LZ4 compression using app-arch/lz4
 sys-fs/squashfs-tools:xz - Enable support for XZ ("LZMA2") compression using app-arch/xz-utils
@@ -1140,18 +1204,10 @@ sys-fs/udev:firmware-loader - Enable the userspace firmware loader (DEPRECATED, 
 sys-fs/udev:gudev - Build the gobject interface library
 sys-fs/udev:kmod - Enable kernel module loading/unloading support using sys-apps/kmod
 sys-fs/zfs-kmod:rootfs - Install zfs-shutdown script to support exporting a pool containing rootfs
-sys-kernel/aufs-sources:deblob - Remove binary blobs from kernel sources to provide libre license compliance.
 sys-kernel/aufs-sources:experimental - Apply experimental patches; for more information, see "https://wiki.gentoo.org/wiki/Project:Kernel/Experimental".
 sys-kernel/aufs-sources:module - Patch kernel to allow aufs being build as a module.
 sys-kernel/aufs-sources:vanilla - Use vanilla kernel sources without applying genpatches. WARNING: This flag will drop all support from the Gentoo Kernel Security team
-sys-kernel/bliss-initramfs:luks - Encryption support
-sys-kernel/bliss-initramfs:lvm - Logical Volume support
-sys-kernel/bliss-initramfs:raid - RAID support
-sys-kernel/bliss-initramfs:zfs - ZFS support
-sys-kernel/ck-sources:bfsonly - BFS by itself vs the full ck patchset
 sys-kernel/ck-sources:deblob - Remove binary blobs from kernel sources to provide libre license compliance.
-sys-kernel/ck-sources:experimental - Allow experimental code. Can break or degrade performance. (UNSUPPORTED)
-sys-kernel/ck-sources:urwlocks - Use upgradable read/write locks in place of the grq spinlock. (EXPERIMENTAL)
 sys-kernel/dracut:debug - Module installing additional tools like strace, file editor, ssh and more
 sys-kernel/genkernel-next:cryptsetup - Enable support for Luks disk enrcyption using sys-fs/cryptsetup
 sys-kernel/genkernel-next:dmraid - Enable support for DMRAID (include dmraid dependency)
@@ -1170,8 +1226,13 @@ sys-kernel/mips-sources:ip30 - Enables support for SGI Octane (IP30, 'Speedracer
 sys-kernel/rt-sources:deblob - Remove binary blobs from kernel sources to provide libre license compliance.
 sys-kernel/spl:debug-log - Enable additional diagnostics
 sys-kernel/tuxonice-sources:experimental - Apply experimental patches; for more information, see "https://wiki.gentoo.org/wiki/Project:Kernel/Experimental".
+sys-libs/compiler-rt:clang - Force building using installed clang (rather than the default CC/CXX).
 sys-libs/freeipmi:nagios - Install a nagios plugin to check sensors' status.
 sys-libs/gwenhywfar:fox - Use x11-libs/fox graphical toolkit
+sys-libs/libblockdev:bcache - Enable block device cache support.
+sys-libs/libblockdev:dmraid - Support for dmraid devices, also known as ATA-RAID, or Fake RAID.
+sys-libs/libblockdev:kbd - Enable kernel block device support.
+sys-libs/libblockdev:lvm - Enable support for Logical Volume Management via sys-fs/lvm2.
 sys-libs/libcxx:libcxxabi - Build on top of sys-libs/libcxxabi instead of gcc's libsupc++ (avoids depending on gcc).
 sys-libs/libcxx:libcxxrt - Build on top of sys-libs/libcxxrt instead of gcc's libsupc++ (avoids depending on gcc).
 sys-libs/libcxx:libunwind - Use libunwind instead of libgcc_s for stack unwinding, thus avoiding dependence on gcc.
@@ -1248,14 +1309,11 @@ sys-power/nut:ups_drivers_victronups - Driver for IMV/Victron UPS unit Match, Ma
 sys-power/nvclock:gtk - Install the GTK+ based graphical interface
 sys-power/nvclock:nvcontrol - Add NVCONTROL support for OpenGL options
 sys-power/phctool:sudo - Enable support for sudo to run gui from non-root user
-sys-power/powerman:genders - Add support for selecting power control targets using genders (-g option)
-sys-power/powerman:h8power - Add support for h8 based power controllers
-sys-power/powerman:httppower - Add support for HTTP based power controllers
-sys-power/powerman:snmppower - Add support for SNMP based power controllers
 sys-power/powermgmt-base:pm-utils - Adds support for on_ac_power through sys-power/pm-utils
 sys-power/sispmctl:gemplug - Install gemplug (management script)
 sys-power/suspend:crypt - Allows suspend and resume from encrypted disk
 sys-power/suspend:fbsplash - Add support for framebuffer splash
+sys-process/audit:gssapi - Enable GSSAPI support
 sys-process/criu:setproctitle - Make process titles of service workers to be more verbose
 sys-process/systemd-cron:cron-boot - Include support for the boot timer.
 sys-process/systemd-cron:etc-crontab-systemd - Use dedicated /etc/crontab-systemd instead of parsing /etc/crontab
@@ -1267,3 +1325,6 @@ virtual/ffmpeg:opus - Use the external opus library for encoding and decoding.
 virtual/mpi:romio - Enable romio, a high-performance portable MPI-IO
 virtual/mysql:embedded - Build embedded server (libmysqld)
 virtual/podofo-build:boost - Add support for boost
+virtual/podofo-build:tools - Build and install commandline tools.
+virtual/wine:d3d9 - Enable Ixit's Gallium Nine Patchset
+virtual/wine:staging - Enable Wine-Staging's Patchset

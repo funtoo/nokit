@@ -1,6 +1,5 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI="6"
 PYTHON_COMPAT=( python2_7 python3_4 python3_5 )
@@ -15,7 +14,7 @@ if [[ ${PV} == 9999 ]] ; then
 	EGIT_REPO_URI="https://github.com/TresysTechnology/setools.git"
 else
 	SRC_URI="https://github.com/TresysTechnology/setools/archive/${PV}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64 ~arm ~arm64 ~mips ~x86"
+	KEYWORDS="~amd64 ~x86"
 fi
 
 LICENSE="GPL-2 LGPL-2.1"
@@ -25,10 +24,10 @@ IUSE="X debug test"
 RDEPEND="${PYTHON_DEPS}
 	>=sys-libs/libselinux-2.4:=[${PYTHON_USEDEP}]
 	>=dev-python/networkx-1.8[${PYTHON_USEDEP}]
-	app-arch/bzip2:=
+	virtual/python-enum34[${PYTHON_USEDEP}]
 	dev-libs/libpcre:=
 	X? (
-		dev-python/PyQt5
+		dev-python/PyQt5[gui,widgets,${PYTHON_USEDEP}]
 	)"
 
 DEPEND="${RDEPEND}
@@ -44,7 +43,7 @@ DEPEND="${RDEPEND}
 python_prepare_all() {
 	sed -i "s/'-Werror', //" "${S}"/setup.py || die "failed to remove Werror"
 
-	use X || local PATCHES=( "${FILESDIR}"/setools-4.0.1-remove-gui.patch )
+	use X || local PATCHES=( "${FILESDIR}"/setools-4.1.0-remove-gui.patch )
 	distutils-r1_python_prepare_all
 }
 

@@ -1,12 +1,11 @@
 DEFINED_PHASES=configure prepare test unpack
-DEPEND=aio? ( dev-libs/libaio ) lua? ( dev-lang/lua:= ) mysql? ( virtual/libmysqlclient ) postgres? ( dev-db/postgresql:= ) sys-devel/libtool:= dev-libs/libxslt test? ( dev-util/cram ) >=dev-vcs/git-1.8.2.1
+DEPEND=aio? ( dev-libs/libaio ) mysql? ( virtual/libmysqlclient ) postgres? ( dev-db/postgresql:= ) app-editors/vim-core dev-lang/luajit:= dev-libs/concurrencykit dev-libs/libxslt sys-devel/libtool:= virtual/pkgconfig test? ( dev-util/cram ) >=dev-vcs/git-1.8.2.1
 DESCRIPTION=System performance benchmark
 EAPI=6
 HOMEPAGE=https://github.com/akopytov/sysbench
-IUSE=aio lua mysql postgres test
+IUSE=aio mysql postgres test
 LICENSE=GPL-2+
-RDEPEND=aio? ( dev-libs/libaio ) lua? ( dev-lang/lua:= ) mysql? ( virtual/libmysqlclient ) postgres? ( dev-db/postgresql:= )
-REQUIRED_USE=mysql? ( lua ) postgres? ( lua )
+RDEPEND=aio? ( dev-libs/libaio ) mysql? ( virtual/libmysqlclient ) postgres? ( dev-db/postgresql:= )
 SLOT=0
-_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	git-r3	e928b84a9f6f1d9076d1d27687876dc6	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
-_md5_=03cde61971329b9a6236ce709df6c8cc
+_eclasses_=git-r3	cbafa3261c37c7e3af44bb16a34ea390
+_md5_=69d94c0b32641abd3edff5d11271b7cf

@@ -1,16 +1,20 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=5
 
-inherit multilib toolchain-funcs
+inherit flag-o-matic multilib toolchain-funcs
 
 DESCRIPTION="Library for build EFI Applications"
 HOMEPAGE="http://gnu-efi.sourceforge.net/"
 SRC_URI="mirror://sourceforge/gnu-efi/${P}.tar.bz2"
 
-LICENSE="GPL-2"
+# inc/, lib/ dirs (README.efilib)
+# - BSD-2
+# gnuefi dir:
+# - BSD (3-cluase): crt0-efi-ia32.S
+# - GPL-2+ : setjmp_ia32.S
+LICENSE="GPL-2+ BSD BSD-2"
 SLOT="0"
 # IA64 build is broken in setjmp code:
 # https://sourceforge.net/p/gnu-efi/bugs/9/
@@ -51,6 +55,10 @@ efimake() {
 
 src_compile() {
 	tc-export BUILD_CC AR AS CC LD
+
+	# https://bugs.gentoo.org/607992
+	filter-mfpmath sse
+
 	if [[ ${CHOST} == x86_64* ]]; then
 		use abi_x86_32 && CHOST=i686 ABI=x86 efimake
 		use abi_x86_64 && efimake

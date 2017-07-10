@@ -1,8 +1,7 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
 inherit eutils fdo-mime multilib toolchain-funcs
 
@@ -21,9 +20,14 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 RDEPEND="${RDEPEND}
 	dev-perl/pcsc-perl
-	gtk? ( dev-perl/gtk2-perl )"
+	gtk? ( dev-perl/Gtk2 )"
+
+DOCS=(
+	README Changelog
+)
 
 src_prepare() {
+	default
 	sed -i -e 's:-Wall -O2:$(CFLAGS):g' Makefile
 }
 
@@ -34,12 +38,12 @@ src_compile() {
 }
 
 src_install() {
+	einstalldocs
+
 	# install manually, makes it much easier since the Makefile
 	# requires fiddling with
 	dobin ATR_analysis scriptor pcsc_scan
 	doman pcsc_scan.1 scriptor.1p ATR_analysis.1p
-
-	dodoc README Changelog
 
 	if use gtk; then
 		domenu gscriptor.desktop
