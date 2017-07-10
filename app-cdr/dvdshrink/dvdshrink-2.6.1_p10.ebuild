@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=2
 inherit eutils
@@ -18,7 +19,7 @@ RDEPEND=">=media-video/transcode-1.0.2-r2[dvd]
 	>=media-video/subtitleripper-0.3.4-r1
 	>=media-video/dvdauthor-0.6.11
 	>=app-cdr/dvd+rw-tools-6.1
-	gtk? ( >=dev-perl/Gtk2-1.104 )
+	gtk? ( >=dev-perl/gtk2-perl-1.104 )
 	>=app-text/gocr-0.40
 	virtual/cdrtools"
 DEPEND=""

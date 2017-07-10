@@ -1,10 +1,11 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=5
 inherit eutils flag-o-matic
 
-DESCRIPTION="TCP daemon and set of libraries for usbredir protocol (redirecting USB traffic)"
+DESCRIPTION="A simple TCP daemon and set of libraries for the usbredir protocol (redirecting USB traffic)"
 HOMEPAGE="http://spice-space.org/page/UsbRedir"
 SRC_URI="http://spice-space.org/download/${PN}/${P}.tar.bz2"
 

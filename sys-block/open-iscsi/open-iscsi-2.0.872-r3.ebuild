@@ -1,11 +1,12 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=2
 inherit versionator linux-info eutils flag-o-matic toolchain-funcs
 
 DESCRIPTION="Open-iSCSI is a high performance, transport independent, multi-platform implementation of RFC3720"
-HOMEPAGE="http://www.open-iscsi.com/"
+HOMEPAGE="http://www.open-iscsi.org/"
 MY_PV="${PN}-$(replace_version_separator 2 "-" $MY_PV)"
 SRC_URI="http://www.open-iscsi.org/bits/${MY_PV}.tar.gz"
 LICENSE="GPL-2"

@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=6
 inherit toolchain-funcs
@@ -11,7 +12,7 @@ SRC_URI="https://dev.gentoo.org/~radhermit/dist/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 hppa ~ppc ~ppc64 x86 ~x86-linux"
+KEYWORDS="~alpha amd64 ~hppa ~ppc ~ppc64 x86 ~x86-linux"
 IUSE="+doc +perl"
 
 RDEPEND="

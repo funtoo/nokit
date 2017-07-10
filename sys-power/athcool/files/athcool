@@ -1,4 +1,5 @@
 #!/sbin/openrc-run
+# $Id$
 
 start() {
 	ebegin "Starting ${SVCNAME}"

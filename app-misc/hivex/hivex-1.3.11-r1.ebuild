@@ -1,14 +1,15 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=5
 
 AUTOTOOLS_IN_SOURCE_BUILD=1
 
-USE_RUBY="ruby21"
+USE_RUBY="ruby20 ruby21"
 RUBY_OPTIONAL=yes
 
-PYTHON_COMPAT=(python2_7 python3_{4,5,6})
+PYTHON_COMPAT=(python2_7 python3_4)
 
 inherit autotools-utils eutils perl-app ruby-ng python-single-r1
 
@@ -28,7 +29,7 @@ RDEPEND="
 	ocaml? ( dev-lang/ocaml[ocamlopt]
 			 dev-ml/findlib[ocamlopt]
 			 )
-	readline? ( sys-libs/readline:0 )
+	readline? ( sys-libs/readline )
 	perl? ( dev-perl/IO-stringy )
 	ruby? ( $(ruby_implementations_depend) )
 	python? ( ${PYTHON_DEPS} )

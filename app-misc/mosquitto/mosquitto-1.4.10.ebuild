@@ -1,5 +1,6 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI="5"
 PYTHON_COMPAT=( python2_7 )
@@ -11,7 +12,7 @@ HOMEPAGE="http://mosquitto.org/"
 SRC_URI="http://mosquitto.org/files/source/${P}.tar.gz"
 LICENSE="EPL-1.0"
 SLOT="0"
-KEYWORDS="amd64 x86 ~arm"
+KEYWORDS="amd64 x86"
 IUSE="bridge examples +persistence +srv ssl tcpd"
 
 RDEPEND="tcpd? ( sys-apps/tcp-wrappers )

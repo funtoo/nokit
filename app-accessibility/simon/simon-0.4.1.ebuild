@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 # KEEP KDE ECLASSES OUT OF HERE
 
@@ -30,7 +31,7 @@ RDEPEND="
 	media-libs/alsa-lib
 	x11-libs/libX11
 	x11-libs/libXtst
-	x11-libs/qwt:6[qt4(+)]
+	x11-libs/qwt:6
 	libsamplerate? ( media-libs/libsamplerate )
 	nls? (
 		kde-apps/kde4-l10n
@@ -55,7 +56,6 @@ PATCHES=(
 	"${FILESDIR}"/${P}-linguas.patch
 	"${FILESDIR}"/${P}-sphinx.patch
 	"${FILESDIR}"/${P}-opencv-include.patch
-	"${FILESDIR}"/${P}-no-qtwebkit.patch
 )
 
 src_configure() {

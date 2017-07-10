@@ -1,3 +1,4 @@
+# $Id$
 # rkhunter completion
 
 _rkhunter() {

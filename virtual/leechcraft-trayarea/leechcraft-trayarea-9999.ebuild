@@ -1,9 +1,17 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
-EAPI=6
+EAPI="4"
 
 DESCRIPTION="Virtual for LeechCraft plugins providing a tray area"
-SLOT="0"
+HOMEPAGE=""
+SRC_URI=""
 
-RDEPEND="~app-leechcraft/lc-sb2-${PV}"
+LICENSE=""
+SLOT="0"
+KEYWORDS=""
+IUSE=""
+
+RDEPEND="app-leechcraft/lc-sb2"
+DEPEND=""

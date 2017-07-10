@@ -1,7 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-
-EAPI=6
+# $Id$
 
 inherit eutils autotools
 
@@ -19,18 +18,19 @@ DEPEND="${RDEPEND}"
 
 S=${WORKDIR}/top-${PV/_/}
 
-src_prepare() {
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
 	epatch "${FILESDIR}"/${P}-ncurses.patch
 	epatch "${FILESDIR}"/${P}-no-AX-macros.patch
 	epatch "${FILESDIR}"/${P}-renice-segfault.patch
 	epatch "${FILESDIR}"/${P}-memleak-fix-v2.patch
 	epatch "${FILESDIR}"/${P}-high-threadid-crash.patch
 	epatch "${FILESDIR}"/${P}-percent-cpu.patch
-	eapply_user
 	eautoreconf
 }
 
-src_configure() {
+src_compile() {
 	local myconf=
 
 	# don't do bi-arch cruft on hosts that support that, such as Solaris
@@ -39,5 +39,11 @@ src_configure() {
 	# configure demands an override because on OSX this is "experimental"
 	[[ ${CHOST} == *-darwin* ]] && myconf="${myconf} --with-module=macosx"
 
-	econf ${myconf}
+	econf ${myconf} || die
+	emake || die
+}
+
+src_install() {
+	emake DESTDIR="${D}" install
+	dodoc README FAQ Y2K
 }

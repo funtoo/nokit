@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI="5"
 PYTHON_COMPAT=( python2_7 )
@@ -12,7 +13,7 @@ DEB_P="${PN}_${MY_PV}"
 DEB_PVER=$(get_version_component_range 3)
 DEB_PATCH="${DEB_P}-${DEB_PVER}.diff"
 
-DESCRIPTION="Detection of weak ssl keys produced by certain debian versions in 2006-2008"
+DESCRIPTION="Detection of weak ssl keys produced by certain debian versions between 2006 and 2008"
 HOMEPAGE="https://launchpad.net/ubuntu/+source/openssl-blacklist/"
 SRC_URI="mirror://debian/pool/main/o/${PN}/${DEB_P}.orig.tar.gz
 	mirror://debian/pool/main/o/${PN}/${DEB_PATCH}.gz"
@@ -21,11 +22,9 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 hppa x86 ~x86-fbsd"
 IUSE=""
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 DEPEND=""
-RDEPEND="${DEPEND}
-	${PYTHON_DEPS}"
+RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_P}
 

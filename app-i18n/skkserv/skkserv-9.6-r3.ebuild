@@ -1,7 +1,9 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
-EAPI="6"
+EAPI=3
+inherit eutils
 
 MY_P="skk${PV}mu"
 
@@ -14,21 +16,28 @@ SLOT="0"
 KEYWORDS="amd64 ppc x86 ~amd64-linux ~x86-linux ~ppc-macos"
 IUSE=""
 
-DEPEND="app-i18n/skk-jisyo"
+DEPEND=">=app-i18n/skk-jisyo-200210"
+
 S="${WORKDIR}/skk-${PV}mu"
 
-PATCHES=(
-	"${FILESDIR}"/${PN}-segfault.patch
-	"${FILESDIR}"/${PN}-headers.patch
-	"${FILESDIR}"/${PN}-suffix.patch
-)
+src_prepare() {
+	cd "${S}"/skkserv
+	epatch "${FILESDIR}"/${P}-segfault-gentoo.patch
+	epatch "${FILESDIR}"/${P}-inet_ntoa-gentoo.patch
+}
+
+src_configure() {
+	econf --libexecdir="${EPREFIX}"/usr/sbin
+}
 
 src_compile() {
-	emake -C ${PN}
+	cd skkserv
+	emake || die
 }
 
 src_install() {
-	dosbin ${PN}/${PN}
+	cd skkserv
+	dosbin skkserv || die
 
-	newinitd "${FILESDIR}"/${PN}.initd ${PN}
+	newinitd "${FILESDIR}"/skkserv.initd skkserv
 }

@@ -1,5 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=5
 
@@ -18,7 +19,7 @@ IUSE=""
 
 DEPEND=">=dev-libs/openssl-0.9.6:0"
 RDEPEND="${DEPEND}
-	!<net-vpn/openvpn-2.3"
+	!<net-misc/openvpn-2.3"
 
 S="${WORKDIR}/${MY_P}"
 

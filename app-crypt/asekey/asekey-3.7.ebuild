@@ -1,9 +1,10 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
-EAPI="6"
+EAPI="4"
 
-inherit udev
+inherit eutils udev
 
 DESCRIPTION="ASEKey USB SIM Card Reader"
 HOMEPAGE="http://www.athena-scs.com/"
@@ -20,15 +21,16 @@ RDEPEND="${RDEPEND}
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
-PATCHES=(
-	"${FILESDIR}/${P}-bundle.patch"
-)
-
 src_prepare() {
-	default
+	epatch "${FILESDIR}/${P}-bundle.patch"
 	sed -i -e 's/GROUP="pcscd"/ENV{PCSCD}="1"/' "92_pcscd_${PN}.rules" || die
 }
 
 src_configure() {
 	econf --with-udev-rules-dir="$(get_udevdir)/rules.d"
+}
+
+src_install() {
+	default
+	dodoc ChangeLog README
 }

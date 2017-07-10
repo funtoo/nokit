@@ -1,11 +1,12 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
-EAPI=5
+EAPI="5"
 
-PYTHON_COMPAT=( python{2_7,3_4,3_5,3_6} pypy )
+PYTHON_COMPAT=( python{2_7,3_4,3_5} pypy )
 
-inherit distutils-r1 prefix
+inherit distutils-r1
 
 if [[ ${PV} = 9999* ]]
 then
@@ -25,13 +26,9 @@ SLOT="0"
 IUSE="+portage"
 
 DEPEND="app-text/xmlto
+	!dev-python/configparser
 	sys-apps/gentoo-functions"
 RDEPEND="portage? ( sys-apps/portage[${PYTHON_USEDEP}] )"
-
-python_prepare_all() {
-	distutils-r1_python_prepare_all
-	eprefixify WebappConfig/eprefix.py config/webapp-config
-}
 
 python_compile_all() {
 	emake -C doc/
@@ -43,7 +40,7 @@ python_install() {
 	# distutils does not provide for specifying two different script install
 	# locations. Since we only install one script here the following should
 	# be ok
-	distutils-r1_python_install --install-scripts="${EPREFIX}/usr/sbin"
+	distutils-r1_python_install --install-scripts="/usr/sbin"
 }
 
 python_install_all() {

@@ -1,5 +1,6 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=5
 inherit autotools eutils toolchain-funcs flag-o-matic games
@@ -10,7 +11,7 @@ SRC_URI="mirror://sourceforge/vice-emu/releases/${P}.tar.gz"
 
 LICENSE="GPL-2+"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE="Xaw3d alsa ethernet ffmpeg fullscreen +gtk ipv6 lame nls oss png pulseaudio sdl +sdlsound threads vte zlib"
 
 # upstream says gtk3 and sdl2 shouldn't be exposed yet.

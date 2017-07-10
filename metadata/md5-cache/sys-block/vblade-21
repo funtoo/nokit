@@ -8,4 +8,4 @@ RDEPEND=sys-apps/util-linux
 SLOT=0
 SRC_URI=mirror://sourceforge/aoetools/vblade-21.tgz
 _eclasses_=multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
-_md5_=38450003e1f64ee8c4eb21799b257fc0
+_md5_=3152d8ee829e732cae543128d6230950

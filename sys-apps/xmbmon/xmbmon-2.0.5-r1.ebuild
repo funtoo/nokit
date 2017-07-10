@@ -1,5 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 inherit eutils
 
@@ -25,7 +26,7 @@ S=${WORKDIR}/${MY_P}
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	# epatch "${DISTDIR}"/${MY_P}_A7N8X-VM.patch
+	# epatch ${DISTDIR}/${MY_P}_A7N8X-VM.patch
 	epatch "${DISTDIR}"/${MY_P}_fflush.patch
 	epatch "${FILESDIR}"/${P}-amd64.patch
 	epatch "${FILESDIR}"/${P}-pid.patch

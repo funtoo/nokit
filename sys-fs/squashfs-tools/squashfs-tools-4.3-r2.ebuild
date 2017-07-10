@@ -14,7 +14,7 @@ SRC_URI="mirror://sourceforge/squashfs/squashfs${PV}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm arm64 hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86"
+KEYWORDS="alpha amd64 arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh sparc x86"
 IUSE="debug lz4 lzma lzo static xattr +xz"
 
 LIB_DEPEND="sys-libs/zlib[static-libs(+)]
@@ -38,8 +38,6 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-local-cve-fix.patch
 	epatch "${FILESDIR}"/${P}-mem-overflow.patch
 	epatch "${FILESDIR}"/${P}-xattrs.patch
-	epatch "${FILESDIR}"/${P}-extmatch.patch
-	epatch "${FILESDIR}"/${P}-musl.patch
 }
 
 use10() { usex $1 1 0 ; }

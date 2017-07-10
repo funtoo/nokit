@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=6
 
@@ -53,8 +54,7 @@ LIBSLURMDB_PERL_S="${WORKDIR}/${P}/contribs/perlapi/libslurmdb/perl"
 RESTRICT="primaryuri"
 
 PATCHES=(
-	"${FILESDIR}"/${P}-disable-sview.patch
-	"${FILESDIR}"/${P}-sysmacros.patch
+	"${FILESDIR}/${P}-disable-sview.patch"
 )
 
 src_unpack() {
@@ -72,7 +72,7 @@ pkg_setup() {
 
 src_prepare() {
 	if [ ${#PATCHES[0]} -ne 0 ]; then
-		epatch "${PATCHES[@]}"
+		epatch ${PATCHES[@]}
 	fi
 	eapply_user
 	# pids should go to /var/run/slurm

@@ -1,9 +1,10 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
-EAPI="6"
+EAPI="5"
 
-inherit toolchain-funcs autotools
+inherit eutils toolchain-funcs autotools
 
 DESCRIPTION="A collection of several tools related to OpenPGP"
 HOMEPAGE="http://pgp-tools.alioth.debian.org/"
@@ -11,22 +12,19 @@ SRC_URI="mirror://debian/pool/main/s/signing-party/${PN}_${PV}.orig.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="
-	dev-lang/perl
-	app-crypt/libmd
-"
+DEPEND="dev-lang/perl"
 RDEPEND="${DEPEND}
 	>=app-crypt/gnupg-1.3.92
+	app-crypt/libmd
 	dev-perl/GnuPG-Interface
 	dev-perl/Text-Template
 	dev-perl/MIME-tools
 	net-mail/qprint
 	>=dev-perl/MailTools-1.62
 	dev-perl/Net-IDN-Encode
-	app-crypt/libmd
 	virtual/mailx
 	virtual/mta
 	|| (
@@ -34,11 +32,9 @@ RDEPEND="${DEPEND}
 		dev-perl/Text-Iconv
 		app-text/recode
 	)"
-S="${WORKDIR}"
+S=$WORKDIR
 
 src_prepare() {
-	default
-
 	# app-crypt/keylookup
 	rm -r keylookup || die
 	# media-gfx/springgraph
@@ -67,8 +63,6 @@ src_compile() {
 }
 
 src_install() {
-	einstalldocs
-
 	# Check Makefile when a new tool is introduced to this package.
 	# caff
 	dobin caff/caff caff/pgp-clean caff/pgp-fixkey

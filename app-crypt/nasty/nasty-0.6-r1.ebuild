@@ -1,9 +1,10 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
-EAPI="6"
+EAPI="2"
 
-inherit toolchain-funcs
+inherit eutils toolchain-funcs
 
 DESCRIPTION="Proof-of-concept GPG passphrase recovery tool"
 HOMEPAGE="http://www.vanheusden.com/nasty/"
@@ -15,19 +16,15 @@ IUSE=""
 RDEPEND="app-crypt/gpgme"
 DEPEND="${RDEPEND}"
 
-DOCS=(
-	readme.txt
-)
-
-PATCHES=(
-	"${FILESDIR}/${P}-flags.patch"
-)
+src_prepare() {
+	epatch "${FILESDIR}/${P}-flags.patch"
+}
 
 src_compile() {
-	emake CC="$(tc-getCC)" DEBUG=
+	emake CC="$(tc-getCC)" DEBUG= || die "emake failed"
 }
 
 src_install() {
-	einstalldocs
-	dobin nasty
+	dobin nasty || die "dobin nasty failed"
+	dodoc readme.txt
 }

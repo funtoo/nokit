@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI="6"
 
@@ -107,7 +108,6 @@ src_prepare() {
 	eapply "${FILESDIR}"/${P}-bash-completion.patch
 	#558854
 	eapply "${FILESDIR}"/${PN}-2.0.5-omit-sysconfig.patch
-	eapply "${FILESDIR}"/${PN}-2.0.6-major.patch
 	eapply_user
 	eautoreconf
 }

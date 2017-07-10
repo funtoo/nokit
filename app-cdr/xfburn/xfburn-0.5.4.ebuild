@@ -1,11 +1,12 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=5
 inherit xfconf
 
 DESCRIPTION="GTK+ based CD and DVD burning application"
-HOMEPAGE="https://goodies.xfce.org/projects/applications/xfburn"
+HOMEPAGE="http://goodies.xfce.org/projects/applications/xfburn"
 SRC_URI="mirror://xfce/src/apps/${PN}/${PV%.*}/${P}.tar.bz2"
 
 LICENSE="GPL-2"

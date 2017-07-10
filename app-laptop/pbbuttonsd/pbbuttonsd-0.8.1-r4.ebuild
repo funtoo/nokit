@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 inherit autotools flag-o-matic eutils
 
@@ -25,19 +26,19 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	epatch "${FILESDIR}/${PN}-0.8.1-pmcs.patch"
+	epatch "${FILESDIR}/pmcs.patch"
 	### Don't link with g++ if we don't use ibam
 	if ! use ibam; then
-		epatch "${FILESDIR}/${PN}-0.8.1-g++.patch"
+		epatch "${FILESDIR}/g++.patch"
 	fi
 	### Fix macbook -lz issue
-	epatch "${FILESDIR}/${PN}-0.8.1-lz.patch"
-	epatch "${FILESDIR}/${PN}-0.8.1-lm.patch"
+	epatch "${FILESDIR}/lz.patch"
+	epatch "${FILESDIR}/lm.patch"
 	### Fix new apple hid fnmode issue
-	epatch "${FILESDIR}/${PN}-0.8.1-fnmode.patch"
+	epatch "${FILESDIR}/fnmode.patch"
 	### Add kernel 2.6.x stuff for 3.x as well
-	epatch "${FILESDIR}/${PN}-0.8.1-laptopmode.sh.patch"
-	epatch "${FILESDIR}/${PN}-0.8.1-cpufreq.patch"
+	epatch "${FILESDIR}/laptopmode.sh.patch"
+	epatch "${FILESDIR}/cpufreq.patch"
 
 	eautoconf
 }

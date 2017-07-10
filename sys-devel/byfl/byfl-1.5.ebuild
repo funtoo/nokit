@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=6
 
@@ -7,19 +8,19 @@ inherit flag-o-matic
 
 if [ "${PV}" = "9999" ]; then
 	LLVM_VERSION="3.8.0"
-	EGIT_REPO_URI="git://github.com/lanl/${PN^b}.git https://github.com/lanl/${PN}.git"
+	EGIT_REPO_URI="git://github.com/losalamos/${PN^b}.git https://github.com/losalamos/${PN}.git"
 	inherit autotools git-r3
 	KEYWORDS=""
 else
 	LLVM_VERSION="3.8.0"
 	MY_P="${P}-llvm-${LLVM_VERSION}"
-	SRC_URI="https://github.com/lanl/Byfl/releases/download/v${MY_P#${PN}-}/${MY_P}.tar.gz"
+	SRC_URI="https://github.com/losalamos/Byfl/releases/download/v${MY_P#${PN}-}/${MY_P}.tar.gz"
 	KEYWORDS="~amd64 ~amd64-linux"
 	S="${WORKDIR}/${MY_P}"
 fi
 
 DESCRIPTION="Compiler-based Application Analysis"
-HOMEPAGE="https://github.com/lanl/Byfl"
+HOMEPAGE="https://github.com/losalamos/Byfl"
 
 SLOT="0"
 LICENSE="BSD"

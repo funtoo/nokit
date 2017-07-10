@@ -1,5 +1,5 @@
---- a/configure.in
-+++ b/configure.in
+--- configure.in
++++ configure.in
 @@ -505,8 +505,15 @@
  AC_PATH_PROGS(TEST, test)
  AC_PATH_PROGS(PKGCONFIG, pkg-config)
@@ -18,8 +18,8 @@
  
  dnl ************************************************************************
  dnl Check whether non-root user can chown.
---- a/doc/Makefile.am
-+++ b/doc/Makefile.am
+--- doc/Makefile.am
++++ doc/Makefile.am
 @@ -33,11 +33,12 @@
  
  doc_DATA		= $(OTHER_DOCS)

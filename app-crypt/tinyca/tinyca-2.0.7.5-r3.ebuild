@@ -1,18 +1,19 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
-EAPI=6
+EAPI=5
 
 inherit eutils
 
 MY_P="${PN}${PV/./-}"
 DESCRIPTION="Simple Perl/Tk GUI to manage a small certification authority"
-HOMEPAGE="https://opsec.eu/src/tinyca/"
+HOMEPAGE="http://tinyca.sm-zone.net/"
 SRC_URI="http://tinyca.sm-zone.net/${MY_P}.tar.bz2"
 
 LICENSE="Artistic"
 SLOT="0"
-KEYWORDS="amd64 ~ppc ~sparc x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE="libressl"
 LANGS="en de cs es sv"
 
@@ -25,20 +26,16 @@ RDEPEND="
 	libressl? ( dev-libs/libressl:0= )
 	dev-perl/Locale-gettext
 	>=virtual/perl-MIME-Base64-2.12
-	>=dev-perl/Gtk2-1.072"
+	>=dev-perl/gtk2-perl-1.072"
 DEPEND="${RDEPEND}
 	>=sys-apps/sed-4"
-
-PATCHES=(
-	"${FILESDIR}/${PN}-2.0.7.3-compositefix.patch"
-	"${FILESDIR}/${P}-openssl-1.patch"
-	"${FILESDIR}/${P}-perl-5.18.patch"
-)
 
 S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
-	default
+	epatch "${FILESDIR}/${PN}-2.0.7.3-compositefix.patch"
+	epatch "${FILESDIR}/${P}-openssl-1.patch"
+	epatch "${FILESDIR}/${P}-perl-5.18.patch"
 	sed -i -e 's:./lib:/usr/share/tinyca/lib:g' \
 		-e 's:./templates:/usr/share/tinyca/templates:g' \
 		-e 's:./locale:/usr/share/locale:g' "${S}/tinyca2" || die
@@ -54,7 +51,6 @@ locale_install() {
 }
 
 src_install() {
-	einstalldocs
 	newbin tinyca2 tinyca
 	insinto /usr/share/tinyca/lib
 	doins lib/*.pm

@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=5
 
@@ -14,7 +15,7 @@ SRC_URI="https://github.com/mongodb/mongo-tools/archive/r${MY_PV}.tar.gz -> mong
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="sasl ssl"
 
 # Maintainer note:
@@ -32,9 +33,6 @@ S=${WORKDIR}/${MY_P}
 src_prepare() {
 	# ensure we use bash wrt #582906
 	sed -e 's@/bin/sh@/bin/bash@g' -i build.sh || die
-
-	# see #608292
-	epatch "${FILESDIR}/${PN}-3.2.10-pie.patch"
 }
 
 src_compile() {

@@ -1,9 +1,10 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
-EAPI=5
+EAPI="5"
 
-PYTHON_COMPAT=( python{2_7,3_4,3_5,3_6} pypy )
+PYTHON_COMPAT=( python{2_7,3_4,3_5} pypy )
 
 inherit distutils-r1
 
@@ -22,8 +23,8 @@ DEPEND="app-text/xmlto
 RDEPEND="portage? ( sys-apps/portage[${PYTHON_USEDEP}] )"
 
 python_prepare() {
-	epatch "${FILESDIR}/${P}-pvr-check.patch"\
-		"${FILESDIR}/${P}-fix-bashism.patch"
+	epatch "${FILESDIR}/${P}-pvr-check.patch"
+	epatch "${FILESDIR}/${P}-fix-bashism.patch"
 }
 python_compile_all() {
 	emake -C doc/
@@ -35,7 +36,7 @@ python_install() {
 	# distutils does not provide for specifying two different script install
 	# locations. Since we only install one script here the following should
 	# be ok
-	distutils-r1_python_install --install-scripts="${EPREFIX}/usr/sbin"
+	distutils-r1_python_install --install-scripts="/usr/sbin"
 }
 
 python_install_all() {

@@ -1,5 +1,6 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=6
 
@@ -9,8 +10,8 @@ inherit cmake-multilib
 
 MY_P=openmp-${PV}
 DESCRIPTION="OpenMP runtime library for LLVM/clang compiler"
-HOMEPAGE="https://openmp.llvm.org"
-SRC_URI="https://llvm.org/releases/${PV}/${MY_P}.src.tar.xz"
+HOMEPAGE="http://openmp.llvm.org"
+SRC_URI="http://llvm.org/releases/${PV}/${MY_P}.src.tar.xz"
 
 # Additional licenses:
 # - MIT-licensed Intel code,

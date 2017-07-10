@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=5
 
@@ -7,11 +8,11 @@ inherit cmake-utils
 
 DESCRIPTION="Graphical interface for QEMU and KVM emulators, using Qt5"
 HOMEPAGE="https://sourceforge.net/projects/aqemu"
-SRC_URI="https://github.com/tobimensch/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/tobimensch/${PN}/archive/v${PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="vnc"
 
 DEPEND="${RDEPEND}"

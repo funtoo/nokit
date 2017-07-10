@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
@@ -16,11 +17,9 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 x86"
 IUSE="boost opencc lua"
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
-DEPEND=""
-RDEPEND="${PYTHON_DEPS}
-	>=app-i18n/ibus-1.4[python,${PYTHON_USEDEP}]
+DEPEND="sys-apps/sed"
+RDEPEND=">=app-i18n/ibus-1.4[python,${PYTHON_USEDEP}]
 	dev-python/pygtk[${PYTHON_USEDEP}]
 	=app-i18n/libpinyin-1.0.0
 	app-i18n/pyzy

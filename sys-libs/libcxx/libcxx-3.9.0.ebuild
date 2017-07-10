@@ -1,12 +1,13 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=6
 
 # Ninja provides better scalability and cleaner verbose output, and is used
 # throughout all LLVM projects.
 : ${CMAKE_MAKEFILE_GENERATOR:=ninja}
-EGIT_REPO_URI="https://llvm.org/git/libcxx.git
+EGIT_REPO_URI="http://llvm.org/git/libcxx.git
 	https://github.com/llvm-mirror/libcxx.git"
 PYTHON_COMPAT=( python2_7 )
 
@@ -15,9 +16,9 @@ PYTHON_COMPAT=( python2_7 )
 inherit ${SCM} cmake-multilib python-any-r1 toolchain-funcs
 
 DESCRIPTION="New implementation of the C++ standard library, targeting C++11"
-HOMEPAGE="https://libcxx.llvm.org/"
+HOMEPAGE="http://libcxx.llvm.org/"
 if [[ ${PV} != 9999 ]] ; then
-	SRC_URI="https://llvm.org/releases/${PV}/${P}.src.tar.xz"
+	SRC_URI="http://llvm.org/releases/${PV}/${P}.src.tar.xz"
 	S="${WORKDIR}/${P}.src"
 else
 	SRC_URI=""

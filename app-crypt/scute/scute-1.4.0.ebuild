@@ -1,9 +1,10 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
-EAPI=6
+EAPI=4
 
-inherit autotools ltprune
+inherit autotools eutils libtool multilib
 
 DESCRIPTION="A PKCS #11 module for OpenPGP smartcards"
 HOMEPAGE="http://www.scute.org/"
@@ -25,17 +26,14 @@ DEPEND="
 	>=app-crypt/gnupg-2.0.17-r1[smartcard]"
 RDEPEND="${DEPEND}"
 
-PATCHES=(
-	# We need no ABI versioning, reduce the number of symlinks installed
-	"${FILESDIR}/scute-1.2.0-noversion.patch"
-
-	# Don't build tests during src_compile.
-	"${FILESDIR}/scute-1.4.0-tests.patch"
-)
-
 src_prepare() {
-	default
+	# We need no ABI versioning, reduce the number of symlinks installed
+	epatch "${FILESDIR}"/scute-1.2.0-noversion.patch
+	# Don't build tests during src_compile.
+	epatch "${FILESDIR}"/scute-1.4.0-tests.patch
+
 	eautoreconf
+	elibtoolize
 }
 
 src_configure() {
@@ -46,6 +44,7 @@ src_configure() {
 }
 
 src_install() {
-	default
-	prune_libtool_files --modules
+	emake DESTDIR="${D}" install || die "emake install failed"
+	find "${D}" -name '*.la' -delete
+	dodoc AUTHORS ChangeLog NEWS README TODO
 }

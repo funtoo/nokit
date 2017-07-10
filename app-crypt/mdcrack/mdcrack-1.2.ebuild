@@ -1,9 +1,10 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
-EAPI="6"
+EAPI="2"
 
-inherit toolchain-funcs
+inherit eutils toolchain-funcs
 
 DESCRIPTION="A MD4/MD5/NTML hashes bruteforcer"
 HOMEPAGE="http://mdcrack.df.ru/"
@@ -14,18 +15,11 @@ LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86"
 IUSE="ncurses"
 
-DOCS=(
-	BENCHMARKS CREDITS FAQ README TODO VERSIONS WWW
-)
-
-PATCHES=(
-	"${FILESDIR}/${P}-gcc4.diff"
-	"${FILESDIR}/${P}-asneeded.patch"
-	"${FILESDIR}/${P}-remove-interactive-test.diff"
-)
-
 src_prepare() {
-	default
+	epatch "${FILESDIR}"/${P}-gcc4.diff \
+		"${FILESDIR}"/${P}-asneeded.patch \
+		"${FILESDIR}"/${P}-remove-interactive-test.diff
+
 	use ncurses || \
 		sed -i -e 's/^NCURSES/#NCURSES/g' \
 			-e 's/^LIBS/#LIBS/g' Makefile
@@ -35,13 +29,13 @@ src_prepare() {
 }
 
 src_compile() {
-	emake CC="$(tc-getCC)" little
+	emake CC="$(tc-getCC)" little || die "emake failed"
 }
 
 src_test() {
 	local failure=false
 
-	emake CC="$(tc-getCC)" fulltest
+	make CC="$(tc-getCC)" fulltest || die "self test failed"
 
 	for i in {1..20}; do
 		if grep "Collision found" out$i ; then
@@ -58,6 +52,6 @@ src_test() {
 }
 
 src_install() {
-	einstalldocs
-	dobin bin/mdcrack
+	dobin bin/mdcrack || die "dobin failed"
+	dodoc BENCHMARKS CREDITS FAQ README TODO VERSIONS WWW || die
 }

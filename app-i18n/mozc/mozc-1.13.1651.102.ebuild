@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI="5"
 PYTHON_COMPAT=( python2_7 )
@@ -26,10 +27,9 @@ LICENSE="BSD ipadic public-domain unicode"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="emacs +ibus +qt4 renderer test"
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="dev-libs/glib:2
-	dev-libs/openssl:0=
+	dev-libs/openssl
 	>=dev-libs/protobuf-2.5.0
 	x11-libs/libxcb
 	emacs? ( virtual/emacs )

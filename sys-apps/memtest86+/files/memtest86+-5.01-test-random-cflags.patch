@@ -11,11 +11,11 @@ https://bugs.gentoo.org/590974
  
  test.o: test.c
 -	$(CC) -c -Wall -march=i486 -m32 -O0 -fomit-frame-pointer -fno-builtin -ffreestanding test.c
-+test.o: CFLAGS += -O0 -fno-PIC
++test.o: CFLAGS += -O0
  
  random.o: random.c
 -	$(CC) -c -Wall -march=i486 -m32 -O3 -fomit-frame-pointer -fno-builtin -ffreestanding random.c
-+random.o: CFLAGS += -O3 -fno-PIC
++random.o: CFLAGS += -O3
  	
  # rule for build number generation  
  build_number:

@@ -1,5 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=5
 WANT_AUTOMAKE=1.9
@@ -28,7 +29,7 @@ src_prepare() {
 		"${FILESDIR}"/${P}-glibc-212.patch
 
 	if has_version ">=dev-libs/libevocosm-3.3.0"; then
-		epatch "${FILESDIR}"/${P}-libevocosm.patch
+		epatch ${FILESDIR}"/${P}-libevocosm.patch"
 	fi
 
 	eautomake

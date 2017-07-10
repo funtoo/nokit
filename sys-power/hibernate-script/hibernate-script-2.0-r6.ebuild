@@ -1,13 +1,16 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
-EAPI=6
+EAPI=5
+
+inherit eutils
 
 PATCH_VERSION="5"
 
 DESCRIPTION="Hibernate script supporting multiple suspend methods"
-HOMEPAGE="https://github.com/NigelCunningham/Hibernate-Script"
-SRC_URI="http://tuxonice.nigelcunningham.com.au/downloads/all/${P}.tar.gz
+HOMEPAGE="http://www.tuxonice.net/"
+SRC_URI="http://www.tuxonice.net/downloads/all/${P}.tar.gz
 	mirror://gentoo/${P}-patches-${PATCH_VERSION}.tar.bz2"
 
 LICENSE="GPL-2"
@@ -19,15 +22,11 @@ IUSE="vim-syntax"
 DEPEND=""
 RDEPEND="!<media-gfx/splashutils-1.5.2"
 
-DOCS=(
-	CHANGELOG
-	README
-	SCRIPTLET-API
-)
+DOCS=( CHANGELOG README SCRIPTLET-API hibernate.vim )
 
-PATCHES=(
-	"${WORKDIR}/${PV}"
-)
+src_prepare() {
+	epatch "${WORKDIR}/${PV}/"*.patch
+}
 
 src_install() {
 	BASE_DIR="${D}" \

@@ -1,35 +1,29 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=6
+
+inherit eutils git-r3
 
 MY_PN="${PN/f/F}"
 
 DESCRIPTION="Bash Screenshot Information Tool"
 HOMEPAGE="https://github.com/KittyKatt/screenFetch"
+EGIT_REPO_URI="https://github.com/KittyKatt/screenFetch"
 
 LICENSE="GPL-3"
 SLOT="0"
-IUSE="curl X"
-
-DEPEND=""
-RDEPEND="
-	curl? ( net-misc/curl )
-	X? (
-		media-gfx/scrot
-		x11-apps/xdpyinfo
-	)"
-
-if [[ ${PV} == *9999 ]] ; then
-	EGIT_REPO_URI="git://github.com/KittyKatt/screenFetch.git"
-	inherit git-r3
-else
-	KEYWORDS="~amd64 ~x86"
-	SRC_URI="https://github.com/KittyKatt/${MY_PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-	S="${WORKDIR}/${MY_PN}-${PV}"
-fi
+KEYWORDS=""
+IUSE="X"
 
 src_install() {
 	newbin ${PN}-dev ${PN}
-	einstalldocs
+	dodoc CHANGELOG README.mkdn TODO
+}
+
+pkg_postinst() {
+	optfeature "resoluton detection" x11-apps/xdpyinfo
+	optfeature "screenshot taking" media-gfx/scrot
+	optfeature "screenshot uploading" net-misc/curl
 }

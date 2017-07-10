@@ -1,0 +1,14 @@
+DEFINED_PHASES=configure install
+DEPEND=dev-libs/libltdl:0 dev-libs/yajl net-misc/curl[idn,ipv6(-)?,ssh,ssl(-)?] server? ( >=dev-db/sqlite-3.8.4.3:3 dev-libs/fcgi www-servers/nginx:mainline[http,ipv6(-)?,nginx_modules_http_fastcgi(-),nginx_modules_http_gzip(-),nginx_modules_http_proxy(-),nginx_modules_http_scgi(-),nginx_modules_http_uwsgi(-),ssl(-)?] )
+DESCRIPTION=Skylable SX - a distributed object-storage software for data clusters
+EAPI=5
+HOMEPAGE=http://www.skylable.com/products/sx
+IUSE=+client ipv6 +server ssl
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2 LGPL-2.1
+RDEPEND=dev-libs/libltdl:0 dev-libs/yajl net-misc/curl[idn,ipv6(-)?,ssh,ssl(-)?] server? ( >=dev-db/sqlite-3.8.4.3:3 dev-libs/fcgi www-servers/nginx:mainline[http,ipv6(-)?,nginx_modules_http_fastcgi(-),nginx_modules_http_gzip(-),nginx_modules_http_proxy(-),nginx_modules_http_scgi(-),nginx_modules_http_uwsgi(-),ssl(-)?] )
+REQUIRED_USE=server? ( client )
+SLOT=0/2
+SRC_URI=http://cdn.skylable.com/source/sx-2.1.tar.gz
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
+_md5_=e8db35cd86815123f667e56f11a12f3e

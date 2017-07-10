@@ -1,12 +1,13 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=5
 
 inherit eutils cmake-utils
 
 DESCRIPTION="A tool to handle your cellular phone"
-HOMEPAGE="https://wammu.eu/gammu/"
+HOMEPAGE="http://wammu.eu/gammu/"
 SRC_URI="http://dl.cihar.com/${PN}/releases/${P}.tar.bz2"
 
 LICENSE="GPL-2"
@@ -14,25 +15,19 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="bluetooth curl dbi debug irda mysql nls postgres usb"
 
-COMMON_DEPEND="
-	dev-libs/glib:2=
+# TODO: figure out a way to disable gudev
+RDEPEND="dev-libs/glib:2=
 	virtual/libgudev:=
 	bluetooth? ( net-wireless/bluez:= )
 	curl? ( net-misc/curl:= )
 	dbi? ( >=dev-db/libdbi-0.8.3:= )
 	mysql? ( virtual/mysql:= )
-	postgres? ( dev-db/postgresql:= )
+	postgres? ( dev-db/postgresql:=[server] )
 	usb? ( virtual/libusb:1= )
-"
-DEPEND="
-	${COMMON_DEPEND}
+	dev-util/dialog"
+DEPEND="${RDEPEND}
 	irda? ( virtual/os-headers )
-	nls? ( sys-devel/gettext )
-"
-RDEPEND="
-	${COMMON_DEPEND}
-	dev-util/dialog
-"
+	nls? ( sys-devel/gettext )"
 
 # sys-devel/gettext is needed for creating .mo files
 # Supported languages and translated documentation

@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer type="person">
-		<email>NP-Hardass@gentoo.org</email>
-		<name>NP-Hardass</name>
+		<email>pacho@gentoo.org</email>
+		<name>Pacho Ramos</name>
 	</maintainer>
 	<maintainer type="person">
 		<email>gentoo@mva.name</email>

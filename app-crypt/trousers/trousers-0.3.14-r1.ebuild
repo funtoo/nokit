@@ -1,9 +1,10 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=6
 
-inherit autotools linux-info ltprune readme.gentoo-r1 systemd user udev
+inherit autotools eutils linux-info readme.gentoo-r1 systemd user udev
 
 DESCRIPTION="An open-source TCG Software Stack (TSS) v1.1 implementation"
 HOMEPAGE="http://trousers.sf.net"
@@ -11,7 +12,7 @@ SRC_URI="mirror://sourceforge/trousers/${PN}/${P}.tar.gz"
 
 LICENSE="CPL-1.0 GPL-2"
 SLOT="0"
-KEYWORDS="amd64 arm arm64 ~m68k ~ppc ~ppc64 ~s390 ~sh x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~m68k ~ppc ~ppc64 ~s390 ~sh ~x86"
 IUSE="doc libressl selinux" # gtk
 
 # gtk support presently does NOT compile.

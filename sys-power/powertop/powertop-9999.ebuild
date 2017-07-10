@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI="6"
 
@@ -42,7 +43,7 @@ pkg_setup() {
 		~DEBUG_FS
 		~PERF_EVENTS
 		~TRACEPOINTS
-		~NO_HZ_IDLE
+		~NO_HZ
 		~HIGH_RES_TIMERS
 		~HPET_TIMER
 		~CPU_FREQ_STAT
@@ -56,7 +57,7 @@ pkg_setup() {
 	ERROR_KERNEL_DEBUG_FS="DEBUG_FS is not enabled in the kernel, you almost certainly need it"
 	ERROR_KERNEL_PERF_EVENTS="PERF_EVENTS should be enabled in the kernel for full powertop function"
 	ERROR_KERNEL_TRACEPOINTS="TRACEPOINTS should be enabled in the kernel for full powertop function"
-	ERROR_KERNEL_NO_HZ_IDLE="NO_HZ_IDLE should be enabled in the kernel for full powertop function"
+	ERROR_KERNEL_NO_HZ="NO_HZ should be enabled in the kernel for full powertop function"
 	ERROR_KERNEL_HIGH_RES_TIMERS="HIGH_RES_TIMERS should be enabled in the kernel for full powertop function"
 	ERROR_KERNEL_HPET_TIMER="HPET_TIMER should be enabled in the kernel for full powertop function"
 	ERROR_KERNEL_CPU_FREQ_STAT="CPU_FREQ_STAT should be enabled in the kernel for full powertop function"

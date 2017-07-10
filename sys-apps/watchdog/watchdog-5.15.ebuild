@@ -1,7 +1,8 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
-EAPI=6
+EAPI=5
 
 inherit toolchain-funcs flag-o-matic systemd
 
@@ -16,11 +17,6 @@ IUSE="nfs"
 
 DEPEND="nfs? ( net-libs/libtirpc )"
 RDEPEND="${DEPEND}"
-
-PATCHES=(
-	"${FILESDIR}"/${P}-musl.patch
-	"${FILESDIR}"/${P}-musl-nfs.patch
-)
 
 src_configure() {
 	if use nfs ; then

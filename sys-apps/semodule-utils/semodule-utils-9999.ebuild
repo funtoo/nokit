@@ -1,11 +1,12 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI="6"
 
 inherit toolchain-funcs
 
-MY_RELEASEDATE="20170630"
+MY_RELEASEDATE="20161014"
 SEPOL_VER="${PV}"
 SELNX_VER="${PV}"
 
@@ -41,13 +42,11 @@ src_prepare() {
 
 src_compile() {
 	emake \
-		CC="$(tc-getCC)" \
 		LIBDIR="\$(PREFIX)/$(get_libdir)"
 }
 
 src_install() {
 	emake DESTDIR="${D}" \
 		LIBDIR="\$(PREFIX)/$(get_libdir)" \
-		LIBSEPOLA="/usr/$(get_libdir)/libsepol.a" \
 		install
 }

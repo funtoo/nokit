@@ -1,25 +1,24 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=6
 
 # Ninja provides better scalability and cleaner verbose output, and is used
 # throughout all LLVM projects.
 : ${CMAKE_MAKEFILE_GENERATOR:=ninja}
-# (needed due to CMAKE_BUILD_TYPE != Gentoo)
-CMAKE_MIN_VERSION=3.7.0-r1
-EGIT_REPO_URI="https://git.llvm.org/git/libcxx.git
+EGIT_REPO_URI="http://llvm.org/git/libcxx.git
 	https://github.com/llvm-mirror/libcxx.git"
 PYTHON_COMPAT=( python2_7 )
 
 [[ ${PV} == 9999 ]] && SCM="git-r3" || SCM=""
 
-inherit ${SCM} cmake-multilib llvm python-any-r1 toolchain-funcs
+inherit ${SCM} cmake-multilib python-any-r1 toolchain-funcs
 
 DESCRIPTION="New implementation of the C++ standard library, targeting C++11"
-HOMEPAGE="https://libcxx.llvm.org/"
+HOMEPAGE="http://libcxx.llvm.org/"
 if [[ ${PV} != 9999 ]] ; then
-	SRC_URI="https://llvm.org/releases/${PV}/${P}.src.tar.xz"
+	SRC_URI="http://llvm.org/releases/${PV}/${P}.src.tar.xz"
 	S="${WORKDIR}/${P}.src"
 else
 	SRC_URI=""
@@ -32,7 +31,7 @@ if [[ ${PV} != 9999 ]] ; then
 else
 	KEYWORDS=""
 fi
-IUSE="elibc_glibc elibc_musl +libcxxabi libcxxrt +libunwind +static-libs test"
+IUSE="elibc_glibc elibc_musl libcxxabi +libcxxrt libunwind +static-libs test"
 REQUIRED_USE="libunwind? ( || ( libcxxabi libcxxrt ) )
 	?? ( libcxxabi libcxxrt )"
 
@@ -40,14 +39,15 @@ RDEPEND="
 	libcxxabi? ( ~sys-libs/libcxxabi-${PV}[libunwind=,static-libs?,${MULTILIB_USEDEP}] )
 	libcxxrt? ( sys-libs/libcxxrt[libunwind=,static-libs?,${MULTILIB_USEDEP}] )
 	!libcxxabi? ( !libcxxrt? ( >=sys-devel/gcc-4.7:=[cxx] ) )"
-# LLVM 4 required for llvm-config --cmakedir
+# llvm-3.9.0 needed because its cmake files installation path changed, which is
+# needed by libcxx
 # clang-3.9.0 installs necessary target symlinks unconditionally
 # which removes the need for MULTILIB_USEDEP
 DEPEND="${RDEPEND}
 	test? ( >=sys-devel/clang-3.9.0
 		$(python_gen_any_dep 'dev-python/lit[${PYTHON_USEDEP}]') )
 	app-arch/xz-utils
-	>=sys-devel/llvm-4"
+	>=sys-devel/llvm-3.9.0"
 
 DOCS=( CREDITS.TXT )
 
@@ -57,15 +57,11 @@ PATCHES=(
 	"${FILESDIR}/${PN}-3.9-cmake-link-flags.patch"
 )
 
-# least intrusive of all
-CMAKE_BUILD_TYPE=RelWithDebInfo
-
 python_check_deps() {
 	has_version "dev-python/lit[${PYTHON_USEDEP}]"
 }
 
 pkg_setup() {
-	llvm_pkg_setup
 	use test && python-any-r1_pkg_setup
 
 	if ! use libcxxabi && ! use libcxxrt && ! tc-is-gcc ; then
@@ -80,6 +76,11 @@ pkg_setup() {
 		eerror "gcc-4.7 or later version."
 		die
 	fi
+}
+
+src_configure() {
+	NATIVE_LIBDIR=$(get_libdir)
+	cmake-multilib_src_configure
 }
 
 multilib_src_configure() {
@@ -120,6 +121,9 @@ multilib_src_configure() {
 
 	local libdir=$(get_libdir)
 	local mycmakeargs=(
+		# LLVM_LIBDIR_SUFFIX is used to find CMake files
+		# and we are happy to use the native set
+		-DLLVM_LIBDIR_SUFFIX=${NATIVE_LIBDIR#lib}
 		-DLIBCXX_LIBDIR_SUFFIX=${libdir#lib}
 		-DLIBCXX_ENABLE_SHARED=ON
 		-DLIBCXX_ENABLE_STATIC=$(usex static-libs)

@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI="6"
 PYTHON_COMPAT=( python{2_7,3_4,3_5} )
@@ -9,14 +10,13 @@ inherit multilib python-r1 toolchain-funcs bash-completion-r1
 
 MY_P="${P//_/-}"
 
-MY_RELEASEDATE="20170630"
-EXTRAS_VER="1.36"
+MY_RELEASEDATE="20161014"
+EXTRAS_VER="1.34"
 SEMNG_VER="${PV}"
 SELNX_VER="${PV}"
 SEPOL_VER="${PV}"
 
 IUSE="audit pam dbus"
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 DESCRIPTION="SELinux core utilities"
 HOMEPAGE="https://github.com/SELinuxProject/selinux/wiki"
@@ -40,24 +40,22 @@ fi
 LICENSE="GPL-2"
 SLOT="0"
 
-DEPEND=">=sys-libs/libselinux-${SELNX_VER}:=[python,${PYTHON_USEDEP}]
+DEPEND=">=sys-libs/libselinux-${SELNX_VER}:=[python]
 	>=sys-libs/glibc-2.4
 	>=sys-libs/libcap-1.10-r10:=
-	>=sys-libs/libsemanage-${SEMNG_VER}:=[python,${PYTHON_USEDEP}]
+	>=sys-libs/libsemanage-${SEMNG_VER}:=[python]
 	sys-libs/libcap-ng:=
 	>=sys-libs/libsepol-${SEPOL_VER}:=
-	>=app-admin/setools-4.0[${PYTHON_USEDEP}]
+	>=app-admin/setools-4.0
 	sys-devel/gettext
 	dev-python/ipy[${PYTHON_USEDEP}]
 	dbus? (
 		sys-apps/dbus
 		dev-libs/dbus-glib:=
 	)
-	audit? ( >=sys-process/audit-1.5.1[python,${PYTHON_USEDEP}] )
+	audit? ( >=sys-process/audit-1.5.1 )
 	pam? ( sys-libs/pam:= )
-	${PYTHON_DEPS}
-	!<sec-policy/selinux-base-policy-2.20151208-r6"
-# 2.20151208-r6 and higher has support for new setfiles
+	${PYTHON_DEPS}"
 
 ### libcgroup -> seunshare
 ### dbus -> restorecond
@@ -83,7 +81,12 @@ src_prepare() {
 	cd "${S}" || die "Failed to switch to ${S}"
 	if [[ ${PV} != 9999 ]] ; then
 		# If needed for live ebuilds please use /etc/portage/patches
-		eapply "${FILESDIR}/policycoreutils-2.7-0001-newrole-not-suid.patch"
+		eapply "${FILESDIR}/0010-remove-sesandbox-support.patch"
+		eapply "${FILESDIR}/0020-disable-autodetection-of-pam-and-audit.patch"
+		eapply "${FILESDIR}/0030-make-inotify-check-use-flag-triggered.patch"
+		eapply "${FILESDIR}/0070-remove-symlink-attempt-fails-with-gentoo-sandbox-approach.patch"
+		eapply "${FILESDIR}/0110-build-mcstrans-bug-472912.patch"
+		eapply "${FILESDIR}/0120-build-failure-for-mcscolor-for-CONTEXT__CONTAINS.patch"
 	fi
 
 	# rlpkg is more useful than fixfiles
@@ -109,9 +112,9 @@ src_compile() {
 	building() {
 		emake -C "${BUILD_DIR}" \
 			AUDIT_LOG_PRIVS="y" \
-			AUDITH="$(usex audit y n)" \
-			PAMH="$(usex pam y n)" \
-			INOTIFYH="$(usex dbus y n)" \
+			AUDITH="$(usex audit)" \
+			PAMH="$(usex pam)" \
+			INOTIFYH="$(usex dbus)" \
 			SESANDBOX="n" \
 			CC="$(tc-getCC)" \
 			PYLIBVER="${EPYTHON}" \
@@ -128,11 +131,12 @@ src_install() {
 	installation-policycoreutils() {
 		einfo "Installing policycoreutils"
 		emake -C "${BUILD_DIR}" DESTDIR="${D}" \
-			AUDITH="$(usex audit y n)" \
-			PAMH="$(usex pam y n)" \
-			INOTIFYH="$(usex dbus y n)" \
+			AUDITH="$(usex audit)" \
+			PAMH="$(usex pam)" \
+			INOTIFYH="$(usex dbus)" \
 			SESANDBOX="n" \
 			AUDIT_LOG_PRIV="y" \
+			PYLIBVER="${EPYTHON}" \
 			LIBDIR="\$(PREFIX)/$(get_libdir)" \
 			install
 		python_optimize
@@ -140,11 +144,7 @@ src_install() {
 
 	installation-extras() {
 		einfo "Installing policycoreutils-extra"
-		emake -C "${BUILD_DIR}" \
-			DESTDIR="${D}" \
-			INOTIFYH="$(usex dbus)" \
-			SHLIBDIR="${D}$(get_libdir)/rc" \
-			install
+		emake -C "${BUILD_DIR}" DESTDIR="${D}" INOTIFYH="$(usex dbus)" SHLIBDIR="${D}$(get_libdir)/rc" install
 		python_optimize
 	}
 

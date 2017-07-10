@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=5
 
@@ -15,12 +16,12 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 x86"
 IUSE="+pm-utils qt4"
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
-RDEPEND="${PYTHON_DEPS}
+RDEPEND="${DEPEND}
 	pm-utils? ( sys-power/pm-utils )
 	qt4? ( dev-python/PyQt4 )"
-DEPEND="${RDEPEND}"
+
+DEPEND="${DEPEND}"
 
 src_prepare() {
 	sed -i \

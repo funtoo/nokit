@@ -16,9 +16,8 @@ SRC_URI="http://brick.kernel.dk/snaps/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 arm ia64 ppc ppc64 x86"
+KEYWORDS="amd64 ~arm ia64 ppc ppc64 x86"
 IUSE="aio glusterfs gnuplot gtk numa rbd rdma static zlib"
-REQUIRED_USE="gnuplot? ( ${PYTHON_REQUIRED_USE} )"
 
 # GTK+:2 does not offer static libaries.
 LIB_DEPEND="aio? ( dev-libs/libaio[static-libs(+)] )
@@ -40,8 +39,8 @@ RDEPEND+="
 S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
+	#epatch "${FILESDIR}"/fio-2.8-sysmacros.patch #580592
 	epatch "${FILESDIR}"/fio-2.2.13-libmtd.patch
-	epatch "${FILESDIR}"/fio-2.2.15-rdma.patch #542640
 	sed -i '/^DEBUGFLAGS/s: -D_FORTIFY_SOURCE=2::g' Makefile || die
 	epatch_user
 
@@ -65,7 +64,6 @@ src_configure() {
 		$(usex gtk '--enable-gfio' '') \
 		$(usex numa '' '--disable-numa') \
 		$(usex rbd '' '--disable-rbd') \
-		$(usex rdma '' '--disable-rdma') \
 		$(usex static '--build-static' '')
 	echo "$@"
 	"$@" || die 'configure failed'

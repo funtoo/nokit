@@ -1,16 +1,22 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=5
 
 inherit multilib-build
 
 DESCRIPTION="Virtual for OpenCL implementations"
+HOMEPAGE=""
+SRC_URI=""
+
+LICENSE=""
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="amd64 ~ppc x86"
 CARDS=( fglrx nvidia )
 IUSE="${CARDS[@]/#/video_cards_}"
 
+DEPEND=""
 # intel-ocl-sdk is amd64-only
 RDEPEND="app-eselect/eselect-opencl
 	|| (

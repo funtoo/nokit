@@ -1,13 +1,14 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=5
 
 inherit bash-completion-r1 git-2 elisp-common
 
-DESCRIPTION="Stores, retrieves, generates, and synchronizes passwords securely"
-HOMEPAGE="https://www.passwordstore.org/"
-EGIT_REPO_URI="https://git.zx2c4.com/password-store"
+DESCRIPTION="Stores, retrieves, generates, and synchronizes passwords securely using gpg, pwgen, and git"
+HOMEPAGE="http://www.passwordstore.org/"
+EGIT_REPO_URI="http://git.zx2c4.com/password-store"
 
 SLOT="0"
 LICENSE="GPL-2"
@@ -16,7 +17,7 @@ IUSE="+git X zsh-completion fish-completion emacs dmenu importers elibc_Darwin"
 
 RDEPEND="
 	app-crypt/gnupg
-	media-gfx/qrencode
+	app-admin/pwgen
 	>=app-text/tree-1.7.0
 	git? ( dev-vcs/git )
 	X? ( x11-misc/xclip )
@@ -44,14 +45,11 @@ src_compile() {
 }
 
 src_install() {
-	emake install \
-		DESTDIR="${D}" \
-		PREFIX="${EPREFIX}/usr" \
-		BASHCOMPDIR="$(get_bashcompdir)" \
-		WITH_BASHCOMP=yes \
-		WITH_ZSHCOMP=$(usex zsh-completion) \
-		WITH_FISHCOMP=$(usex fish-completion)
+	use zsh-completion && export FORCE_ZSHCOMP=1
+	use fish-completion && export FORCE_FISHCOMP=1
+	emake DESTDIR="${D}" PREFIX="${EPREFIX}/usr" install
 	use dmenu && dobin contrib/dmenu/passmenu
+	newbashcomp src/completion/pass.bash-completion pass
 	if use emacs; then
 		elisp-install ${PN} contrib/emacs/*.el
 		elisp-site-file-install "${FILESDIR}/50${PN}-gentoo.el"
