@@ -1,15 +1,13 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="5"
+EAPI="6"
 
 USE_RUBY="ruby21 ruby22 ruby23"
-# need to get deps up to date for this
-#USE_RUBY="ruby21 ruby22 ruby23 ruby24"
 
-RUBY_FAKEGEM_RECIPE_TEST="rspec3"
+#RUBY_FAKEGEM_RECIPE_TEST="rspec3"
 
-inherit eutils user ruby-fakegem versionator
+inherit xemacs-elisp-common eutils user ruby-fakegem versionator
 
 DESCRIPTION="A system automation and configuration management software."
 HOMEPAGE="http://puppetlabs.com/"
@@ -18,11 +16,12 @@ SRC_URI="http://downloads.puppetlabs.com/puppet/${P}.tar.gz"
 LICENSE="Apache-2.0 GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~hppa ~ppc ~x86"
-IUSE="augeas diff doc emacs ldap rrdtool selinux shadow sqlite vim-syntax"
+IUSE="augeas diff doc emacs experimental ldap rrdtool selinux shadow sqlite vim-syntax xemacs"
 RESTRICT="test"
 
 ruby_add_rdepend "
 	dev-ruby/hiera
+	>=dev-ruby/rgen-0.6.5
 	dev-ruby/json:=
 	>=dev-ruby/facter-3.0.0
 	augeas? ( dev-ruby/ruby-augeas )
@@ -31,18 +30,20 @@ ruby_add_rdepend "
 	ldap? ( dev-ruby/ruby-ldap )
 	shadow? ( dev-ruby/ruby-shadow )
 	sqlite? ( dev-ruby/sqlite3 )
-	virtual/ruby-ssl
-	dev-ruby/hocon"
+	virtual/ruby-ssl"
 
-ruby_add_bdepend "
-	test? (
-		dev-ruby/mocha
-		dev-ruby/rack
-		dev-ruby/rspec-its
-	)"
-# this should go in the above lists, but isn't because of test deps not being keyworded
-#   dev-ruby/rspec-collection_matchers
+# ruby_add_bdepend "
+# 	test? (
+# 		dev-ruby/mocha:0.14
+# 		=dev-ruby/rack-1*
+# 		dev-ruby/rspec-its
+# 		dev-ruby/rspec-collection_matchers
+# 		>=dev-ruby/vcr-2.9:2
+# 		>=dev-ruby/webmock-1.24:0
+# 	)"
 
+DEPEND+=" ${DEPEND}
+	xemacs? ( app-editors/xemacs )"
 RDEPEND+=" ${RDEPEND}
 	rrdtool? ( >=net-analyzer/rrdtool-1.2.23[ruby] )
 	selinux? (
@@ -52,6 +53,8 @@ RDEPEND+=" ${RDEPEND}
 	vim-syntax? ( >=app-vim/puppet-syntax-3.0.1 )
 	>=app-portage/eix-0.18.0"
 PDEPEND="emacs? ( >=app-emacs/puppet-mode-0.3-r1 )"
+
+SITEFILE="50${PN}-mode-gentoo.el"
 
 pkg_setup() {
 	enewgroup puppet
@@ -68,12 +71,44 @@ all_ruby_prepare() {
 	# fix systemd path
 	epatch "${FILESDIR}/puppet-systemd.patch"
 
+	if use experimental; then
+		epatch "${FILESDIR}/43e2c935252b995134ce353e5e6312cf77aea480.patch"
+	fi
+
+	# Use working version of mocha
+	sed -i -e '1igem "mocha", "~>0.14.0"; gem "rack", "~>1.0"' spec/spec_helper.rb || die
+
 	# Avoid specs that can only run in the puppet.git repository. This
 	# should be narrowed down to the specific specs.
 	rm spec/integration/parser/compiler_spec.rb || die
 
-	# Avoid failing spec that need further investigation.
-	rm spec/unit/module_tool/metadata_spec.rb || die
+	# Avoid failing specs that need further investigation.
+	sed -i -e '/should resolve external facts/,/^    end/ s:^:#:' \
+		spec/integration/indirector/facts/facter_spec.rb || die
+	sed -i -e "/describe 'cfacter'/,/^  end/ s:^:#:" spec/unit/defaults_spec.rb || die
+	rm -f spec/unit/indirector/ldap_spec.rb \
+		spec/unit/parser/functions/create_resources_spec.rb || die
+
+	# Avoid specs that rely on tools from other OSs
+	rm -f spec/unit/provider/package/{dnf,tdnf,yum}_spec.rb \
+	   spec/unit/provider/user/directoryservice_spec.rb || die
+
+	# Avoid specs that depend on hiera-eyaml to avoid circular
+	# dependencies
+	rm -f spec/unit/functions/lookup_spec.rb || die
+
+	# Avoid specs that fail due to an unpackaged file
+	sed -i -e '/when loading pp resource types using auto loading/,/^  end/ s:^:#:' spec/unit/pops/loaders/loaders_spec.rb || die
+}
+
+all_ruby_compile() {
+	if use xemacs ; then
+		# Create a separate version for xemacs to be able to install
+		# emacs and xemacs in parallel.
+		mkdir ext/xemacs
+		cp ext/emacs/* ext/xemacs/
+		xemacs-elisp-compile ext/xemacs/puppet-mode.el
+	fi
 }
 
 each_ruby_install() {
@@ -111,6 +146,11 @@ all_ruby_install() {
 	fowners -R :puppet /etc/puppetlabs
 	fowners -R :puppet /var/lib/puppet
 
+	if use xemacs ; then
+		xemacs-elisp-install ${PN} ext/xemacs/puppet-mode.el*
+		xemacs-elisp-site-file-install "${FILESDIR}/${SITEFILE}"
+	fi
+
 	if use ldap ; then
 		insinto /etc/openldap/schema; doins ext/ldap/puppet.schema
 	fi
@@ -140,4 +180,10 @@ pkg_postinst() {
 		elog "for more information."
 		elog
 	fi
+
+	use xemacs && xemacs-elisp-site-regen
+}
+
+pkg_postrm() {
+	use xemacs && xemacs-elisp-site-regen
 }
