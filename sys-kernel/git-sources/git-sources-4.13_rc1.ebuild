@@ -7,7 +7,7 @@ K_NOUSENAME="yes"
 K_NOSETEXTRAVERSION="yes"
 K_NOUSEPR="yes"
 K_SECURITY_UNSUPPORTED="1"
-K_BASE_VER="4.11"
+K_BASE_VER="4.12"
 K_EXP_GENPATCHES_NOUSE="1"
 K_FROM_GIT="yes"
 ETYPE="sources"
@@ -33,7 +33,7 @@ report the problem so it can be fixed in time for the next kernel release."
 
 RDEPEND=""
 DEPEND="${RDEPEND}
-	>=sys-devel/patch-2.7.4"
+	>=sys-devel/patch-2.7.5"
 
 pkg_postinst() {
 	postinst_sources
