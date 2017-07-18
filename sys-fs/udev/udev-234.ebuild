@@ -45,7 +45,6 @@ DEPEND="${COMMON_DEPEND}
 	>=dev-util/intltool-0.50
 	>=dev-util/meson-0.40.0
 	dev-util/ninja
-	>=dev-util/patchelf-0.9
 	>=sys-apps/coreutils-8.16
 	virtual/os-headers
 	virtual/pkgconfig
@@ -170,19 +169,10 @@ multilib_src_compile() {
 	eninja "${targets[@]}"
 }
 
-# meson uses an private python script for this
-strip_rpath() {
-	local x
-	for x; do
-		patchelf --remove-rpath "${x}" || die
-	done
-}
-
 multilib_src_install() {
 	local libudev=$(readlink src/libudev/libudev.so.1)
 
 	into /
-	strip_rpath src/libudev/${libudev}
 	dolib.so src/libudev/{${libudev},libudev.so.1,libudev.so}
 
 	insinto "/usr/$(get_libdir)/pkgconfig"
@@ -190,15 +180,12 @@ multilib_src_install() {
 
 	if multilib_is_native_abi; then
 		into /
-		strip_rpath udevadm
 		dobin udevadm
 
 		exeinto /lib/systemd
-		strip_rpath systemd-udevd
 		doexe systemd-udevd
 
 		exeinto /lib/udev
-		strip_rpath src/udev/{ata_id,cdrom_id,collect,mtd_probe,scsi_id,v4l_id}
 		doexe src/udev/{ata_id,cdrom_id,collect,mtd_probe,scsi_id,v4l_id}
 
 		rm rules/99-systemd.rules || die
