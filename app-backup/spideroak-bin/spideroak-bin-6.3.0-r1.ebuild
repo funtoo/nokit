@@ -1,7 +1,7 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="5"
+EAPI="6"
 
 inherit eutils unpacker
 
@@ -22,6 +22,7 @@ IUSE="dbus X"
 DEPEND="dev-util/patchelf"
 RDEPEND="
 	app-crypt/mit-krb5[keyutils]
+	media-libs/libpng:1.2
 	dbus? ( sys-apps/dbus )
 	X? (
 		media-libs/fontconfig
@@ -58,6 +59,8 @@ src_prepare() {
 	rm -f "${S}/opt/SpiderOakONE/lib/libgcc_s.so.1"
 	rm -f "${S}/opt/SpiderOakONE/lib/libpng12.so.0"
 	rm -f "${S}/opt/SpiderOakONE/lib/libz.so.1"
+
+	eapply_user
 }
 
 src_install() {
