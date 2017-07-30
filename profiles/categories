@@ -15,9 +15,6 @@ app-mobilephone
 app-pda
 app-portage
 app-shells
-dev-libs
-dev-python
-gnome-extra
 gnustep-apps
 gnustep-base
 gnustep-libs
