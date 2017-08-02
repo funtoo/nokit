@@ -1,7 +1,7 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=5
 
 PYTHON_COMPAT=( python2_7 )
 DISTUTILS_SINGLE_IMPL=1
@@ -12,18 +12,22 @@ DESCRIPTION="A graphical tool for administering virtual machines"
 HOMEPAGE="http://virt-manager.org"
 
 if [[ ${PV} = *9999* ]]; then
-	inherit git-r3
+	inherit git-2
 	SRC_URI=""
 	KEYWORDS=""
 	EGIT_REPO_URI="https://github.com/virt-manager/virt-manager.git"
 else
 	SRC_URI="http://virt-manager.org/download/sources/${PN}/${P}.tar.gz"
-	KEYWORDS="~amd64 ~x86"
+	KEYWORDS="amd64 x86"
 fi
+
+VM_LINGUAS=( as bg bn_IN bs ca cmn cs da de en_GB es fi fr gu hi hr hu is
+	it ja kn ko ml mr ms nb nl or pa pl pt pt_BR ro ru sk sr sr@latin sv ta te
+	tr uk vi zh_CN zh_TW )
 
 LICENSE="GPL-2"
 SLOT="0"
-IUSE="gnome-keyring gtk policykit sasl"
+IUSE="gnome-keyring gtk policykit sasl ${VM_LINGUAS[@]/#/linguas_}"
 
 RDEPEND="!app-emulation/virtinst
 	dev-python/libvirt-python[${PYTHON_USEDEP}]
@@ -49,10 +53,15 @@ DEPEND="${RDEPEND}
 	dev-lang/perl
 	dev-util/intltool"
 
-DOCS=( README.md NEWS.md )
+DOCS=( README NEWS )
 
 src_prepare() {
 	distutils-r1_src_prepare
+
+	local lang
+	for lang in ${VM_LINGUAS[@]}; do
+		use linguas_${lang} || rm -v "po/${lang}.po" || die
+	done
 }
 
 distutils-r1_python_compile() {
