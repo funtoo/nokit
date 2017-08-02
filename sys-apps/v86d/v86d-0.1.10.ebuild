@@ -7,7 +7,8 @@ inherit eutils flag-o-matic linux-info multilib
 
 DESCRIPTION="A daemon to run x86 code in an emulated environment"
 HOMEPAGE="https://dev.gentoo.org/~spock/projects/uvesafb/"
-SRC_URI="https://dev.gentoo.org/~spock/projects/uvesafb/archive/${P/_/-}.tar.bz2"
+SRC_URI="mirror://funtoo/${P}.tar.bz2"
+RESTRICT="mirror"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -28,6 +29,10 @@ src_prepare() {
 		eerror "You need to compile klibc against a kernel tree patched with uvesafb"
 		eerror "prior to merging this package."
 		die "Kernel not patched with uvesafb."
+	fi
+
+	if use kernel_linux && kernel_is ge 3 10; then
+	epatch "${FILESDIR}/v86d-0.1.10-atomict.patch"
 	fi
 }
 
