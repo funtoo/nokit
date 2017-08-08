@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
-inherit golang-build golang-vcs-snapshot
+inherit golang-build golang-vcs-snapshot bash-completion-r1
 
 EGO_PN="k8s.io/kubernetes"
 ARCHIVE_URI="https://github.com/kubernetes/kubernetes/archive/v${PV}.tar.gz -> kubernetes-${PV}.tar.gz"
@@ -28,10 +28,19 @@ src_prepare() {
 
 src_compile() {
 	LDFLAGS="" GOPATH="${WORKDIR}/${P}" emake -j1 -C src/${EGO_PN} WHAT=cmd/${PN}
+	pushd src/${EGO_PN} || die
+	_output/bin/${PN} completion bash > ${PN}.bash
+	_output/bin/${PN} completion zsh > ${PN}.zsh
+	popd || die
 }
 
 src_install() {
 	pushd src/${EGO_PN} || die
 	dobin _output/bin/${PN}
+
+	newbashcomp ${PN}.bash ${PN}
+	insinto /usr/share/zsh/site-functions
+	newins ${PN}.zsh ${PN}
+
 	popd || die
 }
