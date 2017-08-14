@@ -8,7 +8,7 @@ if [[ ${PV} == 9999 ]]; then
 	inherit git-r3
 else
 	SRC_URI="https://github.com/systemd/systemd/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+	KEYWORDS="~amd64 ~arm ~ia64 ~ppc ~ppc64 ~x86"
 fi
 
 PYTHON_COMPAT=( python{3_4,3_5,3_6} )
@@ -148,6 +148,9 @@ src_unpack() {
 
 src_prepare() {
 	local PATCHES=(
+		"${FILESDIR}"/234-0001-path-lookup-look-for-generators-in-usr-lib-systemd-s.patch
+		"${FILESDIR}"/234-0002-cryptsetup-fix-infinite-timeout-6486.patch
+		"${FILESDIR}"/234-0003-resolved-make-sure-idn2-conversions-are-roundtrippab.patch
 	)
 
 	if ! use vanilla; then
@@ -433,6 +436,11 @@ pkg_postinst() {
 	if [[ $(readlink "${ROOT}"etc/resolv.conf) == */run/systemd/* ]]; then
 		ewarn "You should replace the resolv.conf symlink:"
 		ewarn "ln -snf ${ROOTPREFIX%/}/lib/systemd/resolv.conf ${ROOT}etc/resolv.conf"
+	fi
+
+	if [[ -e "${EROOT%/}"/usr/lib/systemd/system-generators ]]; then
+		ewarn "Please rebuild any packages which install system generators."
+		ewarn "  emerge --oneshot --usepkg=n /usr/lib/systemd/system-generators"
 	fi
 }
 
