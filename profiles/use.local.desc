@@ -601,6 +601,7 @@ app-i18n/fcitx-configtool:gtk3 - Use GTK+3 instead of 2
 app-i18n/fcitx-libpinyin:dictmanager - Enable dictionary manager. Requires dev-qt/qtwebkit.
 app-i18n/fcitx-unikey:macro-editor - Install macro editor
 app-i18n/freewnn:uum - Build uum
+app-i18n/ibus-chewing:gconf - Enable support for gnome-base/gconf
 app-i18n/ibus-handwrite:zinnia - Enable support for app-i18n/zinnia
 app-i18n/ibus-libpinyin:boost - Compile against dev-libs/boost libraries
 app-i18n/ibus-libpinyin:opencc - Enable support for app-i18n/opencc
@@ -643,7 +644,6 @@ app-misc/blink1:server - Build and install REST API server (currently hard-coded
 app-misc/blink1:tool - Build and install command-line tool blink1-tool
 app-misc/byobu:screen - Use app-misc/screen as the default backend
 app-misc/ddccontrol:pci - enable direct PCI memory access (the setuid ddcpci util)
-app-misc/ddcutil:enable-api-libs - Enables the C/C++ API.
 app-misc/ddcutil:usb-monitor - Adds support for monitors attached via USB.
 app-misc/ddcutil:user-permissions - Adds a udev rules to allow non-root users in the i2c group to access the /dev/i2c-* devices. If usb-monitor is selected, users will need to be added to the video group to access the USB monitor. Otherwise, only root will be able to use ddcutil.
 app-misc/digitemp:ds2490 - Build support for the ds2490 sensor
