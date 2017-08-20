@@ -959,6 +959,7 @@ sys-block/gparted:mdadm - Support for Linux software RAID.
 sys-block/gparted:ntfs - Include NTFS support (sys-fs/ntfs3g)
 sys-block/gparted:reiser4 - Include ReiserFS4 support (sys-fs/reiser4progs)
 sys-block/gparted:reiserfs - Include ReiserFS support (sys-fs/reiserfsprogs)
+sys-block/gparted:udf - Include UDF support (sys-fs/udftools)
 sys-block/gparted:xfs - Include XFS support (sys-fs/xfsprogs, sys-fs/xfsdump)
 sys-block/open-iscsi:rdma - Support iSCSI over RDMA
 sys-block/open-iscsi:tcp - Support iSCSI over TCP
