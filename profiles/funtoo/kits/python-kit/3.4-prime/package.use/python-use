@@ -16,8 +16,8 @@ app-backup/bareos python_single_target_python2_7
 app-backup/bup python_single_target_python2_7
 app-cdr/burn-cd python_single_target_python2_7
 app-cdr/cdcover python_single_target_python2_7
-=app-cdr/cdemu-3.0.1 python_single_target_python2_7
 =app-cdr/cdemu-3.0.0 python_single_target_python2_7
+=app-cdr/cdemu-3.0.1 python_single_target_python2_7
 =app-cdr/gcdemu-3.0.1 python_single_target_python2_7
 =app-cdr/gcdemu-3.0.0 python_single_target_python2_7
 app-cdr/gtkcdlabel python_single_target_python2_7
@@ -36,8 +36,8 @@ app-forensics/afflib python_single_target_python2_7
 app-forensics/openscap python_single_target_python2_7
 =app-i18n/ibus-anthy-1.5.4 python_single_target_python2_7
 app-i18n/ibus-hangul python_single_target_python2_7
-=app-i18n/ibus-libpinyin-1.7.4 python_single_target_python2_7
 =app-i18n/ibus-libpinyin-1.6.92 python_single_target_python2_7
+=app-i18n/ibus-libpinyin-1.7.4 python_single_target_python2_7
 app-i18n/ibus-pinyin python_single_target_python2_7
 app-i18n/ibus-sunpinyin python_single_target_python2_7
 =app-i18n/ibus-table-1.5.0-r1 python_single_target_python2_7
