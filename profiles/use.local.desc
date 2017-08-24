@@ -598,7 +598,7 @@ app-i18n/fcitx:pango - Enable support for x11-libs/pango
 app-i18n/fcitx:qt4 - Install input method module for Qt 4
 app-i18n/fcitx:table - Install table input methods for Simplified Chinese
 app-i18n/fcitx-configtool:gtk3 - Use GTK+3 instead of 2
-app-i18n/fcitx-libpinyin:dictmanager - Enable dictionary manager. Requires dev-qt/qtwebkit.
+app-i18n/fcitx-libpinyin:dictmanager - Enable dictionary manager
 app-i18n/fcitx-unikey:macro-editor - Install macro editor
 app-i18n/freewnn:uum - Build uum
 app-i18n/ibus-chewing:gconf - Enable support for gnome-base/gconf
@@ -606,7 +606,7 @@ app-i18n/ibus-handwrite:zinnia - Enable support for app-i18n/zinnia
 app-i18n/ibus-libpinyin:boost - Compile against dev-libs/boost libraries
 app-i18n/ibus-libpinyin:opencc - Enable support for app-i18n/opencc
 app-i18n/ibus-m17n:gtk2 - Build with x11-libs/gtk+:2 instead of x11-libs/gtk+:3
-app-i18n/ibus-pinyin:boost - Compile against dev-libs/boost libraries
+app-i18n/ibus-pinyin:boost - Enable support for dev-libs/boost
 app-i18n/ibus-unikey:gtk2 - Enable support for x11-libs/gtk+:2
 app-i18n/im-chooser:gtk2 - Build with x11-libs/gtk+:2 instead of x11-libs/gtk+:3
 app-i18n/im-chooser:xfce - Enable support for XFCE panel
@@ -618,8 +618,8 @@ app-i18n/mozc:fcitx - Enable support for app-i18n/fcitx
 app-i18n/mozc:ibus - Enable support for app-i18n/ibus
 app-i18n/mozc:renderer - Enable native candidate window.
 app-i18n/pyzy:boost - Enable support for dev-libs/boost
-app-i18n/pyzy:doc - Enable support for documents
-app-i18n/pyzy:opencc - Use app-i18n/opencc for input
+app-i18n/pyzy:doc - Generate API documentation
+app-i18n/pyzy:opencc - Enable support for app-i18n/opencc
 app-i18n/scim:gtk3 - Enable support for x11-libs/gtk+:3
 app-i18n/scim-anthy:gtk3 - Enable support for x11-libs/gtk+:3
 app-i18n/scim-anthy:kasumi - Use Anthy dictionary maintenance tool (app-dicts/kasumi)
