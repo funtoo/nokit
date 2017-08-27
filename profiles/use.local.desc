@@ -8,7 +8,6 @@ app-accessibility/festival-it:mbrola - Adds support for mbrola voices
 app-accessibility/freetts:jsapi - build Java Speech API (JSAPI)
 app-accessibility/freetts:mbrola - Adds support for mbrola voices
 app-accessibility/simon:opencv - Use media-libs/opencv
-app-accessibility/simon:pim - Use kde-apps/kdepimlibs
 app-accessibility/simon:sphinx - Build sphinx backend (pulls app-accessibility/julius if disabled
 app-accessibility/speechd-el:brltty - brltty support
 app-admin/bcfg2:cheetah - Include dev-python/cheetah support
