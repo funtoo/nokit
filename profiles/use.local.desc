@@ -775,6 +775,7 @@ gnustep-base/gnustep-make:native-exceptions - Enables use of the native Objectiv
 gnustep-base/libobjc2:boehm-gc - Enable Hans Boehm's garbage collector (dev-libs/boehm-gc). Not recommended by upstream
 sys-apps/accountsservice:elogind - Use sys-auth/elogind instead of sys-auth/consolekit for session tracking
 sys-apps/accountsservice:systemd - Use sys-apps/systemd instead of sys-auth/consolekit for session tracking
+sys-apps/dbus-broker:launcher - dbus-daemon compatibility launcher
 sys-apps/dstat:wifi - Enable wireless network functions
 sys-apps/duc:X - Use X11 for the GUI instead of OpenGL. This is the recommended option
 sys-apps/duc:cairo - Build support for exporting to PNG and PDF with x11-libs/cairo
