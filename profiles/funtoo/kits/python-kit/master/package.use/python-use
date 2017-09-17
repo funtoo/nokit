@@ -91,10 +91,10 @@ sys-cluster/pacemaker python_single_target_python2_7
 sys-devel/clang python_single_target_python2_7
 sys-devel/distcc python_single_target_python2_7
 =sys-devel/gdb-7.10.1 python_single_target_python2_7
+=sys-devel/gdb-7.12.1 python_single_target_python2_7
+=sys-devel/gdb-9999 python_single_target_python2_7
 =sys-devel/gdb-7.9.1 python_single_target_python2_7
 =sys-devel/gdb-8.0 python_single_target_python2_7
-=sys-devel/gdb-9999 python_single_target_python2_7
-=sys-devel/gdb-7.12.1 python_single_target_python2_7
 sys-fs/ecryptfs-utils python_single_target_python2_7
 sys-fs/ocfs2-tools python_single_target_python2_7
 sys-fs/traydevice python_single_target_python2_7
