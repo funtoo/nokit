@@ -35,8 +35,8 @@ app-forensics/afflib python_single_target_python2_7
 app-forensics/openscap python_single_target_python2_7
 =app-i18n/ibus-anthy-1.5.4 python_single_target_python2_7
 app-i18n/ibus-hangul python_single_target_python2_7
-=app-i18n/ibus-libpinyin-1.6.92 python_single_target_python2_7
 =app-i18n/ibus-libpinyin-1.7.4 python_single_target_python2_7
+=app-i18n/ibus-libpinyin-1.6.92 python_single_target_python2_7
 app-i18n/ibus-pinyin python_single_target_python2_7
 app-i18n/ibus-sunpinyin python_single_target_python2_7
 =app-i18n/ibus-table-1.5.0-r1 python_single_target_python2_7
@@ -68,8 +68,8 @@ app-mobilephone/obexftp python_single_target_python2_7
 app-mobilephone/sobexsrv python_single_target_python2_7
 =app-portage/chuse-1.1 python_single_target_python3_4 python_targets_python3_4
 =app-portage/chuse-1.0.2 python_single_target_python3_4 python_targets_python3_4
-=app-portage/elogviewer-2.6-r2 python_single_target_python2_7
 =app-portage/elogviewer-2.7 python_single_target_python2_7
+=app-portage/elogviewer-2.6-r2 python_single_target_python2_7
 sys-apps/biosdisk python_single_target_python2_7
 sys-apps/entropy python_single_target_python2_7
 sys-apps/entropy-server python_single_target_python2_7
@@ -79,9 +79,9 @@ sys-apps/pyrenamer python_single_target_python2_7
 =sys-apps/razercfg-0.23 python_single_target_python2_7
 sys-apps/tuned python_single_target_python2_7
 sys-apps/yum python_single_target_python2_7
-=sys-auth/sssd-1.12.1 python_single_target_python2_7
-=sys-auth/sssd-1.12.4 python_single_target_python2_7
 =sys-auth/sssd-1.12.5 python_single_target_python2_7
+=sys-auth/sssd-1.12.4 python_single_target_python2_7
+=sys-auth/sssd-1.12.1 python_single_target_python2_7
 sys-boot/udk python_single_target_python2_7
 sys-cluster/charm python_single_target_python2_7
 sys-cluster/glusterfs python_single_target_python2_7
@@ -90,11 +90,11 @@ sys-cluster/moosefs python_single_target_python2_7
 sys-cluster/pacemaker python_single_target_python2_7
 sys-devel/clang python_single_target_python2_7
 sys-devel/distcc python_single_target_python2_7
+=sys-devel/gdb-7.9.1 python_single_target_python2_7
+=sys-devel/gdb-7.12.1 python_single_target_python2_7
 =sys-devel/gdb-8.0 python_single_target_python2_7
 =sys-devel/gdb-9999 python_single_target_python2_7
-=sys-devel/gdb-7.12.1 python_single_target_python2_7
 =sys-devel/gdb-7.10.1 python_single_target_python2_7
-=sys-devel/gdb-7.9.1 python_single_target_python2_7
 sys-fs/ecryptfs-utils python_single_target_python2_7
 sys-fs/ocfs2-tools python_single_target_python2_7
 sys-fs/traydevice python_single_target_python2_7
