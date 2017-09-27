@@ -1,4 +1,3 @@
-# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -41,6 +40,7 @@ src_prepare() {
 		-i src/eix-functions.sh.in || die
 	sed -e "s:'\$(bindir)/eix-functions.sh':cat \\\\\"${EROOT}usr/share/eix/eix-functions.sh\\\\\":" \
 		-i src/Makefile.am || die
+	eapply "${FILESDIR}"/${P}-meta-repo.patch
 	eautoreconf
 }
 
