@@ -928,8 +928,6 @@ sys-auth/oath-toolkit:pam - Build PAM module for pluggable login authentication 
 sys-auth/oath-toolkit:pskc - Build tools & library for the Portable Symmetric Key Container (PSKC) format per RFC6030
 sys-auth/pam_mktemp:prevent-removal - If supported, set EXT2_APPEND_FL on /tmp/.private to prevent temporary directories from being removed
 sys-auth/pam_mysql:openssl - Use OpenSSL for md5 and sha1 support
-sys-auth/pam_pkcs11:nss - Use Mozilla NSS (dev-libs/nss) as provider for PKCS#11 access, rather than using OpenSSL with a custom implementation of the PKC#11 protocol.
-sys-auth/pam_pkcs11:pcsc-lite - Build the card_eventmanager binary used to detect card removal and lock the sessions. This needs sys-apps/pcsc-lite.
 sys-auth/pam_u2f:debug - Enable debug messages using the pam logging macros. (Note: these will be visible on stdout for terminal logins).
 sys-auth/passwdqc:utils - Install pwqcheck and pwqgen helper utilities
 sys-auth/sssd:acl - Build and use the cifsidmap plugin
