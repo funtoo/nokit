@@ -2,10 +2,10 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer type="person">
-		<email>radhermit@gentoo.org</email>
-		<name>Tim Harder</name>
+		<email>mrueg@gentoo.org</email>
+		<name>Manuel Rüger</name>
 	</maintainer>
 	<upstream>
-		<remote-id type="sourceforge">avf</remote-id>
+		<remote-id type="github">prometheus/prom2json</remote-id>
 	</upstream>
 </pkgmetadata>

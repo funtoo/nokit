@@ -86,4 +86,3 @@ sys-libs/libsmbios python_single_target_python2_7
 sys-libs/ntdb python_single_target_python2_7
 sys-libs/openipmi python_single_target_python2_7
 sys-power/phctool python_single_target_python2_7
-sys-process/procexp python_single_target_python2_7
