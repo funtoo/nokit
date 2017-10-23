@@ -657,7 +657,6 @@ app-misc/freemind:pdf - Build plugin for exporting mindmaps to SVG and PDF
 app-misc/freemind:svg - Build plugin for exporting mindmaps to SVG and PDF
 app-misc/gcstar:stats - Enable statistics reporting
 app-misc/gcstar:tellico - Enable support for kde-misc/tellico files
-app-misc/geneweb:ocamlopt - Enable ocamlopt support (dev-lang/ocaml native code compiler)
 app-misc/gourmet:i18n - Enable support for i18n through elib.intl
 app-misc/gourmet:ipython - Enable support for the interactive Python console plugin
 app-misc/gourmet:pdf - Enable export to PDF
