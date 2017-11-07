@@ -3,20 +3,20 @@
 
 EAPI=6
 
-EGIT_REPO_URI="https://git.exherbo.org/git/paludis/paludis.git"
 PYTHON_COMPAT=( python2_7 )
 RUBY_VER=2.3
 
-inherit bash-completion-r1 cmake-utils git-r3 python-single-r1 user
+inherit bash-completion-r1 cmake-utils python-single-r1 user
 
+MY_P=paludis-f8e58ee1d02d2476ae92ebc3737e42b8b6a36891
 DESCRIPTION="paludis, the other package mangler"
 HOMEPAGE="http://paludis.exherbo.org/"
-SRC_URI=""
+SRC_URI="https://git.exherbo.org/paludis/paludis.git/snapshot/${MY_P}.tar.xz"
 
 IUSE="doc pbins pink python ruby ruby_targets_ruby${RUBY_VER/./} search-index test +xml"
 LICENSE="GPL-2 vim"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86"
 
 COMMON_DEPEND="
 	>=app-admin/eselect-1.2.13
@@ -32,6 +32,7 @@ COMMON_DEPEND="
 	xml? ( >=dev-libs/libxml2-2.6:= )"
 
 DEPEND="${COMMON_DEPEND}
+	app-arch/xz-utils
 	>=app-text/asciidoc-8.6.3
 	app-text/htmltidy
 	app-text/xmlto
@@ -52,6 +53,8 @@ PDEPEND="app-eselect/eselect-package-manager"
 REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )
 	ruby? ( ruby_targets_ruby${RUBY_VER/./} )"
 RESTRICT="!test? ( test )"
+
+S=${WORKDIR}/${MY_P}
 
 pkg_pretend() {
 	if [[ ${MERGE_TYPE} != buildonly ]]; then
