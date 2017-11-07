@@ -1159,37 +1159,6 @@ sys-freebsd/freebsd-usbin:audit - Build auditing tools.
 sys-freebsd/freebsd-usbin:floppy - Enable floppy disk utilities (fdcontrol, fdformat, fdread, fdwrite).
 sys-freebsd/freebsd-usbin:netware - Build libraries and tools to work with NetWare protocols (IPX and NCP).
 sys-freebsd/freebsd-usbin:zfs - Enable ZFS support.
-sys-fs/cryfs:update-check - Enable automatic checking for updates and security vulnerabilities
-sys-fs/ecryptfs-utils:gpg - Enable app-crypt/gnupg key module
-sys-fs/ecryptfs-utils:openssl - Enable dev-libs/openssl key module
-sys-fs/ecryptfs-utils:pkcs11 - Enable PKCS#11 (Smartcards) key module
-sys-fs/ecryptfs-utils:tpm - Enable support for Trusted Platform Module (TPM) using app-crypt/trousers
-sys-fs/ext4magic:expert-mode - Builds ext4magic with expert mode. Highly useful in recovering data from a corrupted filesystem
-sys-fs/ext4magic:file-attr - Enable the recovery of file attributes (append, immutable, nodump etc)
-sys-fs/lessfs:filelog - Enable the ability to log to a file instead of syslog
-sys-fs/lessfs:memtrace - Enable leefs to create a report regarding the memory allocation. This feature should be used for debugging purposes to avoid performance degradation
-sys-fs/lessfs:snappy - Enable snappy compression using the app-arch/snappy library
-sys-fs/loop-aes:cpu_flags_x86_padlock - Use VIA padlock instructions, detected at run time, code still works on non-padlock processors
-sys-fs/loop-aes:extra-ciphers - Enable extra ciphers
-sys-fs/loop-aes:keyscrub - Protects the encryption key in memory but takes more cpu resources
-sys-fs/mtpfs:mad - Enable handling of MP3's metadata
-sys-fs/multipath-tools:rbd - Enable Rados block device support via sys-cluster/ceph
-sys-fs/ntfs3g:external-fuse - Use external FUSE library instead of internal one. Must be disabled for unprivileged mounting to work.
-sys-fs/ntfs3g:ntfsdecrypt - Build and install the ntfsdecrypt application.
-sys-fs/ntfs3g:ntfsprogs - Include internal version of ntfsprogs.
-sys-fs/ocfs2-tools:external - Enable external locking
-sys-fs/owfs:ftdi - Enable support for USB FTDI chips via dev-embedded/libftdi
-sys-fs/owfs:ftpd - Enable building the OWFS FTP server (owftpd)
-sys-fs/owfs:fuse - Enable building the FUSE-based OWFS client (owfs)
-sys-fs/owfs:httpd - Enable building the OWFS web server (owhttpd)
-sys-fs/owfs:parport - Enable support for the DS1410E parallel port adapter
-sys-fs/owfs:zeroconf - Enables support for zero-configuration networking via net-dns/avahi
-sys-fs/squashfs-tools:lz4 - Enable support for LZ4 compression using app-arch/lz4
-sys-fs/squashfs-tools:xz - Enable support for XZ ("LZMA2") compression using app-arch/xz-utils
-sys-fs/squashfuse:lz4 - Enable support for lz4 compression
-sys-fs/udev:firmware-loader - Enable the userspace firmware loader (DEPRECATED, replaced by the in-kernel loader starting from 3.8)
-sys-fs/udev:gudev - Build the gobject interface library
-sys-fs/udev:kmod - Enable kernel module loading/unloading support using sys-apps/kmod
 sys-kernel/aufs-sources:experimental - Apply experimental patches; for more information, see "https://wiki.gentoo.org/wiki/Project:Kernel/Experimental".
 sys-kernel/aufs-sources:module - Patch kernel to allow aufs being build as a module.
 sys-kernel/aufs-sources:vanilla - Use vanilla kernel sources without applying genpatches. WARNING: This flag will drop all support from the Gentoo Kernel Security team

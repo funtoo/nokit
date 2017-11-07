@@ -27,7 +27,6 @@ sys-cluster
 sys-devel
 sys-fabric
 sys-freebsd
-sys-fs
 sys-kernel
 sys-libs
 sys-power
