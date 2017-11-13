@@ -78,6 +78,7 @@ ALL_DEPEND="
 # Dependencies required for qemu tools (qemu-nbd, qemu-img, qemu-io, ...)
 # softmmu targets (qemu-system-*).
 SOFTMMU_TOOLS_DEPEND="
+	>=x11-libs/pixman-0.28.0[static-libs(+)]
 	accessibility? (
 		app-accessibility/brltty[api]
 		app-accessibility/brltty[static-libs(+)]
@@ -203,6 +204,8 @@ RDEPEND="${CDEPEND}
 PATCHES=(
 	"${FILESDIR}"/${PN}-2.5.0-cflags.patch
 	"${FILESDIR}"/${PN}-2.5.0-sysmacros.patch
+	"${FILESDIR}"/${PN}-2.10.1-CVE-2017-15268.patch
+	"${FILESDIR}"/${PN}-2.10.1-CVE-2017-15289.patch
 )
 
 STRIP_MASK="/usr/share/qemu/palcode-clipper"
@@ -491,6 +494,7 @@ qemu_src_configure() {
 			--disable-linux-user
 			--enable-system
 			--disable-tools
+			--with-system-pixman
 		)
 		local static_flag="static"
 		;;
