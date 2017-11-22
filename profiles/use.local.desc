@@ -740,6 +740,9 @@ app-portage/eix:debug - Build with upstream's CXXFLAGS/LDFLAGS for debugging sup
 app-portage/eix:doc - Create description of the eix cache file additionally in html format
 app-portage/eix:sqlite - Compile in support for portage's sqlite backend; to actually use it you need additional configuration of portage and eix
 app-portage/g-sorcery:bson - Support BSON file format for package DB
+app-portage/gemato:blake2 - Install dependencies needed for BLAKE2 hash functions
+app-portage/gemato:gpg - Install dependencies needed for OpenPGP signature verification support
+app-portage/gemato:sha3 - Install dependencies needed for SHA3 hash functions
 app-portage/layman:bazaar - Support dev-vcs/bzr based overlays
 app-portage/layman:cvs - Support dev-vcs/cvs based overlays
 app-portage/layman:darcs - Support dev-vcs/darcs based overlays
@@ -1023,6 +1026,7 @@ sys-cluster/glusterfs:fuse - Add FUSE mount helper
 sys-cluster/glusterfs:georeplication - Enable support for georeplication (requires dev-lang/python)
 sys-cluster/glusterfs:glupy - Enable support for translators written in Python
 sys-cluster/glusterfs:infiniband - Add support for Infiniband ibverbs transport. Libraries can be found in science overlay
+sys-cluster/glusterfs:libtirpc - Build against net-libs/libtirpc for RPC support
 sys-cluster/glusterfs:qemu-block - Transparently create files as QCow2/QED images in the backend, including the possibility to snapshot.
 sys-cluster/glusterfs:rsyslog - Install configuration snippet for app-admin/rsyslog
 sys-cluster/glusterfs:systemtap - Enable support for dev-util/systemtap
