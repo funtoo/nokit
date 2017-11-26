@@ -54,7 +54,7 @@ app-admin/elektra:ini - Enable new, advanced ini support
 app-admin/elektra:simpleini - Enable simpleini support
 app-admin/elektra:uname - Enable uname information for the key database
 app-admin/elektra:yajl - Enable yajl support
-app-admin/gkrellm:X - Build both the X11 gui (gkrellm) and the server (gkrellmd). Disabling this flag builds the server only.
+app-admin/gkrellm:X - Build both the X11 gui (gkrellm) and the server (gkrellmd). Disabling this flag builds the server only
 app-admin/gkrellm:gnutls - Enable SSL support for mail checking with net-libs/gnutls (overrides 'ssl' USE flag)
 app-admin/gkrellm:hddtemp - Enable monitoring harddrive temperatures via app-admin/hddtemp
 app-admin/gkrellm:lm_sensors - Enable monitoring sensors via sys-apps/lm_sensors
@@ -183,9 +183,9 @@ app-arch/engrampa:caja - Enable engrampa to integrate with mate-base/caja by pro
 app-arch/engrampa:gtk3 - Build with GTK+3 instead of GTK+2
 app-arch/engrampa:magic - Enable filetype auto-detection via sys-apps/file
 app-arch/engrampa:packagekit - Enable support for installing via app-admin/packagekit based on archive type
-app-arch/innoextract:c++0x - Compile innoextract using the C++11 standard.
-app-arch/innoextract:debug - Enable debug logging and the --debug command-line option.
-app-arch/innoextract:lzma - Enable support for extracting lzma-compressed installers using app-arch/xz-utils.
+app-arch/innoextract:c++0x - Compile innoextract using the C++11 standard
+app-arch/innoextract:debug - Enable debug logging and the --debug command-line option
+app-arch/innoextract:lzma - Enable support for extracting lzma-compressed installers using app-arch/xz-utils
 app-arch/p7zip:rar - Enable support for non-free rar decoder
 app-arch/pbzip2:symlink - Install symlinks which override app-arch/bzip2 implementation
 app-arch/pigz:symlink - Install symlinks which override app-arch/gzip implementation
@@ -232,7 +232,7 @@ app-backup/snapper:xattr - Add support for getting and setting POSIX extended at
 app-backup/tsm:tsm_cit - IBM Tivoli Common Inventory Technology
 app-backup/tsm:tsm_hw - Difference snapshot support for NetApp and N-Series file servers
 app-backup/zbackup:tartool - Install tartool utility
-app-benchmarks/filebench:auto-completion - Enable command-line autocompletion using dev-libs/libtecla.
+app-benchmarks/filebench:auto-completion - Enable command-line autocompletion using dev-libs/libtecla
 app-benchmarks/httperf:idleconn - Build with the idleconn program
 app-benchmarks/ramspeed:pic - Force shared libraries to be built as PIC (this is slower)
 app-benchmarks/sysbench:aio - Enable libaio support
@@ -652,7 +652,7 @@ app-misc/gourmet:pdf - Enable export to PDF
 app-misc/gourmet:print - Enable pretty Python printing
 app-misc/gourmet:spell - Enable support for the spell check plugin
 app-misc/gourmet:web - Enable support for the web import plugin
-app-misc/gramps:geo - Enable rendering of geographical data using sci-geosciences/osm-gps-map.
+app-misc/gramps:geo - Enable rendering of geographical data using sci-geosciences/osm-gps-map
 app-misc/gramps:reports - All external software that is needed for graphical reports will be installed
 app-misc/graphlcd-base:g15 - Add support for app-misc/g15daemon driver (e.g. Logitech G15 Keybord)
 app-misc/irtrans-irserver:mono - Enable mono support
