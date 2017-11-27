@@ -1125,7 +1125,7 @@ sys-devel/gdb:xml - Support parsing XML data files needed (at least) for cpu fea
 sys-devel/kgcc64:regression-test - Run the testsuite and install the results (requires FEATURES=test)
 sys-devel/sparse:gtk - Build the test-inspect utility (requires x11-libs/gtk+ version 2)
 sys-devel/sparse:llvm - Build the sparse-llvm utility
-sys-devel/sparse:xml - Build the c2xml utility (requires dev-libs/libxml2).
+sys-devel/sparse:xml - Build the c2xml utility (requires dev-libs/libxml2)
 sys-fabric/ofed:dapl - Add support for DAPL abstraction layer
 sys-fabric/ofed:diags - Add dignostic tools for infiniband
 sys-fabric/ofed:ibacm - Add support for userspace pre-connection services
@@ -1153,8 +1153,8 @@ sys-freebsd/freebsd-sources:build-kernel - Build and install a kernel (recommend
 sys-freebsd/freebsd-sources:dtrace - Enable DTrace support.
 sys-freebsd/freebsd-sources:zfs - Enable ZFS support.
 sys-freebsd/freebsd-ubin:ar - Build FreeBSD's ar and ranlib replacements based on libarchive. The toolchain will still use binutils' version but you can play with it. They have been renamed to freebsd-ar and freebsd-ranlib not to collide with binutils.
-sys-freebsd/freebsd-ubin:audit - Build auditing tools.
-sys-freebsd/freebsd-ubin:netware - Build libraries and tools to work with NetWare protocols (IPX and NCP).
+sys-freebsd/freebsd-ubin:audit - Build auditing tools
+sys-freebsd/freebsd-ubin:netware - Build libraries and tools to work with NetWare protocols (IPX and NCP)
 sys-freebsd/freebsd-ubin:zfs - Enable ZFS support (for fstat actually).
 sys-freebsd/freebsd-usbin:audit - Build auditing tools.
 sys-freebsd/freebsd-usbin:floppy - Enable floppy disk utilities (fdcontrol, fdformat, fdread, fdwrite).
@@ -1206,7 +1206,7 @@ sys-libs/uclibc:uclibc-compat - Build uclibc with backwards compatible options
 sys-libs/uclibc:wordexp - Add support for word expansion (wordexp.h)
 sys-libs/uclibc-ng:rpc - Enable sun nis/rpc support (you should use libtirpc though)
 sys-libs/uclibc-ng:symlink-compat - Explicitly add sym links for libdl.so.0, libm.so.0, and friends for backward compatibility with sys-libs/uclibc-ng-1.0.17 and earlier
-sys-power/apcupsd:modbus - enable MODBUS support over USB
+sys-power/apcupsd:modbus - Enable MODBUS support over USB
 sys-power/cpupower:cpufreq_bench - Build and install the cpufreq_bench binary
 sys-power/nut:ipmi - Support IPMI-based UPSes.
 sys-power/nut:ups_drivers_al175 - Driver for Eltek UPS models with AL175 alarm module
