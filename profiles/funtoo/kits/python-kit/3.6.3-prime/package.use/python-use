@@ -1,8 +1,6 @@
 =app-backup/backintime-1.1.12 python_single_target_python3_4 python_targets_python3_4
 =app-backup/backintime-1.1.8-r1 python_single_target_python3_4 python_targets_python3_4
 =app-i18n/ibus-anthy-1.5.4 python_single_target_python2_7
-=app-i18n/ibus-libpinyin-1.6.92 python_single_target_python2_7
-=app-i18n/ibus-libpinyin-1.7.4 python_single_target_python2_7
 =app-i18n/ibus-table-1.5.0-r1 python_single_target_python2_7
 =app-misc/anki-2.0.31 python_single_target_python2_7
 =app-misc/anki-2.0.33 python_single_target_python2_7
