@@ -22,7 +22,6 @@ ros-meta
 sys-apps
 sys-auth
 sys-block
-sys-boot
 sys-cluster
 sys-devel
 sys-fabric
