@@ -953,6 +953,7 @@ sys-block/gparted:xfs - Include XFS support (sys-fs/xfsprogs, sys-fs/xfsdump)
 sys-block/open-iscsi:rdma - Support iSCSI over RDMA
 sys-block/open-iscsi:tcp - Support iSCSI over TCP
 sys-block/partimage:nologin - Do not include login support when connecting partimaged
+sys-block/perccli:efi - Install EFI variant as well
 sys-block/sas2ircu:efi - Install EFI variant as well
 sys-block/sas3flash:efi - Install EFI variant as well
 sys-block/sas3ircu:efi - Install EFI variant as well
@@ -1146,6 +1147,7 @@ sys-kernel/aufs-sources:experimental - Apply experimental patches; for more info
 sys-kernel/aufs-sources:module - Patch kernel to allow aufs being build as a module.
 sys-kernel/aufs-sources:vanilla - Use vanilla kernel sources without applying genpatches. WARNING: This flag will drop all support from the Gentoo Kernel Security team
 sys-kernel/ck-sources:deblob - Remove binary blobs from kernel sources to provide libre license compliance.
+sys-kernel/ck-sources:experimental - Apply experimental patches; for more information, see "https://wiki.gentoo.org/wiki/Project:Kernel/Experimental".
 sys-kernel/dracut:debug - Module installing additional tools like strace, file editor, ssh and more
 sys-kernel/genkernel-next:cryptsetup - Enable support for Luks disk enrcyption using sys-fs/cryptsetup
 sys-kernel/genkernel-next:dmraid - Enable support for DMRAID (include dmraid dependency)
