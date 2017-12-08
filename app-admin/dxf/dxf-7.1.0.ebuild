@@ -16,9 +16,9 @@ KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND=">=dev-python/jwcrypto-0.4.2[${PYTHON_USEDEP}]
-	>=dev-python/requests-2.9.0[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.18.4[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]
-	>=dev-python/tqdm-4.10.0[${PYTHON_USEDEP}]
+	>=dev-python/tqdm-4.19.4[${PYTHON_USEDEP}]
 	>=dev-python/www-authenticate-0.9.2[${PYTHON_USEDEP}]"
 
 RESTRICT="test"
