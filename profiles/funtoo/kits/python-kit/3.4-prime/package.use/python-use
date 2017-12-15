@@ -8,7 +8,6 @@
 =app-misc/anki-2.0.41 python_single_target_python2_7
 =app-misc/anki-2.0.43 python_single_target_python2_7
 =app-misc/anki-2.0.47 python_single_target_python2_7
-=app-misc/anki-2.1.0_beta25 python_single_target_python3_6 python_targets_python3_6
 =sys-apps/pcsc-lite-1.8.20 python_single_target_python2_7
 =sys-apps/razercfg-0.23 python_single_target_python2_7
 =sys-auth/sssd-1.12.1 python_single_target_python2_7

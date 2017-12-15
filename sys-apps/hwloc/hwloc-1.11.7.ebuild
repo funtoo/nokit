@@ -1,4 +1,3 @@
-# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -59,7 +58,7 @@ multilib_src_configure() {
 	ECONF_SOURCE=${S} econf \
 		$(use_enable static-libs static) \
 		$(use_enable cairo) \
-		$(use_enable cuda) \
+		$(multilib_native_use_enable cuda) \
 		$(use_enable debug) \
 		$(multilib_native_use_enable gl) \
 		$(use_enable pci) \
@@ -68,3 +67,4 @@ multilib_src_configure() {
 		$(use_enable xml libxml2) \
 		$(use_with X x)
 }
+
