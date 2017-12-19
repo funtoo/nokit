@@ -1,13 +1,5 @@
 =app-i18n/ibus-anthy-1.5.4 python_single_target_python2_7
 =app-i18n/ibus-table-1.5.0-r1 python_single_target_python2_7
-=app-misc/anki-2.0.31 python_single_target_python2_7
-=app-misc/anki-2.0.33 python_single_target_python2_7
-=app-misc/anki-2.0.34 python_single_target_python2_7
-=app-misc/anki-2.0.35 python_single_target_python2_7
-=app-misc/anki-2.0.36 python_single_target_python2_7
-=app-misc/anki-2.0.41 python_single_target_python2_7
-=app-misc/anki-2.0.43 python_single_target_python2_7
-=app-misc/anki-2.0.47 python_single_target_python2_7
 =sys-apps/pcsc-lite-1.8.20 python_single_target_python2_7
 =sys-apps/razercfg-0.23 python_single_target_python2_7
 =sys-auth/sssd-1.12.1 python_single_target_python2_7
@@ -49,6 +41,7 @@ app-i18n/ibus-tutcode python_single_target_python2_7
 app-i18n/pology python_single_target_python2_7
 app-i18n/tomoe python_single_target_python2_7
 app-i18n/tomoe-gtk python_single_target_python2_7
+app-misc/anki python_single_target_python3_6 python_targets_python3_6
 app-misc/byobu python_single_target_python2_7
 app-misc/cwiid python_single_target_python2_7
 app-misc/email2trac python_single_target_python2_7

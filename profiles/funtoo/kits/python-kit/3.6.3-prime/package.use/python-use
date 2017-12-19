@@ -1,15 +1,5 @@
-=app-backup/backintime-1.1.12 python_single_target_python3_4 python_targets_python3_4
-=app-backup/backintime-1.1.8-r1 python_single_target_python3_4 python_targets_python3_4
 =app-i18n/ibus-anthy-1.5.4 python_single_target_python2_7
 =app-i18n/ibus-table-1.5.0-r1 python_single_target_python2_7
-=app-misc/anki-2.0.31 python_single_target_python2_7
-=app-misc/anki-2.0.33 python_single_target_python2_7
-=app-misc/anki-2.0.34 python_single_target_python2_7
-=app-misc/anki-2.0.35 python_single_target_python2_7
-=app-misc/anki-2.0.36 python_single_target_python2_7
-=app-misc/anki-2.0.41 python_single_target_python2_7
-=app-misc/anki-2.0.43 python_single_target_python2_7
-=app-misc/anki-2.0.47 python_single_target_python2_7
 =app-portage/chuse-1.0.2 python_single_target_python3_4 python_targets_python3_4
 =app-portage/chuse-1.1 python_single_target_python3_4 python_targets_python3_4
 =app-portage/elogviewer-2.6-r2 python_single_target_python2_7
@@ -36,6 +26,7 @@ app-arch/createrepo python_single_target_python2_7
 app-arch/deltarpm python_single_target_python2_7
 app-arch/rpm python_single_target_python2_7
 app-arch/unrpa python_single_target_python2_7
+app-backup/backintime python_single_target_python3_4 python_targets_python3_4
 app-backup/bacula python_single_target_python2_7
 app-backup/bareos python_single_target_python2_7
 app-backup/bup python_single_target_python2_7
