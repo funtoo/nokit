@@ -1,12 +1,12 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="3"
+EAPI="6"
 GENTOO_MAN_P="portage-${PN}-20060415"
 
 DESCRIPTION="A collection of manual pages translated into Japanese"
-HOMEPAGE="http://linuxjm.sourceforge.jp/ http://www.gentoo.gr.jp/jpmain/translation.xml"
-SRC_URI="http://linuxjm.sourceforge.jp/${P}.tar.gz
+HOMEPAGE="http://linuxjm.osdn.jp/ https://github.com/hattya/portage-man-pages-ja"
+SRC_URI="http://linuxjm.osdn.jp/${P}.tar.gz
 	https://dev.gentoo.org/~hattya/distfiles/${GENTOO_MAN_P}.tar.gz"
 
 LICENSE="GPL-2+ GPL-2 LGPL-2+ LGPL-2 BSD MIT ISC HPND FDL-1.1+ LDP-1 LDP-1a man-pages Texinfo-manual"
@@ -25,12 +25,14 @@ src_prepare() {
 	rm -f manual/*/man1/{chfn,chsh,newgrp,su,passwd,groups}.1 || die
 	rm -f manual/*/man8/{vigr,vipw}.8 || die
 	# - app-arch/rpm +nls
-	rm -f manual/rpm/man8/rpm*.8 || die
+	rm -rf manual/rpm || die
 
 	for f in manual/*/man8/ld{,-linux}.so.8 ; do
 		mv ${f} ${f/.so.8/.so.ja.8} || die
 	done
 	mv "${WORKDIR}"/${GENTOO_MAN_P}/portage/g-cpan.pl{,.ja}.1 || die
+
+	eapply_user
 }
 
 src_compile() {
@@ -61,7 +63,7 @@ src_install() {
 		pkg=
 	done
 
-	dodoc README || die
+	dodoc README
 
 	cd "${WORKDIR}"/${GENTOO_MAN_P}
 
@@ -75,7 +77,7 @@ src_install() {
 		fi
 	done
 
-	newdoc ChangeLog ChangeLog.GentooJP || die
+	newdoc ChangeLog ChangeLog.GentooJP
 
 }
 
