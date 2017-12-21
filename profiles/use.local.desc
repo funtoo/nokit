@@ -275,9 +275,9 @@ app-crypt/qca:softstore - Enable softstore plugin
 app-crypt/rhash:openssl - Add support for hashes from dev-libs/openssl
 app-crypt/tpm-tools:pkcs11 - Build Token data management utilities based on OpenCryptoki's (dev-libs/opencryptoki) PKCS#11 implementation.
 app-crypt/veracrypt:asm - Enable assembly for optimization
-app-crypt/zuluCrypt:gnome - Enable support for the freedesktop.org Secret Service API via app-crypt/libsecret
-app-crypt/zuluCrypt:kwallet - Enable encrypted storage of passwords with kde-frameworks/kwallet
-app-crypt/zuluCrypt:udev - Whether udev will be consulted when deciding if a volume is system or not
+app-crypt/zulucrypt:gnome - Enable support for the freedesktop.org Secret Service API via app-crypt/libsecret
+app-crypt/zulucrypt:kwallet - Enable encrypted storage of passwords with kde-frameworks/kwallet
+app-crypt/zulucrypt:udev - Whether udev will be consulted when deciding if a volume is system or not
 app-emulation/bochs:3dnow - Enable support for emulating 3DNow! instructions (incomplete)
 app-emulation/bochs:avx - Enable support for emulating Advanced Vector Extensions (AVX)
 app-emulation/bochs:debugger - Enable debugger (slows down emulation)
