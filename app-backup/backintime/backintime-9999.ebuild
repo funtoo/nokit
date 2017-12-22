@@ -1,20 +1,20 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
-PYTHON_COMPAT=( python3_{4,5} )
+PYTHON_COMPAT=( python3_{4,5,6} )
 
-inherit eutils python-single-r1
+inherit eutils python-single-r1 gnome2-utils git-r3
 
 DESCRIPTION="Backup system inspired by TimeVault and FlyBack, with a GUI for GNOME and KDE4"
-HOMEPAGE="http://backintime.le-web.org/"
-SRC_URI="http://${PN}.le-web.org/download/${PN}/${P}.tar.gz"
+HOMEPAGE="https://backintime.readthedocs.io/ https://github.com/bit-team/backintime/"
+EGIT_REPO_URI="https://github.com/bit-team/backintime/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 x86"
-IUSE="qt4"
+KEYWORDS=""
+IUSE="qt5"
 
 DEPEND="${PYTHON_DEPS}
 	dev-python/dbus-python[${PYTHON_USEDEP}]
@@ -22,7 +22,7 @@ DEPEND="${PYTHON_DEPS}
 	net-misc/openssh
 	net-misc/rsync[xattr,acl]"
 RDEPEND="${DEPEND}
-	qt4? ( dev-python/PyQt4 )"
+	qt5? ( dev-python/PyQt5 )"
 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
@@ -30,12 +30,12 @@ src_prepare() {
 	#fix doc install location
 	sed -e "s:/doc/${PN}-common:/doc/${PF}:g" \
 		-i common/configure || die
-	sed -e "s:/doc/${PN}-qt4:/doc/${PF}:g" \
-		-i qt4/configure || die
+	sed -e "s:/doc/${PN}-qt:/doc/${PF}:g" \
+		-i qt/configure || die
 	sed -e "/addInstallFile \"..\/VERSION/d" \
 		-e "/addInstallFile \"..\/LICENSE/d" \
 		-e "/addInstallFile \"..\/debian\/copyright/d" \
-		-i {qt4,common}/configure || die
+		-i {qt,common}/configure || die
 
 	if [ -n ${LINGUAS+x} ] ; then
 		cd common/po || die
@@ -45,13 +45,15 @@ src_prepare() {
 			fi
 		done
 	fi
+
+	default
 }
 
 src_configure() {
 	cd "${S}"/common || die
 	./configure --python3 --no-fuse-group || die
-	if use qt4 ; then
-		cd "${S}"/qt4 || die
+	if use qt5 ; then
+		cd "${S}"/qt || die
 		./configure --python3 || die
 	fi
 }
@@ -59,8 +61,8 @@ src_configure() {
 src_compile() {
 	cd "${S}"/common || die
 	emake
-	if use qt4 ; then
-		cd "${S}"/qt4 || die
+	if use qt5 ; then
+		cd "${S}"/qt || die
 		emake
 	fi
 }
@@ -68,10 +70,18 @@ src_compile() {
 src_install() {
 	cd "${S}"/common || die
 	emake DESTDIR="${D}" install
-	if use qt4 ; then
-		cd "${S}"/qt4 || die
+	if use qt5 ; then
+		cd "${S}"/qt || die
 		emake DESTDIR="${D}" install
 	fi
 
 	python_optimize "${D}"
+}
+
+pkg_postinst() {
+	gnome2_icon_cache_update
+}
+
+pkg_postrm() {
+	gnome2_icon_cache_update
 }
