@@ -54,7 +54,6 @@ sys-libs
 sys-power
 sys-process
 virtual
-x11-drivers
 x11-misc
 x11-plugins
 x11-themes
