@@ -92,8 +92,4 @@ sys-cluster/heartbeat python_single_target_python2_7
 sys-cluster/moosefs python_single_target_python2_7
 sys-cluster/pacemaker python_single_target_python2_7
 sys-devel/distcc python_single_target_python2_7
-sys-libs/libieee1284 python_single_target_python2_7
-sys-libs/libsmbios python_single_target_python2_7
-sys-libs/ntdb python_single_target_python2_7
-sys-libs/openipmi python_single_target_python2_7
 sys-power/phctool python_single_target_python2_7
