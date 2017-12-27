@@ -782,6 +782,8 @@ media-gfx/alembic:pyalembic - Build pyalembic python bindings (needs dev-python/
 media-gfx/alembic:test - Build and run the test-suite
 media-gfx/alembic:zlib - Use sys-libs/zlib for compressions
 media-gfx/sigal:s3 - Enables support for the Amazon S3 service.
+media-libs/libopenglrecorder:openh264 - Enable H.264 support using media-libs/openh264
+media-libs/libopenglrecorder:vpx - Enable VP8/VP9 codec support via media-libs/libvpx
 media-libs/osl:partio - Use media-libs/partio
 media-radio/tucnak:hamlib - Enables support by the Hamlib amateur radio rig control library to get/set frequency and mode of the ham radio
 sys-apps/accountsservice:elogind - Use sys-auth/elogind instead of sys-auth/consolekit for session tracking
