@@ -59,12 +59,8 @@ app-misc/webcomics-collector python_single_target_python2_7
 app-misc/workrave python_single_target_python2_7
 app-mobilephone/gammu python_single_target_python2_7
 app-mobilephone/sobexsrv python_single_target_python2_7
-dev-ada/gps python_single_target_python2_7
-dev-ada/langkit python_single_target_python2_7
-dev-ada/libadalang python_single_target_python2_7
 dev-python/pyilmbase python_single_target_python2_7
 dev-python/quex python_single_target_python2_7
-media-gfx/alembic python_single_target_python2_7
 sys-apps/biosdisk python_single_target_python2_7
 sys-apps/entropy python_single_target_python2_7
 sys-apps/entropy-server python_single_target_python2_7

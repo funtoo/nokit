@@ -755,17 +755,6 @@ app-shells/mpv-bash-completion:luajit - Use dev-lang/luajit instead of dev-lang/
 app-shells/pdsh:rsh - This allows the use of rsh (remote shell) and rcp (remote copy) for authoring websites. sftp is a much more secure protocol and is preferred.
 app-shells/scsh-install-lib:scsh - Use a non-FHS directory layout
 app-shells/shish:diet - Use dev-libs/dietlibc
-dev-ada/libadalang:gnat_2016 - Compile with dev-lang/gnat-gpl-2016
-dev-ada/libadalang:gnat_2017 - Compile with dev-lang/gnat-gpl-2017
-dev-ada/libgpr:gnat_2016 - Compile with dev-lang/gnat-gpl-2016
-dev-ada/libgpr:gnat_2017 - Compile with dev-lang/gnat-gpl-2017
-dev-ada/libgpr:shared - Build shared library
-dev-ada/libgpr:static - Build static library
-dev-ada/libgpr:static-pic - Build static library with pic code
-dev-libs/libunibreak:doc - Install html API documentation.
-dev-libs/libunibreak:man - Generate man pages with doxygen.
-dev-libs/onigmo:combination-explosion-check - enable combination explosion check
-dev-libs/onigmo:crnl-as-line-terminator - enable CR+NL as line terminator
 dev-perl/Lab-VXI11:libtirpc - Build against net-libs/libtirpc for RPC support
 dev-python/pyilmbase:numpy - Add bindings for dev-python/numpy use.
 gnustep-apps/gemas:projectcenter - Build and install plugin for gnustep-apps/projectcenter
@@ -777,16 +766,6 @@ gnustep-base/gnustep-gui:speech - Audio support using app-accessibility/flite
 gnustep-base/gnustep-make:libobjc2 - Enables use of the GNUstep Objective-C runtime (gnustep-base/libobjc2) with non-fragile ABI and sys-devel/clang compiler
 gnustep-base/gnustep-make:native-exceptions - Enables use of the native Objective-C exception support (@try/@catch/@finally) built-in objective-c exceptions with compilers that support it
 gnustep-base/libobjc2:boehm-gc - Enable Hans Boehm's garbage collector (dev-libs/boehm-gc). Not recommended by upstream
-media-gfx/alembic:boost - Use dev-libs/boost library
-media-gfx/alembic:hdf5 - Add support sci-libs/hdf5
-media-gfx/alembic:pyalembic - Build pyalembic python bindings (needs dev-python/pyilmbase)
-media-gfx/alembic:test - Build and run the test-suite
-media-gfx/alembic:zlib - Use sys-libs/zlib for compressions
-media-gfx/sigal:s3 - Enables support for the Amazon S3 service.
-media-libs/libopenglrecorder:openh264 - Enable H.264 support using media-libs/openh264
-media-libs/libopenglrecorder:vpx - Enable VP8/VP9 codec support via media-libs/libvpx
-media-libs/osl:partio - Use media-libs/partio
-media-radio/tucnak:hamlib - Enables support by the Hamlib amateur radio rig control library to get/set frequency and mode of the ham radio
 sys-apps/accountsservice:elogind - Use sys-auth/elogind instead of sys-auth/consolekit for session tracking
 sys-apps/accountsservice:systemd - Use sys-apps/systemd instead of sys-auth/consolekit for session tracking
 sys-apps/dbus-broker:launcher - dbus-daemon compatibility launcher
@@ -1258,4 +1237,3 @@ virtual/mysql:embedded - Build embedded server (libmysqld)
 virtual/mysql:server - Build server (mysqld)
 virtual/wine:d3d9 - Enable Ixit's Gallium Nine Patchset
 virtual/wine:staging - Enable Wine-Staging's Patchset
-x11-misc/xsr:cursor - Capture mouse cursor using x11-misc/xdotool, and place them on the screenshots using media-gfx/imagemagick
