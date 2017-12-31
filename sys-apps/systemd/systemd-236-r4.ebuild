@@ -8,7 +8,7 @@ if [[ ${PV} == 9999 ]]; then
 	inherit git-r3
 else
 	SRC_URI="https://github.com/systemd/systemd/archive/v${PV}.tar.gz -> ${P}.tar.gz
-		https://dev.gentoo.org/~floppym/dist/${P}-patches-0.tar.gz"
+		https://dev.gentoo.org/~floppym/dist/${P}-patches-1.tar.gz"
 	KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~x86"
 fi
 
@@ -154,11 +154,10 @@ src_prepare() {
 
 	if ! use vanilla; then
 		PATCHES+=(
-			"${FILESDIR}/218-Dont-enable-audit-by-default.patch"
-			"${FILESDIR}/228-noclean-tmp.patch"
-			"${FILESDIR}/233-systemd-user-pam.patch"
-			"${FILESDIR}/236-uucp-group.patch"
-			"${FILESDIR}/generator-path.patch"
+			"${FILESDIR}/gentoo-Dont-enable-audit-by-default.patch"
+			"${FILESDIR}/gentoo-systemd-user-pam.patch"
+			"${FILESDIR}/gentoo-uucp-group-r1.patch"
+			"${FILESDIR}/gentoo-generator-path.patch"
 		)
 	fi
 
@@ -205,6 +204,8 @@ multilib_src_configure() {
 		-Drootprefix="$(usex usrmerge "${EPREFIX}/usr" "${EPREFIX:-/}")"
 		-Dsysvinit-path=
 		-Dsysvrcnd-path=
+		# Avoid infinite exec recursion, bug 642724
+		-Dtelinit-path="${EPREFIX}/lib/sysvinit/telinit"
 		# no deps
 		-Defi=$(meson_multilib)
 		-Dima=true
@@ -393,6 +394,7 @@ pkg_postinst() {
 
 	enewgroup input
 	enewgroup kvm 78
+	enewgroup render
 	enewgroup systemd-journal
 	newusergroup systemd-bus-proxy
 	newusergroup systemd-coredump
