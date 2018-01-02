@@ -43,12 +43,11 @@ RDEPEND="!app-emulation/virtinst
 		x11-libs/vte:2.91[introspection]
 		gnome-keyring? ( gnome-base/libgnome-keyring )
 		policykit? ( sys-auth/polkit[introspection] )
-	)
-"
+		x11-themes/gnome-icon-theme
+	)"
 DEPEND="${RDEPEND}
 	dev-lang/perl
-	dev-util/intltool
-"
+	dev-util/intltool"
 
 DOCS=( README.md NEWS.md )
 
