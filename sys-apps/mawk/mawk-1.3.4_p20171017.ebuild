@@ -8,11 +8,11 @@ inherit toolchain-funcs
 MY_P=${P/_p/-}
 DESCRIPTION="an (often faster than gawk) awk-interpreter"
 HOMEPAGE="https://invisible-island.net/mawk/mawk.html"
-SRC_URI="ftp://invisible-island.net/mawk/${MY_P}.tgz"
+SRC_URI="ftp://ftp.invisible-island.net/mawk/${MY_P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~x86-macos"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~x86-macos"
 
 RDEPEND="app-eselect/eselect-awk"
 DEPEND="${RDEPEND}"
