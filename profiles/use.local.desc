@@ -1015,6 +1015,7 @@ sys-cluster/hpx:jemalloc - Use dev-libs/jemalloc for memory allocation
 sys-cluster/hpx:papi - Use dev-libs/papi for NaCl
 sys-cluster/hpx:perftools - Use dev-util/google-perftools for memory allocation
 sys-cluster/hpx:tbb - Use dev-cpp/tbb for memory allocation
+sys-cluster/keepalived:json - compile with signal to dump configuration and stats as JSON.
 sys-cluster/legion:gasnet - Enable GASNet lib support
 sys-cluster/legion:hwloc - Enable HWLoc lib support
 sys-cluster/maui:pbs - Enable pbs integration
