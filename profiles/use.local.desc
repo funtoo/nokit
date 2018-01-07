@@ -1139,7 +1139,6 @@ sys-kernel/mips-sources:ip27 - Enables additional support for SGI Origin (IP27)
 sys-kernel/mips-sources:ip28 - Enables additional support for SGI Indigo2 Impact R10000 (IP28)
 sys-kernel/mips-sources:ip30 - Enables support for SGI Octane (IP30, 'Speedracer')
 sys-kernel/rt-sources:deblob - Remove binary blobs from kernel sources to provide libre license compliance.
-sys-kernel/tuxonice-sources:experimental - Apply experimental patches; for more information, see "https://wiki.gentoo.org/wiki/Project:Kernel/Experimental".
 sys-power/apcupsd:modbus - Enable MODBUS support over USB
 sys-power/cpupower:cpufreq_bench - Build and install the cpufreq_bench binary
 sys-power/nut:ipmi - Support IPMI-based UPSes.
