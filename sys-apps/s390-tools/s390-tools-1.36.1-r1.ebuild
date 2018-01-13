@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="5"
@@ -18,7 +18,8 @@ RDEPEND="fuse? ( sys-fs/fuse )
 	ncurses? ( sys-libs/ncurses:0= )
 	pfm? ( app-misc/pfm )
 	snmp? ( net-analyzer/net-snmp )
-	zlib? ( sys-libs/zlib )"
+	zlib? ( sys-libs/zlib )
+	>=sys-apps/util-linux-2.30"
 DEPEND="${RDEPEND}
 	dev-util/indent
 	app-admin/genromfs"
@@ -48,4 +49,7 @@ src_compile() {
 src_install() {
 	default
 	udev_dorules etc/udev/rules.d/*.rules
+
+	# The chmem tool has moved to util-linux.
+	rm "${ED}"/usr/sbin/{ch,ls}mem "${ED}"/usr/share/man/man8/{ch,ls}mem.8* || die
 }
