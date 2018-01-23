@@ -882,7 +882,6 @@ sys-apps/systemd:usrmerge - Enable /usr merge (experimental)
 sys-apps/systemd:vanilla - Disable Gentoo-specific behavior and compatibility quirks
 sys-apps/systemd:xkb - Depend on x11-libs/libxkbcommon to allow logind to control the X11 keymap
 sys-apps/timer_entropyd:debug - Enable printf debugging and logging to the syslog at DEBUG level
-sys-apps/tuxonice-userui:fbsplash - Add support for framebuffer splash
 sys-apps/usb_modeswitch:jimtcl - Use dev-lang/jimtcl instead of dev-lang/tcl for smaller memory footprint
 sys-apps/usermode-utilities:fuse - Build tools (currently umlmount) needing fuse
 sys-apps/watchdog:nfs - enable support for checking nfs mounts
