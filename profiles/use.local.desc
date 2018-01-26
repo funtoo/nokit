@@ -85,6 +85,7 @@ app-admin/pass:fish-completion - Enable fish completion support.
 app-admin/pass:git - Use dev-vcs/git for password revisions.
 app-admin/pass:importers - Allow importing passwords from other password managers using various contributed scripts.
 app-admin/passwordsafe:minimal - Avoid collision with app-misc/pwsafe
+app-admin/passwordsafe:qr - Enable QR code password display
 app-admin/passwordsafe:xml - Enable XML import support
 app-admin/passwordsafe:yubikey - Enable support for Yubikey
 app-admin/prelude-manager:dbx - Enables Prelude Manager storing Prelude alerts into database through dev-libs/libpreludedb .
@@ -608,6 +609,7 @@ app-misc/blink1:tool - Build and install command-line tool blink1-tool
 app-misc/byobu:screen - Use app-misc/screen as the default backend
 app-misc/carbon-c-relay:lz4 - add support for LZ4 compressed transport
 app-misc/ddccontrol:pci - enable direct PCI memory access (the setuid ddcpci util)
+app-misc/ddcutil:drm - Use x11-libs/libdrm for more verbose diagnostics.
 app-misc/ddcutil:usb-monitor - Adds support for monitors attached via USB.
 app-misc/ddcutil:user-permissions - Adds a udev rules to allow non-root users in the i2c group to access the /dev/i2c-* devices. If usb-monitor is selected, users will need to be added to the video group to access the USB monitor. Otherwise, only root will be able to use ddcutil.
 app-misc/digitemp:ds2490 - Build support for the ds2490 sensor
