@@ -354,6 +354,7 @@ app-emulation/open-vm-tools:grabbitmqproxy - Enable grabbitmqproxy
 app-emulation/open-vm-tools:pic - Force shared libraries to be built as PIC
 app-emulation/open-vm-tools:vgauth - Enable vgauth
 app-emulation/playonlinux:winbind - Enables support for the winbind auth daemon
+app-emulation/punes:cg - Add support for Nvidia CG Toolkit
 app-emulation/q4wine:ico - Enable ico support via media-gfx/icoutils
 app-emulation/q4wine:iso - Support unprivileged mounting of ISO9660 images via sys-fs/fuseiso
 app-emulation/q4wine:wineappdb - Enable Wine AppDB browser support
