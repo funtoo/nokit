@@ -848,7 +848,6 @@ sys-apps/pcsc-tools:network-cron - Monthly cronjob the update-smartcard_list scr
 sys-apps/pkgcore:doc - Build and install API docs.
 sys-apps/policycoreutils:audit - Enable support for sys-process/audit and use the audit_* functions (like audit_getuid instead of getuid())
 sys-apps/proot:care - Build dynamic CARE binary (more info - http://reproducible.io/)
-sys-apps/pyrenamer:music - Enable support for renaming music
 sys-apps/qingy:consolekit - Enable native consolekit support
 sys-apps/qingy:opensslcrypt - Encrypt communications between qingy and its GUI using dev-libs/openssl
 sys-apps/razercfg:pm-utils - Installs the pm-utils hooks for suspend/resume and requires sys-power/pm-utils
