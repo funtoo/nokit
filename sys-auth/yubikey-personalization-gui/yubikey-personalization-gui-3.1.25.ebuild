@@ -1,34 +1,46 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
-inherit eutils qmake-utils
+inherit desktop flag-o-matic qmake-utils
 
 DESCRIPTION="GUI for personalization of Yubico's YubiKey"
-SRC_URI="http://yubico.github.io/yubikey-personalization-gui/releases/${P}.tar.gz"
+SRC_URI="https://github.com/Yubico/yubikey-personalization-gui/archive/${P}.tar.gz"
 HOMEPAGE="https://github.com/Yubico/yubikey-personalization-gui"
 
 KEYWORDS="~amd64"
 SLOT="0"
 LICENSE="BSD-2"
-IUSE="debug"
+IUSE="debug test"
 
 RDEPEND="
-	>=sys-auth/ykpers-1.14.0
-	>=sys-auth/libyubikey-1.6
-	dev-qt/qtcore:4
-	dev-qt/qtgui:4
-	dev-qt/qttest:4
 	dev-libs/glib:2
+	dev-qt/qtcore:5
+	dev-qt/qtgui:5
+	dev-qt/qtwidgets:5
+	>=sys-auth/libyubikey-1.6
+	>=sys-auth/ykpers-1.14.0
 	virtual/libusb:1"
 DEPEND="${RDEPEND}
-	virtual/pkgconfig"
+	virtual/pkgconfig
+	test? ( dev-qt/qttest:5 )"
 
-DOCS=( NEWS README )
+S="${WORKDIR}/${PN}-${P}"
+
+src_prepare() {
+	default
+	if ! use test ; then
+		sed -i YKPersonalization.pro \
+			-e 's/src \\/src/' \
+			-e '/tests/d' || die
+	fi
+}
 
 src_configure() {
-	eqmake4 YKPersonalization.pro
+	append-cxxflags -std=c++11
+
+	eqmake5 "CONFIG+=nosilent" YKPersonalization.pro
 }
 
 src_install() {
