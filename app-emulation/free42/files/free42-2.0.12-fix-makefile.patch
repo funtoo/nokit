@@ -1,6 +1,6 @@
 diff -Nuar a/gtk/Makefile b/gtk/Makefile
---- a/gtk/Makefile	2017-12-26 19:48:08.000000000 +0100
-+++ b/gtk/Makefile	2017-12-26 21:07:20.279998488 +0100
+--- a/gtk/Makefile	2018-01-08 02:52:33.000000000 +0100
++++ b/gtk/Makefile	2018-01-13 19:40:49.059998446 +0100
 @@ -15,11 +15,11 @@
  # along with this program; if not, see http://www.gnu.org/licenses/.
  ###############################################################################

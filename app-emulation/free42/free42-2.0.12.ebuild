@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -30,11 +30,11 @@ RDEPEND="${DEPEND}
 S="${WORKDIR}/${MY_PV}"
 
 src_prepare() {
-	default
 	sed -i -e 's/print_gif_name\[FILENAMELEN\]/print_gif_name\[1000\]/' \
 		"${S}/gtk/shell_main.cc" || die
 	epatch "${FILESDIR}"/${P}-fix-makefile.patch
 	epatch "${FILESDIR}"/${P}-fix-build-intel-lib.patch
+	eapply_user
 }
 
 src_compile() {

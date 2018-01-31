@@ -1,9 +1,9 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
-inherit autotools eutils user linux-info systemd readme.gentoo-r1 bash-completion-r1
+inherit autotools eutils user linux-info systemd readme.gentoo-r1
 
 if [[ ${PV} = *9999* ]]; then
 	inherit git-r3
@@ -58,6 +58,8 @@ RDEPEND="
 	|| ( >=net-analyzer/netcat6-1.0-r2 >=net-analyzer/openbsd-netcat-1.105-r1 )
 	>=net-libs/gnutls-1.0.25:0=
 	net-libs/libssh2
+	net-libs/libtirpc
+	net-libs/rpcsvc-proto
 	>=net-misc/curl-7.18.0
 	sys-apps/dmidecode
 	>=sys-apps/util-linux-2.17
@@ -122,8 +124,9 @@ DEPEND="${RDEPEND}
 PATCHES=(
 	"${FILESDIR}"/${PN}-1.3.0-do_not_use_sysconf.patch
 	"${FILESDIR}"/${PN}-1.2.16-fix_paths_in_libvirt-guests_sh.patch
-	"${FILESDIR}"/${PN}-3.0.0-fix_paths_for_apparmor.patch
+	"${FILESDIR}"/${PN}-3.10.0-r2-fix_paths_for_apparmor.patch
 	"${FILESDIR}"/${PN}-1.3.4-glibc-2.23.patch
+	"${FILESDIR}"/${PN}-3.1.0-musl-fix-includes.patch          # bug #609488
 )
 
 pkg_setup() {
@@ -354,9 +357,6 @@ src_install() {
 
 	newconfd "${FILESDIR}/libvirtd.confd-r5" libvirtd || die
 	newconfd "${FILESDIR}/libvirt-guests.confd" libvirt-guests || die
-
-	newbashcomp "${S}/tools/bash-completion/vsh" vsh
-	bashcomp_alias vsh virsh virt-admin
 
 	DOC_CONTENTS=$(<"${FILESDIR}/README.gentoo-r2")
 	DISABLE_AUTOFORMATTING=true
