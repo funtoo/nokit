@@ -20,7 +20,6 @@ gnustep-base
 gnustep-libs
 ros-meta
 sys-apps
-sys-auth
 sys-block
 sys-cluster
 sys-devel

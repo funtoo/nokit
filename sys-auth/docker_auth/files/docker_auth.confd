@@ -1,2 +1,0 @@
-# arguments for docker auth
-command_args="/etc/docker_auth/config.yml"
