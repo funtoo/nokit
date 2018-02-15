@@ -845,9 +845,6 @@ sys-apps/paludis:pink - Use a less boring colourscheme than the default
 sys-apps/paludis:search-index - Enable cave search --index. Requires dev-db/sqlite.
 sys-apps/paludis:xml - Build xml things for metadata.xml and GLSA support (needs dev-libs/libxml2).
 sys-apps/pcmciautils:staticsocket - Add support for static sockets
-sys-apps/pcsc-lite:libusb - Use dev-libs/libusb detection to hotplug new smartcard readers. This flag should only be enabled if you're running a non-Linux kernel or you don't want to use sys-fs/udev.
-sys-apps/pcsc-lite:policykit - Uses sys-auth/polkit to restrict access to smartcard readers or smartcars to given users.
-sys-apps/pcsc-lite:udev - Use sys-fs/udev rules to handle devices' permissions and hotplug support. Unless you know what you're doing do not disable this flag on Linux kernels. This is provided as an option for completeness.
 sys-apps/pcsc-tools:network-cron - Monthly cronjob the update-smartcard_list script
 sys-apps/pkgcore:doc - Build and install API docs.
 sys-apps/policycoreutils:audit - Enable support for sys-process/audit and use the audit_* functions (like audit_getuid instead of getuid())
@@ -892,6 +889,28 @@ sys-apps/usb_modeswitch:jimtcl - Use dev-lang/jimtcl instead of dev-lang/tcl for
 sys-apps/usermode-utilities:fuse - Build tools (currently umlmount) needing fuse
 sys-apps/watchdog:nfs - enable support for checking nfs mounts
 sys-apps/xinetd:rpc - support RPC services
+sys-auth/fingerprint-gui:upekbsapi - Add UPEK BSAPI drivers for identify functions on some readers
+sys-auth/keystone:memcached - Installs dependencies needed for using memcached as a backend
+sys-auth/keystone:mongo - Installs dependencies needed for using mongo as a backend
+sys-auth/munge:gcrypt - Use libgcrypt instead of openssl
+sys-auth/nss-pam-ldapd:pynslcd - Install the python implementation along with the standard implementation
+sys-auth/nss-pam-ldapd:utils - Install the command-line utilities
+sys-auth/oath-toolkit:pam - Build PAM module for pluggable login authentication for OATH
+sys-auth/oath-toolkit:pskc - Build tools & library for the Portable Symmetric Key Container (PSKC) format per RFC6030
+sys-auth/pam_mktemp:prevent-removal - If supported, set EXT2_APPEND_FL on /tmp/.private to prevent temporary directories from being removed
+sys-auth/pam_mysql:openssl - Use OpenSSL for md5 and sha1 support
+sys-auth/pam_u2f:debug - Enable debug messages using the pam logging macros. (Note: these will be visible on stdout for terminal logins).
+sys-auth/passwdqc:utils - Install pwqcheck and pwqgen helper utilities
+sys-auth/sssd:acl - Build and use the cifsidmap plugin
+sys-auth/sssd:augeas - Build internal configuration library
+sys-auth/sssd:autofs - Build helper to let net-fs/autofs use sssd provided information
+sys-auth/sssd:locator - Install sssd's Kerberos plugin
+sys-auth/sssd:manpages - Build man pages with dev-libs/libxslt
+sys-auth/sssd:netlink - Add support for netlink protocol via dev-libs/libnl
+sys-auth/sssd:nfsv4 - Add support for the nfsv4 idmapd plugin provided by net-libs/libnfsidmap
+sys-auth/sssd:ssh - Build helper to let net-misc/openssh use sssd provided information
+sys-auth/sssd:sudo - Build helper to let app-admin/sudo use sssd provided information
+sys-auth/ykpers:consolekit - Use sys-auth/consolekit and virtual/udev to allow access to the YubiKey HID device to the console user.
 sys-block/f3:extra - Build the additional f3probe, f3brew and f3fix utility (requires sys-block/parted and virtual/udev)
 sys-block/fio:aio - Enable AIO ioengine
 sys-block/fio:glusterfs - Enable GlusterFS gfapi support via sys-cluster/glusterfs
