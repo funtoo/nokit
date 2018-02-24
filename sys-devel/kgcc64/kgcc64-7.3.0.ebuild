@@ -15,9 +15,7 @@ export CTARGET
 TOOLCHAIN_ALLOWED_LANGS="c"
 GCC_TARGET_NO_MULTILIB=true
 
-PATCH_VER="1.1"
-PATCH_GCC_VER="7.1.0"
-
+PATCH_VER="1.0"
 inherit eutils toolchain
 
 DESCRIPTION="64bit kernel compiler"

@@ -1020,6 +1020,7 @@ sys-cluster/mvapich2:medium-cluster - Automatically generated description for me
 sys-cluster/mvapich2:romio - Automatically generated description for romio
 sys-cluster/neutron:compute-only - Only install things needed on compute hosts
 sys-cluster/neutron:dhcp - Installs the initscripts for the neutron dhcp service
+sys-cluster/neutron:haproxy - haproxy backend support
 sys-cluster/neutron:l3 - Installs the initscripts for the neutron l3 agent service
 sys-cluster/neutron:linuxbridge - Installs the initscripts for the neutron linuxbridge agent service
 sys-cluster/neutron:metadata - Installs the initscripts for the neutron metadata agent service
