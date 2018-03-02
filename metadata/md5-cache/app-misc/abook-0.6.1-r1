@@ -10,4 +10,4 @@ RDEPEND=sys-libs/ncurses sys-libs/readline dev-libs/libvformat nls? ( virtual/li
 SLOT=0
 SRC_URI=http://abook.sourceforge.net/devel/abook-0.6.1.tar.gz
 _eclasses_=autotools	4842e626555a9a4344f34cef2e190b67	libtool	e32ea84bf82cf8987965b574672dba93	multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
-_md5_=4269060f69d21b410acef4be436c253e
+_md5_=c4ff4da8b196080de5736492ef9f8774
