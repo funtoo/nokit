@@ -5,10 +5,10 @@ EAPI=6
 HOMEPAGE=https://www.kernel.org/ https://www.gentoo.org/ https://dev.gentoo.org/~mpagano/genpatches/ http://kernel.kolivas.org/ http://www.fsfla.org/svn/fsfla/software/linux-libre/releases/tags
 IUSE=experimental symlink build deblob
 KEYWORDS=~amd64 ~x86
-LICENSE=GPL-2 !deblob? ( linux-firmware )
-RDEPEND=!build? ( >=sys-libs/ncurses-5.2 sys-devel/make dev-lang/perl sys-devel/bc virtual/libelf )
+LICENSE=GPL-2 !deblob? ( freedist )
+RDEPEND=!build? ( >=sys-libs/ncurses-5.2 sys-devel/make dev-lang/perl sys-devel/bc )
 RESTRICT=binchecks strip
 SLOT=4.14.22
 SRC_URI=mirror://kernel/linux/kernel/v4.x/linux-4.14.tar.xz deblob? ( http://www.fsfla.org/svn/fsfla/software/linux-libre/releases/tags/4.14-gnu/deblob-4.14 http://www.fsfla.org/svn/fsfla/software/linux-libre/releases/tags/4.14-gnu/deblob-check -> deblob-check-4.14 ) mirror://gentoo/genpatches-4.14-27.base.tar.xz mirror://gentoo/genpatches-4.14-27.extras.tar.xz experimental? ( mirror://gentoo/genpatches-4.14-27.experimental.tar.xz ) http://ck.kolivas.org/patches/4.0/4.14/4.14-ck1/patch-4.14-ck1.xz https://github.com/ckolivas/linux/commit/25849740d77dfc089fdbfb53623e50d38a972aff.patch -> ck-sources-4.14-blkio-fix.patch
-_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	kernel-2	6e37f651408d80af441518a0264b59c7	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	python-any-r1	27d7f9da7187d283b7f3eae8390b7b09	python-utils-r1	c9de01becf9df3f8c10aeec3dc693f5d	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	versionator	ce21313503c41896ebcd7d58b0607e37
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	kernel-2	238dd55384300d94154aad9048ac2028	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	python-any-r1	27d7f9da7187d283b7f3eae8390b7b09	python-utils-r1	c9de01becf9df3f8c10aeec3dc693f5d	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	versionator	c80ccf29e90adea7c5cae94b42eb76d0
 _md5_=65abda91df6f3023b57f4f8aafaf4128
