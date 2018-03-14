@@ -1225,7 +1225,5 @@ sys-process/systemd-cron:setgid - Compile setgid C helper for crontab. Needs GCC
 sys-process/systemd-cron:yearly - Support /etc/cron.yearly
 sys-process/tini:args - Enable argument parsing.
 virtual/mpi:romio - Enable romio, a high-performance portable MPI-IO
-virtual/mysql:embedded - Build embedded server (libmysqld)
-virtual/mysql:server - Build server (mysqld)
 virtual/wine:d3d9 - Enable Ixit's Gallium Nine Patchset
 virtual/wine:staging - Enable Wine-Staging's Patchset
