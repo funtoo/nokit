@@ -4,10 +4,10 @@ DESCRIPTION=Analysis of Compiler Options via Evolutionary Algorithm
 EAPI=6
 HOMEPAGE=http://www.coyotegulch.com/products/acovea/
 IUSE=static-libs
-KEYWORDS=amd64 ~ppc ~x86
+KEYWORDS=amd64 ~ppc x86
 LICENSE=GPL-2
 RDEPEND=>=dev-libs/libcoyotl-3.1.0:= >=dev-libs/libevocosm-3.3.0:= dev-libs/expat:=
 SLOT=0
 SRC_URI=http://www.coyotegulch.com/distfiles/libacovea-5.1.1.tar.gz
 _eclasses_=autotools	dc412f38566b91012efd58b9c203e6c3	libtool	e32ea84bf82cf8987965b574672dba93	multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
-_md5_=fc9237f800af7aa8fac32acc471d931b
+_md5_=803de9e6122cf029fc09e6ca0ce61bd4
