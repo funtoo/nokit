@@ -86,6 +86,7 @@ app-admin/pass:dmenu - Add support for x11-misc/dmenu with the 'passmenu' progra
 app-admin/pass:fish-completion - Enable fish completion support.
 app-admin/pass:git - Use dev-vcs/git for password revisions.
 app-admin/pass:importers - Allow importing passwords from other password managers using various contributed scripts.
+app-admin/pass-otp:qrcode - Add support for qtcodes using media-gfx/qrencode
 app-admin/passwordsafe:minimal - Avoid collision with app-misc/pwsafe
 app-admin/passwordsafe:qr - Enable QR code password display
 app-admin/passwordsafe:xml - Enable XML import support
