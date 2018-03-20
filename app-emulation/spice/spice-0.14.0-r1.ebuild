@@ -12,11 +12,12 @@ SRC_URI="https://www.spice-space.org/download/releases/${P}.tar.bz2"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~arm64 ~x86"
+KEYWORDS="amd64 ~arm64 ~x86"
 IUSE="libressl lz4 sasl smartcard static-libs gstreamer"
 
 # the libspice-server only uses the headers of libcacard
 RDEPEND="
+	dev-lang/orc[static-libs(+)?]
 	>=dev-libs/glib-2.22:2[static-libs(+)?]
 	media-libs/opus[static-libs(+)?]
 	sys-libs/zlib[static-libs(+)?]
