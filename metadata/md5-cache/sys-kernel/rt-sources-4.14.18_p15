@@ -5,10 +5,10 @@ EAPI=6
 HOMEPAGE=https://www.kernel.org/ https://www.gentoo.org/ https://www.kernel.org/pub/linux/kernel/projects/rt/ http://www.fsfla.org/svn/fsfla/software/linux-libre/releases/tags
 IUSE=symlink build deblob
 KEYWORDS=~amd64
-LICENSE=GPL-2 !deblob? ( freedist )
-RDEPEND=!build? ( >=sys-libs/ncurses-5.2 sys-devel/make dev-lang/perl sys-devel/bc )
+LICENSE=GPL-2 !deblob? ( linux-firmware )
+RDEPEND=!build? ( >=sys-libs/ncurses-5.2 sys-devel/make dev-lang/perl sys-devel/bc virtual/libelf )
 RESTRICT=binchecks strip
 SLOT=4.14.18_p15
 SRC_URI=mirror://kernel/linux/kernel/v4.x/patch-4.14.18.xz mirror://kernel/linux/kernel/v4.x/linux-4.14.tar.xz deblob? ( http://www.fsfla.org/svn/fsfla/software/linux-libre/releases/tags/4.14-gnu/deblob-4.14 http://www.fsfla.org/svn/fsfla/software/linux-libre/releases/tags/4.14-gnu/deblob-check -> deblob-check-4.14 ) mirror://kernel/linux/kernel/projects/rt/4.14/patch-4.14.18-rt15.patch.xz mirror://kernel/linux/kernel/projects/rt/4.14/older/patch-4.14.18-rt15.patch.xz
-_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	kernel-2	238dd55384300d94154aad9048ac2028	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	python-any-r1	27d7f9da7187d283b7f3eae8390b7b09	python-utils-r1	c9de01becf9df3f8c10aeec3dc693f5d	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	versionator	c80ccf29e90adea7c5cae94b42eb76d0
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	kernel-2	6e37f651408d80af441518a0264b59c7	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	python-any-r1	27d7f9da7187d283b7f3eae8390b7b09	python-utils-r1	c9de01becf9df3f8c10aeec3dc693f5d	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	versionator	c80ccf29e90adea7c5cae94b42eb76d0
 _md5_=175fbf54f3a05c771dc5d3487a9f75e3
