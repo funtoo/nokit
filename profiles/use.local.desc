@@ -864,6 +864,9 @@ sys-apps/pcmciautils:staticsocket - Add support for static sockets
 sys-apps/pcsc-tools:network-cron - Monthly cronjob the update-smartcard_list script
 sys-apps/pkgcore:doc - Build and install API docs.
 sys-apps/policycoreutils:audit - Enable support for sys-process/audit and use the audit_* functions (like audit_getuid instead of getuid())
+sys-apps/portage-mgorny:ipc - Use inter-process communication between Portage and running ebuilds.
+sys-apps/portage-mgorny:native-extensions - Compiles native "C" extensions (speedups, instead of using Python backup code). Currently includes libc-locales. This should only be temporarily disabled for some bootstrapping operations. Cross-compilation is not supported.
+sys-apps/portage-mgorny:xattr - Preserve extended attributes (filesystem-stored metadata) when installing files. Usually only required for hardened systems.
 sys-apps/proot:care - Build dynamic CARE binary (more info - http://reproducible.io/)
 sys-apps/qingy:consolekit - Enable native consolekit support
 sys-apps/qingy:opensslcrypt - Encrypt communications between qingy and its GUI using dev-libs/openssl
