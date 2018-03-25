@@ -1,3 +1,5 @@
+=app-emulation/virt-manager-1.4.3 python_single_target_python2_7
+=app-emulation/virt-manager-1.5.0 python_single_target_python2_7
 =app-i18n/ibus-anthy-1.5.4 python_single_target_python2_7
 =app-i18n/ibus-table-1.5.0-r1 python_single_target_python2_7
 =sys-auth/sssd-1.12.1 python_single_target_python2_7
@@ -31,7 +33,6 @@ app-emulation/ganeti python_single_target_python2_7
 app-emulation/libvirt-glib python_single_target_python2_7
 app-emulation/openstack-guest-agents-unix python_single_target_python2_7
 app-emulation/playonlinux python_single_target_python2_7
-app-emulation/virt-manager python_single_target_python2_7
 app-emulation/virtualbox python_single_target_python2_7
 app-emulation/xen-pvgrub python_single_target_python2_7
 app-emulation/xen-tools python_single_target_python2_7

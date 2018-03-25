@@ -652,6 +652,7 @@ app-misc/gourmet:print - Enable pretty Python printing
 app-misc/gourmet:spell - Enable support for the spell check plugin
 app-misc/gourmet:web - Enable support for the web import plugin
 app-misc/gramps:geo - Enable rendering of geographical data using sci-geosciences/osm-gps-map
+app-misc/gramps:rcs - Adds support for family tree archives via dev-vcs/rcs
 app-misc/gramps:reports - All external software that is needed for graphical reports will be installed
 app-misc/graphlcd-base:g15 - Add support for app-misc/g15daemon driver (e.g. Logitech G15 Keybord)
 app-misc/irtrans-irserver:mono - Enable mono support
@@ -695,6 +696,8 @@ app-misc/recoll:inotify - Use the Linux Kernel notification subsystem for monito
 app-misc/recoll:session - Stop monitoring file alterations when X11 session terminates
 app-misc/rlwrap:debug - Enable debug
 app-misc/screenfetch:X - Use the media-gfx/scrot package to take screenshots
+app-misc/skim:tmux - Install sk-tmux script to run skim in a tmux pane
+app-misc/skim:vim - Install vim plugin for skim
 app-misc/sphinx:id64 - use 64-bit document and word IDs
 app-misc/sphinx:re2 - use the dev-libs/re2 regular expression library
 app-misc/sphinx:stemmer - Enable language stemming support
@@ -1095,10 +1098,6 @@ sys-devel/binutils-apple:lto - Add support for Link-Time Optimization with LLVM
 sys-devel/binutils-apple:multitarget - Compile for non-standard target architectures (ppc and ppc64) -- experimental, Gentoo only
 sys-devel/binutils-apple:tapi - Build against sys-libs/tapi
 sys-devel/binutils-hppa64:multitarget - Adds support to binutils for cross compiling (does not work with gas)
-sys-devel/clang-runtime:compiler-rt - Install sys-libs/compiler-rt for -rtlib=compiler-rt
-sys-devel/clang-runtime:libcxx - Install sys-libs/libcxx for -stdlib=libc++
-sys-devel/clang-runtime:openmp - Install sys-libs/libomp for -fopenmp support
-sys-devel/clang-runtime:sanitize - Enable compiler-rt sanitizer (-fsanitize*) support
 sys-devel/distcc:crossdev - Enable support for sys-devel/crossdev
 sys-devel/distcc:gssapi - Enable support for net-libs/libgssglue
 sys-devel/gcc-apple:objc - Build support for the Objective C code language
