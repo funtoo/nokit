@@ -75,6 +75,9 @@ src_configure() {
 	# this static method is the same used by upstream for their 'static' make
 	# target, but better, as it doesn't break.
 	use static && append-ldflags -static
+	
+	# FL-4943. workaround for the older compilers such as gcc-4.9-gcc-5.4
+	append-cxxflags -std=c++11
 
 	econf "${myeconfargs[@]}"
 
