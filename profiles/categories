@@ -29,6 +29,7 @@ sys-fabric
 sys-freebsd
 sys-fs
 sys-kernel
+sys-libs
 sys-power
 sys-process
 virtual
