@@ -11,8 +11,8 @@ SRC_URI="https://www.clamav.net/downloads/production/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~sparc-solaris ~x86-solaris"
-IUSE="bzip2 clamdtop iconv ipv6 libressl milter metadata-analysis-api selinux static-libs uclibc"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~sparc-solaris ~x86-solaris"
+IUSE="bzip2 clamdtop iconv ipv6 libressl milter metadata-analysis-api selinux static-libs test uclibc"
 
 CDEPEND="bzip2? ( app-arch/bzip2 )
 	clamdtop? ( sys-libs/ncurses:0 )
@@ -30,18 +30,15 @@ CDEPEND="bzip2? ( app-arch/bzip2 )
 # openssl is now *required* see this link as to why
 # http://blog.clamav.net/2014/02/introducing-openssl-as-dependency-to.html
 DEPEND="${CDEPEND}
-	virtual/pkgconfig"
+	virtual/pkgconfig
+	test? ( dev-libs/check )"
 RDEPEND="${CDEPEND}
 	selinux? ( sec-policy/selinux-clamav )"
 
 DOCS=( AUTHORS BUGS ChangeLog FAQ INSTALL NEWS README UPGRADE )
 PATCHES=(
-	"${FILESDIR}"/${PN}-0.99.2-gcc-6.patch
-	"${FILESDIR}"/${PN}-0.99.2-tinfo.patch
-	"${FILESDIR}"/${PN}-0.99.2-bytecode_api.patch
-	"${FILESDIR}"/${PN}-0.99.2-pcre2-compile-erroffset.patch
-	"${FILESDIR}"/${PN}-0.99.3-fix-fd-leaks-in-cli_scanscript.patch
-	"${FILESDIR}"/${PN}-0.99.3-VMSF_DELTA-fix-CVE-2012-6706.patch
+	"${FILESDIR}"/${PN}-0.99.4-fix-newer-zlib.patch
+	"${FILESDIR}/${P}-pcre2-compile-erroffset.patch"
 )
 
 pkg_setup() {
@@ -65,6 +62,7 @@ src_configure() {
 		$(use_enable ipv6) \
 		$(use_enable milter) \
 		$(use_enable static-libs static) \
+		$(use_enable test check) \
 		$(use_with iconv) \
 		$(use_with metadata-analysis-api libjson /usr) \
 		--cache-file="${S}"/config.cache \
@@ -74,7 +72,8 @@ src_configure() {
 		--enable-id-check \
 		--with-dbdir="${EPREFIX}"/var/lib/clamav \
 		--with-system-tommath \
-		--with-zlib="${EPREFIX}"/usr
+		--with-zlib="${EPREFIX}"/usr \
+		--disable-llvm
 }
 
 src_install() {
