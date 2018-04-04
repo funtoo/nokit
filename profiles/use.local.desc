@@ -838,6 +838,7 @@ sys-apps/fwupd:colorhug - Enable ColorHug support through x11-misc/colord packag
 sys-apps/fwupd:dell - Enable Dell-specific support.
 sys-apps/fwupd:gpg - Enable GPG support.
 sys-apps/fwupd:man - Build and install man pages
+sys-apps/fwupd:pkcs7 - Enable PKCS7 verification support via net-libs/gnutls.
 sys-apps/fwupd:uefi - Enable UEFI support
 sys-apps/fwupd:uefi_labels - Enable UEFI labels support
 sys-apps/hwdata-gentoo:binary-drivers - Adds support for ATI/NVIDIA binary drivers
@@ -901,6 +902,7 @@ sys-apps/systemd:libidn2 - If IDN support is enabled, use net-dns/libidn2 instea
 sys-apps/systemd:lz4 - Enable lz4 compression for the journal
 sys-apps/systemd:nat - Enable support for network address translation in networkd
 sys-apps/systemd:qrcode - Enable qrcode output support in journal
+sys-apps/systemd:resolvconf - Install resolvconf symlink for systemd-resolve
 sys-apps/systemd:sysv-utils - Install sysvinit compatibility symlinks and manpages for init, telinit, halt, poweroff, reboot, runlevel, and shutdown
 sys-apps/systemd:usrmerge - Enable /usr merge (experimental)
 sys-apps/systemd:vanilla - Disable Gentoo-specific behavior and compatibility quirks
