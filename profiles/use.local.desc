@@ -146,7 +146,6 @@ app-admin/salt:raet - Add support for the new RAET transport.
 app-admin/salt:redis - Support returning data to a redis database.
 app-admin/salt:timelib - Use timelib to parse english textual date descriptions.
 app-admin/salt:zeromq - Add support for the zeromq transport.
-app-admin/sshguard:ipfilter - Enable ipfilter firewall support (only for *bsd)
 app-admin/sysklogd:logrotate - use app-admin/logrotate for rotating logs rather than custom cron scripts
 app-admin/sysstat:isag - Install isag, the Interactive System Activity Graph tool
 app-admin/systemrescuecd-x86:isohybrid - Pass downloaded images through isohybrid in order to make it possible to copy them directly to USB media and boot (requires sys-boot/syslinux at build time).
