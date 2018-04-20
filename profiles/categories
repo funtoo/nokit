@@ -19,6 +19,7 @@ app-shells
 gnustep-apps
 gnustep-base
 gnustep-libs
+kde-apps
 ros-meta
 sys-apps
 sys-auth
