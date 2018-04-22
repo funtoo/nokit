@@ -4,34 +4,29 @@
 EAPI=6
 
 KDE_HANDBOOK="forceoptional"
-VIRTUALX_REQUIRED="test"
-inherit kde5
+inherit kde5 versionator
 
 DESCRIPTION="Application to take pictures and videos from your webcam by KDE"
 HOMEPAGE="https://userbase.kde.org/Kamoso"
+SRC_URI="mirror://kde/stable/${PN}/$(get_version_component_range 1-2)/src/${P}.tar.xz"
 
 LICENSE="GPL-2+"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND="
 	$(add_frameworks_dep kconfig)
 	$(add_frameworks_dep kcoreaddons)
+	$(add_frameworks_dep kdeclarative)
 	$(add_frameworks_dep ki18n)
 	$(add_frameworks_dep kio)
-	$(add_frameworks_dep kitemviews)
-	$(add_frameworks_dep purpose)
 	$(add_qt_dep qtdeclarative)
 	$(add_qt_dep qtgui)
 	$(add_qt_dep qtwidgets)
-	dev-libs/glib:2
-	media-libs/gst-plugins-base:1.0
-	virtual/opengl
+	kde-frameworks/purpose:5
+	media-libs/qt-gstreamer[qt5(+)]
+	virtual/libudev:=
 "
 RDEPEND="${DEPEND}
-	$(add_frameworks_dep kirigami)
-	$(add_qt_dep qtquickcontrols2)
 	media-plugins/gst-plugins-meta:1.0[alsa,theora,vorbis,v4l]
 "
-
-RESTRICT+=" test"
