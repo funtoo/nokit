@@ -923,7 +923,7 @@ sys-auth/oath-toolkit:pam - Build PAM module for pluggable login authentication 
 sys-auth/oath-toolkit:pskc - Build tools & library for the Portable Symmetric Key Container (PSKC) format per RFC6030
 sys-auth/pam_mktemp:prevent-removal - If supported, set EXT2_APPEND_FL on /tmp/.private to prevent temporary directories from being removed
 sys-auth/pam_mysql:openssl - Use OpenSSL for md5 and sha1 support
-sys-auth/pam_u2f:debug - Enable debug messages using the pam logging macros. (Note: these will be visible on stdout for terminal logins).
+sys-auth/pam_u2f:debug - Enable debug messages using the pam logging macros.
 sys-auth/passwdqc:utils - Install pwqcheck and pwqgen helper utilities
 sys-auth/sssd:acl - Build and use the cifsidmap plugin
 sys-auth/sssd:augeas - Build internal configuration library
