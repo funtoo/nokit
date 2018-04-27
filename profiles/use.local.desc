@@ -967,6 +967,7 @@ sys-block/tgt:fcoe - Add support for FCoE protocol
 sys-block/tgt:fcp - Add support for new FC protocol
 sys-block/tgt:ibmvio - Add support for IBM Virtual I/O
 sys-block/tgt:rbd - Add support for ceph block devices
+sys-boot/woeusb:minimal - Install only woeusb tool
 sys-cluster/ceph:babeltrace - Add support for LTTng babeltrace
 sys-cluster/ceph:cephfs - Build support for cephfs, a POSIX compatible filesystem built on top of ceph
 sys-cluster/ceph:cryptopp - Use dev-libs/crypto++ for cryptography
