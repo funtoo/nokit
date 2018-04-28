@@ -1,7 +1,7 @@
-DEFINED_PHASES=configure install prepare unpack
-DEPEND=~dev-python/pypax-9999[ptpax=,xtpax=] ptpax? ( dev-libs/elfutils ) xtpax? ( sys-apps/attr ) dev-vcs/git
+DEFINED_PHASES=configure prepare unpack
+DEPEND=~dev-python/pypax-9999[ptpax=,xtpax=] ptpax? ( dev-libs/elfutils ) xtpax? ( sys-apps/attr ) >=app-portage/elt-patches-20170317 !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.15:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4 >=dev-vcs/git-1.8.2.1
 DESCRIPTION=A suite of tools to work with ELF objects on Hardened Gentoo
-EAPI=5
+EAPI=6
 HOMEPAGE=https://www.gentoo.org/proj/en/hardened/pax-quickstart.xml https://dev.gentoo.org/~blueness/elfix/
 IUSE=+ptpax +xtpax
 LICENSE=GPL-3
@@ -9,5 +9,5 @@ RDEPEND=~dev-python/pypax-9999[ptpax=,xtpax=] ptpax? ( dev-libs/elfutils ) xtpax
 REQUIRED_USE=|| ( ptpax xtpax )
 RESTRICT=test
 SLOT=0
-_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	git-2	195a672bfaf52d868442171c9469bbb6	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
-_md5_=b9ce3635e1e6abd00240c0fa79ffbfb9
+_eclasses_=autotools	dc412f38566b91012efd58b9c203e6c3	git-r3	fec09a83ae965b041b47f5ff7c8ba29a	libtool	e32ea84bf82cf8987965b574672dba93	multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
+_md5_=5a93f0236da18d26b19354850af4ce91
