@@ -222,9 +222,6 @@ app-backup/deja-dup:nautilus - Build gnome-base/nautilus extension
 app-backup/duplicity:s3 - Support for backing up to the Amazon S3 system
 app-backup/fsarchiver:lz4 - Enable lz4 compression support
 app-backup/fsarchiver:zstd - Enable zstd compression support
-app-backup/holland-backup-mysql-meta:lvm - Install Holland LVM Plugin
-app-backup/holland-backup-mysql-meta:mysqldump - Install Holland mysqldump Plugin
-app-backup/holland-backup-mysql-meta:mysqlhotcopy - Install Holland mysqlhotcopy Plugin
 app-backup/rear:udev - Have ReaR start backup when attaching your USB drive.
 app-backup/snapper:btrfs - Include Btrfs support sys-fs/btrfs-progs
 app-backup/snapper:ext4 - Include Ext4 support sys-fs/e2fsprogs
@@ -763,7 +760,6 @@ app-portage/tatt:templates - Install template scripts to be used with tatt
 app-shells/autojump:ipython - Add support for dev-python/ipython
 app-shells/dash:vanilla - Support echo -n, and enable echo -e all the time (unsupported)
 app-shells/pdsh:rsh - This allows the use of rsh (remote shell) and rcp (remote copy) for authoring websites. sftp is a much more secure protocol and is preferred.
-app-shells/scsh-install-lib:scsh - Use a non-FHS directory layout
 app-shells/shish:diet - Use dev-libs/dietlibc
 gnustep-apps/gemas:projectcenter - Build and install plugin for gnustep-apps/projectcenter
 gnustep-apps/gworkspace:gwmetadata - Enable the metadata indexing and searching system
@@ -1001,15 +997,10 @@ sys-cluster/cinder:tgt - Enable tgt storage backend support
 sys-cluster/cinder:volume - Installs the initscripts for the cinder volume service
 sys-cluster/cluster-glue:libnet - Force use of net-libs/libnet
 sys-cluster/corosync:infiniband - Enable Infiniband RDMA transport support
-sys-cluster/drbd:heartbeat - Enable Heartbeat integration
-sys-cluster/drbd:pacemaker - Enable Pacemaker integration
-sys-cluster/drbd:xen - Enable Xen integration
 sys-cluster/drbd-utils:heartbeat - Enable Heartbeat integration
 sys-cluster/drbd-utils:pacemaker - Enable Pacemaker integration
 sys-cluster/drbd-utils:xen - Enable Xen integration
 sys-cluster/galera:garbd - Install Galera Arbitrator - a stateless daemon which acts as a lightweight group member
-sys-cluster/gearmand:memcache - Support memcache daemon (via dev-libs/libmemcached) for the queue storage.
-sys-cluster/gearmand:tokyocabinet - Support dev-db/tokyocabinet for the queue storage.
 sys-cluster/glusterfs:bd-xlator - Enable the blockdevice translator (requires sys-fs/lvm2)
 sys-cluster/glusterfs:crypt-xlator - Enable the encryption translator
 sys-cluster/glusterfs:fuse - Add FUSE mount helper

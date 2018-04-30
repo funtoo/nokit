@@ -55,7 +55,6 @@ app-i18n/pology python_single_target_python2_7
 app-i18n/tomoe python_single_target_python2_7
 app-i18n/tomoe-gtk python_single_target_python2_7
 app-misc/byobu python_single_target_python2_7
-app-misc/cwiid python_single_target_python2_7
 app-misc/email2trac python_single_target_python2_7
 app-misc/evemu python_single_target_python2_7
 app-misc/golly python_single_target_python2_7
