@@ -3,8 +3,6 @@
 =app-i18n/ibus-anthy-1.5.4 python_single_target_python2_7
 =app-i18n/ibus-table-1.5.0-r1 python_single_target_python2_7
 =app-portage/chuse-1.0.2 python_single_target_python3_4 python_targets_python3_4
-=app-portage/elogviewer-2.6-r2 python_single_target_python2_7
-=app-portage/elogviewer-2.7-r1 python_single_target_python2_7
 =sys-auth/sssd-1.12.1 python_single_target_python2_7
 =sys-auth/sssd-1.12.4 python_single_target_python2_7
 =sys-auth/sssd-1.12.5 python_single_target_python2_7
@@ -73,6 +71,7 @@ app-misc/workrave python_single_target_python2_7
 app-mobilephone/gammu python_single_target_python2_7
 app-mobilephone/obexftp python_single_target_python2_7
 app-mobilephone/sobexsrv python_single_target_python2_7
+app-portage/elogviewer python_single_target_python2_7
 sys-apps/biosdisk python_single_target_python2_7
 sys-apps/entropy python_single_target_python2_7
 sys-apps/entropy-server python_single_target_python2_7
