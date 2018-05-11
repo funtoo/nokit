@@ -21,6 +21,7 @@ gnustep-base
 gnustep-libs
 kde-apps
 ros-meta
+sec-policy
 sys-apps
 sys-auth
 sys-block
