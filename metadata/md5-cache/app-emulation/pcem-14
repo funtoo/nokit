@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile configure install unpack
+DEPEND=x11-libs/wxGTK virtual/opengl
+DESCRIPTION=IBM PC emulator
+EAPI=6
+HOMEPAGE=http://pcem-emulator.co.uk
+IUSE=+alsa -debug +networking +release-build
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2
+RDEPEND=x11-libs/wxGTK virtual/opengl media-libs/libsdl2 media-libs/openal alsa? ( media-libs/alsa-lib )
+SLOT=0
+SRC_URI=http://pcem-emulator.co.uk/files/PCemV14Linux.tar.gz
+_md5_=0b14d9451e31f7984dce0ae544b067bf
