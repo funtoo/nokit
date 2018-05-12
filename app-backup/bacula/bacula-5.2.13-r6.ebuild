@@ -1,9 +1,12 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="5"
 
-inherit eutils multilib qt4-r2 systemd user libtool
+PYTHON_COMPAT=( python2_7 )
+PYTHON_REQ_USE="threads"
+
+inherit eutils multilib python-single-r1 systemd user libtool
 
 MY_PV=${PV/_beta/-b}
 MY_P=${PN}-${MY_PV}
@@ -15,7 +18,7 @@ SRC_URI="mirror://sourceforge/bacula/${MY_P}.tar.gz"
 LICENSE="AGPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
-IUSE="bacula-clientonly bacula-nodir bacula-nosd examples ipv6 libressl logwatch mysql postgres qt4 readline +sqlite ssl static tcpd vim-syntax X"
+IUSE="acl bacula-clientonly bacula-nodir bacula-nosd examples ipv6 libressl logwatch mysql postgres python readline +sqlite ssl static tcpd vim-syntax X"
 
 DEPEND="
 	dev-libs/gmp:0
@@ -25,15 +28,11 @@ DEPEND="
 		sqlite? ( dev-db/sqlite:3 )
 		!bacula-nodir? ( virtual/mta )
 	)
-	qt4? (
-		dev-qt/qtsvg:4
-		x11-libs/qwt:5
-	)
 	logwatch? ( sys-apps/logwatch )
 	tcpd? ( >=sys-apps/tcp-wrappers-7.6 )
 	readline? ( sys-libs/readline:0 )
 	static? (
-		virtual/acl[static-libs]
+		acl? ( virtual/acl[static-libs] )
 		sys-libs/zlib[static-libs]
 		dev-libs/lzo[static-libs]
 		sys-libs/ncurses:=[static-libs]
@@ -43,7 +42,7 @@ DEPEND="
 		)
 	)
 	!static? (
-		virtual/acl
+		acl? ( virtual/acl )
 		sys-libs/zlib
 		dev-libs/lzo
 		sys-libs/ncurses:=
@@ -51,7 +50,9 @@ DEPEND="
 			!libressl? ( dev-libs/openssl:0= )
 			libressl? ( dev-libs/libressl:0= )
 		)
-	)"
+	)
+	python? ( ${PYTHON_DEPS} )
+	"
 RDEPEND="${DEPEND}
 	!bacula-clientonly? (
 		!bacula-nosd? (
@@ -62,7 +63,8 @@ RDEPEND="${DEPEND}
 	vim-syntax? ( || ( app-editors/vim app-editors/gvim ) )"
 
 REQUIRED_USE="!bacula-clientonly? ( ^^ ( mysql postgres sqlite ) )
-				static? ( bacula-clientonly )"
+				static? ( bacula-clientonly )
+				python? ( ${PYTHON_REQUIRED_USE} )"
 
 S=${WORKDIR}/${MY_P}
 
@@ -81,12 +83,6 @@ pkg_setup() {
 		einfo
 	fi
 
-	if use bacula-clientonly && use static && use qt4; then
-		ewarn
-		ewarn "Building statically linked 'bat' is not supported. Ignorig 'qt4' useflag."
-		ewarn
-	fi
-
 	if ! use bacula-clientonly; then
 		if [ -z "$(egetent passwd bacula 2>/dev/null)" ]; then
 			enewuser bacula -1 -1 /var/lib/bacula bacula,disk,tape,cdrom,cdrw
@@ -96,6 +92,8 @@ pkg_setup() {
 			einfo
 		fi
 	fi
+
+	use python && python-single-r1_pkg_setup
 }
 
 src_prepare() {
@@ -118,13 +116,16 @@ src_prepare() {
 	sed -i -e 's/@CFLAGS@/@CXXFLAGS@/' autoconf/Make.common.in || die
 
 	# drop automatic install of unneeded documentation (for bug 356499)
-	epatch "${FILESDIR}"/7.2.0/${PN}-7.2.0-doc.patch
+	epatch "${FILESDIR}"/5.2.3/${PN}-5.2.3-doc.patch
 
 	# bug #310087
 	epatch "${FILESDIR}"/5.2.3/${PN}-5.2.3-as-needed.patch
 
 	# bug #311161
-	epatch "${FILESDIR}"/9.0.2/${PN}-9.0.2-lib-search-path.patch
+	epatch "${FILESDIR}"/5.2.3/${PN}-5.2.3-lib-search-path.patch
+
+	# stop build for errors in subdirs
+	epatch "${FILESDIR}"/5.2.3/${PN}-5.2.3-Makefile.patch
 
 	# bat needs to respect LDFLAGS
 	epatch "${FILESDIR}"/5.2.3/${PN}-5.2.3-ldflags.patch
@@ -132,17 +133,14 @@ src_prepare() {
 	# bug #328701
 	epatch "${FILESDIR}"/5.2.3/${PN}-5.2.3-openssl-1.patch
 
-	epatch "${FILESDIR}"/9.0.2/${PN}-9.0.2-fix-static.patch
-
-	# fix soname in libbaccat.so bug #602952
-	epatch "${FILESDIR}/bacula-fix-sonames.patch"
+	epatch "${FILESDIR}"/5.2.10/${PN}-5.2.10-fix-static.patch
 
 	# do not strip binaries
 	sed -i -e "s/strip /# strip /" src/filed/Makefile.in || die
 	sed -i -e "s/strip /# strip /" src/console/Makefile.in || die
 
 	# fix file not found error during make depend
-	epatch "${FILESDIR}"/7.0.2/${PN}-7.0.2-depend.patch
+	epatch "${FILESDIR}"/5.2.12/${PN}-5.2.12-depend.patch
 
 	# Fix systemd unit files:
 	# bug 497748
@@ -152,6 +150,13 @@ src_prepare() {
 	sed -i -e '/Alias=bacula-dir/d' platforms/systemd/bacula-dir.service.in || die
 	# bug 584442 and 504368
 	sed -i -e 's/@dir_user@/root/g' platforms/systemd/bacula-dir.service.in || die
+
+	# Fix tmpfiles config for client-only (no bacula user) install
+	# NOTE: Change only first occurance (user) not second (group)
+	# bug 528398 and 577486
+	if use bacula-clientonly; then
+		sed -i -e 's/bacula/root/' platforms/systemd/bacula.conf.in || die
+	fi
 
 	# fix bundled libtool (bug 466696)
 	# But first move directory with M4 macros out of the way.
@@ -176,34 +181,24 @@ src_configure() {
 		# bug #311099
 		# database support needed by dir-only *and* sd-only
 		# build as well (for building bscan, btape, etc.)
-		myconf="${myconf}
-			--with-${mydbtype}"
-		if use mysql; then
-		    myconf="${myconf} \
-			--disable-batch-insert"
-		else
-		    myconf="${myconf} \
-			--enable-batch-insert"
-		fi
-	fi
-
-	# do not build bat if 'static' clientonly
-	if ! use bacula-clientonly || ! use static; then
 		myconf="${myconf} \
-			$(use_enable qt4 bat)"
+			--with-${mydbtype} \
+			--enable-batch-insert"
 	fi
 
 	myconf="${myconf} \
+		--disable-tray-monitor \
 		$(use_with X x) \
+		$(use_with python) \
 		$(use_enable !readline conio) \
 		$(use_enable readline) \
 		$(use_with readline readline /usr) \
 		$(use_with ssl openssl) \
 		$(use_enable ipv6) \
+		$(use_enable acl) \
 		$(use_with tcpd tcp-wrappers)"
 
 	econf \
-	    --enable-acl \
 		--libdir=/usr/$(get_libdir) \
 		--docdir=/usr/share/doc/${PF} \
 		--htmldir=/usr/share/doc/${PF}/html \
@@ -224,12 +219,6 @@ src_configure() {
 		--disable-afs \
 		--host=${CHOST} \
 		${myconf}
-	# correct configuration for QT based bat
-	if use qt4 ; then
-		pushd src/qt-console
-		eqmake4
-		popd
-	fi
 }
 
 src_compile() {
@@ -240,13 +229,6 @@ src_compile() {
 src_install() {
 	emake DESTDIR="${D}" install
 	doicon scripts/bacula.png
-
-	# install bat icon and desktop file when enabled
-	# (for some reason ./configure doesn't pick this up)
-	if use qt4 && ! use static ; then
-		doicon src/qt-console/images/bat_icon.png
-		domenu scripts/bat.desktop
-	fi
 
 	# remove some scripts we don't need at all
 	rm -f "${D}"/usr/libexec/bacula/{bacula,bacula-ctl-dir,bacula-ctl-fd,bacula-ctl-sd,startmysql,stopmysql}
@@ -278,19 +260,18 @@ src_install() {
 		# the logwatch scripts
 		if use logwatch; then
 			diropts -m0750
-			dodir /usr/share/logwatch/scripts/services
-			dodir /usr/share/logwatch/scripts/shared
-			dodir /etc/logwatch/conf/logfiles
-			dodir /etc/logwatch/conf/services
+			dodir /etc/log.d/scripts/services
+			dodir /etc/log.d/scripts/shared
+			dodir /etc/log.d/conf/logfiles
+			dodir /etc/log.d/conf/services
 			pushd "${S}"/scripts/logwatch >&/dev/null || die
 			emake DESTDIR="${D}" install
 			popd >&/dev/null || die
 		fi
 	fi
 
-	if ! use qt4; then
-		rm -vf "${D}"/usr/share/man/man1/bat.1*
-	fi
+	rm -vf "${D}"/usr/share/man/man1/bacula-bwxconsole.1*
+	rm -vf "${D}"/usr/share/man/man1/bat.1*
 	rm -vf "${D}"/usr/share/man/man1/bacula-tray-monitor.1*
 	if use bacula-clientonly || use bacula-nodir; then
 		rm -vf "${D}"/usr/share/man/man8/bacula-dir.8*
@@ -317,7 +298,7 @@ src_install() {
 	fi
 
 	# documentation
-	dodoc ChangeLog ReleaseNotes SUPPORT
+	dodoc ChangeLog ReleaseNotes SUPPORT technotes
 
 	# install examples (bug #457504)
 	if use examples; then
@@ -347,7 +328,7 @@ src_install() {
 		# copy over init script and config to a temporary location
 		# so we can modify them as needed
 		cp "${FILESDIR}/${script}".confd "${T}/${script}".confd || die "failed to copy ${script}.confd"
-		cp "${FILESDIR}/newscripts/${script}".initd "${T}/${script}".initd || die "failed to copy ${script}.initd"
+		cp "${FILESDIR}/${script}".initd "${T}/${script}".initd || die "failed to copy ${script}.initd"
 
 		# now set the database dependancy for the director init script
 		case "${script}" in
@@ -373,6 +354,7 @@ src_install() {
 	done
 
 	systemd_dounit "${S}"/platforms/systemd/bacula-{dir,fd,sd}.service
+	systemd_dotmpfilesd "${S}"/platforms/systemd/bacula.conf
 
 	# make sure the working directory exists
 	diropts -m0750
@@ -389,6 +371,11 @@ pkg_postinst() {
 		fowners bacula:bacula /var/lib/bacula
 	fi
 
+	einfo
+	einfo "This Revision 6 of bacula-5.2.13 dropped support for building 'bat' as"
+	einfo "Qt4 is not longer supported by Gentoo. Please use it only for installations"
+	einfo "requiring an old file demon."
+	einfo
 	if ! use bacula-clientonly && ! use bacula-nodir; then
 		einfo
 		einfo "If this is a new install, you must create the ${mydbtype} databases with:"
@@ -396,13 +383,6 @@ pkg_postinst() {
 		einfo "  /usr/libexec/bacula/make_${mydbtype}_tables"
 		einfo "  /usr/libexec/bacula/grant_${mydbtype}_privileges"
 		einfo
-
-		ewarn "ATTENTION!"
-		ewarn "The format of the database may have changed."
-		ewarn "If you just upgraded from a version below 9.0.0 you must run"
-		ewarn "'update_bacula_tables' now."
-		ewarn "Make sure to have a backup of your catalog before."
-		ewarn
 	fi
 
 	if use sqlite; then
@@ -412,7 +392,6 @@ pkg_postinst() {
 		einfo
 	fi
 
-	einfo "Please note that 'bconsole' will always be installed. To compile 'bat'"
-	einfo "you have to enable 'USE=qt4'."
+	einfo "Please note that 'bconsole' will always be installed."
 	einfo
 }
