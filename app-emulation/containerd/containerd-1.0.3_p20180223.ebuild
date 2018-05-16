@@ -11,8 +11,8 @@ if [[ ${PV} == *9999 ]]; then
 else
 	MY_PV="${PV/_rc/-rc.}"
 	EGIT_COMMIT="v${MY_PV}"
-	CONTAINERD_COMMIT="cfd0439"
-	SRC_URI="https://${EGO_PN}/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+	CONTAINERD_COMMIT="4ac4fd0b6a268fe6f38b2b2e32e40daa7e424fac"
+	SRC_URI="https://${EGO_PN}/archive/${CONTAINERD_COMMIT}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64 ~arm ~ppc64"
 	inherit golang-vcs-snapshot
 fi
@@ -30,6 +30,8 @@ RDEPEND="|| ( >=app-emulation/docker-runc-1.0.0_rc4
 	sys-libs/libseccomp"
 
 S=${WORKDIR}/${P}/src/${EGO_PN}
+
+RESTRICT="test"
 
 src_prepare() {
 	default
