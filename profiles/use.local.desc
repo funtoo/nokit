@@ -286,6 +286,7 @@ app-emulation/bochs:gdb - Enable support for the remote GDB stub
 app-emulation/bochs:x86-64 - Enable support for emulation of 64-bit CPUs
 app-emulation/containerd:btrfs - Support for BTRFS snapshot driver
 app-emulation/crossover-bin:capi - Enable ISDN support via CAPI
+app-emulation/crossover-bin:opencl - Enable OpenCL support
 app-emulation/docker:apparmor - Enable AppArmor support.
 app-emulation/docker:aufs - Enables dependencies for the "aufs" graph driver, including necessary kernel flags.
 app-emulation/docker:btrfs - Enables dependencies for the "btrfs" graph driver, including necessary kernel flags.
@@ -436,6 +437,7 @@ app-emulation/virtualbox-bin:rdesktop-vrdp - Install the rdesktop client integra
 app-emulation/virtualbox-bin:sdk - Enable building of SDK
 app-emulation/virtualbox-bin:vboxwebsrv - Install the VirtualBox webservice
 app-emulation/virtualbox-modules:pax_kernel - Apply patch needed for pax enabled kernels
+app-emulation/vkd3d:spirv-tools - Enable SPIRV shader debugging support using dev-util/spirv-tools
 app-emulation/vov:gprof - build with profiling support
 app-emulation/wine-any:capi - Enable ISDN support via CAPI
 app-emulation/wine-any:custom-cflags - Bypass strip-flags; use at your own peril
@@ -460,6 +462,7 @@ app-emulation/wine-any:sdl - Add support for gamepad detection using SDL
 app-emulation/wine-any:staging - Apply Wine-Staging patches for advanced feature support that haven't made it into upstream Wine yet
 app-emulation/wine-any:themes - Support GTK+:3 window theming through Wine-Staging
 app-emulation/wine-any:udev - Use virtual/libudev to provide plug and play support
+app-emulation/wine-any:vkd3d - Use app-emulation/vkd3d to provide Direct3D 12 support
 app-emulation/wine-any:vulkan - Enable Vulkan drivers
 app-emulation/wine-d3d9:capi - Enable ISDN support via CAPI
 app-emulation/wine-d3d9:custom-cflags - Bypass strip-flags; use at your own peril
@@ -480,6 +483,7 @@ app-emulation/wine-d3d9:run-exes - Use Wine to open and run .EXE and .MSI files
 app-emulation/wine-d3d9:samba - Add support for NTLM auth. see http://wiki.winehq.org/NtlmAuthSetupGuide and http://wiki.winehq.org/NtlmSigningAndSealing
 app-emulation/wine-d3d9:sdl - Add support for gamepad detection using SDL
 app-emulation/wine-d3d9:udev - Use virtual/libudev to provide plug and play support
+app-emulation/wine-d3d9:vkd3d - Use app-emulation/vkd3d to provide Direct3D 12 support
 app-emulation/wine-d3d9:vulkan - Enable Vulkan drivers
 app-emulation/wine-staging:capi - Enable ISDN support via CAPI
 app-emulation/wine-staging:custom-cflags - Bypass strip-flags; use at your own peril
@@ -503,6 +507,7 @@ app-emulation/wine-staging:sdl - Add support for gamepad detection using SDL
 app-emulation/wine-staging:staging - Apply Wine-Staging patches for advanced feature support that haven't made it into upstream Wine yet
 app-emulation/wine-staging:themes - Support GTK+:3 window theming through Wine-Staging
 app-emulation/wine-staging:udev - Use virtual/libudev to provide plug and play support
+app-emulation/wine-staging:vkd3d - Use app-emulation/vkd3d to provide Direct3D 12 support
 app-emulation/wine-staging:vulkan - Enable Vulkan drivers
 app-emulation/wine-vanilla:capi - Enable ISDN support via CAPI
 app-emulation/wine-vanilla:custom-cflags - Bypass strip-flags; use at your own peril
@@ -522,6 +527,7 @@ app-emulation/wine-vanilla:run-exes - Use Wine to open and run .EXE and .MSI fil
 app-emulation/wine-vanilla:samba - Add support for NTLM auth. see http://wiki.winehq.org/NtlmAuthSetupGuide and http://wiki.winehq.org/NtlmSigningAndSealing
 app-emulation/wine-vanilla:sdl - Add support for gamepad detection using SDL
 app-emulation/wine-vanilla:udev - Use virtual/libudev to provide plug and play support
+app-emulation/wine-vanilla:vkd3d - Use app-emulation/vkd3d to provide Direct3D 12 support
 app-emulation/wine-vanilla:vulkan - Enable Vulkan drivers
 app-emulation/winetricks:rar - Pull in app-arch/unrar for extraction of rar-compressed game files
 app-emulation/x48:readline - Enables support for libreadline
@@ -605,9 +611,9 @@ app-i18n/scim-anthy:gtk3 - Enable support for x11-libs/gtk+:3
 app-i18n/scim-anthy:kasumi - Use Anthy dictionary maintenance tool (app-dicts/kasumi)
 app-i18n/tomoe:hyperestraier - Enable support for app-text/hyperestraier
 app-i18n/translate-shell:tts - Enable text-to-speech support
-app-i18n/uim:anthy - Enable support for app-i18n/anthy input method
+app-i18n/uim:anthy - Enable support for app-i18n/anthy
 app-i18n/uim:eb - Enable support for dev-libs/eb
-app-i18n/uim:gtk3 - Enable support for x11-libs/gtk+:3
+app-i18n/uim:gtk2 - Enable support for x11-libs/gtk+:2
 app-i18n/uim:skk - Enable support for app-i18n/skk-jisyo
 app-laptop/hdapsd:libconfig - Require dev-libs/libconfig to allow the daemon to read a configuration file at startup
 app-laptop/ibam:gkrellm - Enable building of app-admin/gkrellm module
@@ -901,8 +907,8 @@ sys-apps/systemd:lz4 - Enable lz4 compression for the journal
 sys-apps/systemd:nat - Enable support for network address translation in networkd
 sys-apps/systemd:qrcode - Enable qrcode output support in journal
 sys-apps/systemd:resolvconf - Install resolvconf symlink for systemd-resolve
+sys-apps/systemd:split-usr - Enable this if /bin and /usr/bin are separate directories
 sys-apps/systemd:sysv-utils - Install sysvinit compatibility symlinks and manpages for init, telinit, halt, poweroff, reboot, runlevel, and shutdown
-sys-apps/systemd:usrmerge - Enable /usr merge (experimental)
 sys-apps/systemd:vanilla - Disable Gentoo-specific behavior and compatibility quirks
 sys-apps/systemd:xkb - Depend on x11-libs/libxkbcommon to allow logind to control the X11 keymap
 sys-apps/timer_entropyd:debug - Enable printf debugging and logging to the syslog at DEBUG level

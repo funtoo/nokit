@@ -1,6 +1,6 @@
+=app-admin/abrt-2.0.12-r2 python_single_target_python2_7
 =app-emulation/virt-manager-1.4.3-r1 python_single_target_python2_7
 =app-emulation/virt-manager-1.5.1-r1 python_single_target_python2_7
-=app-i18n/ibus-anthy-1.5.4 python_single_target_python2_7
 =app-i18n/ibus-table-1.5.0-r1 python_single_target_python2_7
 =sys-auth/sssd-1.12.1 python_single_target_python2_7
 =sys-devel/distcc-3.1-r10 python_single_target_python2_7
@@ -8,7 +8,6 @@
 =sys-devel/distcc-3.2_rc1-r5 python_single_target_python2_7
 =sys-devel/distcc-3.3 python_single_target_python3_5 python_targets_python3_5
 app-accessibility/SphinxTrain python_single_target_python2_7
-app-admin/abrt python_single_target_python2_7
 app-admin/conkyforecast python_single_target_python2_7
 app-admin/equo python_single_target_python2_7
 app-admin/matter python_single_target_python2_7
