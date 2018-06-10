@@ -61,7 +61,6 @@ app-misc/recoll python_single_target_python2_7
 app-misc/tails-installer python_single_target_python2_7
 app-misc/webcomics-collector python_single_target_python2_7
 app-misc/workrave python_single_target_python2_7
-app-mobilephone/gammu python_single_target_python2_7
 app-mobilephone/sobexsrv python_single_target_python2_7
 sys-apps/biosdisk python_single_target_python2_7
 sys-apps/entropy python_single_target_python2_7
