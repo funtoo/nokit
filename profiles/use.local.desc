@@ -241,6 +241,7 @@ app-cdr/mirage2iso:pinentry - Support app-crypt/pinentry password input backend.
 app-crypt/aespipe:asm - Enable assembly modules
 app-crypt/aespipe:cpu_flags_x86_padlock - Use VIA padlock instructions, detected at run time, code still works on non-padlock processors
 app-crypt/codecrypt:cryptopp - Build algorithms that need Crypto++ support dev-libs/crypto++
+app-crypt/dehydrated:cron - Install cron job to sign/renew non-existent/changed/expiring certificates
 app-crypt/eid-mw:dialogs - Enable "askaccess" dialog box, by using x11-libs/gtk+
 app-crypt/eid-mw:gtk - All dialogs are available, by using x11-libs/gtk+
 app-crypt/eid-mw:p11-kit - Support for app-crypt/p11-kit.
@@ -585,6 +586,7 @@ app-i18n/fcitx:pango - Enable support for x11-libs/pango
 app-i18n/fcitx:qt4 - Install input method module for Qt 4
 app-i18n/fcitx:table - Install table input methods for Simplified Chinese
 app-i18n/fcitx-libpinyin:dictionary-manager - Install dictionary manager
+app-i18n/fcitx-rime:configuration_tool - Install configuration tool
 app-i18n/fcitx-unikey:macro-editor - Install macro editor
 app-i18n/freewnn:uum - Build uum
 app-i18n/ibus-chewing:gconf - Enable support for gnome-base/gconf
@@ -821,6 +823,7 @@ sys-apps/flashrom:gfxnvidia - Enable NVIDIA programmer
 sys-apps/flashrom:internal - Enable internal/onboard support
 sys-apps/flashrom:internal_dmi - Enable internal DMI decoding rather than use sys-apps/dmidecode
 sys-apps/flashrom:it8212 - Support for ITE IT8212F ATA/RAID controllers
+sys-apps/flashrom:linux_mtd - Enable support for Linux mtd SPI flash devices
 sys-apps/flashrom:linux_spi - Enable support for Linux userspace spidev interface
 sys-apps/flashrom:mstarddc_spi - Support for SPI flash ROMs accessible through DDC in MSTAR-equipped displays
 sys-apps/flashrom:nic3com - Enable 3Com NIC programmer
@@ -976,12 +979,14 @@ sys-boot/woeusb:minimal - Install only woeusb tool
 sys-cluster/ceph:babeltrace - Add support for LTTng babeltrace
 sys-cluster/ceph:cephfs - Build support for cephfs, a POSIX compatible filesystem built on top of ceph
 sys-cluster/ceph:cryptopp - Use dev-libs/crypto++ for cryptography
+sys-cluster/ceph:dpdk - Enable DPDK messaging
 sys-cluster/ceph:fuse - Build fuse client
 sys-cluster/ceph:jemalloc - Use dev-libs/jemalloc for allocations
 sys-cluster/ceph:libaio - Use libaio as asynchronous input/output library
 sys-cluster/ceph:libatomic - Use libatomic instead of builtin atomic operations
 sys-cluster/ceph:lttng - Add support for LTTng
 sys-cluster/ceph:mgr - Build the ceph-mgr daemon
+sys-cluster/ceph:mgr-frontend - Build/install the mgr/dashboard frontend with npm
 sys-cluster/ceph:nss - Use dev-libs/nss for cryptography
 sys-cluster/ceph:radosgw - Add radosgw support
 sys-cluster/ceph:system-boost - Use system dev-libs/boost instead of the bundled one
