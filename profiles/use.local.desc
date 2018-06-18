@@ -284,6 +284,7 @@ app-emulation/bochs:avx - Enable support for emulating Advanced Vector Extension
 app-emulation/bochs:debugger - Enable debugger (slows down emulation)
 app-emulation/bochs:gdb - Enable support for the remote GDB stub
 app-emulation/bochs:x86-64 - Enable support for emulation of 64-bit CPUs
+app-emulation/buildah:ostree - Enables dependencies for handling of OSTree images.
 app-emulation/containerd:btrfs - Support for BTRFS snapshot driver
 app-emulation/cri-o:btrfs - Enables dependencies for the "btrfs" graph driver, including necessary kernel flags.
 app-emulation/cri-o:device-mapper - Enables dependencies for the "devicemapper" graph driver, including necessary kernel flags.
