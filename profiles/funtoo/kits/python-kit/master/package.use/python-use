@@ -4,7 +4,11 @@
 =app-emulation/virt-manager-1.4.3-r1 python_single_target_python2_7
 =app-emulation/virt-manager-1.5.1-r1 python_single_target_python2_7
 =app-i18n/ibus-table-1.5.0-r1 python_single_target_python2_7
+=app-misc/lirc-0.10.0_rc2 python_single_target_python3_4 python_targets_python3_4
+=app-misc/lirc-0.9.4c python_single_target_python3_4 python_targets_python3_4
+=app-misc/lirc-0.9.4d python_single_target_python3_4 python_targets_python3_4
 =app-portage/chuse-1.0.2 python_single_target_python3_4 python_targets_python3_4
+=app-portage/elogviewer-2.7-r2 python_single_target_python2_7
 =sys-auth/sssd-1.12.1 python_single_target_python2_7
 =sys-auth/sssd-1.12.4 python_single_target_python2_7
 =sys-auth/sssd-1.12.5 python_single_target_python2_7
@@ -60,7 +64,6 @@ app-misc/gramps python_single_target_python3_4 python_targets_python3_4
 app-misc/iguanaIR python_single_target_python2_7
 app-misc/ktoblzcheck python_single_target_python2_7
 app-misc/lcd4linux python_single_target_python2_7
-app-misc/lirc python_single_target_python3_4 python_targets_python3_4
 app-misc/metromap python_single_target_python2_7
 app-misc/mtail python_single_target_python2_7
 app-misc/pystopwatch python_single_target_python2_7
@@ -68,9 +71,7 @@ app-misc/recoll python_single_target_python2_7
 app-misc/tails-installer python_single_target_python2_7
 app-misc/webcomics-collector python_single_target_python2_7
 app-misc/workrave python_single_target_python2_7
-app-mobilephone/obexftp python_single_target_python2_7
 app-mobilephone/sobexsrv python_single_target_python2_7
-app-portage/elogviewer python_single_target_python2_7
 sys-apps/biosdisk python_single_target_python2_7
 sys-apps/entropy python_single_target_python2_7
 sys-apps/entropy-server python_single_target_python2_7
