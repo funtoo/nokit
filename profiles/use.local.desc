@@ -668,6 +668,9 @@ app-misc/gramps:reports - All external software that is needed for graphical rep
 app-misc/graphlcd-base:g15 - Add support for app-misc/g15daemon driver (e.g. Logitech G15 Keybord)
 app-misc/irtrans-irserver:mono - Enable mono support
 app-misc/jq:oniguruma - Use dev-libs/oniguruma for regular expression support
+app-misc/kryoflux-dtc:demos - Install example floppy game files.
+app-misc/kryoflux-dtc:fast-firmware - Install fast firmware instead of slow firmware.
+app-misc/kryoflux-dtc:gui - Install the Kryoflux GUI
 app-misc/lcd4linux:apm - Enable the APM plugin.
 app-misc/lcd4linux:asterisk - Enable the Asterisk plugin.
 app-misc/lcd4linux:button_exec - Enable the Button plugin, to execute something on keypress.
