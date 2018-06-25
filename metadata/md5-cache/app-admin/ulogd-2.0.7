@@ -4,10 +4,10 @@ DESCRIPTION=A userspace logging daemon for netfilter/iptables related logging
 EAPI=6
 HOMEPAGE=https://netfilter.org/projects/ulogd/index.html
 IUSE=dbi doc json mysql nfacct +nfct +nflog pcap postgres selinux sqlite ulog
-KEYWORDS=~amd64 ~ia64 ~ppc ~x86
+KEYWORDS=amd64 ~ia64 ~ppc ~x86
 LICENSE=GPL-2
 RDEPEND=|| ( net-firewall/iptables net-firewall/nftables ) >=net-libs/libnfnetlink-1.0.1 dbi? ( dev-db/libdbi ) json? ( dev-libs/jansson ) nfacct? ( >=net-libs/libmnl-1.0.3 >=net-libs/libnetfilter_acct-1.0.1 ) nfct? ( >=net-libs/libnetfilter_conntrack-1.0.2 ) nflog? ( >=net-libs/libnetfilter_log-1.0.0 ) mysql? ( virtual/mysql ) pcap? ( net-libs/libpcap ) postgres? ( dev-db/postgresql:= ) sqlite? ( dev-db/sqlite:3 ) selinux? ( sec-policy/selinux-ulogd )
 SLOT=0
 SRC_URI=https://www.netfilter.org/projects/ulogd/files/ulogd-2.0.7.tar.bz2
 _eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	flag-o-matic	02908f00f002f0f07c5b74783d778325	linux-info	ca370deef9d44125d829f2eb6ebc83e0	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	readme.gentoo-r1	6f03e110529650f57fc7d1fb908b8986	systemd	8f5286f89e265842f5b5189666eae88b	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	user	8bc2845510e2109af75e3eeac607ec81	versionator	c80ccf29e90adea7c5cae94b42eb76d0
-_md5_=38685ec34c91f049203b8b918d3d8bee
+_md5_=7321ea99c751038287087b50e20c6b6f
