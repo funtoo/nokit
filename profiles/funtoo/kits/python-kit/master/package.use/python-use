@@ -1,9 +1,12 @@
 =app-admin/abrt-2.0.12-r2 python_single_target_python2_7
 =app-arch/rpm-4.11.0.1 python_single_target_python2_7
 =app-arch/rpm-4.12.0.1 python_single_target_python2_7
+=app-emulation/libguestfs-1.28.5-r3 python_single_target_python2_7
+=app-emulation/libguestfs-1.36.5 python_single_target_python2_7
 =app-emulation/virt-manager-1.4.3-r1 python_single_target_python2_7
 =app-emulation/virt-manager-1.5.1-r1 python_single_target_python2_7
 =app-i18n/ibus-table-1.5.0-r1 python_single_target_python2_7
+=app-misc/gramps-4.2.5 python_single_target_python3_4 python_targets_python3_4
 =app-misc/lirc-0.10.0_rc2 python_single_target_python3_4 python_targets_python3_4
 =app-misc/lirc-0.9.4c python_single_target_python3_4 python_targets_python3_4
 =app-misc/lirc-0.9.4d python_single_target_python3_4 python_targets_python3_4
@@ -41,7 +44,6 @@ app-crypt/openvpn-blacklist python_single_target_python2_7
 app-crypt/ssh-multiadd python_single_target_python2_7
 app-emulation/crossover-bin python_single_target_python2_7
 app-emulation/ganeti python_single_target_python2_7
-app-emulation/libguestfs python_single_target_python2_7
 app-emulation/libvirt-glib python_single_target_python2_7
 app-emulation/openstack-guest-agents-unix python_single_target_python2_7
 app-emulation/playonlinux python_single_target_python2_7
@@ -61,7 +63,6 @@ app-misc/byobu python_single_target_python2_7
 app-misc/email2trac python_single_target_python2_7
 app-misc/evemu python_single_target_python2_7
 app-misc/golly python_single_target_python2_7
-app-misc/gramps python_single_target_python3_4 python_targets_python3_4
 app-misc/iguanaIR python_single_target_python2_7
 app-misc/ktoblzcheck python_single_target_python2_7
 app-misc/lcd4linux python_single_target_python2_7
