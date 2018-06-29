@@ -788,7 +788,6 @@ app-mobilephone/gnokii:pcsc-lite - Enable smartcard support with sys-apps/pcsc-l
 app-mobilephone/gnokii:sms - Enable SMS support (build smsd)
 app-mobilephone/smstools:stats - Enable statistic reporting
 app-pda/barry:boost - Enable boost support
-app-pda/barry:desktop - Install the GUI desktop control panel
 app-pda/barry:gui - Install the GUI backup tool
 app-pda/gtkpod:clutter - Enable clutter support for displaying coverart
 app-portage/conf-update:colordiff - Use colors when displaying diffs (app-misc/colordiff)
