@@ -20,8 +20,7 @@ LICENSE="GPL-2 BSD-2"
 SLOT="0"
 IUSE=""
 
-RDEPEND="dev-libs/glib
-	x11-libs/pixman"
+RDEPEND="dev-libs/glib"
 
 DEPEND="${RDEPEND}
 	${PYTHON_DEPS}"
@@ -44,6 +43,7 @@ src_configure() {
 		--disable-linux-user
 		--disable-system
 		--disable-strip
+		--disable-tools
 		--disable-werror
 		--enable-guest-agent
 		--python="${PYTHON}"
