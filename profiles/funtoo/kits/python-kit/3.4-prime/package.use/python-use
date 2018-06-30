@@ -16,6 +16,7 @@ app-admin/conkyforecast python_single_target_python2_7
 app-admin/equo python_single_target_python2_7
 app-admin/matter python_single_target_python2_7
 app-admin/packagekit-base python_single_target_python2_7
+app-admin/ps_mem python_single_target_python2_7
 app-admin/syslog-summary python_single_target_python2_7
 app-antivirus/clamtk python_single_target_python2_7
 app-arch/cfv python_single_target_python2_7
