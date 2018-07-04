@@ -1174,6 +1174,16 @@ sys-devel/gdb:python - Enable support for the new internal scripting language, a
 sys-devel/gdb:server - Install the "gdbserver" program (useful for embedded/remote targets)
 sys-devel/gdb:xml - Support parsing XML data files needed (at least) for cpu features, memory maps, and syscall tracing
 sys-devel/kgcc64:regression-test - Run the testsuite and install the results (requires FEATURES=test)
+sys-devel/parity:vc10_0 - Enable support for Visual Studio 2010
+sys-devel/parity:vc11_0 - Enable support for Visual Studio 2012
+sys-devel/parity:vc12_0 - Enable support for Visual Studio 2013
+sys-devel/parity:vc14_0 - Enable support for Visual Studio 2015
+sys-devel/parity:vc15_0 - Enable support for Visual Studio 2017
+sys-devel/parity:vc7_0 - Enable support for Visual Studio 2002
+sys-devel/parity:vc7_1 - Enable support for Visual Studio 2003
+sys-devel/parity:vc8_0 - Enable support for Visual Studio 2005
+sys-devel/parity:vc9_0 - Enable support for Visual Studio 2008
+sys-devel/parity:vc_x86 - Enable support for 32bit Visual Studio compilers
 sys-devel/sparse:gtk - Build the test-inspect utility (requires x11-libs/gtk+ version 2)
 sys-devel/sparse:llvm - Build the sparse-llvm utility
 sys-devel/sparse:xml - Build the c2xml utility (requires dev-libs/libxml2)

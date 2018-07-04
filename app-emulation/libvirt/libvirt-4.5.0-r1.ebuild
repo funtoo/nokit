@@ -105,7 +105,7 @@ RDEPEND="
 	wireshark-plugins? ( net-analyzer/wireshark:= )
 	xen? (
 		app-emulation/xen
-		app-emulation/xen-tools:=[api,hvm]
+		app-emulation/xen-tools:=
 	)
 	udev? (
 		virtual/udev
@@ -125,6 +125,7 @@ PATCHES=(
 	"${FILESDIR}"/${PN}-4.5.0-do_not_use_sysconf.patch
 	"${FILESDIR}"/${PN}-1.2.16-fix_paths_in_libvirt-guests_sh.patch
 	"${FILESDIR}"/${PN}-3.10.0-r2-fix_paths_for_apparmor.patch
+	"${FILESDIR}"/${PN}-4.5.0-fix_typo_in_apparmor_rule.patch
 )
 
 pkg_setup() {
@@ -272,7 +273,6 @@ src_configure() {
 		$(use_with vepa virtualport)
 		$(use_with virt-network network)
 		$(use_with wireshark-plugins wireshark-dissector)
-		$(use_with xen xenapi)
 		$(use_with xen libxl)
 		$(use_with zeroconf avahi)
 		$(use_with zfs storage-zfs)
@@ -280,6 +280,7 @@ src_configure() {
 		--without-hal
 		--without-netcf
 		--without-sanlock
+		--without-xenapi
 
 		--with-esx
 		--with-init-script=systemd
