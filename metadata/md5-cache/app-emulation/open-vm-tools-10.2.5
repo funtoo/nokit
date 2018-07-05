@@ -1,0 +1,14 @@
+DEFINED_PHASES=configure install postinst prepare setup
+DEPEND=dev-libs/glib net-libs/libtirpc deploypkg? ( dev-libs/libmspack ) fuse? ( sys-fs/fuse:0 ) pam? ( virtual/pam ) ssl? ( dev-libs/openssl:0 ) vgauth? ( xml-security-c? ( dev-libs/xerces-c dev-libs/xml-security-c ) xmlsec? ( dev-libs/libxml2 dev-libs/xmlsec ) ) X? ( x11-libs/libXext multimon? ( x11-libs/libXinerama ) x11-libs/libXi x11-libs/libXrender x11-libs/libXrandr x11-libs/libXtst x11-libs/libSM x11-libs/libXcomposite x11-libs/gdk-pixbuf:2 x11-libs/gtk+:3 gtkmm? ( dev-cpp/gtkmm:3.0 dev-libs/libsigc++:2 ) ) dnet? ( dev-libs/libdnet ) icu? ( dev-libs/icu:= ) caf? ( dev-libs/log4cpp net-libs/rabbitmq-c ) resolutionkms? ( x11-libs/libdrm[video_cards_vmware] virtual/libudev ) virtual/pkgconfig net-libs/rpcsvc-proto doc? ( app-doc/doxygen ) test? ( dev-util/cunit ) >=app-portage/elt-patches-20170317 !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.15:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4 virtual/pkgconfig
+DESCRIPTION=Opensourced tools for VMware guests
+EAPI=6
+HOMEPAGE=https://github.com/vmware/open-vm-tools
+IUSE=X caf +deploypkg +dnet doc +fuse +grabbitmqproxy gtkmm +icu multimon pam +resolutionkms +ssl static-libs test +vgauth +xml-security-c xmlsec
+KEYWORDS=~amd64 ~x86
+LICENSE=LGPL-2.1
+RDEPEND=dev-libs/glib net-libs/libtirpc deploypkg? ( dev-libs/libmspack ) fuse? ( sys-fs/fuse:0 ) pam? ( virtual/pam ) ssl? ( dev-libs/openssl:0 ) vgauth? ( xml-security-c? ( dev-libs/xerces-c dev-libs/xml-security-c ) xmlsec? ( dev-libs/libxml2 dev-libs/xmlsec ) ) X? ( x11-libs/libXext multimon? ( x11-libs/libXinerama ) x11-libs/libXi x11-libs/libXrender x11-libs/libXrandr x11-libs/libXtst x11-libs/libSM x11-libs/libXcomposite x11-libs/gdk-pixbuf:2 x11-libs/gtk+:3 gtkmm? ( dev-cpp/gtkmm:3.0 dev-libs/libsigc++:2 ) ) dnet? ( dev-libs/libdnet ) icu? ( dev-libs/icu:= ) caf? ( dev-libs/log4cpp net-libs/rabbitmq-c ) resolutionkms? ( x11-libs/libdrm[video_cards_vmware] virtual/libudev )
+REQUIRED_USE=multimon? ( X ) vgauth? ( ^^ ( xmlsec xml-security-c ) ssl ) caf? ( vgauth ssl ) grabbitmqproxy? ( ssl )
+SLOT=0
+SRC_URI=https://github.com/vmware/open-vm-tools/releases/download/stable-10.2.5/open-vm-tools-10.2.5-8068406.tar.gz
+_eclasses_=autotools	dc412f38566b91012efd58b9c203e6c3	epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	flag-o-matic	02908f00f002f0f07c5b74783d778325	libtool	e32ea84bf82cf8987965b574672dba93	linux-info	ca370deef9d44125d829f2eb6ebc83e0	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	pam	3e788d86170dfcd5b06824d898315e18	systemd	8f5286f89e265842f5b5189666eae88b	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	user	8bc2845510e2109af75e3eeac607ec81	versionator	c80ccf29e90adea7c5cae94b42eb76d0
+_md5_=19396974b0547ee0a4b23544bf950445
