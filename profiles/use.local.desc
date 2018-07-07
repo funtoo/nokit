@@ -196,6 +196,7 @@ app-arch/wimlib:iso - Install app-cdr/cdrtools in order to prepare iso images
 app-arch/wimlib:ntfs - Use libntfs-3g library from sys-fs/ntfs3g
 app-arch/wimlib:openssl - Use the SHA-1 message digest from libcrypto instead of compilling another implementation
 app-arch/wimlib:yasm - Use yasm assembler instead of nasm
+app-arch/zstd:lz4 - Enable support for LZ4 compression using app-arch/lz4
 app-backup/amanda:ndmp - Support for the NDMP protocol
 app-backup/amanda:s3 - Support for backing up to the Amazon S3 system
 app-backup/amanda:xfs - Support for backing up raw XFS filesystems using xfsdump
