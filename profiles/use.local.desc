@@ -184,7 +184,6 @@ app-arch/engrampa:caja - Enable engrampa to integrate with mate-base/caja by pro
 app-arch/engrampa:gtk3 - Build with GTK+3 instead of GTK+2
 app-arch/engrampa:magic - Enable filetype auto-detection via sys-apps/file
 app-arch/engrampa:packagekit - Enable support for installing via app-admin/packagekit based on archive type
-app-arch/innoextract:c++0x - Compile innoextract using the C++11 standard
 app-arch/innoextract:debug - Enable debug logging and the --debug command-line option
 app-arch/innoextract:lzma - Enable support for extracting lzma-compressed installers using app-arch/xz-utils
 app-arch/p7zip:rar - Enable support for non-free rar decoder
