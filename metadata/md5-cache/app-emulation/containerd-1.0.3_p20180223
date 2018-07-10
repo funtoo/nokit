@@ -10,5 +10,5 @@ RDEPEND=|| ( >=app-emulation/docker-runc-1.0.0_rc4 >=app-emulation/runc-1.0.0_rc
 RESTRICT=test
 SLOT=0
 SRC_URI=https://github.com/containerd/containerd/archive/4ac4fd0b6a268fe6f38b2b2e32e40daa7e424fac.tar.gz -> containerd-1.0.3_p20180223.tar.gz
-_eclasses_=golang-base	51a1f13e065f1cff4507685d9cc268c7	golang-vcs-snapshot	913580335becddd3ebecefe852e47536	multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
+_eclasses_=golang-base	e3b49d3365185b0b0e29f2713b094420	golang-vcs-snapshot	f92d5438a012f5e6665f8e7ffb1427a2	multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
 _md5_=f6d2b9d7d4f497baf5bc88bc4f954a1e

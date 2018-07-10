@@ -10,5 +10,5 @@ RDEPEND=>=sys-cluster/kubectl-1.9.4
 RESTRICT=test
 SLOT=0
 SRC_URI=https://github.com/kubernetes/minikube/archive/v0.28.0.tar.gz -> minikube-0.28.0.tar.gz
-_eclasses_=golang-base	51a1f13e065f1cff4507685d9cc268c7	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	913580335becddd3ebecefe852e47536	multilib	97f470f374f2e94ccab04a2fb21d811e	python-any-r1	27d7f9da7187d283b7f3eae8390b7b09	python-utils-r1	c9de01becf9df3f8c10aeec3dc693f5d	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
+_eclasses_=golang-base	e3b49d3365185b0b0e29f2713b094420	golang-build	e7df0915974352579de1da5d1f8ad692	golang-vcs-snapshot	f92d5438a012f5e6665f8e7ffb1427a2	multilib	97f470f374f2e94ccab04a2fb21d811e	python-any-r1	3b48a54b2b31a6bc928e459fec3adb54	python-utils-r1	f724cd24574e2ef185586e338b9318c4	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
 _md5_=524e6490caeef78b119a3a0f3a94230b

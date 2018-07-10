@@ -737,9 +737,7 @@ app-misc/lirc:devinput - Support the devinput input device
 app-misc/lirc:ftdi - Support FTDI devices
 app-misc/lirc:gtk - Include GTK support which enables the use of lirc-setup
 app-misc/lirc:hardware-carrier - The transmitter device generates its clock signal in hardware
-app-misc/lirc:iguanair - Support iguanaIR devices
 app-misc/lirc:inputlirc - Add a dependency on app-misc/inputlircd
-app-misc/lirc:irman - Add a dependency on media-libs/libirman
 app-misc/lirc:transmitter - Add transmitter support to some lirc-drivers (e.g. serial)
 app-misc/lirc:uinput - Enable support for uinput
 app-misc/mc:edit - Compile and install the mcedit application
@@ -912,6 +910,7 @@ sys-apps/ibm-powerpc-utils:rtas - Add support for the Run Time Abstraction Servi
 sys-apps/iotools:make-symlinks - Generate sub-command symlinks to iotools -- note that a lot are simple like "xor"
 sys-apps/ipmitool:openipmi - Use the system OpenIPMI implementation.
 sys-apps/irqbalance:numa - Support balancing IRQs across NUMA nodes
+sys-apps/irqbalance:tui - Enable build of irqbalance terminal user interface
 sys-apps/kexec-tools:booke - Include support for Book-E memory management
 sys-apps/kexec-tools:lzma - Enables support for LZMA compressed kernel images
 sys-apps/kexec-tools:xen - Enable extended xen support
