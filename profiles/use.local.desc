@@ -827,9 +827,6 @@ app-shells/autojump:ipython - Add support for dev-python/ipython
 app-shells/dash:vanilla - Support echo -n, and enable echo -e all the time (unsupported)
 app-shells/pdsh:rsh - This allows the use of rsh (remote shell) and rcp (remote copy) for authoring websites. sftp is a much more secure protocol and is preferred.
 app-shells/shish:diet - Use dev-libs/dietlibc
-dev-php/maxmind-db-reader:extension - Build the C extension that uses dev-libs/libmaxminddb
-dev-php/swoole:http2 - Add support for HTTP/2 protocol via net-libs/nghttp2
-dev-php/swoole:redis - Add support for redis via dev-libs/hiredis
 gnustep-apps/gemas:projectcenter - Build and install plugin for gnustep-apps/projectcenter
 gnustep-apps/gworkspace:gwmetadata - Enable the metadata indexing and searching system
 gnustep-base/gnustep-back-art:xim - Enable X11 XiM input method
