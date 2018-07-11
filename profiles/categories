@@ -22,7 +22,6 @@ gnustep-libs
 kde-apps
 kde-plasma
 ros-meta
-sec-policy
 sys-apps
 sys-auth
 sys-block
