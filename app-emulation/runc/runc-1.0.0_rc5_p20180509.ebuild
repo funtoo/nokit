@@ -9,9 +9,9 @@ if [[ ${PV} == *9999 ]]; then
 else
 	MY_PV="${PV/_/-}"
 	EGIT_COMMIT="v${MY_PV}"
-	RUNC_COMMIT="2e7cfe0" # Change this when you update the ebuild
-	SRC_URI="https://${EGO_PN}/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="amd64 ~arm ~ppc64"
+	RUNC_COMMIT="69663f0bd4b60df09991c08812a60108003fa340" # Change this when you update the ebuild
+	SRC_URI="https://${EGO_PN}/archive/${RUNC_COMMIT}.tar.gz -> ${P}.tar.gz"
+	KEYWORDS="~amd64 ~arm ~arm64 ~ppc64"
 	inherit golang-build golang-vcs-snapshot
 fi
 

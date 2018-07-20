@@ -7,9 +7,9 @@ EGO_PN="github.com/docker/libnetwork"
 if [[ ${PV} == *9999 ]]; then
 	inherit golang-vcs
 else
-	EGIT_COMMIT="7b2b1feb1de4817d522cc372af149ff48d25028e"
+	EGIT_COMMIT="3ac297bc7fd0afec9051bbb47024c9bc1d75bf5b"
 	SRC_URI="https://${EGO_PN}/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="amd64 ~arm ~ppc64"
+	KEYWORDS="~amd64 ~arm ~arm64 ~ppc64"
 	inherit golang-vcs-snapshot
 fi
 
@@ -27,7 +27,7 @@ RDEPEND="!<app-emulation/docker-1.13.0_rc1"
 RESTRICT="test" # needs dockerd
 
 src_compile() {
-	GOPATH="${WORKDIR}/${P}:$(get_golibdir_gopath)" go build -o "bin/docker-proxy" ./cmd/proxy || die
+	GOPATH="${WORKDIR}/${P}" go build -o "bin/docker-proxy" ./cmd/proxy || die
 }
 
 src_install() {
