@@ -3,10 +3,10 @@ DEPEND=app-i18n/uim ~app-i18n/tomoe-gtk-0.6.0 virtual/pkgconfig >=app-portage/el
 DESCRIPTION=Japanese input method Tomoe IMEngine for uim
 EAPI=6
 HOMEPAGE=http://tomoe.sourceforge.net/
-KEYWORDS=~amd64 ~x86
+KEYWORDS=amd64 x86
 LICENSE=LGPL-2.1
 RDEPEND=app-i18n/uim ~app-i18n/tomoe-gtk-0.6.0
 SLOT=0
 SRC_URI=mirror://sourceforge/tomoe/uim-tomoe-gtk-0.6.0.tar.gz
 _eclasses_=autotools	dc412f38566b91012efd58b9c203e6c3	libtool	e32ea84bf82cf8987965b574672dba93	multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
-_md5_=db2acd4cbc8e02e10e6f754883d8e08d
+_md5_=e11d597792c2ad1a52dbee59fc354986
