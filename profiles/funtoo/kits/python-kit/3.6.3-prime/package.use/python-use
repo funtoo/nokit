@@ -52,7 +52,6 @@ app-forensics/openscap python_single_target_python2_7
 app-i18n/ibus-hangul python_single_target_python2_7
 app-i18n/ibus-pinyin python_single_target_python2_7
 app-i18n/ibus-sunpinyin python_single_target_python2_7
-app-i18n/ibus-tutcode python_single_target_python2_7
 app-i18n/pology python_single_target_python2_7
 app-i18n/tomoe python_single_target_python2_7
 app-i18n/tomoe-gtk python_single_target_python2_7
