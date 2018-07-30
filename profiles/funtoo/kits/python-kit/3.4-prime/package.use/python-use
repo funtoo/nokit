@@ -3,6 +3,8 @@
 =app-arch/rpm-4.12.0.1 python_single_target_python2_7
 =app-arch/rpm-4.14.1 python_single_target_python2_7
 =app-arch/rpm-4.14.1-r1 python_single_target_python2_7
+=app-crypt/glep63-check-1 python_single_target_python3_5 python_targets_python3_5
+=app-crypt/glep63-check-2 python_single_target_python3_5 python_targets_python3_5
 =app-emulation/virt-manager-1.4.3-r1 python_single_target_python2_7
 =app-emulation/virt-manager-1.5.1-r1 python_single_target_python2_7
 =app-i18n/ibus-table-1.5.0-r1 python_single_target_python2_7
@@ -30,7 +32,6 @@ app-backup/bup python_single_target_python2_7
 app-cdr/burn-cd python_single_target_python2_7
 app-cdr/cdcover python_single_target_python2_7
 app-cdr/gtkcdlabel python_single_target_python2_7
-app-crypt/glep63-check python_single_target_python3_5 python_targets_python3_5
 app-crypt/openssl-blacklist python_single_target_python2_7
 app-crypt/openvpn-blacklist python_single_target_python2_7
 app-crypt/ssh-multiadd python_single_target_python2_7
