@@ -21,7 +21,6 @@ gnustep-base
 gnustep-libs
 kde-apps
 kde-plasma
-net-print
 ros-meta
 sys-apps
 sys-auth
