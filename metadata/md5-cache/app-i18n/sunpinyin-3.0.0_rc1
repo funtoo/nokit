@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare setup unpack
+DEPEND=dev-db/sqlite:3 || ( >=dev-lang/python-2.7.5-r2:2.7 ) dev-util/intltool sys-devel/gettext virtual/pkgconfig dev-util/scons
+DESCRIPTION=A Statistical Language Model based Chinese input method library
+EAPI=6
+HOMEPAGE=https://github.com/sunpinyin/sunpinyin
+KEYWORDS=~amd64 ~ppc ~ppc64 ~x86
+LICENSE=LGPL-2.1 CDDL
+PDEPEND=>=app-i18n/sunpinyin-data-20140820
+RDEPEND=dev-db/sqlite:3
+SLOT=0/3
+SRC_URI=https://github.com/sunpinyin/sunpinyin/archive/v3.0.0-rc1.tar.gz -> sunpinyin-3.0.0_rc1.tar.gz
+_eclasses_=multilib	97f470f374f2e94ccab04a2fb21d811e	multiprocessing	cac3169468f893670dac3e7cb940e045	python-any-r1	3b48a54b2b31a6bc928e459fec3adb54	python-utils-r1	b5fdfa15cbe2f6299a482bf5d0c5925d	scons-utils	db0d81136f51870b3470fd86f04f5e3d	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	vcs-snapshot	80ddf8e42aad3fa1cdc08166f446f632
+_md5_=9c40c2b5ebd033e2b80a734d6aac8d78

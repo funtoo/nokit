@@ -1,12 +1,13 @@
-DEFINED_PHASES=compile install postinst prepare setup unpack
-DEPEND=dev-db/sqlite:3 || ( >=dev-lang/python-2.7.5-r2:2.7 ) virtual/pkgconfig dev-util/scons
+DEFINED_PHASES=compile install prepare setup
+DEPEND=dev-db/sqlite:3 || ( >=dev-lang/python-2.7.5-r2:2.7 ) dev-util/intltool sys-devel/gettext virtual/pkgconfig dev-util/scons
 DESCRIPTION=A Statistical Language Model based Chinese input method library
 EAPI=6
 HOMEPAGE=https://github.com/sunpinyin/sunpinyin
-KEYWORDS=~amd64 ~ppc ~ppc64 ~x86
+KEYWORDS=amd64 ppc ppc64 x86
 LICENSE=LGPL-2.1 CDDL
+PDEPEND=<=app-i18n/sunpinyin-data-20130220
 RDEPEND=dev-db/sqlite:3
-SLOT=0
-SRC_URI=https://github.com/sunpinyin/sunpinyin/files/sunpinyin-2.0.3.tar.gz https://open-gram.googlecode.com/files/dict.utf8.tar.bz2 https://open-gram.googlecode.com/files/lm_sc.t3g.arpa.tar.bz2
+SLOT=0/3
+SRC_URI=https://dev.gentoo.org/~yngwin/distfiles/sunpinyin-2.0.4_pre20130108.tar.xz
 _eclasses_=multilib	97f470f374f2e94ccab04a2fb21d811e	multiprocessing	cac3169468f893670dac3e7cb940e045	python-any-r1	3b48a54b2b31a6bc928e459fec3adb54	python-utils-r1	b5fdfa15cbe2f6299a482bf5d0c5925d	scons-utils	db0d81136f51870b3470fd86f04f5e3d	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
-_md5_=d7f064862289002e9262ad0c969c20aa
+_md5_=ac18fb42b59ec8f3da03fd93da131ab7
