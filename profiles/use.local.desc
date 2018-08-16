@@ -966,6 +966,7 @@ sys-apps/roccat-tools:input_devices_roccat_ryosmkfx - Enable support for Ryos Mk
 sys-apps/roccat-tools:input_devices_roccat_skeltr - Enable support for Skeltr keyboard.
 sys-apps/roccat-tools:input_devices_roccat_sova - Enable support for Sova keyboard.
 sys-apps/roccat-tools:input_devices_roccat_suora - Enable support for Suora keyboard.
+sys-apps/rtl-entropy:bladerf - Build with Nuand BladeRF support
 sys-apps/s390-tools:fuse - build cmsfs-fuse to read files stored on a z/VM CMS disk
 sys-apps/s390-tools:ncurses - build hyptop monitoring program
 sys-apps/s390-tools:pfm - build the cpacfstats tool
