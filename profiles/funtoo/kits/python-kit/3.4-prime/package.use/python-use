@@ -6,7 +6,6 @@
 =app-emulation/virt-manager-1.4.3-r1 python_single_target_python2_7
 =app-emulation/virt-manager-1.5.1-r1 python_single_target_python2_7
 =app-i18n/ibus-table-1.5.0-r1 python_single_target_python2_7
-=app-mobilephone/obexftp-0.24.2 python_single_target_python2_7
 =sys-auth/sssd-1.12.1 python_single_target_python2_7
 =sys-devel/distcc-3.1-r10 python_single_target_python2_7
 =sys-devel/distcc-3.2_rc1-r4 python_single_target_python2_7
@@ -64,6 +63,7 @@ app-misc/recoll python_single_target_python2_7
 app-misc/tails-installer python_single_target_python2_7
 app-misc/webcomics-collector python_single_target_python2_7
 app-misc/workrave python_single_target_python2_7
+app-mobilephone/obexftp python_single_target_python2_7
 app-mobilephone/sobexsrv python_single_target_python2_7
 sys-apps/biosdisk python_single_target_python2_7
 sys-apps/entropy python_single_target_python2_7
