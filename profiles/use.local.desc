@@ -1216,7 +1216,6 @@ sys-devel/sparse:xml - Build the c2xml utility (requires dev-libs/libxml2)
 sys-fabric/ofed:dapl - Add support for DAPL abstraction layer
 sys-fabric/ofed:diags - Add dignostic tools for infiniband
 sys-fabric/ofed:ibacm - Add support for userspace pre-connection services
-sys-fabric/ofed:mstflint - Tools to burn Mellanox firmware
 sys-fabric/ofed:opensm - Add OpenSM - Subnet manager for infiniband
 sys-fabric/ofed:perftest - Add perftest utils
 sys-fabric/ofed:qperf - Add rdma tests
@@ -1225,7 +1224,6 @@ sys-fabric/ofed:srp - Suport for userspace part for srp initiator
 sys-fabric/opensm:tools - Install ssld extra tool
 sys-freebsd/boot0:tftp - Enable PXE/TFTP boot support.
 sys-freebsd/boot0:zfs - Enable booting on ZFS filesystems.
-sys-freebsd/freebsd-lib:hesiod - Enable support for net-dns/hesiod
 sys-freebsd/freebsd-lib:netware - Build libraries and tools to work with NetWare protocols (IPX and NCP).
 sys-freebsd/freebsd-lib:zfs - Enable ZFS support.
 sys-freebsd/freebsd-rescue:netware - Build tools to work with NetWare protocols (IPX and NCP).
