@@ -48,7 +48,6 @@ app-emulation/xen-pvgrub python_single_target_python2_7
 app-emulation/xen-tools python_single_target_python2_7
 app-forensics/afflib python_single_target_python2_7
 app-forensics/openscap python_single_target_python2_7
-app-i18n/ibus-hangul python_single_target_python2_7
 app-i18n/ibus-pinyin python_single_target_python2_7
 app-i18n/ibus-sunpinyin python_single_target_python2_7
 app-i18n/pology python_single_target_python2_7
