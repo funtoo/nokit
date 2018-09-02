@@ -486,7 +486,6 @@ app-emulation/wine-any:pipelight - Apply Wine-Staging patches for Pipelight/Silv
 app-emulation/wine-any:prelink - Run prelink on DLLs during build; For versions before wine-1.7.55 or hardened, do not disable if you do not know what this means as it can break things at runtime
 app-emulation/wine-any:realtime - Pull in sys-auth/rtkit for low-latency pulseaudio support
 app-emulation/wine-any:run-exes - Use Wine to open and run .EXE and .MSI files
-app-emulation/wine-any:s3tc - Pull in media-libs/libtxc_dxtn for DXTn texture compression, needed for many games
 app-emulation/wine-any:samba - Add support for NTLM auth. see http://wiki.winehq.org/NtlmAuthSetupGuide and http://wiki.winehq.org/NtlmSigningAndSealing
 app-emulation/wine-any:sdl - Add support for gamepad detection using SDL
 app-emulation/wine-any:staging - Apply Wine-Staging patches for advanced feature support that haven't made it into upstream Wine yet
@@ -532,7 +531,6 @@ app-emulation/wine-staging:pipelight - Apply Wine-Staging patches for Pipelight/
 app-emulation/wine-staging:prelink - Run prelink on DLLs during build; For versions before wine-1.7.55 or hardened, do not disable if you do not know what this means as it can break things at runtime
 app-emulation/wine-staging:realtime - Pull in sys-auth/rtkit for low-latency pulseaudio support
 app-emulation/wine-staging:run-exes - Use Wine to open and run .EXE and .MSI files
-app-emulation/wine-staging:s3tc - Pull in media-libs/libtxc_dxtn for DXTn texture compression, needed for many games
 app-emulation/wine-staging:samba - Add support for NTLM auth. see http://wiki.winehq.org/NtlmAuthSetupGuide and http://wiki.winehq.org/NtlmSigningAndSealing
 app-emulation/wine-staging:sdl - Add support for gamepad detection using SDL
 app-emulation/wine-staging:staging - Apply Wine-Staging patches for advanced feature support that haven't made it into upstream Wine yet
