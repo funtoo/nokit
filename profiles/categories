@@ -20,6 +20,7 @@ gnustep-apps
 gnustep-base
 gnustep-libs
 kde-apps
+kde-frameworks
 kde-plasma
 ros-meta
 sys-apps
