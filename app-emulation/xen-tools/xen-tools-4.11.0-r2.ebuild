@@ -1,30 +1,29 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 PYTHON_COMPAT=( python2_7 )
 PYTHON_REQ_USE='ncurses,xml,threads'
 
-inherit bash-completion-r1 eutils flag-o-matic multilib python-single-r1 toolchain-funcs versionator
+inherit bash-completion-r1 eutils flag-o-matic multilib python-single-r1 toolchain-funcs
 
 MY_PV=${PV/_/-}
-MAJOR_V="$(get_version_component_range 1-2)"
+MAJOR_V="$(ver_cut 1-2)"
 
 if [[ $PV == *9999 ]]; then
 	inherit git-r3
-	KEYWORDS=""
 	REPO="xen.git"
 	EGIT_REPO_URI="git://xenbits.xen.org/${REPO}"
 	S="${WORKDIR}/${REPO}"
 else
 	KEYWORDS="~amd64 ~arm ~arm64 ~x86"
-	UPSTREAM_VER=2
+	UPSTREAM_VER=1
 	SECURITY_VER=
 	# xen-tools's gentoo patches tarball
-	GENTOO_VER=12
+	GENTOO_VER=14
 	# xen-tools's gentoo patches version which apply to this specific ebuild
-	GENTOO_GPV=1
+	GENTOO_GPV=0
 	# xen-tools ovmf's patches
 	OVMF_VER=3
 
@@ -33,7 +32,8 @@ else
 	OVMF_PV=20170321
 
 	[[ -n ${UPSTREAM_VER} ]] && \
-		UPSTREAM_PATCHSET_URI="https://dev.gentoo.org/~dlan/distfiles/${P/-tools/}-upstream-patches-${UPSTREAM_VER}.tar.xz"
+		UPSTREAM_PATCHSET_URI="https://dev.gentoo.org/~dlan/distfiles/${P/-tools/}-upstream-patches-${UPSTREAM_VER}.tar.xz
+		https://github.com/hydrapolic/gentoo-dist/raw/master/xen/${P/-tools/}-upstream-patches-${UPSTREAM_VER}.tar.xz"
 	[[ -n ${SECURITY_VER} ]] && \
 		SECURITY_PATCHSET_URI="https://dev.gentoo.org/~dlan/distfiles/${PN/-tools}-security-patches-${SECURITY_VER}.tar.xz"
 	[[ -n ${GENTOO_VER} ]] && \
@@ -109,8 +109,7 @@ DEPEND="${COMMON_DEPEND}
 		dev-texlive/texlive-latexextra
 		media-gfx/transfig
 	)
-	hvm? ( x11-base/xorg-proto
-		!net-libs/libiscsi )
+	hvm? ( x11-base/xorg-proto )
 	qemu? (
 		app-arch/snappy:=
 		x11-libs/pixman
@@ -141,11 +140,14 @@ QA_PREBUILT="
 	usr/libexec/xen/bin/ivshmem-server
 	usr/libexec/xen/bin/qemu-img
 	usr/libexec/xen/bin/qemu-io
+	usr/libexec/xen/bin/qemu-keymap
 	usr/libexec/xen/bin/qemu-nbd
+	usr/libexec/xen/bin/qemu-pr-helper
 	usr/libexec/xen/bin/qemu-system-i386
 	usr/libexec/xen/bin/virtfs-proxy-helper
 	usr/libexec/xen/libexec/xen-bridge-helper
 	usr/share/qemu-xen/qemu/s390-ccw.img
+	usr/share/qemu-xen/qemu/s390-netboot.img
 	usr/share/qemu-xen/qemu/u-boot.e500
 "
 
