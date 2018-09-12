@@ -22,6 +22,7 @@ gnustep-libs
 kde-apps
 kde-frameworks
 kde-plasma
+media-sound
 ros-meta
 sys-apps
 sys-auth
