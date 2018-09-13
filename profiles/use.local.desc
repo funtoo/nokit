@@ -98,6 +98,7 @@ app-admin/puppet-agent:experimental - Add patches for things in testing
 app-admin/puppet-agent:puppetdb - Adds puppetdb support
 app-admin/puppetserver:puppetdb - Adds support for connecting to puppetdb
 app-admin/pwgen:livecd - Install init script for root password scrambling on boot
+app-admin/pwman3:mongodb - Add support for MongoDB
 app-admin/rsyslog:curl - Enable http_request() function in RainerScript (requires net-misc/curl)
 app-admin/rsyslog:dbi - Build the general database output module (requires dev-db/libdbi)
 app-admin/rsyslog:elasticsearch - Build the Elasticsearch output module (requires net-misc/curl)
@@ -682,6 +683,7 @@ app-misc/freemind:groovy - Build plugin for scripting via Groovy
 app-misc/freemind:latex - Build plugin for inserting mathematical formulas in LaTeX syntax
 app-misc/freemind:pdf - Build plugin for exporting mindmaps to SVG and PDF
 app-misc/freemind:svg - Build plugin for exporting mindmaps to SVG and PDF
+app-misc/g810-led:hidapi - Use dev-libs/hidapi instead of virtual/libusb for talking to the device (advertised to be faster)
 app-misc/gcstar:stats - Enable statistics reporting
 app-misc/gcstar:tellico - Enable support for kde-misc/tellico files
 app-misc/gourmet:i18n - Enable support for i18n through elib.intl
@@ -1219,6 +1221,7 @@ sys-devel/parity:vc_x86 - Enable support for 32bit Visual Studio compilers
 sys-devel/sparse:gtk - Build the test-inspect utility (requires x11-libs/gtk+ version 2)
 sys-devel/sparse:llvm - Build the sparse-llvm utility
 sys-devel/sparse:xml - Build the c2xml utility (requires dev-libs/libxml2)
+sys-fabric/mstflint:inband - Enable firmware updates for Mellanox SwitchX and ConnectIB devices
 sys-fabric/ofed:dapl - Add support for DAPL abstraction layer
 sys-fabric/ofed:diags - Add dignostic tools for infiniband
 sys-fabric/ofed:ibacm - Add support for userspace pre-connection services
