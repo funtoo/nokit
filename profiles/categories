@@ -16,6 +16,7 @@ app-mobilephone
 app-pda
 app-portage
 app-shells
+dev-perl
 gnustep-apps
 gnustep-base
 gnustep-libs
@@ -23,6 +24,7 @@ kde-apps
 kde-frameworks
 kde-plasma
 media-sound
+perl-core
 ros-meta
 sys-apps
 sys-auth
@@ -38,3 +40,4 @@ sys-libs
 sys-power
 sys-process
 virtual
+www-apache

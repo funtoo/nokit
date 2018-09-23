@@ -151,6 +151,10 @@ app-admin/salt:raet - Add support for the new RAET transport.
 app-admin/salt:redis - Support returning data to a redis database.
 app-admin/salt:timelib - Use timelib to parse english textual date descriptions.
 app-admin/salt:zeromq - Add support for the zeromq transport.
+app-admin/sudo:gcrypt - Use SHA2 from dev-libs/libgcrypt instead of sudo's internal SHA2
+app-admin/sudo:offensive - Let sudo print insults when the user types the wrong password
+app-admin/sudo:openssl - Use SHA2 from dev-libs/openssl instead of sudo's internal SHA2
+app-admin/sudo:sendmail - Allow sudo to send emails with sendmail
 app-admin/sysklogd:logrotate - use app-admin/logrotate for rotating logs rather than custom cron scripts
 app-admin/sysstat:isag - Install isag, the Interactive System Activity Graph tool
 app-admin/systemrescuecd-x86:isohybrid - Pass downloaded images through isohybrid in order to make it possible to copy them directly to USB media and boot (requires sys-boot/syslinux at build time).
@@ -842,6 +846,9 @@ app-shells/autojump:ipython - Add support for dev-python/ipython
 app-shells/dash:vanilla - Support echo -n, and enable echo -e all the time (unsupported)
 app-shells/pdsh:rsh - This allows the use of rsh (remote shell) and rcp (remote copy) for authoring websites. sftp is a much more secure protocol and is preferred.
 app-shells/shish:diet - Use dev-libs/dietlibc
+dev-perl/HTTP-Entity-Parser:xs - Install C-Based dependieces for faster performance
+dev-perl/Lab-VXI11:libtirpc - Build against net-libs/libtirpc for RPC support
+dev-perl/WWW-Form-UrlEncoded:xs - Install C-Based dependieces for faster performance
 gnustep-apps/gemas:projectcenter - Build and install plugin for gnustep-apps/projectcenter
 gnustep-apps/gworkspace:gwmetadata - Enable the metadata indexing and searching system
 gnustep-base/gnustep-back-art:xim - Enable X11 XiM input method
@@ -1254,6 +1261,13 @@ sys-freebsd/freebsd-usbin:floppy - Enable floppy disk utilities (fdcontrol, fdfo
 sys-freebsd/freebsd-usbin:netware - Build libraries and tools to work with NetWare protocols (IPX and NCP).
 sys-freebsd/freebsd-usbin:zfs - Enable ZFS support.
 sys-fs/android-file-transfer-linux:fuse - Add FUSE mount helper
+sys-fs/udisks:cryptsetup - Enable sys-fs/cryptsetup support
+sys-fs/udisks:elogind - Use sys-auth/elogind for session tracking
+sys-fs/udisks:gptfdisk - Pull in sys-apps/gptfdisk for sgdisk command as used by partitioning functionality
+sys-fs/udisks:lvm - Add support for Logical Volume Management via sys-fs/lvm2.
+sys-fs/udisks:remote-access - Control whether connections from other clients over LAN are allowed
+sys-fs/udisks:systemd - Support sys-apps/systemd's logind
+sys-fs/udisks:vdo - Enable Virtual Data Optimizer support.
 sys-kernel/aufs-sources:experimental - Apply experimental patches; for more information, see "https://wiki.gentoo.org/wiki/Project:Kernel/Experimental".
 sys-kernel/aufs-sources:module - Patch kernel to allow aufs being build as a module.
 sys-kernel/aufs-sources:vanilla - Use vanilla kernel sources without applying genpatches. WARNING: This flag will drop all support from the Gentoo Kernel Security team
@@ -1342,3 +1356,18 @@ sys-process/tini:args - Enable argument parsing.
 virtual/mpi:romio - Enable romio, a high-performance portable MPI-IO
 virtual/wine:d3d9 - Enable Ixit's Gallium Nine Patchset
 virtual/wine:staging - Enable Wine-Staging's Patchset
+www-apache/mod_backtrace:unwind - Use sys-libs/libunwind to provide better resolution of function names.
+www-apache/mod_extract_forwarded:mod_proxy - Enable support for Apache's internal proxy
+www-apache/mod_musicindex:archive - Add archive support
+www-apache/mod_musicindex:cache - Add File cache support
+www-apache/mod_musicindex:mysql - Add MySQL cache support
+www-apache/mod_nss:ecc - enable Elliptical Curve Cyptography
+www-apache/mod_perl:ithreads - Build for use with thread-capable perl, needs same setting as in dev-lang/perl
+www-apache/mod_security:fuzzyhash - Support fuzzy hash computations (to detect malware, for example) using the app-crypt/ssdeep package.
+www-apache/mod_security:geoip - Pull in dev-libs/geoip for use by the SecGeoLookupDb directive.
+www-apache/mod_security:jit - Add support for the PCRE Just-in-Time optimisation, as enabled by dev-libs/libpcre with jit USE flag enabled. Might not be available on hardened systems.
+www-apache/mod_security:json - Suppose JSON in the request body parser through dev-libs/yajl.
+www-apache/mod_security:mlogc - Build and install the ModSecurity Audit Log Collector (mlogc).
+www-apache/pwauth:domain-aware - Ignore leading domain names in username (Windows compat)
+www-apache/pwauth:faillog - Log failed login attempts
+www-apache/pwauth:ignore-case - Ignore string case in username (mostly Windows compat)

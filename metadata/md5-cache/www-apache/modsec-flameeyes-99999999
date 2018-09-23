@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DEPEND=>=dev-vcs/git-1.8.2.1
+DESCRIPTION=Flameeyes's Ruleset for ModSecurity
+EAPI=6
+HOMEPAGE=http://www.flameeyes.eu/projects/modsec
+LICENSE=CC-BY-SA-3.0
+RDEPEND=>=www-apache/mod_security-2.5.1
+SLOT=0
+_eclasses_=git-r3	18aed4252aebae08e3db185e684ee37c	readme.gentoo-r1	2b27b7fcc73685ec7e0456c3b48a2fff
+_md5_=36128a6f73fe78bca98f196139a59f98

@@ -1,0 +1,10 @@
+DEFINED_PHASES=compile configure install prepare test unpack
+DEPEND=sci-electronics/labone virtual/perl-ExtUtils-MakeMaker dev-lang/perl:= >=dev-vcs/git-1.8.2.1
+DESCRIPTION=Perl bindings to the LabOne API of Zurich Instruments
+EAPI=6
+HOMEPAGE=http://search.cpan.org/~amba/Lab-Zhinst/
+LICENSE=|| ( Artistic GPL-1+ )
+RDEPEND=sci-electronics/labone dev-lang/perl:=
+SLOT=0
+_eclasses_=git-r3	18aed4252aebae08e3db185e684ee37c	multiprocessing	cac3169468f893670dac3e7cb940e045	perl-functions	669a1227009eda227739e1621a158a4d	perl-module	b832e3f37aa64cbdd6f3e98274bef14b
+_md5_=0e78b14ae33dce1aea0eea3a54c64440
