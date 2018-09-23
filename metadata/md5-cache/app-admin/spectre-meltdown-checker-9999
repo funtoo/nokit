@@ -1,9 +1,0 @@
-DEFINED_PHASES=install unpack
-DEPEND=>=dev-vcs/git-1.8.2.1
-DESCRIPTION=Spectre & Meltdown vulnerability/mitigation checker for Linux
-EAPI=7
-HOMEPAGE=https://github.com/speed47/spectre-meltdown-checker
-LICENSE=GPL-3+
-SLOT=0
-_eclasses_=git-r3	18aed4252aebae08e3db185e684ee37c
-_md5_=3079831aa528c3427b1fc452281cde02
