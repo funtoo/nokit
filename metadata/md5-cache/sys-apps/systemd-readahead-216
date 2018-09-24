@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile configure install prepare test
+DEPEND=>=sys-apps/systemd-217:= app-arch/xz-utils:0 dev-util/gperf >=dev-util/intltool-0.50 >=sys-apps/coreutils-8.16 >=sys-devel/binutils-2.23.1 >=sys-kernel/linux-headers-3.8 virtual/pkgconfig virtual/pkgconfig virtual/pkgconfig
+DESCRIPTION=Split of readahead systemd implementation
+EAPI=6
+HOMEPAGE=https://dev.gentoo.org/~pacho/systemd-readahead.html
+KEYWORDS=~alpha amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc x86
+LICENSE=LGPL-2.1 MIT
+RDEPEND=>=sys-apps/systemd-217:=
+SLOT=0
+SRC_URI=https://www.freedesktop.org/software/systemd/systemd-216.tar.xz
+_eclasses_=multilib	97f470f374f2e94ccab04a2fb21d811e	systemd	47c677ae1d7b69031f11f630ac09f0d1	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	udev	7af0412965eeadeee9e3b7ad98adabdf
+_md5_=ffb3525d1f75657d507c4d30df9c9a5d

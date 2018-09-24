@@ -1,0 +1,12 @@
+DEFINED_PHASES=install postinst postrm prepare unpack
+DEPEND=virtual/pkgconfig
+DESCRIPTION=A modern and intuitive control software for the Batronix USB programming devices
+EAPI=6
+HOMEPAGE=https://www.batronix.com
+KEYWORDS=-* ~amd64 ~x86
+LICENSE=prog-express
+RDEPEND=dev-db/sqlite:3 dev-dotnet/gtk-sharp:2 dev-dotnet/libgdiplus dev-lang/mono dev-lang/mono-basic virtual/libusb:1 virtual/udev
+SLOT=0
+SRC_URI=amd64? ( https://www.batronix.com/exe/Batronix/Prog-Express/deb/prog-express-3.7.8-1.amd64.deb ) x86? ( https://www.batronix.com/exe/Batronix/Prog-Express/deb/prog-express-3.7.8-1.i386.deb )
+_eclasses_=desktop	2ccd1dd1dd7bfb8795eea024a4f91bb6	multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	udev	7af0412965eeadeee9e3b7ad98adabdf	unpacker	ee2f5086cd7e7b747b061f58db14d89e
+_md5_=b5dcaab2c00936280c7b11b3bfecb944

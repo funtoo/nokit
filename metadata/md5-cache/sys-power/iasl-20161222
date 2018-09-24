@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile configure install prepare setup test
+DEPEND=sys-devel/bison sys-devel/flex
+DESCRIPTION=Intel ACPI Source Language (ASL) compiler
+EAPI=6
+HOMEPAGE=https://www.acpica.org/downloads/
+IUSE=test
+KEYWORDS=~amd64 ~arm64 ~ppc ~x86 ~amd64-fbsd ~x86-fbsd
+LICENSE=iASL
+SLOT=0
+SRC_URI=http://www.acpica.org/sites/acpica/files/acpica-unix-20161222.tar.gz test? ( http://www.acpica.org/sites/acpica/files/acpitests-unix-20161222.tar.gz )
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	1fb064d93b3ffd05c2fb19ef430a4aa1	flag-o-matic	55aaa148741116aa54ad0d80e361818e	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
+_md5_=242a1857a76cc79b6bb0d29548db6659

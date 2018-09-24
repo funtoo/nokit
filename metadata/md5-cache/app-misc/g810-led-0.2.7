@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare
+DEPEND=hidapi? ( dev-libs/hidapi:= ) !hidapi? ( virtual/libusb:= ) virtual/pkgconfig virtual/pkgconfig
+DESCRIPTION=Led controller for Logitech G- 213, 410, 413, 610, 810, 910 and PRO Keyboards
+EAPI=6
+HOMEPAGE=https://github.com/MatMoul/g810-led
+IUSE=+hidapi
+KEYWORDS=~amd64
+LICENSE=GPL-3
+RDEPEND=hidapi? ( dev-libs/hidapi:= ) !hidapi? ( virtual/libusb:= )
+SLOT=0
+SRC_URI=https://github.com/MatMoul/g810-led/archive/v0.2.7.tar.gz -> g810-led-0.2.7.tar.gz
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	1fb064d93b3ffd05c2fb19ef430a4aa1	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	systemd	47c677ae1d7b69031f11f630ac09f0d1	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	udev	7af0412965eeadeee9e3b7ad98adabdf
+_md5_=5fbfbb88e74b56c5ad57a0105b49c534

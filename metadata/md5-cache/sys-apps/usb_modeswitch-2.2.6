@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare setup
+DEPEND=virtual/udev virtual/libusb:1 virtual/pkgconfig virtual/pkgconfig virtual/pkgconfig
+DESCRIPTION=A tool for controlling 'flip flop' (multiple devices) USB gear like UMTS sticks
+EAPI=5
+HOMEPAGE=http://www.draisberghof.de/usb_modeswitch/ http://www.draisberghof.de/usb_modeswitch/device_reference.txt
+IUSE=jimtcl kernel_linux
+KEYWORDS=amd64 arm x86
+LICENSE=GPL-2
+RDEPEND=virtual/udev virtual/libusb:1 jimtcl? ( dev-lang/jimtcl ) !jimtcl? ( dev-lang/tcl:0 )
+SLOT=0
+SRC_URI=http://www.draisberghof.de/usb_modeswitch/usb-modeswitch-2.2.6.tar.bz2 http://www.draisberghof.de/usb_modeswitch/usb-modeswitch-data-20151101.tar.bz2
+_eclasses_=eapi7-ver	756b3f27d8e46131d5cf3c51bd876446	epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	1fb064d93b3ffd05c2fb19ef430a4aa1	linux-info	915cae3d7d636732918d18827fb1c226	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	systemd	47c677ae1d7b69031f11f630ac09f0d1	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	udev	7af0412965eeadeee9e3b7ad98adabdf
+_md5_=b1f808a269756023894198cf4fc968aa

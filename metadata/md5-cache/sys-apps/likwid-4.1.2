@@ -1,0 +1,13 @@
+DEFINED_PHASES=install postinst prepare setup
+DEPEND=dev-lang/perl fortran? ( sys-devel/gcc:*[fortran] ) dev-lang/lua:0 filecaps? ( sys-libs/libcap ) fortran? ( virtual/fortran )
+DESCRIPTION=A performance-oriented tool suite for x86 multicore environments
+EAPI=6
+HOMEPAGE=https://github.com/rrze-likwid/likwid
+IUSE=fortran +filecaps kernel_linux
+KEYWORDS=~amd64
+LICENSE=GPL-3+
+RDEPEND=dev-lang/perl fortran? ( virtual/fortran )
+SLOT=0
+SRC_URI=https://ftp.fau.de/pub/likwid/likwid-4.1.2.tar.gz
+_eclasses_=eapi7-ver	756b3f27d8e46131d5cf3c51bd876446	epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	1fb064d93b3ffd05c2fb19ef430a4aa1	fcaps	9445d60c1eb084a91c38ef4c070b2f16	fortran-2	68fcf50e02640de6eb5698ea038d9537	linux-info	915cae3d7d636732918d18827fb1c226	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
+_md5_=6f26e29b2c13d7d52d4ff0d5d9acddf6

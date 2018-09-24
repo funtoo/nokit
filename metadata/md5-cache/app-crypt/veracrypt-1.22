@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile install postinst setup test
+DEPEND=sys-fs/lvm2 sys-fs/fuse:0 x11-libs/wxGTK:3.0[X?] app-admin/sudo dev-libs/pkcs11-helper virtual/pkgconfig asm? ( dev-lang/yasm )
+DESCRIPTION=Disk encryption with strong security based on TrueCrypt
+EAPI=6
+HOMEPAGE=https://www.veracrypt.fr/en/Home.html
+IUSE=+asm cpu_flags_x86_sse4_1 cpu_flags_x86_ssse3 +doc X kernel_linux
+KEYWORDS=amd64
+LICENSE=Apache-2.0 truecrypt-3.0
+RDEPEND=sys-fs/lvm2 sys-fs/fuse:0 x11-libs/wxGTK:3.0[X?] app-admin/sudo dev-libs/pkcs11-helper
+RESTRICT=bindist mirror
+SLOT=0
+SRC_URI=https://github.com/veracrypt/VeraCrypt/archive/VeraCrypt_1.22.tar.gz
+_eclasses_=eapi7-ver	756b3f27d8e46131d5cf3c51bd876446	epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	1fb064d93b3ffd05c2fb19ef430a4aa1	flag-o-matic	55aaa148741116aa54ad0d80e361818e	linux-info	915cae3d7d636732918d18827fb1c226	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	pax-utils	e85f015e815dd463b0c206d781ef45a5	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	wxwidgets	ed63935305b6de2210ae97a407719d89
+_md5_=b629e6d3b51ab0f09d06c5a2909956ca
