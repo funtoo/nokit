@@ -1,122 +1,76 @@
-=app-arch/rpm-4.11.0.1 python_single_target_b'python2_7' python_targets_b'python2_7'
-=app-arch/rpm-4.12.0.1 python_single_target_b'python2_7' python_targets_b'python2_7'
-=app-arch/rpm-4.14.1 python_single_target_b'python2_7' python_targets_b'python2_7'
-=app-arch/rpm-4.14.1-r1 python_single_target_b'python2_7' python_targets_b'python2_7'
-=app-cdr/cdemu-3.1.0 python_single_target_b'python2_7' python_targets_b'python2_7'
-=app-cdr/cdemu-3.2.0 python_single_target_b'python3_4' python_targets_b'python3_4'
-=app-cdr/gcdemu-3.1.0 python_single_target_b'python2_7' python_targets_b'python2_7'
-=app-cdr/gcdemu-3.2.0 python_single_target_b'python3_4' python_targets_b'python3_4'
-=app-emulation/libguestfs-1.28.5-r3 python_single_target_b'python2_7' python_targets_b'python2_7'
-=app-emulation/libguestfs-1.36.13 python_single_target_b'python2_7' python_targets_b'python2_7'
-=app-emulation/libguestfs-1.36.5 python_single_target_b'python2_7' python_targets_b'python2_7'
-=app-emulation/virt-manager-1.4.3-r1 python_single_target_b'python2_7' python_targets_b'python2_7'
-=app-emulation/virt-manager-1.5.1-r1 python_single_target_b'python2_7' python_targets_b'python2_7'
-=app-emulation/virt-manager-9999 python_single_target_b'python3_4' python_targets_b'python3_4'
-=app-misc/gramps-4.2.5 python_single_target_b'python3_4' python_targets_b'python3_4'
-=app-misc/gramps-4.2.8 python_single_target_b'python3_4' python_targets_b'python3_4'
-=app-portage/chuse-1.0.2 python_single_target_b'python3_4' python_targets_b'python3_4'
-=app-portage/chuse-1.2-r1 python_single_target_b'python3_4' python_targets_b'python3_4'
-=app-portage/elogviewer-2.7-r2 python_single_target_b'python2_7' python_targets_b'python2_7'
-=app-portage/elogviewer-2.9 python_single_target_b'python2_7' python_targets_b'python2_7'
-=sys-auth/sssd-1.12.1 python_single_target_b'python2_7' python_targets_b'python2_7'
-=sys-auth/sssd-1.12.4 python_single_target_b'python2_7' python_targets_b'python2_7'
-=sys-auth/sssd-1.12.5 python_single_target_b'python2_7' python_targets_b'python2_7'
-=sys-devel/distcc-3.1-r10 python_single_target_b'python2_7' python_targets_b'python2_7'
-=sys-devel/distcc-3.2_rc1-r4 python_single_target_b'python2_7' python_targets_b'python2_7'
-=sys-devel/distcc-3.2_rc1-r5 python_single_target_b'python2_7' python_targets_b'python2_7'
-=sys-devel/distcc-3.3 python_single_target_b'python3_5' python_targets_b'python3_5'
-=sys-devel/gdb-7.10.1 python_single_target_b'python2_7' python_targets_b'python2_7'
-=sys-devel/gdb-7.12.1 python_single_target_b'python2_7' python_targets_b'python2_7'
-=sys-devel/gdb-7.9.1 python_single_target_b'python2_7' python_targets_b'python2_7'
-=sys-devel/gdb-8.1-r1 python_single_target_b'python2_7' python_targets_b'python2_7'
-=sys-devel/gdb-8.1-r2 python_single_target_b'python2_7' python_targets_b'python2_7'
-=sys-devel/gdb-8.1.1 python_single_target_b'python2_7' python_targets_b'python2_7'
-=sys-devel/gdb-8.2 python_single_target_b'python2_7' python_targets_b'python2_7'
-=sys-devel/gdb-9999 python_single_target_b'python2_7' python_targets_b'python2_7'
-=sys-process/systemd-cron-1.5.10 python_single_target_b'pypy3' python_targets_b'pypy3'
-=sys-process/systemd-cron-1.5.12-r1 python_single_target_b'pypy3' python_targets_b'pypy3'
-=sys-process/systemd-cron-1.5.3 python_single_target_b'pypy3' python_targets_b'pypy3'
-=sys-process/systemd-cron-1.5.4 python_single_target_b'pypy3' python_targets_b'pypy3'
-app-accessibility/SphinxTrain python_single_target_b'python2_7' python_targets_b'python2_7'
-app-admin/conkyforecast python_single_target_b'python2_7' python_targets_b'python2_7'
-app-admin/equo python_single_target_b'python2_7' python_targets_b'python2_7'
-app-admin/gnome-abrt python_single_target_b'python3_4' python_targets_b'python3_4'
-app-admin/matter python_single_target_b'python2_7' python_targets_b'python2_7'
-app-admin/packagekit-base python_single_target_b'python2_7' python_targets_b'python2_7'
-app-admin/ps_mem python_single_target_b'python2_7' python_targets_b'python2_7'
-app-admin/syslog-summary python_single_target_b'python2_7' python_targets_b'python2_7'
-app-antivirus/clamtk python_single_target_b'python2_7' python_targets_b'python2_7'
-app-arch/cfv python_single_target_b'python2_7' python_targets_b'python2_7'
-app-arch/createrepo python_single_target_b'python2_7' python_targets_b'python2_7'
-app-arch/deltarpm python_single_target_b'python2_7' python_targets_b'python2_7'
-app-arch/unrpa python_single_target_b'python2_7' python_targets_b'python2_7'
-app-backup/backintime python_single_target_b'python3_4' python_targets_b'python3_4'
-app-backup/bacula python_single_target_b'python2_7' python_targets_b'python2_7'
-app-backup/bareos python_single_target_b'python2_7' python_targets_b'python2_7'
-app-backup/bup python_single_target_b'python2_7' python_targets_b'python2_7'
-app-cdr/burn-cd python_single_target_b'python2_7' python_targets_b'python2_7'
-app-cdr/cdcover python_single_target_b'python2_7' python_targets_b'python2_7'
-app-cdr/gtkcdlabel python_single_target_b'python2_7' python_targets_b'python2_7'
-app-crypt/openssl-blacklist python_single_target_b'python2_7' python_targets_b'python2_7'
-app-crypt/openvpn-blacklist python_single_target_b'python2_7' python_targets_b'python2_7'
-app-crypt/ssh-multiadd python_single_target_b'python2_7' python_targets_b'python2_7'
-app-crypt/yubikey-manager-qt python_single_target_b'python3_4' python_targets_b'python3_4'
-app-emulation/crossover-bin python_single_target_b'python2_7' python_targets_b'python2_7'
-app-emulation/ganeti python_single_target_b'python2_7' python_targets_b'python2_7'
-app-emulation/libvirt-glib python_single_target_b'python2_7' python_targets_b'python2_7'
-app-emulation/openstack-guest-agents-unix python_single_target_b'python2_7' python_targets_b'python2_7'
-app-emulation/playonlinux python_single_target_b'python2_7' python_targets_b'python2_7'
-app-emulation/virtualbox python_single_target_b'python2_7' python_targets_b'python2_7'
-app-emulation/xen-pvgrub python_single_target_b'python2_7' python_targets_b'python2_7'
-app-emulation/xen-tools python_single_target_b'python2_7' python_targets_b'python2_7'
-app-forensics/afflib python_single_target_b'python2_7' python_targets_b'python2_7'
-app-forensics/openscap python_single_target_b'python2_7' python_targets_b'python2_7'
-app-i18n/ibus-anthy python_single_target_b'python2_7' python_targets_b'python2_7'
-app-i18n/ibus-hangul python_single_target_b'python2_7' python_targets_b'python2_7'
-app-i18n/ibus-libpinyin python_single_target_b'python2_7' python_targets_b'python2_7'
-app-i18n/ibus-pinyin python_single_target_b'python2_7' python_targets_b'python2_7'
-app-i18n/ibus-sunpinyin python_single_target_b'python2_7' python_targets_b'python2_7'
-app-i18n/ibus-table python_single_target_b'python3_4' python_targets_b'python3_4'
-app-i18n/ibus-typing-booster python_single_target_b'python3_4' python_targets_b'python3_4'
-app-i18n/pology python_single_target_b'python2_7' python_targets_b'python2_7'
-app-i18n/tomoe python_single_target_b'python2_7' python_targets_b'python2_7'
-app-i18n/tomoe-gtk python_single_target_b'python2_7' python_targets_b'python2_7'
-app-metrics/collectd python_single_target_b'python2_7' python_targets_b'python2_7'
-app-misc/anki python_single_target_b'python3_6' python_targets_b'python3_6'
-app-misc/byobu python_single_target_b'python2_7' python_targets_b'python2_7'
-app-misc/email2trac python_single_target_b'python2_7' python_targets_b'python2_7'
-app-misc/evemu python_single_target_b'python2_7' python_targets_b'python2_7'
-app-misc/golly python_single_target_b'python2_7' python_targets_b'python2_7'
-app-misc/hivex python_single_target_b'python2_7' python_targets_b'python2_7'
-app-misc/iguanaIR python_single_target_b'python2_7' python_targets_b'python2_7'
-app-misc/ktoblzcheck python_single_target_b'python2_7' python_targets_b'python2_7'
-app-misc/lcd4linux python_single_target_b'python2_7' python_targets_b'python2_7'
-app-misc/lirc python_single_target_b'python3_4' python_targets_b'python3_4'
-app-misc/metromap python_single_target_b'python2_7' python_targets_b'python2_7'
-app-misc/mtail python_single_target_b'python2_7' python_targets_b'python2_7'
-app-misc/pystopwatch python_single_target_b'python2_7' python_targets_b'python2_7'
-app-misc/recoll python_single_target_b'python2_7' python_targets_b'python2_7'
-app-misc/tails-installer python_single_target_b'python2_7' python_targets_b'python2_7'
-app-misc/webcomics-collector python_single_target_b'python2_7' python_targets_b'python2_7'
-app-misc/workrave python_single_target_b'python2_7' python_targets_b'python2_7'
-app-mobilephone/obexftp python_single_target_b'python2_7' python_targets_b'python2_7'
-app-mobilephone/sobexsrv python_single_target_b'python2_7' python_targets_b'python2_7'
-app-portage/gverify python_single_target_b'python2_7' python_targets_b'python2_7'
-app-portage/unsymlink-lib python_single_target_b'python2_7' python_targets_b'python2_7'
-sys-apps/biosdisk python_single_target_b'python2_7' python_targets_b'python2_7'
-sys-apps/edid-fixdim python_single_target_b'python3_5' python_targets_b'python3_5'
-sys-apps/entropy python_single_target_b'python2_7' python_targets_b'python2_7'
-sys-apps/entropy-server python_single_target_b'python2_7' python_targets_b'python2_7'
-sys-apps/fwupd python_single_target_b'python3_4' python_targets_b'python3_4'
-sys-apps/paludis python_single_target_b'python2_7' python_targets_b'python2_7'
-sys-apps/razercfg python_single_target_b'python3_4' python_targets_b'python3_4'
-sys-apps/tuned python_single_target_b'python2_7' python_targets_b'python2_7'
-sys-apps/yum python_single_target_b'python2_7' python_targets_b'python2_7'
-sys-cluster/charm python_single_target_b'python2_7' python_targets_b'python2_7'
-sys-cluster/glusterfs python_single_target_b'python2_7' python_targets_b'python2_7'
-sys-cluster/heartbeat python_single_target_b'python2_7' python_targets_b'python2_7'
-sys-cluster/moosefs python_single_target_b'python2_7' python_targets_b'python2_7'
-sys-cluster/pacemaker python_single_target_b'python2_7' python_targets_b'python2_7'
-sys-cluster/singularity python_single_target_b'python2_7' python_targets_b'python2_7'
-sys-kernel/bliss-initramfs python_single_target_b'python3_4' python_targets_b'python3_4'
-www-apache/mod_wsgi python_single_target_b'python2_7' python_targets_b'python2_7'
+=app-arch/rpm-4.11.0.1 python_single_target_python2_7
+=app-arch/rpm-4.12.0.1 python_single_target_python2_7
+=app-arch/rpm-4.14.1 python_single_target_python2_7
+=app-arch/rpm-4.14.1-r1 python_single_target_python2_7
+=app-emulation/virt-manager-1.4.3-r1 python_single_target_python2_7
+=app-emulation/virt-manager-1.5.1-r1 python_single_target_python2_7
+=sys-auth/sssd-1.12.1 python_single_target_python2_7
+=sys-devel/distcc-3.1-r10 python_single_target_python2_7
+=sys-devel/distcc-3.2_rc1-r4 python_single_target_python2_7
+=sys-devel/distcc-3.2_rc1-r5 python_single_target_python2_7
+=sys-devel/distcc-3.3 python_single_target_python3_5 python_targets_python3_5
+app-accessibility/SphinxTrain python_single_target_python2_7
+app-admin/conkyforecast python_single_target_python2_7
+app-admin/equo python_single_target_python2_7
+app-admin/matter python_single_target_python2_7
+app-admin/packagekit-base python_single_target_python2_7
+app-admin/ps_mem python_single_target_python2_7
+app-admin/syslog-summary python_single_target_python2_7
+app-antivirus/clamtk python_single_target_python2_7
+app-arch/cfv python_single_target_python2_7
+app-arch/createrepo python_single_target_python2_7
+app-arch/deltarpm python_single_target_python2_7
+app-arch/unrpa python_single_target_python2_7
+app-backup/bacula python_single_target_python2_7
+app-backup/bareos python_single_target_python2_7
+app-backup/bup python_single_target_python2_7
+app-cdr/burn-cd python_single_target_python2_7
+app-cdr/cdcover python_single_target_python2_7
+app-cdr/gtkcdlabel python_single_target_python2_7
+app-crypt/openssl-blacklist python_single_target_python2_7
+app-crypt/openvpn-blacklist python_single_target_python2_7
+app-crypt/ssh-multiadd python_single_target_python2_7
+app-emulation/crossover-bin python_single_target_python2_7
+app-emulation/ganeti python_single_target_python2_7
+app-emulation/libvirt-glib python_single_target_python2_7
+app-emulation/openstack-guest-agents-unix python_single_target_python2_7
+app-emulation/playonlinux python_single_target_python2_7
+app-emulation/virtualbox python_single_target_python2_7
+app-emulation/xen-pvgrub python_single_target_python2_7
+app-emulation/xen-tools python_single_target_python2_7
+app-forensics/afflib python_single_target_python2_7
+app-forensics/openscap python_single_target_python2_7
+app-i18n/ibus-pinyin python_single_target_python2_7
+app-i18n/ibus-sunpinyin python_single_target_python2_7
+app-i18n/pology python_single_target_python2_7
+app-i18n/tomoe python_single_target_python2_7
+app-i18n/tomoe-gtk python_single_target_python2_7
+app-misc/anki python_single_target_python3_6 python_targets_python3_6
+app-misc/byobu python_single_target_python2_7
+app-misc/email2trac python_single_target_python2_7
+app-misc/evemu python_single_target_python2_7
+app-misc/golly python_single_target_python2_7
+app-misc/iguanaIR python_single_target_python2_7
+app-misc/ktoblzcheck python_single_target_python2_7
+app-misc/lcd4linux python_single_target_python2_7
+app-misc/metromap python_single_target_python2_7
+app-misc/mtail python_single_target_python2_7
+app-misc/pystopwatch python_single_target_python2_7
+app-misc/recoll python_single_target_python2_7
+app-misc/tails-installer python_single_target_python2_7
+app-misc/webcomics-collector python_single_target_python2_7
+app-misc/workrave python_single_target_python2_7
+app-mobilephone/obexftp python_single_target_python2_7
+app-mobilephone/sobexsrv python_single_target_python2_7
+sys-apps/biosdisk python_single_target_python2_7
+sys-apps/edid-fixdim python_single_target_python3_5 python_targets_python3_5
+sys-apps/entropy python_single_target_python2_7
+sys-apps/entropy-server python_single_target_python2_7
+sys-apps/paludis python_single_target_python2_7
+sys-apps/tuned python_single_target_python2_7
+sys-apps/yum python_single_target_python2_7
+sys-cluster/charm python_single_target_python2_7
+sys-cluster/glusterfs python_single_target_python2_7
+sys-cluster/heartbeat python_single_target_python2_7
+sys-cluster/moosefs python_single_target_python2_7
+sys-cluster/pacemaker python_single_target_python2_7
