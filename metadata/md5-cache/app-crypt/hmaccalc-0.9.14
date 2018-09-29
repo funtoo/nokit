@@ -1,7 +1,7 @@
 DEFINED_PHASES=compile configure install test
 DEPEND=dev-libs/nss sys-devel/prelink
 DESCRIPTION=Tools for computing and checking HMAC values for files
-EAPI=6
+EAPI=7
 HOMEPAGE=https://pagure.io/hmaccalc
 IUSE=+fips abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_ppc_32 abi_ppc_64 abi_s390_32 abi_s390_64
 KEYWORDS=~amd64 ~x86
@@ -10,4 +10,4 @@ RDEPEND=dev-libs/nss sys-devel/prelink
 SLOT=0
 SRC_URI=https://releases.pagure.org/hmaccalc/hmaccalc-0.9.14.tar.gz
 _eclasses_=multibuild	293f364715a9786d81588224c129b704	multilib	97f470f374f2e94ccab04a2fb21d811e	multilib-build	d22583becf660d6476780c3ebb0925e4	multilib-minimal	2b16dd98c05c0a78efd8b3259ebb7622	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
-_md5_=fcc1a6b0aba44f8c460a60330346c53b
+_md5_=5c2abe698d92dea62cf1bc4ee75b67fc

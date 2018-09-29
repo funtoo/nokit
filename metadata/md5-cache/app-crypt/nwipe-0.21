@@ -1,7 +1,8 @@
+BDEPEND=virtual/pkgconfig
 DEFINED_PHASES=prepare
-DEPEND=>=sys-block/parted-2.3 >=sys-libs/ncurses-5.7-r7:= virtual/pkgconfig >=app-portage/elt-patches-20170317 !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.15:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4
+DEPEND=>=sys-block/parted-2.3 >=sys-libs/ncurses-5.7-r7:= >=app-portage/elt-patches-20170317 !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.15:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4
 DESCRIPTION=Securely erase disks using a variety of recognized methods
-EAPI=6
+EAPI=7
 HOMEPAGE=https://github.com/martijnvanbrummelen/nwipe/
 KEYWORDS=~amd64 ~x86
 LICENSE=GPL-2
@@ -9,4 +10,4 @@ RDEPEND=>=sys-block/parted-2.3 >=sys-libs/ncurses-5.7-r7:=
 SLOT=0
 SRC_URI=https://github.com/martijnvanbrummelen/nwipe/archive/v0.21.tar.gz -> nwipe-0.21.tar.gz
 _eclasses_=autotools	dc412f38566b91012efd58b9c203e6c3	libtool	e32ea84bf82cf8987965b574672dba93	multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
-_md5_=18e3d5f92f725d054532306caa49ae60
+_md5_=50e86b4c47c15abad54f362246ec09f3

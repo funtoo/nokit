@@ -1,3 +1,4 @@
+=app-admin/ps_mem-3.12-r1 python_single_target_python2_7
 =app-arch/rpm-4.11.0.1 python_single_target_python2_7
 =app-arch/rpm-4.12.0.1 python_single_target_python2_7
 =app-arch/rpm-4.14.1 python_single_target_python2_7
@@ -41,7 +42,6 @@ app-admin/equo python_single_target_python2_7
 app-admin/gnome-abrt python_single_target_python3_4 python_targets_python3_4
 app-admin/matter python_single_target_python2_7
 app-admin/packagekit-base python_single_target_python2_7
-app-admin/ps_mem python_single_target_python2_7
 app-admin/syslog-summary python_single_target_python2_7
 app-antivirus/clamtk python_single_target_python2_7
 app-arch/cfv python_single_target_python2_7
@@ -102,7 +102,6 @@ sys-apps/biosdisk python_single_target_python2_7
 sys-apps/entropy python_single_target_python2_7
 sys-apps/entropy-server python_single_target_python2_7
 sys-apps/fwupd python_single_target_python3_4 python_targets_python3_4
-sys-apps/paludis python_single_target_python2_7
 sys-apps/razercfg python_single_target_python3_4 python_targets_python3_4
 sys-apps/tuned python_single_target_python2_7
 sys-apps/yum python_single_target_python2_7

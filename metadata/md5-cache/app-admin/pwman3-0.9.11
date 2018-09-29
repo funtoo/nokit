@@ -2,7 +2,7 @@ DEFINED_PHASES=compile configure install prepare test
 DEPEND=>=dev-python/cryptography-2.3[python_targets_python3_5(-)?,python_targets_python3_6(-)?,-python_single_target_python3_5(-),-python_single_target_python3_6(-)] >=dev-python/colorama-0.3.0[python_targets_python3_5(-)?,python_targets_python3_6(-)?,-python_single_target_python3_5(-),-python_single_target_python3_6(-)] test? ( dev-python/pexpect[python_targets_python3_5(-)?,python_targets_python3_6(-)?,-python_single_target_python3_5(-),-python_single_target_python3_6(-)] ) python_targets_python3_5? ( dev-lang/python:3.5[sqlite?] ) python_targets_python3_6? ( dev-lang/python:3.6[sqlite?] ) >=dev-lang/python-exec-2:=[python_targets_python3_5(-)?,python_targets_python3_6(-)?,-python_single_target_python3_5(-),-python_single_target_python3_6(-)]
 DESCRIPTION=A lightweight password-manager with multiple database backends
 EAPI=6
-HOMEPAGE=https://pwman3.github.io
+HOMEPAGE=https://pwman3.github.io/pwman3/
 IUSE=mongodb mysql postgres +sqlite test python_targets_python3_5 python_targets_python3_6
 KEYWORDS=~amd64
 LICENSE=GPL-2
@@ -11,4 +11,4 @@ REQUIRED_USE=|| ( python_targets_python3_5 python_targets_python3_6 )
 SLOT=0
 SRC_URI=https://github.com/pwman3/pwman3/archive/v0.9.11.tar.gz -> pwman3-0.9.11.tar.gz
 _eclasses_=distutils-r1	15d091cc1fb5519adb3c1b5a7cea37dc	multibuild	293f364715a9786d81588224c129b704	multilib	97f470f374f2e94ccab04a2fb21d811e	multiprocessing	cac3169468f893670dac3e7cb940e045	python-r1	ff5bed0d9bac3da43fe84e2179943e8e	python-utils-r1	b5fdfa15cbe2f6299a482bf5d0c5925d	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	xdg-utils	9ef13b5c5bcf0c50d6aa53692d8e441c
-_md5_=89798f3b138fce7811978d295b8c2fe3
+_md5_=c287eb821f06bcc68731303eafd6bb98
