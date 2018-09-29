@@ -1,0 +1,12 @@
+DEFINED_PHASES=configure install
+DEPEND=>=dev-libs/libbsd-0.7
+DESCRIPTION=Cryptographically sign and verify files
+EAPI=6
+HOMEPAGE=http://www.openbsd.org/ https://github.com/aperezdc/signify
+KEYWORDS=~amd64
+LICENSE=BSD-1
+RDEPEND=>=dev-libs/libbsd-0.7
+SLOT=0
+SRC_URI=https://github.com/aperezdc/signify/archive/v24.tar.gz -> signify-24.tar.gz
+_eclasses_=multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
+_md5_=da9aa881f3beffbe962936bc4bd27497
