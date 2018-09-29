@@ -94,7 +94,6 @@ app-admin/puppet:diff - Enable diff support
 app-admin/puppet:experimental - Add patches for things in testing
 app-admin/puppet:rrdtool - Enable rrdtool support
 app-admin/puppet:shadow - Enable shadow support
-app-admin/puppet-agent:experimental - Add patches for things in testing
 app-admin/puppet-agent:puppetdb - Adds puppetdb support
 app-admin/puppetserver:puppetdb - Adds support for connecting to puppetdb
 app-admin/pwgen:livecd - Install init script for root password scrambling on boot
@@ -114,6 +113,7 @@ app-admin/rsyslog:mdblookup - Build the MaxMind DB lookup message modify plugin 
 app-admin/rsyslog:mongodb - Build the MongoDB output module (requires dev-libs/libmongo-client)
 app-admin/rsyslog:mysql - Build the MySQL database output module (requires virtual/mysql)
 app-admin/rsyslog:normalize - Build the normalize modify module (requires dev-libs/libee and dev-libs/liblognorm)
+app-admin/rsyslog:omhttp - Build the http output module (requires net-misc/curl)
 app-admin/rsyslog:omhttpfs - Build the httpfs output module (requires net-misc/curl)
 app-admin/rsyslog:omudpspoof - Build the udpspoof output module (requires net-libs/libnet)
 app-admin/rsyslog:openssl - Build the OpenSSL network stream driver (requires dev-libs/openssl)
@@ -889,6 +889,7 @@ sys-apps/flashrom:bitbang_spi - Bitbanging SPI infrastructure
 sys-apps/flashrom:buspirate_spi - Enable Bus Pirate SPI programmer
 sys-apps/flashrom:ch341a_spi - Enable WCH CH341A SPI programmer
 sys-apps/flashrom:dediprog - Dediprog SF100 support
+sys-apps/flashrom:developerbox_spi - Enable Devloperbox SPI recovery support
 sys-apps/flashrom:digilent_spi - Enable support for Digilent iCEblink40 development board
 sys-apps/flashrom:drkaiser - Enable Dr. Kaiser programmer
 sys-apps/flashrom:dummy - Enable dummy tracing
@@ -953,10 +954,6 @@ sys-apps/nix:gc - Enable garbage collection in the Nix expression evaluator (use
 sys-apps/nix:sodium - Use dev-libs/libsodium for cryptography
 sys-apps/pacman:doc - Install extended documentation using app-doc/doxygen. (Man pages are included by default.)
 sys-apps/pacman:gpg - Enable GPG signature verification using app-crypt/gpgme
-sys-apps/paludis:pbins - Enable binary package support. Adds dependency upon app-arch/libarchive
-sys-apps/paludis:pink - Use a less boring colourscheme than the default
-sys-apps/paludis:search-index - Enable cave search --index. Requires dev-db/sqlite.
-sys-apps/paludis:xml - Build xml things for metadata.xml and GLSA support (needs dev-libs/libxml2).
 sys-apps/pcmciautils:staticsocket - Add support for static sockets
 sys-apps/pcsc-tools:network-cron - Monthly cronjob the update-smartcard_list script
 sys-apps/pkgcore:doc - Build and install API docs.
@@ -967,6 +964,7 @@ sys-apps/proot:care - Build dynamic CARE binary (more info - http://reproducible
 sys-apps/qingy:consolekit - Enable native consolekit support
 sys-apps/qingy:opensslcrypt - Encrypt communications between qingy and its GUI using dev-libs/openssl
 sys-apps/razercfg:pm-utils - Installs the pm-utils hooks for suspend/resume and requires sys-power/pm-utils
+sys-apps/ripgrep:man - Build and install man pages.
 sys-apps/rng-tools:jitterentropy - Enable Jitter RNG entropy support
 sys-apps/rng-tools:nistbeacon - Enable NIST beacon entropy support
 sys-apps/roccat-tools:input_devices_roccat_ryosmkfx - Enable support for Ryos Mk FX keyboard.
