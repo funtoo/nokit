@@ -33,7 +33,7 @@ app-admin/conky:math - Enable support for glibc's libm math library
 app-admin/conky:moc - Enable monitoring of music played by media-sound/moc
 app-admin/conky:mpd - Enable monitoring of music controlled by media-sound/mpd
 app-admin/conky:nano-syntax - Enable syntax highlighting for app-editors/nano
-app-admin/conky:nvidia - Enable reading of nvidia card temperature sensors via media-video/nvidia-drivers
+app-admin/conky:nvidia - Enable reading of nvidia card temperature sensors via x11-drivers/nvidia-drivers
 app-admin/conky:portmon - Enable support for tcp (ip4) port monitoring
 app-admin/conky:thinkpad - Enable support for IBM/Lenovo notebooks
 app-admin/conky:weather-metar - Enable support for metar weather service
@@ -1097,6 +1097,7 @@ sys-cluster/cinder:scheduler - Installs the initscripts for the cinder scheduler
 sys-cluster/cinder:tcp - Enables tcp support for the iscsi backend
 sys-cluster/cinder:tgt - Enable tgt storage backend support
 sys-cluster/cinder:volume - Installs the initscripts for the cinder volume service
+sys-cluster/cluster-glue:ipmilan - Install the ipmilan plugin (requires sys-libs/openipmi)
 sys-cluster/cluster-glue:libnet - Force use of net-libs/libnet
 sys-cluster/corosync:infiniband - Enable Infiniband RDMA transport support
 sys-cluster/drbd-utils:heartbeat - Enable Heartbeat integration
