@@ -6,9 +6,9 @@ HOMEPAGE=https://dev.gentoo.org/~mpagano/genpatches
 IUSE=experimental symlink build
 KEYWORDS=arm
 LICENSE=GPL-2 linux-firmware
-RDEPEND=!build? ( >=sys-libs/ncurses-5.2 sys-devel/make dev-lang/perl sys-devel/bc virtual/libelf )
+RDEPEND=!build? ( dev-lang/perl sys-devel/bc sys-devel/bison sys-devel/flex sys-devel/make >=sys-libs/ncurses-5.2 virtual/libelf )
 RESTRICT=binchecks strip
 SLOT=4.14.52
 SRC_URI=mirror://kernel/linux/kernel/v4.x/linux-4.14.tar.xz mirror://gentoo/genpatches-4.14-57.base.tar.xz mirror://gentoo/genpatches-4.14-57.extras.tar.xz experimental? ( mirror://gentoo/genpatches-4.14-57.experimental.tar.xz )
-_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	1fb064d93b3ffd05c2fb19ef430a4aa1	kernel-2	a07f8a3332a2072bd497201c8b219c01	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	python-any-r1	4900ae970f827a22d33d41bd8b8f9ace	python-utils-r1	b5fdfa15cbe2f6299a482bf5d0c5925d	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	versionator	2352c3fc97241f6a02042773c8287748
+_eclasses_=eapi7-ver	756b3f27d8e46131d5cf3c51bd876446	estack	5ac2a138d0b33354b764d84f9e835db8	kernel-2	bc2f2b5caeb6f89c673a8a4dced6511e	multilib	97f470f374f2e94ccab04a2fb21d811e	python-any-r1	4900ae970f827a22d33d41bd8b8f9ace	python-utils-r1	b5fdfa15cbe2f6299a482bf5d0c5925d	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
 _md5_=60374f48d87bf823eeab700116c95e9b

@@ -2,13 +2,13 @@ DEFINED_PHASES=compile install postinst postrm preinst prepare setup test unpack
 DEPEND=deblob? ( || ( >=dev-lang/python-2.7.5-r2:2.7 ) ) !build? ( sys-apps/sed >=sys-devel/binutils-2.11.90.0.31 ) deblob? ( || ( >=dev-lang/python-2.7.5-r2:2.7 ) )
 DESCRIPTION=Gentoo's genpatches for Linux 4.14, with Con Kolivas' MuQSS process scheduler.
 EAPI=6
-HOMEPAGE=https://www.kernel.org/ https://www.gentoo.org/ https://dev.gentoo.org/~mpagano/genpatches/ http://kernel.kolivas.org/ http://www.fsfla.org/svn/fsfla/software/linux-libre/releases/tags
+HOMEPAGE=https://www.kernel.org/ https://www.gentoo.org/ https://dev.gentoo.org/~mpagano/genpatches/ http://kernel.kolivas.org/ https://www.fsfla.org/svn/fsfla/software/linux-libre/releases/tags/
 IUSE=experimental symlink build deblob
 KEYWORDS=~amd64 ~x86
 LICENSE=GPL-2 !deblob? ( linux-firmware )
-RDEPEND=!build? ( >=sys-libs/ncurses-5.2 sys-devel/make dev-lang/perl sys-devel/bc virtual/libelf )
+RDEPEND=!build? ( dev-lang/perl sys-devel/bc sys-devel/bison sys-devel/flex sys-devel/make >=sys-libs/ncurses-5.2 virtual/libelf )
 RESTRICT=binchecks strip
 SLOT=4.14.69
-SRC_URI=mirror://kernel/linux/kernel/v4.x/linux-4.14.tar.xz deblob? ( http://www.fsfla.org/svn/fsfla/software/linux-libre/releases/tags/4.14-gnu/deblob-4.14 http://www.fsfla.org/svn/fsfla/software/linux-libre/releases/tags/4.14-gnu/deblob-check -> deblob-check-4.14 ) mirror://gentoo/genpatches-4.14-75.base.tar.xz mirror://gentoo/genpatches-4.14-75.extras.tar.xz experimental? ( mirror://gentoo/genpatches-4.14-75.experimental.tar.xz ) http://ck.kolivas.org/patches/muqss/4.0/4.14/4.14-sched-MuQSS_162.patch -> ck-sources-4.14-muqss.patch https://github.com/ckolivas/linux/commit/25849740d77dfc089fdbfb53623e50d38a972aff.patch -> ck-sources-4.14-blkio-fix.patch https://github.com/ckolivas/linux/commit/7bb09fbdf490f5de8eafc635ab858b1f38dca84c.patch -> ck-sources-4.14-irqregsdeclaration-fix.patch
-_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	1fb064d93b3ffd05c2fb19ef430a4aa1	kernel-2	a07f8a3332a2072bd497201c8b219c01	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	python-any-r1	4900ae970f827a22d33d41bd8b8f9ace	python-utils-r1	b5fdfa15cbe2f6299a482bf5d0c5925d	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	versionator	2352c3fc97241f6a02042773c8287748
+SRC_URI=mirror://kernel/linux/kernel/v4.x/linux-4.14.tar.xz deblob? ( https://www.fsfla.org/svn/fsfla/software/linux-libre/releases/tags//4.14-gnu/deblob-4.14 https://www.fsfla.org/svn/fsfla/software/linux-libre/releases/tags//4.14-gnu/deblob-check -> deblob-check-4.14 ) mirror://gentoo/genpatches-4.14-75.base.tar.xz mirror://gentoo/genpatches-4.14-75.extras.tar.xz experimental? ( mirror://gentoo/genpatches-4.14-75.experimental.tar.xz ) http://ck.kolivas.org/patches/muqss/4.0/4.14/4.14-sched-MuQSS_162.patch -> ck-sources-4.14-muqss.patch https://github.com/ckolivas/linux/commit/25849740d77dfc089fdbfb53623e50d38a972aff.patch -> ck-sources-4.14-blkio-fix.patch https://github.com/ckolivas/linux/commit/7bb09fbdf490f5de8eafc635ab858b1f38dca84c.patch -> ck-sources-4.14-irqregsdeclaration-fix.patch
+_eclasses_=eapi7-ver	756b3f27d8e46131d5cf3c51bd876446	estack	5ac2a138d0b33354b764d84f9e835db8	kernel-2	bc2f2b5caeb6f89c673a8a4dced6511e	multilib	97f470f374f2e94ccab04a2fb21d811e	python-any-r1	4900ae970f827a22d33d41bd8b8f9ace	python-utils-r1	b5fdfa15cbe2f6299a482bf5d0c5925d	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
 _md5_=fd0db79c5a74eefa245caa7dca40fd91
