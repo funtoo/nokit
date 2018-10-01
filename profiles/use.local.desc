@@ -977,6 +977,8 @@ sys-apps/s390-tools:fuse - build cmsfs-fuse to read files stored on a z/VM CMS d
 sys-apps/s390-tools:ncurses - build hyptop monitoring program
 sys-apps/s390-tools:pfm - build the cpacfstats tool
 sys-apps/s390-tools:zlib - build the zgetdump utility
+sys-apps/superdiag:iso - Install an iso image, which can be used with sys-apps/smc-sum.
+sys-apps/superdiag:usb - Install all files, which are needed for an installation on an usb thumb drive.
 sys-apps/superiotool:pci - Support for PCI-attached "Super I/Os" (e.g. in VIA VT82686A/B).
 sys-apps/systemd:apparmor - Enable AppArmor support
 sys-apps/systemd:audit - Enable support for sys-process/audit
