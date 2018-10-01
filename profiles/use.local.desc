@@ -980,6 +980,8 @@ sys-apps/s390-tools:fuse - build cmsfs-fuse to read files stored on a z/VM CMS d
 sys-apps/s390-tools:ncurses - build hyptop monitoring program
 sys-apps/s390-tools:pfm - build the cpacfstats tool
 sys-apps/s390-tools:zlib - build the zgetdump utility
+sys-apps/superdiag:iso - Install an iso image, which can be used with sys-apps/smc-sum.
+sys-apps/superdiag:usb - Install all files, which are needed for an installation on an usb thumb drive.
 sys-apps/superiotool:pci - Support for PCI-attached "Super I/Os" (e.g. in VIA VT82686A/B).
 sys-apps/systemd:apparmor - Enable AppArmor support
 sys-apps/systemd:audit - Enable support for sys-process/audit
@@ -1260,7 +1262,7 @@ sys-freebsd/freebsd-usbin:floppy - Enable floppy disk utilities (fdcontrol, fdfo
 sys-freebsd/freebsd-usbin:netware - Build libraries and tools to work with NetWare protocols (IPX and NCP).
 sys-freebsd/freebsd-usbin:zfs - Enable ZFS support.
 sys-fs/android-file-transfer-linux:fuse - Add FUSE mount helper
-sys-fs/bees:tools - Build extra tools useful for debugging (fiemap, feiwalk, beestop)
+sys-fs/bees:tools - Build extra tools useful for debugging (fiemap, fiewalk)
 sys-fs/udisks:cryptsetup - Enable sys-fs/cryptsetup support
 sys-fs/udisks:elogind - Use sys-auth/elogind for session tracking
 sys-fs/udisks:gptfdisk - Pull in sys-apps/gptfdisk for sgdisk command as used by partitioning functionality
