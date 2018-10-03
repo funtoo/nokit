@@ -1,5 +1,5 @@
---- a/CMakeLists.txt	2014-11-28 14:51:14.375913296 +0900
-+++ b/CMakeLists.txt	2014-11-28 14:52:09.579369288 +0900
+--- a/CMakeLists.txt	2018-09-28 13:12:14 +0300
++++ b/CMakeLists.txt	2018-09-28 13:12:39 +0300
 @@ -37,16 +37,6 @@
  add_subdirectory ( stable )
  add_subdirectory ( unstable )
@@ -8,7 +8,7 @@
 -   "ChangeLog"
 -   "COPYING"
 -   "MAINTAINERS"
--   "README"
+-   "README.md"
 -   "README.hypervisor"
 -   "RELEASE-NOTES"
 -   "TODO"
