@@ -1282,11 +1282,6 @@ sys-kernel/mips-sources:ip27 - Enables additional support for SGI Origin (IP27)
 sys-kernel/mips-sources:ip28 - Enables additional support for SGI Indigo2 Impact R10000 (IP28)
 sys-kernel/mips-sources:ip30 - Enables support for SGI Octane (IP30, 'Speedracer')
 sys-kernel/rt-sources:deblob - Remove binary blobs from kernel sources to provide libre license compliance.
-sys-libs/ldb:doc - Builds documentation
-sys-libs/ldb:ldap - Enable LDAP support
-sys-libs/ldb:lmdb - Enable LMDB backend
-sys-libs/ldb:python - Enable Python support
-sys-libs/talloc:compat - Enable extra compatibility stuff
 sys-power/apcupsd:modbus - Enable MODBUS support over USB
 sys-power/cpupower:cpufreq_bench - Build and install the cpufreq_bench binary
 sys-power/nut:ipmi - Support IPMI-based UPSes.

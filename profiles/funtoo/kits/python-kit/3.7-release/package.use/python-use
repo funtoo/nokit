@@ -112,8 +112,4 @@ sys-cluster/moosefs python_single_target_python2_7
 sys-cluster/pacemaker python_single_target_python2_7
 sys-cluster/singularity python_single_target_python2_7
 sys-kernel/bliss-initramfs python_single_target_python3_4 python_targets_python3_4
-sys-libs/ldb python_single_target_python2_7
-sys-libs/talloc python_single_target_python2_7
-sys-libs/tdb python_single_target_python2_7
-sys-libs/tevent python_single_target_python2_7
 www-apache/mod_wsgi python_single_target_python2_7
