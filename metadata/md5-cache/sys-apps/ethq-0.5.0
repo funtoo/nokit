@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare test
+DEPEND=sys-libs/ncurses:0
+DESCRIPTION=Ethernet NIC Queue stats viewer
+EAPI=7
+HOMEPAGE=https://github.com/isc-projects/ethq
+IUSE=test
+KEYWORDS=~amd64 ~x86
+LICENSE=MPL-2.0
+RDEPEND=sys-libs/ncurses:0
+SLOT=0
+SRC_URI=https://github.com/isc-projects/ethq/archive/v0_5_0.tar.gz -> ethq-0_5_0.tar.gz
+_eclasses_=multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
+_md5_=75174c3c61b70662e440767122014adb
