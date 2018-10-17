@@ -1367,3 +1367,5 @@ www-apache/mod_security:mlogc - Build and install the ModSecurity Audit Log Coll
 www-apache/pwauth:domain-aware - Ignore leading domain names in username (Windows compat)
 www-apache/pwauth:faillog - Log failed login attempts
 www-apache/pwauth:ignore-case - Ignore string case in username (mostly Windows compat)
+xfce-extra/xfce4-screensaver:consolekit - Enable ConsoleKit support
+xfce-extra/xfce4-screensaver:locking - Enable screen locking support
