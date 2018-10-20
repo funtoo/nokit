@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DEPEND=>=dev-vcs/git-1.8.2.1
+DESCRIPTION=An ACME Shell script
+EAPI=7
+HOMEPAGE=https://github.com/Neilpang/acme.sh
+LICENSE=GPL-3
+RDEPEND=net-misc/curl || ( dev-libs/libressl dev-libs/openssl:0 ) || ( net-analyzer/netcat6 net-analyzer/openbsd-netcat ) || ( net-misc/socat www-servers/apache:2 www-servers/nginx:0 ) virtual/cron
+SLOT=0
+_eclasses_=git-r3	18aed4252aebae08e3db185e684ee37c
+_md5_=1d79a607dc8b8177c191b6747cb82aca

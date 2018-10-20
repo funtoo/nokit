@@ -1,7 +1,4 @@
 =app-admin/ps_mem-3.12-r1 python_single_target_python2_7
-=app-arch/rpm-4.11.0.1 python_single_target_python2_7
-=app-arch/rpm-4.14.1 python_single_target_python2_7
-=app-arch/rpm-4.14.1-r1 python_single_target_python2_7
 =app-emulation/libguestfs-1.28.5-r3 python_single_target_python2_7
 =app-emulation/libguestfs-1.36.13 python_single_target_python2_7
 =app-emulation/libguestfs-1.36.5 python_single_target_python2_7
@@ -42,6 +39,7 @@ app-antivirus/clamtk python_single_target_python2_7
 app-arch/cfv python_single_target_python2_7
 app-arch/createrepo python_single_target_python2_7
 app-arch/deltarpm python_single_target_python2_7
+app-arch/rpm python_single_target_python2_7
 app-arch/unrpa python_single_target_python2_7
 app-backup/backintime python_single_target_python3_4 python_targets_python3_4
 app-backup/bacula python_single_target_python2_7

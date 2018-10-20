@@ -1,8 +1,5 @@
 =app-admin/ps_mem-3.12-r1 python_single_target_python2_7
 =app-admin/ps_mem-3.13 python_single_target_python2_7
-=app-arch/rpm-4.11.0.1 python_single_target_python2_7
-=app-arch/rpm-4.14.1 python_single_target_python2_7
-=app-arch/rpm-4.14.1-r1 python_single_target_python2_7
 =app-emulation/virt-manager-1.4.3-r1 python_single_target_python2_7
 =app-emulation/virt-manager-1.5.1-r1 python_single_target_python2_7
 =sys-devel/distcc-3.1-r10 python_single_target_python2_7
@@ -19,6 +16,7 @@ app-antivirus/clamtk python_single_target_python2_7
 app-arch/cfv python_single_target_python2_7
 app-arch/createrepo python_single_target_python2_7
 app-arch/deltarpm python_single_target_python2_7
+app-arch/rpm python_single_target_python2_7
 app-arch/unrpa python_single_target_python2_7
 app-backup/bacula python_single_target_python2_7
 app-backup/bareos python_single_target_python2_7
