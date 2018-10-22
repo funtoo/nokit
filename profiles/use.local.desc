@@ -104,7 +104,6 @@ app-admin/rsyslog:elasticsearch - Build the Elasticsearch output module (require
 app-admin/rsyslog:gcrypt - Add support for encrypted log files using dev-libs/libgcrypt
 app-admin/rsyslog:gnutls - Build the GnuTLS network stream driver (requires net-libs/gnutls)
 app-admin/rsyslog:grok - Build the grok modify module (requires dev-libs/grok)
-app-admin/rsyslog:jemalloc - Use dev-libs/jemalloc for allocations.
 app-admin/rsyslog:kafka - Build the Apache Kafka input/output module (requires dev-libs/librdkafka)
 app-admin/rsyslog:kerberos - Build the GSSAPI input and output module (requires virtual/krb5)
 app-admin/rsyslog:kubernetes - Build the kubernetes modify plugin (requires net-misc/curl)
@@ -462,7 +461,6 @@ app-emulation/virt-viewer:vnc - Support connecting to VNC-enabled virtual machin
 app-emulation/virt-what:dmi - Use sys-apps/dmidecode to read firmware data
 app-emulation/virtualbox:headless - Build without any graphic frontend
 app-emulation/virtualbox:lvm - Build VBoxVolInfo that needs devicemapper from sys-fs/lvm2.
-app-emulation/virtualbox:opus - Adds support for the Opus codec via media-libs/opus
 app-emulation/virtualbox:pax_kernel - Apply patch needed for pax enabled kernels.
 app-emulation/virtualbox:sdk - Enable building of SDK
 app-emulation/virtualbox:udev - Controls installation of special USB udev rules.
@@ -675,6 +673,7 @@ app-misc/byobu:screen - Use app-misc/screen as the default backend
 app-misc/carbon-c-relay:lz4 - add support for LZ4 compressed transport
 app-misc/carbon-c-relay:oniguruma - use dev-libs/oniguruma as regex implementation
 app-misc/carbon-c-relay:pcre2 - use dev-libs/libpcre2 as regex implementation
+app-misc/carbon-c-relay:snappy - add support for Snappy compressed transport
 app-misc/ddccontrol:pci - enable direct PCI memory access (the setuid ddcpci util)
 app-misc/ddcutil:drm - Use x11-libs/libdrm for more verbose diagnostics.
 app-misc/ddcutil:usb-monitor - Adds support for monitors attached via USB.
@@ -756,9 +755,7 @@ app-misc/lirc:audio - Support using an audio device connected to an IR receiver
 app-misc/lirc:devinput - Support the devinput input device
 app-misc/lirc:ftdi - Support FTDI devices
 app-misc/lirc:gtk - Include GTK support which enables the use of lirc-setup
-app-misc/lirc:hardware-carrier - The transmitter device generates its clock signal in hardware
 app-misc/lirc:inputlirc - Add a dependency on app-misc/inputlircd
-app-misc/lirc:transmitter - Add transmitter support to some lirc-drivers (e.g. serial)
 app-misc/lirc:uinput - Enable support for uinput
 app-misc/mc:edit - Compile and install the mcedit application
 app-misc/mc:mclib - Compile and install the libmc.so shared library
@@ -1070,7 +1067,6 @@ sys-cluster/ceph:cephfs - Build support for cephfs, a POSIX compatible filesyste
 sys-cluster/ceph:cryptopp - Use dev-libs/crypto++ for cryptography
 sys-cluster/ceph:dpdk - Enable DPDK messaging
 sys-cluster/ceph:fuse - Build fuse client
-sys-cluster/ceph:jemalloc - Use dev-libs/jemalloc for allocations
 sys-cluster/ceph:libaio - Use libaio as asynchronous input/output library
 sys-cluster/ceph:libatomic - Use libatomic instead of builtin atomic operations
 sys-cluster/ceph:lttng - Add support for LTTng
@@ -1120,7 +1116,6 @@ sys-cluster/glusterfs:rsyslog - Install configuration snippet for app-admin/rsys
 sys-cluster/glusterfs:systemtap - Enable support for dev-util/systemtap
 sys-cluster/glusterfs:tiering - Enable support for data classification/tiering (requires dev-db/sqlite SLOT 3)
 sys-cluster/heat:memcached - Installs the memcached server
-sys-cluster/hpx:jemalloc - Use dev-libs/jemalloc for memory allocation
 sys-cluster/hpx:papi - Use dev-libs/papi for NaCl
 sys-cluster/hpx:perftools - Use dev-util/google-perftools for memory allocation
 sys-cluster/hpx:tbb - Use dev-cpp/tbb for memory allocation
