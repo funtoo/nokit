@@ -8,7 +8,7 @@ if [[ ${PV} == "9999" ]]; then
 	inherit git-r3
 else
 	SRC_URI="https://gitweb.gentoo.org/proj/livecd-tools.git/snapshot/${P}.tar.bz2"
-	KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
+	KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
 fi
 
 DESCRIPTION="Gentoo LiveCD tools for autoconfiguration of hardware"
@@ -24,8 +24,7 @@ RDEPEND="dev-util/dialog
 	>=sys-apps/openrc-0.8.2-r1
 	sys-apps/pciutils
 	sys-apps/gawk
-	sys-apps/sed
-"
+	sys-apps/sed"
 
 pkg_setup() {
 		ewarn "This package is designed for use on the LiveCD only and will do"
