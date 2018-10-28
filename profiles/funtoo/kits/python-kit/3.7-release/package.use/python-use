@@ -106,4 +106,5 @@ sys-cluster/moosefs python_single_target_python2_7
 sys-cluster/pacemaker python_single_target_python2_7
 sys-cluster/singularity python_single_target_python2_7
 sys-kernel/bliss-initramfs python_single_target_python3_4 python_targets_python3_4
+sys-power/nut python_single_target_python2_7
 www-apache/mod_wsgi python_single_target_python2_7
