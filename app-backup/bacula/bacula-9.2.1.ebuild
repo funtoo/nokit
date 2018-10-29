@@ -1,9 +1,9 @@
 # Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="6"
+EAPI=6
 
-inherit qmake-utils desktop systemd user libtool
+inherit desktop libtool qmake-utils systemd user
 
 MY_PV=${PV/_beta/-b}
 MY_P=${PN}-${MY_PV}
@@ -14,55 +14,59 @@ SRC_URI="mirror://sourceforge/bacula/${MY_P}.tar.gz"
 
 LICENSE="AGPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE="acl bacula-clientonly bacula-nodir bacula-nosd examples ipv6 libressl logwatch mysql postgres qt5 readline +sqlite ssl static tcpd vim-syntax X"
 
 DEPEND="
-	dev-libs/gmp:0
 	!bacula-clientonly? (
-		postgres? ( dev-db/postgresql:=[threads] )
-		mysql? ( dev-db/mysql-connector-c:= )
-		sqlite? ( dev-db/sqlite:3 )
 		!bacula-nodir? ( virtual/mta )
+		postgres? ( dev-db/postgresql:=[threads] )
+		mysql? ( || ( dev-db/mysql-connector-c dev-db/mariadb-connector-c ) )
+		sqlite? ( dev-db/sqlite:3 )
 	)
+	dev-libs/gmp:0
 	qt5? (
 		dev-qt/qtsvg:5
 		x11-libs/qwt:6
 	)
 	logwatch? ( sys-apps/logwatch )
-	tcpd? ( >=sys-apps/tcp-wrappers-7.6 )
 	readline? ( sys-libs/readline:0 )
 	static? (
-		acl? ( virtual/acl[static-libs] )
-		sys-libs/zlib[static-libs]
 		dev-libs/lzo[static-libs]
 		sys-libs/ncurses:=[static-libs]
+		sys-libs/zlib[static-libs]
+		acl? ( virtual/acl[static-libs] )
 		ssl? (
 			!libressl? ( dev-libs/openssl:0=[static-libs] )
 			libressl? ( dev-libs/libressl:0=[static-libs] )
 		)
 	)
 	!static? (
-		acl? ( virtual/acl )
-		sys-libs/zlib
 		dev-libs/lzo
 		sys-libs/ncurses:=
+		sys-libs/zlib
+		acl? ( virtual/acl )
 		ssl? (
 			!libressl? ( dev-libs/openssl:0= )
 			libressl? ( dev-libs/libressl:0= )
 		)
-	)"
+	)
+	tcpd? ( >=sys-apps/tcp-wrappers-7.6 )
+"
 RDEPEND="${DEPEND}
 	!bacula-clientonly? (
 		!bacula-nosd? (
-			sys-block/mtx
 			app-arch/mt-st
+			sys-block/mtx
 		)
 	)
-	vim-syntax? ( || ( app-editors/vim app-editors/gvim ) )"
+	vim-syntax? ( || ( app-editors/vim app-editors/gvim ) )
+"
 
-REQUIRED_USE="!bacula-clientonly? ( ^^ ( mysql postgres sqlite ) )
-				static? ( bacula-clientonly )"
+REQUIRED_USE="
+	!bacula-clientonly? ( ^^ ( mysql postgres sqlite ) )
+	static? ( bacula-clientonly )
+"
 
 S=${WORKDIR}/${MY_P}
 
@@ -175,6 +179,10 @@ src_prepare() {
 		eapply -p0 "${FILESDIR}"/9.0.6/${PN}-9.0.6-libressl27.patch
 	fi
 
+	# Don't let program instal man pages directly
+	rm "${S}"/manpages/Makefile.in || die "Unable to remove man pages Makefile.in"
+	eapply -p1 "${FILESDIR}/bacula-fix-manpages.patch"
+
 	# fix bundled libtool (bug 466696)
 	# But first move directory with M4 macros out of the way.
 	# It is only needed by autoconf and gives errors during elibtoolize.
@@ -231,6 +239,7 @@ src_configure() {
 		--htmldir=/usr/share/doc/${PF}/html \
 		--with-pid-dir=/var/run \
 		--sysconfdir=/etc/bacula \
+		--with-archivedir=/var/lib/bacula/tmp \
 		--with-subsys-dir=/var/lock/subsys \
 		--with-working-dir=/var/lib/bacula \
 		--with-logdir=/var/lib/bacula \
@@ -308,10 +317,8 @@ src_install() {
 		rm -vf "${D}"/usr/share/man/man1/bat.1*
 	fi
 	rm -vf "${D}"/usr/share/man/man1/bacula-tray-monitor.1*
-	if use bacula-clientonly || use bacula-nodir; then
-		rm -vf "${D}"/usr/share/man/man8/bacula-dir.8*
-		rm -vf "${D}"/usr/share/man/man8/dbcheck.8*
-		rm -vf "${D}"/usr/share/man/man1/bsmtp.1*
+
+	if use bacula-clientonly || use bacula-nodir ; then
 		rm -vf "${D}"/usr/libexec/bacula/create_*_database
 		rm -vf "${D}"/usr/libexec/bacula/drop_*_database
 		rm -vf "${D}"/usr/libexec/bacula/make_*_tables
@@ -321,12 +328,6 @@ src_install() {
 		rm -vf "${D}"/usr/libexec/bacula/*_catalog_backup
 	fi
 	if use bacula-clientonly || use bacula-nosd; then
-		rm -vf "${D}"/usr/share/man/man8/bacula-sd.8*
-		rm -vf "${D}"/usr/share/man/man8/bcopy.8*
-		rm -vf "${D}"/usr/share/man/man8/bextract.8*
-		rm -vf "${D}"/usr/share/man/man8/bls.8*
-		rm -vf "${D}"/usr/share/man/man8/bscan.8*
-		rm -vf "${D}"/usr/share/man/man8/btape.8*
 		rm -vf "${D}"/usr/libexec/bacula/disk-changer
 		rm -vf "${D}"/usr/libexec/bacula/mtx-changer
 		rm -vf "${D}"/usr/libexec/bacula/dvd-handler
@@ -334,6 +335,9 @@ src_install() {
 
 	# documentation
 	dodoc ChangeLog ReleaseNotes SUPPORT
+
+	# Install all man pages
+	doman "${S}"/manpages/*
 
 	# install examples (bug #457504)
 	if use examples; then
@@ -431,4 +435,6 @@ pkg_postinst() {
 	einfo "Please note that 'bconsole' will always be installed. To compile 'bat'"
 	einfo "you have to enable 'USE=qt5'."
 	einfo
+	einfo "/var/lib/bacula/tmp was configured for archivedir. This dir will be used during"
+	einfo "restores, so be sure to set it to an appropriate in dir in the bacula config."
 }
