@@ -11,7 +11,7 @@ SRC_URI="https://github.com/Irqbalance/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.g
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="caps +numa selinux tui"
 
 CDEPEND="
@@ -27,10 +27,6 @@ RDEPEND="${CDEPEND}
 	selinux? ( sec-policy/selinux-irqbalance )
 "
 
-PATCHES=(
-	"${FILESDIR}/${P}-configure.patch"
-)
-
 pkg_setup() {
 	CONFIG_CHECK="~PCI_MSI"
 	linux-info_pkg_setup
@@ -45,7 +41,6 @@ src_prepare() {
 		-i misc/irqbalance.service || die
 
 	default
-
 	eautoreconf
 }
 
