@@ -265,6 +265,7 @@ app-crypt/ekeyd:munin - Install a plugin for net-analyzer/munin to graph statist
 app-crypt/ekeyd:usb - Build the libusb-based userland daemon for accessing the EntropyKey (alternative to the CDC USB driver). It is suggested to use this option by default, as the CDC driver in the kernel often seems to be fragile (or the gadget implementation on the EntropyKey is too buggy), and can cause various problems.
 app-crypt/gnupg-pkcs11-scd:proxy - Build the gnupg-pkcs11-scd-prox
 app-crypt/gpgme:common-lisp - Install common-lisp files
+app-crypt/hashcat:brain - Enable the hashcat brain
 app-crypt/heimdal:hdb-ldap - Adds support for LDAP as a database backend
 app-crypt/heimdal:otp - Adds support for one-time passwords
 app-crypt/heimdal:pkinit - Adds support for PKINIT for the initial ticket
@@ -488,10 +489,10 @@ app-emulation/wine-any:osmesa - Add support for OpenGL in bitmaps using libOSMes
 app-emulation/wine-any:pcap - Support packet capture software (e.g. wireshark)
 app-emulation/wine-any:perl - Install helpers written in perl (winedump/winemaker)
 app-emulation/wine-any:pipelight - Apply Wine-Staging patches for Pipelight/Silverlight support
-app-emulation/wine-any:prelink - Run prelink on DLLs during build; For versions before wine-1.7.55 or hardened, do not disable if you do not know what this means as it can break things at runtime
+app-emulation/wine-any:prelink - Run prelink on DLLs during build; For Gentoo hardened, do not disable if you do not know what this means as it can break things at runtime
 app-emulation/wine-any:realtime - Pull in sys-auth/rtkit for low-latency pulseaudio support
 app-emulation/wine-any:run-exes - Use Wine to open and run .EXE and .MSI files
-app-emulation/wine-any:samba - Add support for NTLM auth. see http://wiki.winehq.org/NtlmAuthSetupGuide and http://wiki.winehq.org/NtlmSigningAndSealing
+app-emulation/wine-any:samba - Add support for NTLM auth. See: https://web.archive.org/web/20160108123008/http://wiki.winehq.org:80/NtlmAuthSetupGuide and https://web.archive.org/web/20150906013746/http://wiki.winehq.org/NtlmSigningAndSealing (these pages are not currently in the updated WineHQ Wiki).
 app-emulation/wine-any:sdl - Add support for gamepad detection using SDL
 app-emulation/wine-any:staging - Apply Wine-Staging patches for advanced feature support that haven't made it into upstream Wine yet
 app-emulation/wine-any:themes - Support GTK+:3 window theming through Wine-Staging
@@ -511,10 +512,10 @@ app-emulation/wine-d3d9:opencl - Enable OpenCL support
 app-emulation/wine-d3d9:osmesa - Add support for OpenGL in bitmaps using libOSMesa
 app-emulation/wine-d3d9:pcap - Support packet capture software (e.g. wireshark)
 app-emulation/wine-d3d9:perl - Install helpers written in perl (winedump/winemaker)
-app-emulation/wine-d3d9:prelink - Run prelink on DLLs during build; For versions before wine-1.7.55 or hardened, do not disable if you do not know what this means as it can break things at runtime
+app-emulation/wine-d3d9:prelink - Run prelink on DLLs during build; For Gentoo hardened, do not disable if you do not know what this means as it can break things at runtime
 app-emulation/wine-d3d9:realtime - Pull in sys-auth/rtkit for low-latency pulseaudio support
 app-emulation/wine-d3d9:run-exes - Use Wine to open and run .EXE and .MSI files
-app-emulation/wine-d3d9:samba - Add support for NTLM auth. see http://wiki.winehq.org/NtlmAuthSetupGuide and http://wiki.winehq.org/NtlmSigningAndSealing
+app-emulation/wine-d3d9:samba - Add support for NTLM auth. See: https://web.archive.org/web/20160108123008/http://wiki.winehq.org:80/NtlmAuthSetupGuide and https://web.archive.org/web/20150906013746/http://wiki.winehq.org/NtlmSigningAndSealing (these pages are not currently in the updated WineHQ Wiki).
 app-emulation/wine-d3d9:sdl - Add support for gamepad detection using SDL
 app-emulation/wine-d3d9:udev - Use virtual/libudev to provide plug and play support
 app-emulation/wine-d3d9:vkd3d - Use app-emulation/vkd3d to provide Direct3D 12 support
@@ -533,10 +534,10 @@ app-emulation/wine-staging:osmesa - Add support for OpenGL in bitmaps using libO
 app-emulation/wine-staging:pcap - Support packet capture software (e.g. wireshark)
 app-emulation/wine-staging:perl - Install helpers written in perl (winedump/winemaker)
 app-emulation/wine-staging:pipelight - Apply Wine-Staging patches for Pipelight/Silverlight support
-app-emulation/wine-staging:prelink - Run prelink on DLLs during build; For versions before wine-1.7.55 or hardened, do not disable if you do not know what this means as it can break things at runtime
+app-emulation/wine-staging:prelink - Run prelink on DLLs during build; For Gentoo hardened, do not disable if you do not know what this means as it can break things at runtime
 app-emulation/wine-staging:realtime - Pull in sys-auth/rtkit for low-latency pulseaudio support
 app-emulation/wine-staging:run-exes - Use Wine to open and run .EXE and .MSI files
-app-emulation/wine-staging:samba - Add support for NTLM auth. see http://wiki.winehq.org/NtlmAuthSetupGuide and http://wiki.winehq.org/NtlmSigningAndSealing
+app-emulation/wine-staging:samba - Add support for NTLM auth. See: https://web.archive.org/web/20160108123008/http://wiki.winehq.org:80/NtlmAuthSetupGuide and https://web.archive.org/web/20150906013746/http://wiki.winehq.org/NtlmSigningAndSealing (these pages are not currently in the updated WineHQ Wiki).
 app-emulation/wine-staging:sdl - Add support for gamepad detection using SDL
 app-emulation/wine-staging:staging - Apply Wine-Staging patches for advanced feature support that haven't made it into upstream Wine yet
 app-emulation/wine-staging:themes - Support GTK+:3 window theming through Wine-Staging
@@ -555,10 +556,10 @@ app-emulation/wine-vanilla:opencl - Enable OpenCL support
 app-emulation/wine-vanilla:osmesa - Add support for OpenGL in bitmaps using libOSMesa
 app-emulation/wine-vanilla:pcap - Support packet capture software (e.g. wireshark)
 app-emulation/wine-vanilla:perl - Install helpers written in perl (winedump/winemaker)
-app-emulation/wine-vanilla:prelink - Run prelink on DLLs during build; For versions before wine-1.7.55 or hardened, do not disable if you do not know what this means as it can break things at runtime
+app-emulation/wine-vanilla:prelink - Run prelink on DLLs during build; For Gentoo hardened, do not disable if you do not know what this means as it can break things at runtime
 app-emulation/wine-vanilla:realtime - Pull in sys-auth/rtkit for low-latency pulseaudio support
 app-emulation/wine-vanilla:run-exes - Use Wine to open and run .EXE and .MSI files
-app-emulation/wine-vanilla:samba - Add support for NTLM auth. see http://wiki.winehq.org/NtlmAuthSetupGuide and http://wiki.winehq.org/NtlmSigningAndSealing
+app-emulation/wine-vanilla:samba - Add support for NTLM auth. See: https://web.archive.org/web/20160108123008/http://wiki.winehq.org:80/NtlmAuthSetupGuide and https://web.archive.org/web/20150906013746/http://wiki.winehq.org/NtlmSigningAndSealing (these pages are not currently in the updated WineHQ Wiki).
 app-emulation/wine-vanilla:sdl - Add support for gamepad detection using SDL
 app-emulation/wine-vanilla:udev - Use virtual/libudev to provide plug and play support
 app-emulation/wine-vanilla:vkd3d - Use app-emulation/vkd3d to provide Direct3D 12 support
@@ -588,9 +589,7 @@ app-forensics/aide:e2fs - Enable support for checking file attributes on ext2/ex
 app-forensics/aide:prelink - Bypass prelinking when calculating checksums
 app-forensics/chkrootkit:cron - Install cron script for weekly rootkit scans
 app-forensics/libewf:bfio - Enables libbfio for chaining file in file handling
-app-forensics/libewf:ewf - Enables the v1 API
 app-forensics/libewf:fuse - Enable fuse support for ewfmount
-app-forensics/libewf:rawio - Enables raw IO handling
 app-forensics/libewf:uuid - Enable UUID support in the ewftools
 app-forensics/openscap:gconf - Build the gconf independant probes
 app-forensics/openscap:nss - Prefer NSS over libgcrypt as the crypto engine
@@ -743,13 +742,18 @@ app-misc/lcd4linux:uname - Enable the uname plugin, to get the output of uname.
 app-misc/lcd4linux:uptime - Enable the uptime plugin.
 app-misc/lcd4linux:w1retap - Enable the w1retap plugin.
 app-misc/lcd4linux:wireless - Enable the wireless plugin, to get wireless statistics.
-app-misc/lcdproc:ftdi - Enable support for FTDI connections in some selected LCD_DEVICES (currently hd44780)
-app-misc/lcdproc:hid - Enable HID support using libhid
-app-misc/lcdproc:irman - Enable support for IRMan (media-libs/libirman)
-app-misc/lcdproc:lcd_devices_sdeclcd - Enable support for VLSYS M428 display
-app-misc/lcdproc:lcd_devices_vlsys_m428 - Enable support for VLSYS M428 display
-app-misc/lcdproc:nfs - Adds support for NFS file system
-app-misc/lcdproc:seamless-hbars - Try to avoid gaps in horizontal bars
+app-misc/lcdproc:ethlcd - Enable support for ethlcd in the hd44780 driver.
+app-misc/lcdproc:extra-charmaps - Enable extra language specific charmaps.
+app-misc/lcdproc:freetype - Enable support for media-libs/freetype in the glcd driver.
+app-misc/lcdproc:ftdi - Enable support for dev-embedded/libftdi in the glcd,hd44780,i2500vfd,lis and ula200 driver.
+app-misc/lcdproc:hid - Enable support for dev-libs/libhid in the cfontz,cfontzpacket,cwlnx,glcd,lb216,mdm166a,mtc_s16209x and noritakevfd driver.
+app-misc/lcdproc:irman - Enable support for media-libs/libirman in the irman driver.
+app-misc/lcdproc:menu - Enable menu support in the lcdproc client.
+app-misc/lcdproc:nfs - Display NFS filesystem stats in the lcdproc client.
+app-misc/lcdproc:png - Enable support for media-libs/libpng in the glcd driver.
+app-misc/lcdproc:samba - Display SMBFS filesystem stats in the lcdproc client.
+app-misc/lcdproc:seamless-hbars - Don't produce any gaps in horizontal bar graphs, if hardware supports it.
+app-misc/lcdproc:test-menu - Enable test menu support for the lcdproc server.
 app-misc/lirc:audio - Support using an audio device connected to an IR receiver
 app-misc/lirc:devinput - Support the devinput input device
 app-misc/lirc:ftdi - Support FTDI devices
@@ -949,6 +953,7 @@ sys-apps/memtest86+:serial - Compile with serial console support
 sys-apps/moreutils:perl - Install scripts written in Perl
 sys-apps/nix:etc_profile - Install /etc/profile.d/ entry to inject nix support for all users.
 sys-apps/nix:gc - Enable garbage collection in the Nix expression evaluator (use dev-libs/boehm-gc).
+sys-apps/nix:s3 - Enable Amazon S3 bucket to load and store packages (use dev-libs/aws-sdk-cpp).
 sys-apps/nix:sodium - Use dev-libs/libsodium for cryptography
 sys-apps/nvme-cli:uuid - UUID support
 sys-apps/pacman:doc - Install extended documentation using app-doc/doxygen. (Man pages are included by default.)
