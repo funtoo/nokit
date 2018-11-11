@@ -1,0 +1,15 @@
+DEFINED_PHASES=compile configure install prepare test
+DEPEND=dev-lang/perl ~sys-libs/libapparmor-2.13.1 python_targets_python3_4? ( dev-lang/python:3.4 ) python_targets_python3_5? ( dev-lang/python:3.5 ) python_targets_python3_6? ( dev-lang/python:3.6 ) >=dev-lang/python-exec-2:=[python_targets_python3_4(-)?,python_targets_python3_5(-)?,python_targets_python3_6(-)?,-python_single_target_python3_4(-),-python_single_target_python3_5(-),-python_single_target_python3_6(-)] dev-lang/perl:=
+DESCRIPTION=Additional userspace utils to assist with AppArmor profile management
+EAPI=6
+HOMEPAGE=https://gitlab.com/apparmor/apparmor/wikis/home
+IUSE=python_targets_python3_4 python_targets_python3_5 python_targets_python3_6
+KEYWORDS=~amd64
+LICENSE=GPL-2
+RDEPEND=dev-lang/perl ~sys-libs/libapparmor-2.13.1 python_targets_python3_4? ( dev-lang/python:3.4 ) python_targets_python3_5? ( dev-lang/python:3.5 ) python_targets_python3_6? ( dev-lang/python:3.6 ) >=dev-lang/python-exec-2:=[python_targets_python3_4(-)?,python_targets_python3_5(-)?,python_targets_python3_6(-)?,-python_single_target_python3_4(-),-python_single_target_python3_5(-),-python_single_target_python3_6(-)] ~sys-libs/libapparmor-2.13.1[perl,python] ~sys-apps/apparmor-2.13.1 dev-perl/Locale-gettext dev-perl/RPC-XML dev-perl/TermReadKey virtual/perl-Data-Dumper virtual/perl-Getopt-Long dev-lang/perl:=
+REQUIRED_USE=|| ( python_targets_python3_4 python_targets_python3_5 python_targets_python3_6 )
+RESTRICT=test
+SLOT=0
+SRC_URI=https://launchpad.net/apparmor/2.13/2.13.1/+download/apparmor-2.13.1.tar.gz
+_eclasses_=eapi7-ver	d97a56a62c7df8614afddcb25f5ff00f	multibuild	293f364715a9786d81588224c129b704	multilib	97f470f374f2e94ccab04a2fb21d811e	multiprocessing	cac3169468f893670dac3e7cb940e045	perl-functions	669a1227009eda227739e1621a158a4d	perl-module	b832e3f37aa64cbdd6f3e98274bef14b	python-r1	ff5bed0d9bac3da43fe84e2179943e8e	python-utils-r1	b5fdfa15cbe2f6299a482bf5d0c5925d	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
+_md5_=cbb33b11e9f235458f893dcab720f286

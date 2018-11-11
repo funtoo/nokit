@@ -6,4 +6,4 @@ HOMEPAGE=https://github.com/speed47/spectre-meltdown-checker
 LICENSE=GPL-3+
 SLOT=0
 _eclasses_=git-r3	18aed4252aebae08e3db185e684ee37c
-_md5_=3079831aa528c3427b1fc452281cde02
+_md5_=e1ba05af44ffdd7512278801a5e5aa63
