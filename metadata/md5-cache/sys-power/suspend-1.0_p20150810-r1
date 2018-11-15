@@ -5,10 +5,10 @@ DESCRIPTION=Userspace Software Suspend and S2Ram
 EAPI=7
 HOMEPAGE=http://suspend.sourceforge.net/
 IUSE=crypt +lzo threads
-KEYWORDS=~amd64 ~x86
+KEYWORDS=~amd64 x86
 LICENSE=GPL-2
 RDEPEND=dev-libs/libx86 >=sys-apps/pciutils-2.2.4 crypt? ( >=dev-libs/libgcrypt-1.6.3:0[static-libs] dev-libs/libgpg-error[static-libs] ) lzo? ( >=dev-libs/lzo-2[static-libs] )
 SLOT=0
 SRC_URI=https://dev.gentoo.org/~bircoph/distfiles/suspend-1.0_p20120915.tar.xz https://dev.gentoo.org/~bircoph/patches/suspend-1.0_p20150810.patch.xz
 _eclasses_=autotools	dc412f38566b91012efd58b9c203e6c3	libtool	e32ea84bf82cf8987965b574672dba93	multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
-_md5_=09aaa60f046ef8e77bc45c615cf03de7
+_md5_=c562181ba6ac33cd0aaced49941c20c5

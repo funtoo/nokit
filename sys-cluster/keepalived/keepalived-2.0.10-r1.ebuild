@@ -11,7 +11,7 @@ SRC_URI="http://www.keepalived.org/software/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~s390 sparc x86"
 IUSE="dbus debug ipv6 -json snmp"
 
 RDEPEND="dev-libs/libnl:=
@@ -28,6 +28,10 @@ DEPEND="${RDEPEND}
 DOCS=(
 	README CONTRIBUTORS INSTALL ChangeLog AUTHOR TODO
 	doc/keepalived.conf.SYNOPSIS doc/NOTE_vrrp_vmac.txt
+)
+
+PATCHES=(
+	"${FILESDIR}/${P}-snmp-crash-fix.patch"
 )
 
 src_prepare() {
