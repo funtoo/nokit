@@ -1,18 +1,18 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
-COMMIT=9eb2aa12ce051d8d3d31e6b440389d5abf5efaf1
-inherit autotools flag-o-matic
+EGIT_COMMIT=6837474129968d7de13d91e5454bd824c9136e73
+inherit autotools flag-o-matic gnome2-utils
 
 DESCRIPTION="Checks and undeletes partitions + PhotoRec, signature based recovery tool"
 HOMEPAGE="https://www.cgsecurity.org/wiki/TestDisk"
-SRC_URI="https://git.cgsecurity.org/cgit/${PN}/snapshot/${PN}-${COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://git.cgsecurity.org/cgit/${PN}/snapshot/${PN}-${EGIT_COMMIT}.tar.gz"
 
-LICENSE="GPL-2"
+LICENSE="GPL-2+"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~hppa ~ppc ~x86"
+KEYWORDS="amd64 ~arm ~hppa ~ppc x86"
 IUSE="ewf jpeg ntfs qt5 reiserfs static zlib"
 
 REQUIRED_USE="static? ( !qt5 )"
@@ -25,7 +25,7 @@ COMMON_DEPEND="
 		sys-fs/e2fsprogs[static-libs]
 		sys-libs/ncurses:0[static-libs]
 		jpeg? ( virtual/jpeg:0[static-libs] )
-		ntfs? ( sys-fs/ntfs3g[static-libs] )
+		ntfs? ( sys-fs/ntfs3g:=[static-libs] )
 		reiserfs? ( >=sys-fs/progsreiserfs-0.3.1_rc8[static-libs] )
 		zlib? ( sys-libs/zlib[static-libs] )
 		!arm? ( ewf? ( app-forensics/libewf:=[static-libs] ) )
@@ -53,7 +53,7 @@ RDEPEND="!static? ( ${COMMON_DEPEND} )"
 
 DOCS=( )
 
-S="${WORKDIR}/${PN}-${COMMIT}"
+S="${WORKDIR}/${PN}-${EGIT_COMMIT}"
 
 src_prepare() {
 	default
@@ -75,9 +75,6 @@ src_configure() {
 	# this static method is the same used by upstream for their 'static' make
 	# target, but better, as it doesn't break.
 	use static && append-ldflags -static
-	
-	# FL-4943. workaround for the older compilers such as gcc-4.9-gcc-5.4
-	append-cxxflags -std=c++11
 
 	econf "${myeconfargs[@]}"
 
@@ -91,4 +88,12 @@ src_configure() {
 	if use jpeg && egrep -q 'undef HAVE_LIBJPEG\>' "${S}"/config.h ; then
 		die "Failed to find jpeg library."
 	fi
+}
+
+pkg_postinst() {
+	gnome2_icon_cache_update
+}
+
+pkg_postrm() {
+	gnome2_icon_cache_update
 }
