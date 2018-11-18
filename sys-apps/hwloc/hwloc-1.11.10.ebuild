@@ -13,7 +13,7 @@ SRC_URI="http://www.open-mpi.org/software/${PN}/${MY_PV}/downloads/${P}.tar.bz2"
 
 LICENSE="BSD"
 SLOT="0/5"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux"
+KEYWORDS="~alpha ~amd64 ~arm arm64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux"
 IUSE="cairo cuda debug gl +numa +pci plugins svg static-libs xml X"
 
 # opencl support dropped with x11-drivers/ati-drivers being removed (#582406).
@@ -59,7 +59,7 @@ multilib_src_configure() {
 	ECONF_SOURCE=${S} econf \
 		$(use_enable static-libs static) \
 		$(use_enable cairo) \
-		$(use_enable cuda) \
+		$(multilib_native_use_enable cuda) \
 		$(use_enable debug) \
 		$(multilib_native_use_enable gl) \
 		$(use_enable pci) \

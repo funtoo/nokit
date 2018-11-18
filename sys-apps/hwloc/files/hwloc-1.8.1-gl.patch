@@ -9,4 +9,3 @@
          ], [hwloc_gl_happy=no])
  
          if test "x$hwloc_gl_happy" = "xyes"; then
-
