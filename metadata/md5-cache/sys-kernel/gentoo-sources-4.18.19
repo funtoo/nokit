@@ -1,5 +1,5 @@
 DEFINED_PHASES=compile install postinst postrm preinst prepare setup test unpack
-DEPEND=!build? ( sys-apps/sed >=sys-devel/binutils-2.11.90.0.31 )
+DEPEND=>=app-portage/elt-patches-20170317 !build? ( sys-apps/sed >=sys-devel/binutils-2.11.90.0.31 )
 DESCRIPTION=Full sources including the Gentoo patchset for the 4.18 kernel tree
 EAPI=6
 HOMEPAGE=https://dev.gentoo.org/~mpagano/genpatches
@@ -10,5 +10,5 @@ RDEPEND=!build? ( >=sys-libs/ncurses-5.2 sys-devel/make dev-lang/perl sys-devel/
 RESTRICT=binchecks strip
 SLOT=4.18.19
 SRC_URI=mirror://kernel/linux/kernel/v4.x/linux-4.18.tar.xz mirror://gentoo/genpatches-4.18-23.base.tar.xz mirror://gentoo/genpatches-4.18-23.extras.tar.xz experimental? ( mirror://gentoo/genpatches-4.18-23.experimental.tar.xz )
-_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	1fb064d93b3ffd05c2fb19ef430a4aa1	kernel-2	a07f8a3332a2072bd497201c8b219c01	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	python-any-r1	3b48a54b2b31a6bc928e459fec3adb54	python-utils-r1	b5fdfa15cbe2f6299a482bf5d0c5925d	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	versionator	c80ccf29e90adea7c5cae94b42eb76d0
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	e99babeaa7d98c1caaa6a61a79902210	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	1fb064d93b3ffd05c2fb19ef430a4aa1	kernel-2	a07f8a3332a2072bd497201c8b219c01	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	python-any-r1	3b48a54b2b31a6bc928e459fec3adb54	python-utils-r1	c9de01becf9df3f8c10aeec3dc693f5d	toolchain-funcs	fa43c370cf1e0d4ada6e123b775a35b7	versionator	c80ccf29e90adea7c5cae94b42eb76d0
 _md5_=dafd96e93e4ad3242567f39074330360
