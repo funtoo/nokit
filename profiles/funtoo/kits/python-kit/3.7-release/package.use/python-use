@@ -2,6 +2,8 @@
 =app-emulation/libguestfs-1.36.5 python_single_target_python2_7
 =app-emulation/virt-manager-1.4.3-r1 python_single_target_python2_7
 =app-emulation/virt-manager-1.5.1-r1 python_single_target_python2_7
+=app-forensics/afflib-3.7.4 python_single_target_python2_7
+=app-forensics/afflib-3.7.8 python_single_target_python2_7
 =app-misc/gramps-4.2.5 python_single_target_python3_4 python_targets_python3_4
 =app-portage/chuse-1.0.2 python_single_target_python3_4 python_targets_python3_4
 =app-portage/elogviewer-2.7-r2 python_single_target_python2_7
@@ -20,6 +22,8 @@ app-admin/packagekit-base python_single_target_python2_7
 app-admin/syslog-summary python_single_target_python2_7
 app-antivirus/clamtk python_single_target_python2_7
 app-arch/cfv python_single_target_python2_7
+app-arch/createrepo python_single_target_python2_7
+app-arch/deltarpm python_single_target_python2_7
 app-arch/unrpa python_single_target_python2_7
 app-backup/bacula python_single_target_python2_7
 app-backup/bareos python_single_target_python2_7
@@ -38,7 +42,6 @@ app-emulation/playonlinux python_single_target_python2_7
 app-emulation/virtualbox python_single_target_python2_7
 app-emulation/xen-pvgrub python_single_target_python2_7
 app-emulation/xen-tools python_single_target_python2_7
-app-forensics/afflib python_single_target_python2_7
 app-forensics/openscap python_single_target_python2_7
 app-i18n/ibus-pinyin python_single_target_python2_7
 app-i18n/ibus-sunpinyin python_single_target_python2_7
@@ -70,3 +73,4 @@ sys-cluster/glusterfs python_single_target_python2_7
 sys-cluster/heartbeat python_single_target_python2_7
 sys-cluster/moosefs python_single_target_python2_7
 sys-cluster/pacemaker python_single_target_python2_7
+sys-power/nut python_single_target_python2_7
