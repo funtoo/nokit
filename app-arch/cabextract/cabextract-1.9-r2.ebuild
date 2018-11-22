@@ -29,7 +29,13 @@ IUSE="extras"
 
 DEPEND="${LIBMSPACK_DEPEND}
 	virtual/pkgconfig"
-RDEPEND="extras? ( dev-lang/perl )"
+RDEPEND="${LIBMSPACK_DEPEND}
+	extras? ( dev-lang/perl )"
+
+PATCHES=(
+	"${FILESDIR}"/${P}-fix-bigendian.patch
+	"${FILESDIR}"/${P}-remove-spurious-test_files.patch
+)
 
 src_prepare() {
 	if [[ ${PV} == "9999" ]] ; then
