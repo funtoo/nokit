@@ -4,11 +4,11 @@ DESCRIPTION=Family of powerful x86 virtualization products for enterprise and ho
 EAPI=6
 HOMEPAGE=https://www.virtualbox.org/
 IUSE=alsa debug doc headless java libressl lvm +opus pam pax_kernel pulseaudio +opengl python +qt5 +sdk +udev vboxwebsrv vnc elibc_FreeBSD java kernel_linux python_targets_python2_7
-KEYWORDS=~amd64 ~x86
+KEYWORDS=amd64 ~x86
 LICENSE=GPL-2
 RDEPEND=!app-emulation/virtualbox-bin ~app-emulation/virtualbox-modules-5.2.22 dev-libs/libIDL >=dev-libs/libxslt-1.1.19 net-misc/curl dev-libs/libxml2 media-libs/libpng:0= media-libs/libvpx:0= sys-libs/zlib:= !headless? ( media-libs/libsdl:0[X,video] x11-libs/libX11 x11-libs/libxcb:= x11-libs/libXcursor x11-libs/libXext x11-libs/libXmu x11-libs/libXt opengl? ( virtual/opengl media-libs/freeglut ) qt5? ( dev-qt/qtcore:5 dev-qt/qtgui:5 dev-qt/qtprintsupport:5 dev-qt/qtwidgets:5 dev-qt/qtx11extras:5 opengl? ( dev-qt/qtopengl:5 ) x11-libs/libXinerama ) ) libressl? ( dev-libs/libressl:= ) !libressl? ( dev-libs/openssl:0= ) lvm? ( sys-fs/lvm2 ) opus? ( media-libs/opus ) udev? ( >=virtual/udev-171 ) vnc? ( >=net-libs/libvncserver-0.9.9 ) java? ( >=virtual/jre-1.6 ) java? ( >=dev-java/java-config-2.2.0-r3 ) virtual/tmpfiles
 REQUIRED_USE=java? ( sdk ) python? ( sdk ) vboxwebsrv? ( java ) python_targets_python2_7
 SLOT=0
 SRC_URI=https://download.virtualbox.org/virtualbox/5.2.22/VirtualBox-5.2.22.tar.bz2 https://dev.gentoo.org/~polynomial-c/virtualbox/patchsets/virtualbox-5.2.16-patches-02.tar.xz
 _eclasses_=eapi7-ver	d97a56a62c7df8614afddcb25f5ff00f	epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	e99babeaa7d98c1caaa6a61a79902210	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	1fb064d93b3ffd05c2fb19ef430a4aa1	flag-o-matic	02908f00f002f0f07c5b74783d778325	gnome2-utils	22ebae0b986793be079d9d93fa16a8ea	java-pkg-opt-2	77d2e22d0de7640f817d20e861c0ff3f	java-utils-2	0ee72667014428e01a01df2345244cf3	linux-info	953c3b1c472dcadbf62098a9301327f2	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	pax-utils	4f95120230a315c8caaabeb2307b7eee	python-single-r1	3e0889f7794cf229af65fd448a9e202b	python-utils-r1	b5fdfa15cbe2f6299a482bf5d0c5925d	tmpfiles	a49ec6c69f0b7f09273b2642dd0e2bc3	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	udev	574b4c7244556c7ee81b2b45f80c6674	versionator	c80ccf29e90adea7c5cae94b42eb76d0	xdg-utils	9ef13b5c5bcf0c50d6aa53692d8e441c
-_md5_=0672827b2a3e97b119e10bf97f021392
+_md5_=849dce69f92f4eed23a20dc574a633b1
