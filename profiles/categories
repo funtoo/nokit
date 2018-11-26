@@ -17,14 +17,12 @@ app-pda
 app-portage
 app-shells
 dev-perl
-dev-ruby
 gnustep-apps
 gnustep-base
 gnustep-libs
 kde-apps
 kde-frameworks
 kde-plasma
-media-gfx
 media-sound
 perl-core
 ros-meta
