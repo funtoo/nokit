@@ -52,7 +52,6 @@ app-misc/byobu python_single_target_python2_7
 app-misc/email2trac python_single_target_python2_7
 app-misc/evemu python_single_target_python2_7
 app-misc/golly python_single_target_python2_7
-app-misc/iguanaIR python_single_target_python2_7
 app-misc/ktoblzcheck python_single_target_python2_7
 app-misc/lcd4linux python_single_target_python2_7
 app-misc/metromap python_single_target_python2_7
