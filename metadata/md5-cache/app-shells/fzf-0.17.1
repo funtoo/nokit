@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=>=dev-lang/go-1.9
+DESCRIPTION=A general-purpose command-line fuzzy finder
+EAPI=6
+HOMEPAGE=https://github.com/junegunn/fzf
+IUSE=tmux vim bash-completion zsh-completion
+KEYWORDS=amd64 x86
+LICENSE=MIT
+RDEPEND=tmux? ( app-misc/tmux )
+SLOT=0
+SRC_URI=https://github.com/junegunn/fzf/archive/0.17.1.tar.gz -> fzf-0.17.1.tar.gz https://github.com/gdamore/encoding/archive/b23993cbb6353f0e6aa98d0ee318a34728f628b9.tar.gz -> github.com-gdamore-encoding-b23993cbb6353f0e6aa98d0ee318a34728f628b9.tar.gz https://github.com/gdamore/tcell/archive/44772c121bb7838819d3ba4a7e84c0c2d617328e.tar.gz -> github.com-gdamore-tcell-44772c121bb7838819d3ba4a7e84c0c2d617328e.tar.gz https://github.com/lucasb-eyer/go-colorful/archive/c900de9dbbc73129068f5af6a823068fc5f2308c.tar.gz -> github.com-lucasb-eyer-go-colorful-c900de9dbbc73129068f5af6a823068fc5f2308c.tar.gz https://github.com/mattn/go-isatty/archive/66b8e73f3f5cda9f96b69efd03dd3d7fc4a5cdb8.tar.gz -> github.com-mattn-go-isatty-66b8e73f3f5cda9f96b69efd03dd3d7fc4a5cdb8.tar.gz https://github.com/mattn/go-runewidth/archive/14207d285c6c197daabb5c9793d63e7af9ab2d50.tar.gz -> github.com-mattn-go-runewidth-14207d285c6c197daabb5c9793d63e7af9ab2d50.tar.gz https://github.com/mattn/go-shellwords/archive/02e3cf038dcea8290e44424da473dd12be796a8a.tar.gz -> github.com-mattn-go-shellwords-02e3cf038dcea8290e44424da473dd12be796a8a.tar.gz https://github.com/golang/crypto/archive/e1a4589e7d3ea14a3352255d04b6f1a418845e5e.tar.gz -> github.com-golang-crypto-e1a4589e7d3ea14a3352255d04b6f1a418845e5e.tar.gz https://github.com/golang/sys/archive/b90f89a1e7a9c1f6b918820b3daa7f08488c8594.tar.gz -> github.com-golang-sys-b90f89a1e7a9c1f6b918820b3daa7f08488c8594.tar.gz https://github.com/golang/text/archive/4ee4af566555f5fbe026368b75596286a312663a.tar.gz -> github.com-golang-text-4ee4af566555f5fbe026368b75596286a312663a.tar.gz
+_eclasses_=bash-completion-r1	47a7402d95930413ce25ba8d857339bb	golang-base	8e4d7f712ec0e170e2c190c1e3da6501	golang-build	1b46197451ce01766db03a9955597d7b	golang-vcs-snapshot	6f66975a5b570c5e05ed96910c574abc	multilib	b2f01ad412baf81650c23fcf0975fa33	toolchain-funcs	f164325a2cdb5b3ea39311d483988861
+_md5_=f1888f4954b8886ccbc905127a3e8501

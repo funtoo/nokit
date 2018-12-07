@@ -1,8 +1,7 @@
-# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
-inherit eutils linux-info pax-utils toolchain-funcs wxwidgets
+inherit eutils flag-o-matic linux-info pax-utils toolchain-funcs wxwidgets
 
 DESCRIPTION="Disk encryption with strong security based on TrueCrypt"
 HOMEPAGE="https://www.veracrypt.fr/en/Home.html"
@@ -39,6 +38,7 @@ pkg_setup() {
 }
 
 src_compile() {
+	filter-flags -mno-aes
 	local myemakeargs=(
 		NOSTRIP=1
 		NOTEST=1
