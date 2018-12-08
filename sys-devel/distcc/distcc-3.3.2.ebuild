@@ -1,21 +1,21 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
-PYTHON_COMPAT=( python2_7 )
+PYTHON_COMPAT=( python3_{5,6} )
 
-inherit autotools eutils fdo-mime flag-o-matic multilib python-single-r1 systemd toolchain-funcs user
+inherit autotools flag-o-matic python-single-r1 systemd \
+	toolchain-funcs user xdg-utils prefix
 
-MY_P="${P/_}"
 DESCRIPTION="Distribute compilation of C code across several machines on a network"
 HOMEPAGE="http://distcc.org/"
-SRC_URI="https://distcc.googlecode.com/files/${MY_P}.tar.bz2"
+SRC_URI="https://github.com/${PN}/${PN}/releases/download/v${PV}/${P}.tar.gz"
 
-LICENSE="GPL-2"
+LICENSE="GPL-2+"
 SLOT="0"
-KEYWORDS="alpha amd64 arm arm64 hppa ia64 ~m68k ~mips ppc ppc64 s390 ~sh sparc x86 ~x86-fbsd"
-IUSE="crossdev gnome gssapi gtk hardened ipv6 selinux xinetd zeroconf"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
+IUSE="gnome gssapi gtk hardened ipv6 selinux xinetd zeroconf"
 
 RESTRICT="test"
 
@@ -32,19 +32,18 @@ CDEPEND="${PYTHON_DEPS}
 	zeroconf? ( >=net-dns/avahi-0.6[dbus] )
 "
 DEPEND="${CDEPEND}
+	sys-libs/binutils-libs
 	virtual/pkgconfig"
 RDEPEND="${CDEPEND}
 	!net-misc/pump
+	dev-util/shadowman
 	>=sys-devel/gcc-config-1.4.1
 	selinux? ( sec-policy/selinux-distcc )
 	xinetd? ( sys-apps/xinetd )"
 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
-S="${WORKDIR}/${MY_P}"
-
-DCCC_PATH="/usr/$(get_libdir)/distcc/bin"
-DISTCC_VERBOSE="0"
+S="${WORKDIR}/distcc"
 
 pkg_setup() {
 	enewuser distcc 240 -1 -1 daemon
@@ -52,54 +51,47 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}/${PN}-3.0-xinetd.patch"
-	# bug #253786
-	epatch "${FILESDIR}/${PN}-3.0-fix-fortify.patch"
+	eapply "${FILESDIR}/${PN}-3.0-xinetd.patch"
 	# bug #255188
-	epatch "${FILESDIR}/${PN}-3.2_rc1-freedesktop.patch"
-	# bug #258364
-	epatch "${FILESDIR}/${PN}-3.2_rc1-python.patch"
-	# for net-libs/libgssglue
-	epatch "${FILESDIR}/${PN}-3.2_rc1-gssapi.patch"
+	eapply "${FILESDIR}/${PN}-3.3.2-freedesktop.patch"
 	# SOCKSv5 support needed for Portage, bug #537616
-	epatch "${FILESDIR}/${PN}-3.2_rc1-socks5.patch"
-	epatch_user
+	eapply "${FILESDIR}/${PN}-3.2_rc1-socks5.patch"
+	eapply_user
 
 	# Bugs #120001, #167844 and probably more. See patch for description.
-	use hardened && epatch "${FILESDIR}/distcc-hardened.patch"
+	use hardened && eapply "${FILESDIR}/distcc-hardened.patch"
 
 	sed -i \
-		-e "/PATH/s:\$distcc_location:${EPREFIX}${DCCC_PATH}:" \
+		-e "/PATH/s:\$distcc_location:${EPREFIX}/usr/lib/distcc/bin:" \
 		-e "s:@PYTHON@:${EPYTHON}:" \
 		pump.in || die "sed failed"
 
 	sed \
 		-e "s:@EPREFIX@:${EPREFIX:-/}:" \
-		-e "s:@libdir@:/usr/$(get_libdir):" \
+		-e "s:@libdir@:/usr/lib:" \
 		"${FILESDIR}/3.2/distcc-config" > "${T}/distcc-config" || die
 
-	eaclocal -Im4 --output=aclocal.m4
-	eautoconf
+	hprefixify update-distcc-symlinks.py src/{serve,daemon}.c
+	python_fix_shebang update-distcc-symlinks.py "${T}/distcc-config"
+	eautoreconf
 }
 
 src_configure() {
-	local myconf="--disable-Werror --with-docdir=\$(datadir)/doc/${PF}"
-	# More legacy stuff?
-	[ "$(gcc-major-version)" = "2" ] && filter-lfs-flags
+	local myconf=(
+		--disable-Werror
+		$(use_enable ipv6 rfc2553)
+		$(use_with gtk)
+		$(use_with gnome)
+		$(use_with gssapi auth)
+		$(use_with zeroconf avahi)
+	)
 
-	# --disable-rfc2553 b0rked, bug #254176
-	use ipv6 && myconf="${myconf} --enable-rfc2553"
-
-	econf \
-		$(use_with gtk) \
-		$(use_with gnome) \
-		$(use_with gssapi auth) \
-		$(use_with zeroconf avahi) \
-		${myconf}
+	econf "${myconf[@]}"
 }
 
 src_install() {
-	default
+	# override GZIP_BIN to stop it from compressing manpages
+	emake DESTDIR="${D}" GZIP_BIN=false install
 	python_optimize
 
 	newinitd "${FILESDIR}/3.2/init" distccd
@@ -108,7 +100,7 @@ src_install() {
 
 	cp "${FILESDIR}/3.2/conf" "${T}/distccd" || die
 	if use zeroconf; then
-		cat >> "${T}/distccd" <<-EOF
+		cat >> "${T}/distccd" <<-EOF || die
 
 		# Enable zeroconf support in distccd
 		DISTCCD_OPTS="\${DISTCCD_OPTS} --zeroconf"
@@ -116,9 +108,9 @@ src_install() {
 
 		sed -i '/ExecStart/ s|$| --zeroconf|' "${D}$(systemd_get_systemunitdir)"/distccd.service || die
 	fi
-	doconfd "${T}/distccd" || die
+	doconfd "${T}/distccd"
 
-	cat > "${T}/02distcc" <<-EOF
+	newenvd - 02distcc <<-EOF || die
 	# This file is managed by distcc-config; use it to change these settings.
 	# DISTCC_LOG and DISTCC_DIR should not be set.
 	DISTCC_VERBOSE="${DISTCC_VERBOSE:-0}"
@@ -130,23 +122,26 @@ src_install() {
 	DISTCC_ENABLE_DISCREPANCY_EMAIL="${DISTCC_ENABLE_DISCREPANCY_EMAIL}"
 	DCC_EMAILLOG_WHOM_TO_BLAME="${DCC_EMAILLOG_WHOM_TO_BLAME}"
 	EOF
-	doenvd "${T}/02distcc" || die
 
-	keepdir "${DCCC_PATH}" || die
+	keepdir /usr/lib/distcc
 
-	dobin "${T}/distcc-config" || die
+	dobin "${T}/distcc-config"
 
 	if use gnome || use gtk; then
 		einfo "Renaming /usr/bin/distccmon-gnome to /usr/bin/distccmon-gui"
 		einfo "This is to have a little sensability in naming schemes between distccmon programs"
 		mv "${ED}/usr/bin/distccmon-gnome" "${ED}/usr/bin/distccmon-gui" || die
-		dosym distccmon-gui /usr/bin/distccmon-gnome || die
+		dosym distccmon-gui /usr/bin/distccmon-gnome
 	fi
 
 	if use xinetd; then
-		insinto /etc/xinetd.d || die
-		newins "doc/example/xinetd" distcc || die
+		insinto /etc/xinetd.d
+		newins "doc/example/xinetd" distcc
 	fi
+
+	insinto /usr/share/shadowman/tools
+	newins - distcc <<<"${EPREFIX}/usr/lib/distcc/bin"
+	newins - distccd <<<"${EPREFIX}/usr/lib/distcc"
 
 	rm -r "${ED}/etc/default" || die
 	rm "${ED}/etc/distcc/clients.allow" || die
@@ -154,15 +149,18 @@ src_install() {
 }
 
 pkg_postinst() {
-	if [ -x "${EPREFIX}/usr/bin/distcc-config" ] ; then
-		if use crossdev; then
-			"${EPREFIX}/usr/bin/distcc-config" --update-masquerade-with-crossdev
-		else
-			"${EPREFIX}/usr/bin/distcc-config" --update-masquerade
-		fi
+	# remove the old paths when switching from libXX to lib
+	if [[ $(get_libdir) != lib && ${SYMLINK_LIB} != yes && \
+			-d ${EROOT%/}/usr/$(get_libdir)/distcc ]]; then
+		rm -r -f "${EROOT%/}/usr/$(get_libdir)/distcc" || die
 	fi
 
-	use gnome && fdo-mime_desktop_database_update
+	if [[ ${ROOT} == / ]]; then
+		eselect compiler-shadow update distcc
+		eselect compiler-shadow update distccd
+	fi
+
+	use gnome && xdg_desktop_database_update
 
 	elog
 	elog "Tips on using distcc with Gentoo can be found at"
@@ -181,19 +179,18 @@ pkg_postinst() {
 
 	elog
 	elog "***SECURITY NOTICE***"
-	elog "If you are upgrading distcc please make sure to run etc-update to"
-	elog "update your /etc/conf.d/distccd and /etc/init.d/distccd files with"
-	elog "added security precautions (the --listen and --allow directives)"
-	elog
+	elog "Since distcc-3.3, whitelist is used for what distccd could execute. The whilelist"
+	elog "has been generated by compiler-shadow distccd.  To revert to the old behavior, "
+	elog "you need to pass --make-me-a-botnet to distccd in /etc/conf.d/distccd."
+	elog "Cf. https://github.com/distcc/distcc/pull/243."
+}
+
+pkg_prerm() {
+	if [[ -z ${REPLACED_BY_VERSION} && ${ROOT} == / ]]; then
+		eselect compiler-shadow remove distcc
+	fi
 }
 
 pkg_postrm() {
-	# delete the masquerade directory
-	if [ ! -f "${EPREFIX}/usr/bin/distcc" ] ; then
-		einfo "Remove masquerade symbolic links."
-		rm "${EPREFIX}${DCCC_PATH}/"*{cc,c++,gcc,g++}
-		rmdir "${EPREFIX}${DCCC_PATH}"
-	fi
-
-	use gnome && fdo-mime_desktop_database_update
+	use gnome && xdg_desktop_database_update
 }
