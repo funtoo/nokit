@@ -4,11 +4,11 @@ DESCRIPTION=Tivoli Storage Manager (TSM) Backup/Archive (B/A) Client and API
 EAPI=5
 HOMEPAGE=http://www.tivoli.com/
 IUSE=acl java +tsm_cit +tsm_hw
-KEYWORDS=~amd64 -*
+KEYWORDS=-* ~amd64
 LICENSE=Apache-1.1 Apache-2.0 JDOM BSD-2 CC-PD Boost-1.0 MIT CPL-1.0 HPND Exolab dom4j EPL-1.0 FTL icu unicode IBM Info-ZIP LGPL-2 LGPL-2.1 openafs-krb5-a ZLIB MPL-1.0 MPL-1.1 NPL-1.1 openssl OPENLDAP RSA public-domain W3C || ( BSD GPL-2+ ) gSOAP libpng tsm
-RDEPEND=dev-libs/expat dev-libs/libxml2 =sys-fs/fuse-2* acl? ( sys-apps/acl ) java? ( >=virtual/jre-1.7 )
+RDEPEND=dev-libs/expat dev-libs/libxml2 sys-fs/fuse:0 acl? ( sys-apps/acl ) java? ( >=virtual/jre-1.7 )
 RESTRICT=strip
 SLOT=0
 SRC_URI=ftp://ftp.software.ibm.com/storage/tivoli-storage-management/patches/client/v7r1/Linux/LinuxX86/BA/v714/7.1.4.4-TIV-TSMBAC-LinuxX86.tar
 _eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	e99babeaa7d98c1caaa6a61a79902210	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	1fb064d93b3ffd05c2fb19ef430a4aa1	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	pax-utils	4f95120230a315c8caaabeb2307b7eee	readme.gentoo	a4b433bd1e0cd154b8cbc9a5f477f290	rpm	f52cfa3a435468d86d3b49c357b9cb35	systemd	1caaa6bdb6e41b2920a203d6b45f2f99	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	user	8bc2845510e2109af75e3eeac607ec81	versionator	c80ccf29e90adea7c5cae94b42eb76d0
-_md5_=bb79ca89a58583ab0a48630c3b7c2c93
+_md5_=e0ec72ab9b9bd03c37be647129297bb5
