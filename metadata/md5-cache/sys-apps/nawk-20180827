@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install postinst postrm
+DEPEND=app-eselect/eselect-awk !sys-freebsd/freebsd-ubin virtual/yacc
+DESCRIPTION=Brian Kernighan's pattern scanning and processing language
+EAPI=6
+HOMEPAGE=https://www.cs.princeton.edu/~bwk/btl.mirror/
+KEYWORDS=~amd64 ~x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-macos
+LICENSE=MIT
+RDEPEND=app-eselect/eselect-awk !sys-freebsd/freebsd-ubin
+SLOT=0
+SRC_URI=https://github.com/onetrueawk/awk/archive/20180827.tar.gz -> nawk-20180827.tar.gz
+_eclasses_=multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
+_md5_=9aae67fad8631201e0551d835ed2dbbd
