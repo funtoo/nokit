@@ -1,13 +1,13 @@
 DEFINED_PHASES=compile install unpack
-DEPEND=openmp? ( || ( >=sys-devel/gcc-4.2:*[openmp] sys-devel/clang-runtime:*[openmp] ) ) app-crypt/libb2 dev-libs/openssl:* sys-libs/zlib app-crypt/gpgme >=app-portage/elt-patches-20170317
+DEPEND=openmp? ( || ( >=sys-devel/gcc-4.2:*[openmp] sys-devel/clang-runtime:*[openmp] ) ) app-crypt/libb2 dev-libs/openssl:0= sys-libs/zlib app-crypt/gpgme >=app-portage/elt-patches-20170317
 DESCRIPTION=Manifest generation and verification tool written in C
 EAPI=6
 HOMEPAGE=https://prefix.gentoo.org/
 IUSE=+openmp
 KEYWORDS=~amd64 ~ppc64 ~x64-macos ~sparc-solaris ~x64-solaris
 LICENSE=GPL-2
-RDEPEND=openmp? ( || ( >=sys-devel/gcc-4.2:*[openmp] sys-devel/clang-runtime:*[openmp] ) ) app-crypt/libb2 dev-libs/openssl:* sys-libs/zlib app-crypt/gpgme
+RDEPEND=openmp? ( || ( >=sys-devel/gcc-4.2:*[openmp] sys-devel/clang-runtime:*[openmp] ) ) app-crypt/libb2 dev-libs/openssl:0= sys-libs/zlib app-crypt/gpgme
 SLOT=0
 SRC_URI=https://gitweb.gentoo.org/repo/proj/prefix.git/plain/scripts/rsync-generation/hashgen.c?id=7fc3cf2b4baddc8b98c994b8ee024330d8f29956 -> hashgen-1.0.c
 _eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	e99babeaa7d98c1caaa6a61a79902210	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	1fb064d93b3ffd05c2fb19ef430a4aa1	flag-o-matic	02908f00f002f0f07c5b74783d778325	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
-_md5_=e77408472d5961dec77da07a062dd33a
+_md5_=187d362069b0618b9021ec7fc39e264d
