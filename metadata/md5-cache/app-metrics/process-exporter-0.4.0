@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=>=dev-lang/go-1.8 virtual/pkgconfig
+DESCRIPTION=Process exporter for prometheus
+EAPI=6
+HOMEPAGE=https://github.com/ncabatoff/process-exporter
+KEYWORDS=~amd64
+LICENSE=MIT
+RESTRICT=strip
+SLOT=0
+SRC_URI=https://github.com/ncabatoff/process-exporter/archive/v0.4.0.tar.gz -> process-exporter-0.4.0.tar.gz
+_eclasses_=golang-base	e3b49d3365185b0b0e29f2713b094420	golang-build	e7df0915974352579de1da5d1f8ad692	golang-vcs-snapshot	f92d5438a012f5e6665f8e7ffb1427a2	multilib	97f470f374f2e94ccab04a2fb21d811e	systemd	1caaa6bdb6e41b2920a203d6b45f2f99	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
+_md5_=7de3e728ab2a75d18795369f15194f78

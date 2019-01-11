@@ -2,10 +2,10 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer type="person">
-		<email>gyakovlev@gentoo.org</email>
-		<name>Georgy Yakovlev</name>
+		<email>mrueg@gentoo.org</email>
+		<name>Manuel Rüger</name>
 	</maintainer>
-	<use>
-		<flag name="debug">Enable printf debugging and logging to the syslog at DEBUG level</flag>
-	</use>
+	<upstream>
+		<remote-id type="github">grapeshot/vault_exporter</remote-id>
+	</upstream>
 </pkgmetadata>
