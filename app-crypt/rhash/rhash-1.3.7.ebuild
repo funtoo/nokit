@@ -20,13 +20,21 @@ RDEPEND="
 		libressl? ( dev-libs/libressl:0=[${MULTILIB_USEDEP}] )
 )"
 
-DEPEND="${RDEPEND}
-	nls? ( sys-devel/gettext )"
+DEPEND="
+	${RDEPEND}
+"
+
+BDEPEND="
+	nls? ( sys-devel/gettext )
+"
 
 S="${WORKDIR}/RHash-${PV}"
 
 src_prepare() {
 	default
+	# fix Solaris detection, upstream:
+	# https://github.com/rhash/RHash/pull/81
+	sed -i -e 's/sunos)/solaris2.*)/' configure || die
 	multilib_copy_sources
 }
 
