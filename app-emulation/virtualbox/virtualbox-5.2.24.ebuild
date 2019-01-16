@@ -13,11 +13,10 @@ MY_P=VirtualBox-${MY_PV}
 DESCRIPTION="Family of powerful x86 virtualization products for enterprise and home use"
 HOMEPAGE="https://www.virtualbox.org/"
 SRC_URI="https://download.virtualbox.org/virtualbox/${MY_PV}/${MY_P}.tar.bz2
-	https://dev.gentoo.org/~polynomial-c/${PN}/patchsets/${PN}-6.0.0_beta2-patches-01.tar.xz"
+	https://dev.gentoo.org/~polynomial-c/${PN}/patchsets/${PN}-5.2.16-patches-02.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
-[[ "${PV}" == *_beta* ]] || [[ "${PV}" == *_rc* ]] || \
 KEYWORDS="~amd64 ~x86"
 IUSE="alsa debug doc headless java libressl lvm +opus pam pax_kernel pulseaudio +opengl python +qt5 +sdk +udev vboxwebsrv vnc"
 
@@ -124,7 +123,7 @@ REQUIRED_USE="
 	${PYTHON_REQUIRED_USE}
 "
 
-pkg_setup() {
+pkg_pretend() {
 	if ! use headless && ! use qt5 ; then
 		einfo "No USE=\"qt5\" selected, this build will not include any Qt frontend."
 	elif use headless && use qt5 ; then
@@ -140,6 +139,9 @@ pkg_setup() {
 		einfo "You have disabled the \"python\" USE flag. This will only"
 		einfo "disable the python bindings being installed."
 	fi
+}
+
+pkg_setup() {
 	java-pkg-opt-2_pkg_setup
 	python-single-r1_pkg_setup
 
@@ -194,8 +196,8 @@ src_prepare() {
 		eapply "${FILESDIR}"/virtualbox-5.2.8-paxmark-bldprogs.patch
 	fi
 
+	rm "${WORKDIR}/patches/008_virtualbox-4.3.14-missing_define.patch" || die
 	eapply "${WORKDIR}/patches"
-	eapply "${FILESDIR}"/${PN}-6.0.0-libressl.patch #673800
 
 	eapply_user
 }
@@ -216,7 +218,7 @@ src_configure() {
 		$(usex doc '' --disable-docs)
 		$(usex java '' --disable-java)
 		$(usex lvm '' --disable-devmapper)
-		$(usex opus '' --disable-libopus)
+		$(usex opus --build-libopus '')
 		$(usex pulseaudio '' --disable-pulse)
 		$(usex python '' --disable-python)
 		$(usex vboxwebsrv --enable-webservice '')
@@ -263,14 +265,14 @@ src_install() {
 	use debug && binpath="debug"
 	cd "${S}"/out/linux.${ARCH}/${binpath}/bin || die
 
-	local vbox_inst_path="/usr/$(get_libdir)/${PN}" each size ico icofile
+	local vbox_inst_path="/usr/$(get_libdir)/${PN}" each fwfile size ico icofile
 
 	vbox_inst() {
 		local binary="${1}"
 		local perms="${2:-0750}"
 		local path="${3:-${vbox_inst_path}}"
 
-		[[ -n "${binary}" ]] || die "vbox_inst: No binary given!"
+		[[ -n "${binary}" ]] || die "vbox_inst: No binray given!"
 		[[ ${perms} =~ ^[[:digit:]]+{4}$ ]] || die "vbox_inst: perms must consist of four digits."
 
 		insinto ${path}
@@ -290,7 +292,7 @@ src_install() {
 
 	# Install the wrapper script
 	exeinto ${vbox_inst_path}
-	newexe "${FILESDIR}/${PN}-ose-6-wrapper" "VBox"
+	newexe "${FILESDIR}/${PN}-ose-5-wrapper" "VBox"
 	fowners root:vboxusers ${vbox_inst_path}/VBox
 	fperms 0750 ${vbox_inst_path}/VBox
 
@@ -303,7 +305,7 @@ src_install() {
 	if use amd64 && ! has_multilib_profile ; then
 		rcfiles=""
 	fi
-	for each in VBox{Autostart,BalloonCtrl,BugReport,CpuReport,ExtPackHelperApp,Manage,SVC,Tunctl,VMMPreload,XPCOMIPCD} *so *r0 ${rcfiles} iPxeBaseBin rdesktop-vrdp ; do
+	for each in VBox{ExtPackHelperApp,Manage,SVC,Tunctl,XPCOMIPCD} *so *r0 ${rcfiles} ; do
 		vbox_inst ${each}
 	done
 
@@ -313,9 +315,11 @@ src_install() {
 	done
 
 	# Install EFI Firmware files (bug #320757)
-	for each in VBoxEFI{32,64}.fd ; do
-		vbox_inst ${each} 0644
+	pushd "${S}"/src/VBox/Devices/EFI/FirmwareBin &>/dev/null || die
+	for fwfile in VBoxEFI{32,64}.fd ; do
+		vbox_inst ${fwfile} 0644
 	done
+	popd &>/dev/null || die
 
 	# VBoxSVC and VBoxManage need to be pax-marked (bug #403453)
 	# VBoxXPCOMIPCD (bug #524202)
@@ -324,7 +328,7 @@ src_install() {
 	done
 
 	# Symlink binaries to the shipped wrapper
-	for each in vbox{autostart,balloonctrl,bugreport,headless,manage} VBox{Autostart,BalloonCtrl,BugReport,Headless,Manage,VRDP} ; do
+	for each in vbox{headless,manage} VBox{Headless,Manage,VRDP} ; do
 		dosym ${vbox_inst_path}/VBox /usr/bin/${each}
 	done
 	dosym ${vbox_inst_path}/VBoxTunctl /usr/bin/VBoxTunctl
@@ -347,18 +351,14 @@ src_install() {
 		done
 
 		if use qt5 ; then
-			vbox_inst VirtualBox
-			vbox_inst VirtualBoxVM 4750
-			for each in VirtualBox{,VM} ; do
-				pax-mark -m "${ED%/}"${vbox_inst_path}/${each}
-			done
+			vbox_inst VirtualBox 4750
+			pax-mark -m "${ED%/}"${vbox_inst_path}/VirtualBox
 
 			if use opengl ; then
 				vbox_inst VBoxTestOGL
 				pax-mark -m "${ED%/}"${vbox_inst_path}/VBoxTestOGL
 			fi
 
-			#for each in virtualbox{,vm} VirtualBox{,VM} ; do
 			for each in virtualbox VirtualBox ; do
 				dosym ${vbox_inst_path}/VBox /usr/bin/${each}
 			done
@@ -367,7 +367,7 @@ src_install() {
 			doins -r nls
 			doins -r UnattendedTemplates
 
-			domenu ${PN}.desktop
+			newmenu "${FILESDIR}"/${PN}-ose.desktop-2 ${PN}.desktop
 		fi
 
 		pushd "${S}"/src/VBox/Artwork/OSE &>/dev/null || die
