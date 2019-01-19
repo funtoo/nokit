@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -21,7 +21,7 @@ DEPEND="${RDEPEND}"
 S="${WORKDIR}/${MY_P}"
 
 src_install() {
-	local install_dir="/usr/$(get_libdir)/node_modules/yarn" path
+	local install_dir="/usr/$(get_libdir)/node_modules/yarn" path shebang
 	insinto "${install_dir}"
 	doins -r .
 	dosym "../$(get_libdir)/node_modules/yarn/bin/yarn.js" "/usr/bin/yarn"
