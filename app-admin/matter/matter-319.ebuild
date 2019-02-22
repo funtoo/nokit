@@ -1,7 +1,6 @@
-# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 PYTHON_COMPAT=( python2_7 )
 
@@ -25,11 +24,16 @@ RDEPEND="entropy? ( ~sys-apps/entropy-${PV}[${PYTHON_USEDEP}] )
 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
+src_prepare() {
+	default
+	python_fix_shebang "${S}"
+}
+
 src_install() {
-	emake DESTDIR="${D}" install || die "make install failed"
-	emake DESTDIR="${D}" base-install || die "make base-install failed"
+	emake DESTDIR="${D}" install
+	emake DESTDIR="${D}" base-install
 	if use entropy; then
-		emake DESTDIR="${D}" entropysrv-install || die "make base-install failed"
+		emake DESTDIR="${D}" entropysrv-install
 	fi
 
 	python_optimize "${D}/usr/lib/matter"

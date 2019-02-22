@@ -1,7 +1,6 @@
-# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 PYTHON_COMPAT=( python2_7 )
 
@@ -27,9 +26,13 @@ DEPEND="app-text/asciidoc"
 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
-src_install() {
-	emake DESTDIR="${D}" install || die "make install failed"
-	newbashcomp "${S}/eit-completion.bash" eit
+src_prepare() {
+	default
+	python_fix_shebang "${S}"
+}
 
+src_install() {
+	emake DESTDIR="${D}" install
+	newbashcomp "${S}/eit-completion.bash" eit
 	python_optimize "${D}/usr/lib/entropy/server"
 }

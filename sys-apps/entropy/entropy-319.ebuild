@@ -1,7 +1,6 @@
-# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 PYTHON_COMPAT=( python2_7 )
 PYTHON_REQ_USE="sqlite"
@@ -23,10 +22,7 @@ RDEPEND=">=app-misc/pax-utils-0.7
 	net-misc/rsync
 	sys-apps/diffutils
 	sys-apps/sandbox
-	|| (
-		>=sys-apps/portage-2.1.9[${PYTHON_USEDEP}]
-		sys-apps/portage-mgorny[${PYTHON_USEDEP}]
-	)
+	>=sys-apps/portage-2.1.9[${PYTHON_USEDEP}]
 	sys-devel/gettext
 	${PYTHON_DEPS}"
 DEPEND="${RDEPEND}
@@ -36,6 +32,8 @@ REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 S="${S}/lib"
 
+PACKAGE_MASK_CONFPATH="${ROOT}/etc/entropy/packages/package.mask"
+PACKAGE_UNMASK_CONFPATH="${ROOT}/etc/entropy/packages/package.unmask"
 REPO_CONFPATH="${ROOT}/etc/entropy/repositories.conf"
 REPO_D_CONFPATH="${ROOT}/etc/entropy/repositories.conf.d"
 ENTROPY_CACHEDIR="${ROOT}/var/lib/entropy/caches"
@@ -54,8 +52,8 @@ pkg_setup() {
 
 src_install() {
 	emake DESTDIR="${D}" LIBDIR="usr/lib" install || die "make install failed"
-
 	python_optimize "${D}/usr/lib/entropy/lib/entropy"
+	python_optimize "${D}/usr/lib/entropy/entropy_path_loader"
 }
 
 pkg_postinst() {
@@ -69,11 +67,13 @@ pkg_postinst() {
 		cp "${ex_conf}" "${real_conf}" -p
 	done
 
-	# Copy config file over
-	if [ -f "${REPO_CONFPATH}.example" ] && [ ! -f "${REPO_CONFPATH}" ]; then
-		elog "Copying ${REPO_CONFPATH}.example over to ${REPO_CONFPATH}"
-		cp "${REPO_CONFPATH}.example" "${REPO_CONFPATH}" -p
-	fi
+	# Copy config files over
+	for cfg in "${PACKAGE_MASK_CONFPATH}" "${PACKAGE_UNMASK_CONFPATH}" "${REPO_CONFPATH}"; do
+		if [ -f "${cfg}.example" ] && [ ! -f "${cfg}" ]; then
+			elog "Copying ${cfg}.example over to ${cfg}"
+			cp -p "${cfg}.example" "${cfg}"
+		fi
+	done
 
 	if [ -d "${ENTROPY_CACHEDIR}" ]; then
 		einfo "Purging current Entropy cache"
@@ -107,8 +107,6 @@ pkg_postinst() {
 	chown root:entropy "${ROOT}/var/lib/entropy/client/packages" # no recursion
 	chown root:entropy "${ROOT}/var/log/entropy" # no recursion
 
-	echo
 	elog "If you want to enable Entropy packages delta download support, please"
 	elog "install dev-util/bsdiff."
-	echo
 }
