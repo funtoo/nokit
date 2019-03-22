@@ -1,7 +1,7 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 PYTHON_COMPAT=( python2_7 python3_6 )
 
 inherit eutils systemd distutils-r1
@@ -41,7 +41,7 @@ RDEPEND="sys-apps/pciutils
 	ldap? ( dev-python/python-ldap[${PYTHON_USEDEP}] )
 	libvirt? ( dev-python/libvirt-python[${PYTHON_USEDEP}] )
 	openssl? (
-		dev-libs/openssl:*[-bindist]
+		dev-libs/openssl:0=[-bindist]
 		dev-python/pyopenssl[${PYTHON_USEDEP}]
 	)
 	raet? (
@@ -73,7 +73,8 @@ RDEPEND="sys-apps/pciutils
 	vim-syntax? ( app-vim/salt-vim )"
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 	test? (
-		dev-python/pytest-salt[${PYTHON_USEDEP}]
+		>=dev-python/pytest-salt-2018.12.8[${PYTHON_USEDEP}]
+		dev-python/pytest-helpers-namespace[${PYTHON_USEDEP}]
 		dev-python/psutil[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/pytest-catchlog[${PYTHON_USEDEP}]
@@ -96,7 +97,7 @@ RESTRICT="x86? ( test )"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-2017.7.0-dont-realpath-tmpdir.patch"
-	"${FILESDIR}/${PN}-2017.7.8-tests.patch"
+	"${FILESDIR}/${PN}-2019.2.0-tests.patch"
 	"${FILESDIR}/${PN}-2018.3.2-skip-zeromq-test-that-hangs.patch"
 )
 

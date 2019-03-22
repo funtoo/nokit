@@ -1,17 +1,17 @@
 # Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
-PYTHON_COMPAT=( python2_7 )
+EAPI=7
+PYTHON_COMPAT=( python2_7 python3_6 )
 
 inherit eutils systemd distutils-r1
 
 DESCRIPTION="Salt is a remote execution and configuration manager"
-HOMEPAGE="https://saltstack.com/community/"
+HOMEPAGE="http://saltstack.org/"
 
 if [[ ${PV} == 9999* ]]; then
 	inherit git-r3
-	EGIT_REPO_URI="https://github.com/${PN}stack/${PN}.git"
+	EGIT_REPO_URI="git://github.com/${PN}stack/${PN}.git"
 	EGIT_BRANCH="develop"
 	SRC_URI=""
 	KEYWORDS=""
@@ -27,12 +27,14 @@ IUSE+=" openssl portage profile redis selinux test timelib raet +zeromq vim-synt
 
 RDEPEND="sys-apps/pciutils
 	dev-python/jinja[${PYTHON_USEDEP}]
+	dev-python/libnacl[${PYTHON_USEDEP}]
 	>=dev-python/msgpack-0.3[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	dev-python/markupsafe[${PYTHON_USEDEP}]
 	>=dev-python/requests-1.0.0[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	>=www-servers/tornado-4.2.1[${PYTHON_USEDEP}]
+	<www-servers/tornado-5.0[${PYTHON_USEDEP}]
 	virtual/python-futures[${PYTHON_USEDEP}]
 	libcloud? ( >=dev-python/libcloud-0.14.0[${PYTHON_USEDEP}] )
 	mako? ( dev-python/mako[${PYTHON_USEDEP}] )
@@ -49,19 +51,21 @@ RDEPEND="sys-apps/pciutils
 	)
 	zeromq? (
 		>=dev-python/pyzmq-2.2.0[${PYTHON_USEDEP}]
-		|| (
-			dev-python/pycryptodome[${PYTHON_USEDEP}]
-			>=dev-python/pycrypto-2.6.1[${PYTHON_USEDEP}]
-		)
+		dev-python/pycryptodome[${PYTHON_USEDEP}]
 	)
 	cherrypy? ( >=dev-python/cherrypy-3.2.2[${PYTHON_USEDEP}] )
 	mongodb? ( dev-python/pymongo[${PYTHON_USEDEP}] )
-	portage? ( sys-apps/portage[${PYTHON_USEDEP}] )
+	portage? (
+		|| (
+			sys-apps/portage[${PYTHON_USEDEP}]
+			sys-apps/portage-mgorny[${PYTHON_USEDEP}]
+		)
+	)
 	keyring? ( dev-python/keyring[${PYTHON_USEDEP}] )
-	mysql? ( dev-python/mysql-python[${PYTHON_USEDEP}] )
+	mysql? ( dev-python/mysql-python[$(python_gen_usedep 'python2*')] )
 	redis? ( dev-python/redis-py[${PYTHON_USEDEP}] )
 	selinux? ( sec-policy/selinux-salt )
-	timelib? ( dev-python/timelib[${PYTHON_USEDEP}] )
+	timelib? ( dev-python/timelib[$(python_gen_usedep 'python2*')] )
 	nova? ( >=dev-python/python-novaclient-2.17.0[${PYTHON_USEDEP}] )
 	neutron? ( >=dev-python/python-neutronclient-2.3.6[${PYTHON_USEDEP}] )
 	gnupg? ( dev-python/python-gnupg[${PYTHON_USEDEP}] )
@@ -69,13 +73,16 @@ RDEPEND="sys-apps/pciutils
 	vim-syntax? ( app-vim/salt-vim )"
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 	test? (
+		dev-python/pytest-salt[${PYTHON_USEDEP}]
 		dev-python/psutil[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-catchlog[${PYTHON_USEDEP}]
 		dev-python/pip[${PYTHON_USEDEP}]
 		dev-python/virtualenv[${PYTHON_USEDEP}]
-		dev-python/mock[${PYTHON_USEDEP}]
-		dev-python/timelib[${PYTHON_USEDEP}]
+		>=dev-python/mock-2.0.0[${PYTHON_USEDEP}]
+		dev-python/timelib[$(python_gen_usedep 'python2*')]
 		>=dev-python/boto-2.32.1[${PYTHON_USEDEP}]
-		!x86? ( dev-python/boto3[${PYTHON_USEDEP}] )
+		!x86? ( >=dev-python/boto3-1.2.1[${PYTHON_USEDEP}] )
 		>=dev-python/moto-0.3.6[${PYTHON_USEDEP}]
 		>=dev-python/SaltTesting-2016.5.11[${PYTHON_USEDEP}]
 		>=dev-python/libcloud-0.14.0[${PYTHON_USEDEP}]
@@ -88,27 +95,17 @@ REQUIRED_USE="|| ( raet zeromq )"
 RESTRICT="x86? ( test )"
 
 PATCHES=(
-	"${FILESDIR}/${PN}-2016.11.0-tmpdir.patch"
-	"${FILESDIR}/${PN}-2016.3.1-dont-realpath-tmpdir.patch"
-	"${FILESDIR}/${PN}-2016.3.4-test-nonexist-dirs.patch"
-	"${FILESDIR}/${PN}-2016.11.0-remove-file-tree-test.patch"
-	"${FILESDIR}/${PN}-2016.11.0-broken-tests.patch"
+	"${FILESDIR}/${PN}-2017.7.0-dont-realpath-tmpdir.patch"
+	"${FILESDIR}/${PN}-2018.3.4-tests.patch"
+	"${FILESDIR}/${PN}-2018.3.2-skip-zeromq-test-that-hangs.patch"
 )
 
 python_prepare() {
-	# this test fails because it trys to "pip install distribute"
-	rm tests/unit/{modules,states}/zcbuildout_test.py \
-		tests/unit/modules/{rh_ip,win_network,random_org}_test.py || die
-	rm tests/unit/states/pip_test.py || die
-
-	# https://github.com/saltstack/salt/issues/39095
-	rm tests/unit/utils/parsers_test.py
-
-	# apparently libcloud does not know about this?
-	rm tests/unit/cloud/clouds/dimensiondata_test.py || die
-
-	# seriously? "ValueError: Missing (or not readable) key file: '/home/dany/PRIVKEY.pem'"
-	rm tests/unit/cloud/clouds/gce_test.py || die
+	# remove tests with external dependencies that may not be available
+	rm tests/unit/{test_zypp_plugins.py,utils/test_extend.py} || die
+	rm tests/unit/modules/test_{file,boto_{vpc,secgroup,elb}}.py || die
+	rm tests/unit/states/test_boto_vpc.py || die
+	rm tests/unit/modules/test_{kubernetes,vsphere}.py || die
 
 	# allow the use of the renamed msgpack
 	sed -i '/^msgpack/d' requirements/base.txt || die
@@ -134,11 +131,16 @@ python_test() {
 	ulimit -n 3072 || die
 
 	# ${T} is too long a path for the tests to work
-	tempdir="$(mktemp -dup /tmp salt-XXX)"
+	tempdir="$(mktemp -du --tmpdir=/tmp salt-XXX)"
 	mkdir "${T}/$(basename "${tempdir}")"
+	mkdir "${BUILD_DIR}"/../{templates,conf/cloud.{providers,profiles,maps}.d} || die
 
 	(
-		cleanup() { rm -f "${tempdir}"; }
+		cleanup() {
+			rm -f "${tempdir}"
+			rmdir "${BUILD_DIR}"/../{templates,conf/cloud.{providers,profiles,maps}.d} || die
+		}
+
 		trap cleanup EXIT
 
 		addwrite "${tempdir}"
