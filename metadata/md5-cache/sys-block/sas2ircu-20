@@ -1,4 +1,4 @@
-DEFINED_PHASES=install nofetch postinst postrm preinst prerm unpack
+DEFINED_PHASES=install nofetch postinst postrm preinst prerm pretend unpack
 DESCRIPTION=LSI MPT-SAS2 controller management tool
 EAPI=6
 HOMEPAGE=https://www.broadcom.com/products/storage/host-bus-adapters/sas-9207-8e#tab-archive-drivers4-abc
@@ -8,5 +8,5 @@ LICENSE=LSI
 RESTRICT=strip fetch mirror
 SLOT=0
 SRC_URI=https://docs.broadcom.com/docs-and-downloads/host-bus-adapters/host-bus-adapters-common-files/sas_sata_6g_p20_point6/SAS2IRCU_P20.zip doc? ( https://docs.broadcom.com/docs-and-downloads/host-bus-adapters/host-bus-adapters-common-files/SAS2_IR_User_Guide.pdf )
-_eclasses_=mount-boot	ea24b511b0ad59831d0151aa634dfad2
-_md5_=837bb77401b6662193dfaa9f1480e66e
+_eclasses_=mount-boot	1e82d96b7a7dcb483b412497a90bb646
+_md5_=a2c4c699a47d67550a3a24ac1f50befd

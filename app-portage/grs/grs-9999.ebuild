@@ -1,7 +1,7 @@
 # Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="6"
+EAPI="7"
 PYTHON_COMPAT=( python3_{4,5,6} )
 
 inherit distutils-r1 linux-info
@@ -58,7 +58,7 @@ src_install() {
 	echo "CONFIG_PROTECT=\"/etc/grs/systems.conf\"" > "${T}"/20grs
 	doenvd "${T}"/20grs
 	if use server; then
-		mkdir ${D}/usr/share/${PN}
-		cp "${DISTDIR}"/${ISO} ${D}/usr/share/${PN}
+		mkdir "${D}"/usr/share/${PN}
+		cp "${DISTDIR}"/${ISO} "${D}"/usr/share/${PN}
 	fi
 }

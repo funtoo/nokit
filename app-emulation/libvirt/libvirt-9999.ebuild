@@ -3,7 +3,7 @@
 
 EAPI=6
 
-PYTHON_COMPAT=( python3_{4,5,6} )
+PYTHON_COMPAT=( python3_{4,5,6,7} )
 
 inherit autotools bash-completion-r1 eutils linux-info python-any-r1 readme.gentoo-r1 systemd user
 
@@ -28,20 +28,19 @@ DESCRIPTION="C toolkit to manipulate virtual machines"
 HOMEPAGE="http://www.libvirt.org/"
 LICENSE="LGPL-2.1"
 IUSE="
-	apparmor audit +caps +dbus firewalld fuse glusterfs iscsi +libvirtd lvm
-	libssh lxc +macvtap nfs nls numa openvz parted pcap phyp policykit
-	+qemu rbd sasl selinux +udev uml +vepa virtualbox virt-network
+	apparmor audit +caps +dbus firewalld fuse glusterfs iscsi iscsi-direct
+	+libvirtd lvm libssh lxc +macvtap nfs nls numa openvz parted pcap phyp
+	policykit +qemu rbd sasl selinux +udev +vepa virtualbox virt-network
 	wireshark-plugins xen zeroconf zfs
 "
 
 REQUIRED_USE="
 	firewalld? ( virt-network )
-	libvirtd? ( || ( lxc openvz qemu uml virtualbox xen ) )
+	libvirtd? ( || ( lxc openvz qemu virtualbox xen ) )
 	lxc? ( caps libvirtd )
 	openvz? ( libvirtd )
 	policykit? ( dbus )
 	qemu? ( libvirtd )
-	uml? ( libvirtd )
 	vepa? ( macvtap )
 	virt-network? ( libvirtd )
 	virtualbox? ( libvirtd )
@@ -76,6 +75,7 @@ RDEPEND="
 	fuse? ( >=sys-fs/fuse-2.8.6:= )
 	glusterfs? ( >=sys-cluster/glusterfs-3.4.1 )
 	iscsi? ( sys-block/open-iscsi )
+	iscsi-direct? ( >=net-libs/libiscsi-1.18.0 )
 	libssh? ( net-libs/libssh )
 	lvm? ( >=sys-fs/lvm2-2.02.48-r2[-device-mapper-only(-)] )
 	nfs? ( net-fs/nfs-utils )
@@ -125,9 +125,9 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
 PATCHES=(
-	"${FILESDIR}"/${PN}-4.5.0-do_not_use_sysconf.patch
+	"${FILESDIR}"/${PN}-5.1.0-do-not-use-sysconf.patch
 	"${FILESDIR}"/${PN}-1.2.16-fix_paths_in_libvirt-guests_sh.patch
-	"${FILESDIR}"/${PN}-3.10.0-r2-fix_paths_for_apparmor.patch
+	"${FILESDIR}"/${PN}-5.0.0-fix-paths-for-apparmor.patch
 )
 
 pkg_setup() {
@@ -219,6 +219,8 @@ src_prepare() {
 	default
 
 	if [[ ${PV} = *9999* ]]; then
+		# Reinitialize submodules as this is required for gnulib's bootstrap
+		git submodule init
 		# git checkouts require bootstrapping to create the configure script.
 		# Additionally the submodules must be cloned to the right locations
 		# bug #377279
@@ -252,6 +254,7 @@ src_configure() {
 		$(use_with glusterfs)
 		$(use_with glusterfs storage-gluster)
 		$(use_with iscsi storage-iscsi)
+		$(use_with iscsi-direct storage-iscsi-direct)
 		$(use_with libvirtd)
 		$(use_with libssh)
 		$(use_with lvm storage-lvm)
@@ -272,7 +275,6 @@ src_configure() {
 		$(use_with sasl)
 		$(use_with selinux)
 		$(use_with udev)
-		$(use_with uml)
 		$(use_with vepa virtualport)
 		$(use_with virt-network network)
 		$(use_with wireshark-plugins wireshark-dissector)

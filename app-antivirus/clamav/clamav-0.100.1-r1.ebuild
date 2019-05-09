@@ -11,7 +11,7 @@ SRC_URI="https://www.clamav.net/downloads/production/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~arm hppa ia64 ~ppc ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~sparc-solaris ~x86-solaris"
+KEYWORDS="amd64 ~arm hppa ia64 ppc ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~sparc-solaris ~x86-solaris"
 IUSE="bzip2 doc clamdtop iconv ipv6 libressl milter metadata-analysis-api selinux static-libs system-libmspack test uclibc"
 
 CDEPEND="bzip2? ( app-arch/bzip2 )
@@ -25,6 +25,7 @@ CDEPEND="bzip2? ( app-arch/bzip2 )
 	sys-devel/libtool
 	|| ( dev-libs/libpcre2 >dev-libs/libpcre-6 )
 	system-libmspack? ( dev-libs/libmspack )
+	elibc_musl? ( sys-libs/fts-standalone )
 	!!<app-antivirus/clamav-0.99"
 # hard block clamav < 0.99 due to linking problems Bug #567680
 # openssl is now *required* see this link as to why
@@ -54,6 +55,7 @@ src_prepare() {
 }
 
 src_configure() {
+	use elibc_musl && append-ldflags -lfts
 	use ppc64 && append-flags -mminimal-toc
 	use uclibc && export ac_cv_type_error_t=yes
 

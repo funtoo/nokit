@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Gentoo Authors
+# Copyright 2017-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -46,7 +46,7 @@ SRC_URI="https://github.com/lotabout/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 ~x86"
 IUSE="tmux vim test"
 
 DEPEND="virtual/rust"
@@ -54,10 +54,6 @@ RDEPEND="
 	tmux? ( app-misc/tmux )
 	vim? ( || ( app-editors/vim app-editors/gvim ) )
 "
-
-src_test() {
-	cargo test -j $(makeopts_jobs) $(usex debug "" --release) -v || die "tests failed"
-}
 
 src_install() {
 	cargo_src_install

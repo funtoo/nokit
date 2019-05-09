@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -65,7 +65,7 @@ SRC_URI="https://github.com/sharkdp/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz
 
 LICENSE="|| ( MIT Apache-2.0 )"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 ~x86"
 IUSE="test"
 
 DEPEND=">=virtual/rust-1.20.0"
@@ -88,8 +88,4 @@ src_install() {
 	doins "${T}"/shell_completions/fd.fish
 	dodoc README.md
 	doman doc/*.1
-}
-
-src_test() {
-	cargo test -j $(makeopts_jobs) $(usex debug "" --release) -v || die "tests failed"
 }

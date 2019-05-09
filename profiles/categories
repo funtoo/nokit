@@ -16,9 +16,13 @@ app-mobilephone
 app-pda
 app-portage
 app-shells
+dev-perl
 gnustep-apps
 gnustep-base
 gnustep-libs
+gui-apps
+gui-libs
+gui-wm
 media-sound
 ros-meta
 sys-apps
