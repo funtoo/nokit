@@ -3,7 +3,7 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( python{2_7,3_4,3_5,3_6} )
+PYTHON_COMPAT=( python{2_7,3_5,3_6} )
 
 MY_P="${PN}-3-${PV}"
 
@@ -15,7 +15,7 @@ LICENSE="GPL-2 BSD"
 
 SLOT="0"
 
-KEYWORDS="amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 x86"
+KEYWORDS="amd64 ~arm ~arm64 ~ia64 ppc ppc64 x86"
 IUSE="cpu_flags_x86_sse4_2 garbd test"
 
 CDEPEND="

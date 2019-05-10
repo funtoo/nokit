@@ -17,6 +17,7 @@ app-pda
 app-portage
 app-shells
 dev-perl
+gnome-extra
 gnustep-apps
 gnustep-base
 gnustep-libs

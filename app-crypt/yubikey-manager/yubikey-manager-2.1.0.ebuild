@@ -3,7 +3,7 @@
 
 EAPI=6
 
-PYTHON_COMPAT=( python{2_7,3_{4,5,6}} )
+PYTHON_COMPAT=( python{2_7,3_{5,6}} )
 inherit readme.gentoo-r1 distutils-r1
 
 DESCRIPTION="Python library and command line tool for configuring a YubiKey"
@@ -14,7 +14,7 @@ SRC_URI="https://developers.yubico.com/${PN}/Releases/${P}.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
 RDEPEND="
