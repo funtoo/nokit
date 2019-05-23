@@ -1,33 +1,30 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
-PYTHON_COMPAT=( python3_{5,6} )
+PYTHON_COMPAT=( python3_{4,5,6} )
 
 inherit eutils qmake-utils python-single-r1
 
 DESCRIPTION="Cross-platform application for configuring any YubiKey over all USB transports"
 HOMEPAGE="https://developers.yubico.com/yubikey-manager-qt https://github.com/Yubico/yubikey-manager-qt"
-SRC_URI="https://developers.yubico.com/${PN}/Releases/${P}.tar.gz"
+# >yubikey-manager-qt-0.5.1 should have the tarball issue fixed: https://github.com/Yubico/yubikey-manager-qt/issues/49
+SRC_URI="https://github.com/Yubico/yubikey-manager-qt/releases/download/${P}/${P}.tar.gz -> ${P}.tar"
 
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64"
 
 DEPEND="
-	>=app-crypt/yubikey-manager-1.0.0[${PYTHON_USEDEP}]
-	<app-crypt/yubikey-manager-3.0.0[${PYTHON_USEDEP}]
+	>=app-crypt/yubikey-manager-0.7.0[${PYTHON_USEDEP}]
+	<app-crypt/yubikey-manager-0.8
 	dev-python/cryptography[${PYTHON_USEDEP}]
 	dev-python/pyotherside[${PYTHON_USEDEP}]
-	dev-qt/qtcore:5
-	dev-qt/qtdeclarative:5
-	dev-qt/qtgraphicaleffects:5
-	dev-qt/qtgui:5
-	dev-qt/qtquickcontrols:5[widgets]
-	dev-qt/qtquickcontrols2:5[widgets]
 	dev-qt/qtsingleapplication[qt5(+),X]
+	dev-qt/qtdeclarative:5
 	dev-qt/qtsvg:5
+	dev-qt/qtquickcontrols:5[widgets]
 	dev-qt/qtwidgets:5"
 RDEPEND="${DEPEND}"
 
@@ -37,7 +34,8 @@ src_prepare() {
 	default
 
 	sed -i -e "s/ykman-cli//" ${PN}.pro || die
-	sed -e "/CONFIG += c++11/a CONFIG += qtsingleapplication" \
+	sed -e "/qtsingleapplication.pri/d" \
+		-e "/CONFIG += c++11/a CONFIG += qtsingleapplication" \
 		-i ykman-gui/ykman-gui.pro || die
 }
 
