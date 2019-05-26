@@ -7,11 +7,11 @@
 =app-emulation/virt-manager-1.5.1-r1 python_single_target_python2_7
 =app-emulation/virt-manager-2.0.0 python_single_target_python3_5 python_targets_python3_5
 =app-emulation/virt-manager-9999 python_single_target_python3_5 python_targets_python3_5
-=app-emulation/virtualbox-5.2.22 python_single_target_python2_7
 =app-emulation/virtualbox-5.2.26 python_single_target_python2_7
 =app-emulation/virtualbox-5.2.28-r1 python_single_target_python2_7
-=app-emulation/virtualbox-6.0.4-r1 python_single_target_python2_7
+=app-emulation/virtualbox-5.2.30 python_single_target_python2_7
 =app-emulation/virtualbox-6.0.6-r1 python_single_target_python2_7
+=app-emulation/virtualbox-6.0.8 python_single_target_python2_7
 =app-i18n/ibus-typing-booster-2.5.3 python_single_target_python3_5 python_targets_python3_5
 =app-i18n/ibus-typing-booster-2.6.0 python_single_target_python3_5 python_targets_python3_5
 =app-misc/gramps-4.2.5 python_single_target_python3_5 python_targets_python3_5
@@ -22,12 +22,13 @@
 =app-misc/recoll-1.25.15 python_single_target_python3_5 python_targets_python3_5
 =app-portage/elogviewer-2.7-r2 python_single_target_python2_7
 =app-portage/elogviewer-2.9 python_single_target_python2_7
+=app-portage/unsymlink-lib-13 python_single_target_python2_7
+=app-portage/unsymlink-lib-14 python_single_target_python2_7
+=app-portage/unsymlink-lib-9999 python_single_target_python2_7
 =sys-cluster/glusterfs-4.1.5 python_single_target_python2_7
 =sys-cluster/glusterfs-4.1.8 python_single_target_python2_7
 =sys-cluster/glusterfs-6.1 python_single_target_python3_5 python_targets_python3_5
 =sys-cluster/glusterfs-9999 python_single_target_python2_7
-=sys-devel/distcc-3.2_rc1-r4 python_single_target_python2_7
-=sys-devel/distcc-3.3.2-r5 python_single_target_python3_5 python_targets_python3_5
 =sys-devel/gdb-7.10.1 python_single_target_python2_7
 =sys-devel/gdb-7.12.1 python_single_target_python2_7
 =sys-devel/gdb-7.9.1 python_single_target_python2_7
@@ -37,7 +38,7 @@
 =sys-devel/gdb-8.2 python_single_target_python2_7
 =sys-devel/gdb-8.2-r1 python_single_target_python2_7
 =sys-devel/gdb-8.2.1 python_single_target_python2_7
-=sys-devel/gdb-8.3.50.20190312-r1 python_single_target_python2_7
+=sys-devel/gdb-8.3 python_single_target_python2_7
 =sys-devel/gdb-9999 python_single_target_python2_7
 =sys-process/systemd-cron-1.5.10 python_single_target_pypy3 python_targets_pypy3
 =sys-process/systemd-cron-1.5.12-r1 python_single_target_pypy3 python_targets_pypy3
@@ -105,7 +106,6 @@ app-mobilephone/adb-sync python_single_target_python2_7
 app-mobilephone/obexftp python_single_target_python2_7
 app-mobilephone/sobexsrv python_single_target_python2_7
 app-portage/gverify python_single_target_python2_7
-app-portage/unsymlink-lib python_single_target_python2_7
 sys-apps/biosdisk python_single_target_python2_7
 sys-apps/edid-fixdim python_single_target_python3_5 python_targets_python3_5
 sys-apps/entropy python_single_target_python2_7
@@ -118,5 +118,6 @@ sys-cluster/heartbeat python_single_target_python2_7
 sys-cluster/moosefs python_single_target_python2_7
 sys-cluster/pacemaker python_single_target_python2_7
 sys-cluster/singularity python_single_target_python2_7
+sys-devel/distcc python_single_target_python3_5 python_targets_python3_5
 sys-kernel/bliss-initramfs python_single_target_python3_5 python_targets_python3_5
 sys-power/nut python_single_target_python2_7

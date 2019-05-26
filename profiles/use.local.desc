@@ -249,6 +249,7 @@ app-crypt/gnupg-pkcs11-scd:proxy - Build the gnupg-pkcs11-scd-prox
 app-crypt/gpgme:common-lisp - Install common-lisp files
 app-crypt/hashcat:brain - Enable the hashcat brain
 app-crypt/heimdal:hdb-ldap - Adds support for LDAP as a database backend
+app-crypt/heimdal:lmdb - Add support for using dev-db/lmdb for lookup tables
 app-crypt/heimdal:otp - Adds support for one-time passwords
 app-crypt/heimdal:pkinit - Adds support for PKINIT for the initial ticket
 app-crypt/hmaccalc:fips - Enable NSS FIPS mode and support only the FIPS-compliant functions
@@ -771,7 +772,6 @@ app-misc/lirc:gtk - Include GTK support which enables the use of lirc-setup
 app-misc/lirc:inputlirc - Add a dependency on app-misc/inputlircd
 app-misc/lirc:uinput - Enable support for uinput
 app-misc/mc:edit - Compile and install the mcedit application
-app-misc/mc:mclib - Compile and install the libmc.so shared library
 app-misc/mc:sftp - Add support for sftp (uses net-libs/libssh2 for it).
 app-misc/mc:slang - Use sys-libs/slang instead of sys-libs/ncurses.
 app-misc/mc:xdg - Toggles mc's config dir location. Enable for $XDG_CONFIG_HOME/mc, disable for $HOME/.mc
@@ -860,6 +860,7 @@ app-portage/layman:sync-plugin-portage - Install the sys-apps/portage sync modul
 app-portage/pfl:network-cron - Adds a cron job which does a weekly submit of the package database
 app-portage/tatt:templates - Install template scripts to be used with tatt
 app-shells/autojump:ipython - Add support for dev-python/ipython
+app-shells/bash-completion:eselect - Support blacklisting of completions via 'eselect bash-completion'. This enables custom Gentoo patching of upstream completion loader.
 app-shells/dash:vanilla - Support echo -n, and enable echo -e all the time (unsupported)
 app-shells/pdsh:rsh - This allows the use of rsh (remote shell) and rcp (remote copy) for authoring websites. sftp is a much more secure protocol and is preferred.
 app-shells/shish:diet - Use dev-libs/dietlibc
@@ -939,6 +940,7 @@ sys-apps/flashrom:gfxnvidia - Enable NVIDIA programmer
 sys-apps/flashrom:internal - Enable internal/onboard support
 sys-apps/flashrom:internal_dmi - Enable internal DMI decoding rather than use sys-apps/dmidecode
 sys-apps/flashrom:it8212 - Support for ITE IT8212F ATA/RAID controllers
+sys-apps/flashrom:jlink_spi - Support for SEGGER J-Link and compatible devices
 sys-apps/flashrom:linux_mtd - Enable support for Linux mtd SPI flash devices
 sys-apps/flashrom:linux_spi - Enable support for Linux userspace spidev interface
 sys-apps/flashrom:mstarddc_spi - Support for SPI flash ROMs accessible through DDC in MSTAR-equipped displays
@@ -1005,9 +1007,6 @@ sys-apps/pacman:gpg - Enable GPG signature verification using app-crypt/gpgme
 sys-apps/pcmciautils:staticsocket - Add support for static sockets
 sys-apps/pcsc-tools:network-cron - Monthly cronjob the update-smartcard_list script
 sys-apps/pkgcore:doc - Build and install API docs.
-sys-apps/portage-mgorny:ipc - Use inter-process communication between Portage and running ebuilds.
-sys-apps/portage-mgorny:native-extensions - Compiles native "C" extensions (speedups, instead of using Python backup code). Currently includes libc-locales. This should only be temporarily disabled for some bootstrapping operations. Cross-compilation is not supported.
-sys-apps/portage-mgorny:xattr - Preserve extended attributes (filesystem-stored metadata) when installing files. Usually only required for hardened systems.
 sys-apps/proot:care - Build dynamic CARE binary (more info - https://proot-me.github.io)
 sys-apps/qingy:consolekit - Enable native consolekit support
 sys-apps/qingy:opensslcrypt - Encrypt communications between qingy and its GUI using dev-libs/openssl
@@ -1049,6 +1048,7 @@ sys-apps/systemd:sysv-utils - Install sysvinit compatibility symlinks and manpag
 sys-apps/systemd:vanilla - Disable Gentoo-specific behavior and compatibility quirks
 sys-apps/systemd:xkb - Depend on x11-libs/libxkbcommon to allow logind to control the X11 keymap
 sys-apps/timer_entropyd:debug - Enable printf debugging and logging to the syslog at DEBUG level
+sys-apps/ucspi-ssl:bindist - Disable EC/RC5 algorithms in OpenSSL for patent reasons.
 sys-apps/usb_modeswitch:jimtcl - Use dev-lang/jimtcl instead of dev-lang/tcl for smaller memory footprint
 sys-apps/usermode-utilities:fuse - Build tools (currently umlmount) needing fuse
 sys-apps/watchdog:nfs - enable support for checking nfs mounts
@@ -1260,7 +1260,6 @@ sys-devel/binutils-hppa64:default-gold - Set ld to point to ld.gold instead of l
 sys-devel/binutils-hppa64:gold - Build ld.gold linker
 sys-devel/binutils-hppa64:multitarget - Adds support to binutils for cross compiling (does not work with gas)
 sys-devel/binutils-hppa64:plugins - Enable plugin support in tools
-sys-devel/distcc:crossdev - Enable support for sys-devel/crossdev
 sys-devel/distcc:gssapi - Enable support for net-libs/libgssglue
 sys-devel/gcc-apple:objc - Build support for the Objective C code language
 sys-devel/gcc-apple:objc++ - Build support for the Objective C++ language

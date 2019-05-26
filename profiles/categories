@@ -25,6 +25,7 @@ gui-apps
 gui-libs
 gui-wm
 media-sound
+perl-core
 ros-meta
 sys-apps
 sys-auth
