@@ -16,6 +16,7 @@ app-mobilephone
 app-pda
 app-portage
 app-shells
+dev-ruby
 gnustep-apps
 gnustep-base
 gnustep-libs

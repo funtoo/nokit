@@ -1,0 +1,11 @@
+DEFINED_PHASES=-
+DEPEND=>=app-shells/bash-3.0
+DESCRIPTION=Installs Ruby, JRuby, Rubinius, MagLev or MRuby.
+EAPI=6
+HOMEPAGE=https://github.com/postmodern/ruby-install
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=>=app-shells/bash-3.0 || ( >net-misc/wget-1.12 net-misc/curl ) dev-libs/openssl app-arch/tar app-arch/bzip2 sys-devel/patch || ( >=sys-devel/gcc-4.2 sys-devel/clang )
+SLOT=0
+SRC_URI=https://github.com/postmodern/ruby-install/archive/v0.6.1.tar.gz -> ruby-install-0.6.1.tar.gz
+_md5_=2122de7ccb9e5a7226855f6f25c451f1
