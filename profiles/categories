@@ -17,6 +17,7 @@ app-pda
 app-portage
 app-shells
 dev-perl
+dev-ruby
 gnome-extra
 gnustep-apps
 gnustep-base
