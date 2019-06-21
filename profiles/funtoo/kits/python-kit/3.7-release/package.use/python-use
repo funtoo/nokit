@@ -7,7 +7,6 @@
 =app-misc/recoll-1.24.1 python_single_target_python2_7
 =app-portage/chuse-1.0.2 python_single_target_python3_4 python_targets_python3_4
 =app-portage/elogviewer-2.7-r2 python_single_target_python2_7
-=sys-cluster/glusterfs-4.1.5 python_single_target_python2_7
 =sys-cluster/glusterfs-4.1.8 python_single_target_python2_7
 =sys-cluster/glusterfs-9999 python_single_target_python2_7
 =sys-devel/gdb-7.10.1 python_single_target_python2_7
@@ -64,6 +63,5 @@ sys-apps/entropy-server python_single_target_python2_7
 sys-apps/tuned python_single_target_python2_7
 sys-cluster/charm python_single_target_python2_7
 sys-cluster/heartbeat python_single_target_python2_7
-sys-cluster/moosefs python_single_target_python2_7
 sys-cluster/pacemaker python_single_target_python2_7
 sys-power/nut python_single_target_python2_7
