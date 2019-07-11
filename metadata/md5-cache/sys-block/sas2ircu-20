@@ -8,5 +8,5 @@ LICENSE=LSI
 RESTRICT=strip fetch mirror
 SLOT=0
 SRC_URI=https://docs.broadcom.com/docs-and-downloads/host-bus-adapters/host-bus-adapters-common-files/sas_sata_6g_p20_point6/SAS2IRCU_P20.zip doc? ( https://docs.broadcom.com/docs-and-downloads/host-bus-adapters/host-bus-adapters-common-files/SAS2_IR_User_Guide.pdf )
-_eclasses_=mount-boot	ea24b511b0ad59831d0151aa634dfad2
+_eclasses_=mount-boot	ceb0b6f037145b12922f17485afdec37
 _md5_=a2c4c699a47d67550a3a24ac1f50befd

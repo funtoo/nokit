@@ -7,5 +7,5 @@ LICENSE=GPL-2 raspberrypi-videocore-bin
 RDEPEND=sys-boot/raspberrypi-firmware
 RESTRICT=binchecks strip
 SLOT=0
-_eclasses_=git-r3	0d4635eeb5a96cd5315597a47eba25c9	mount-boot	ea24b511b0ad59831d0151aa634dfad2
+_eclasses_=git-r3	0d4635eeb5a96cd5315597a47eba25c9	mount-boot	ceb0b6f037145b12922f17485afdec37
 _md5_=5e9b55214716f0afe7709bcbd2d34064
