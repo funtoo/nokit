@@ -1,5 +1,5 @@
 BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
-DEFINED_PHASES=install postinst postrm preinst prerm pretend unpack
+DEFINED_PHASES=install postinst postrm preinst prerm unpack
 DESCRIPTION=Raspberry Pi (all versions) kernel and modules
 EAPI=7
 HOMEPAGE=https://github.com/raspberrypi/firmware
@@ -7,5 +7,5 @@ LICENSE=GPL-2 raspberrypi-videocore-bin
 RDEPEND=sys-boot/raspberrypi-firmware
 RESTRICT=binchecks strip
 SLOT=0
-_eclasses_=git-r3	0d4635eeb5a96cd5315597a47eba25c9	mount-boot	1e82d96b7a7dcb483b412497a90bb646
+_eclasses_=git-r3	0d4635eeb5a96cd5315597a47eba25c9	mount-boot	ea24b511b0ad59831d0151aa634dfad2
 _md5_=5e9b55214716f0afe7709bcbd2d34064
