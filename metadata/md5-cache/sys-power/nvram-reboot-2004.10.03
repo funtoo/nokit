@@ -6,5 +6,5 @@ KEYWORDS=~x86 ~amd64
 LICENSE=GPL-2
 SLOT=0
 SRC_URI=mirror://sourceforge/nvram-wakeup/reboot-2004.10.03.tar.bz2
-_eclasses_=mount-boot	ea24b511b0ad59831d0151aa634dfad2
+_eclasses_=mount-boot	ceb0b6f037145b12922f17485afdec37
 _md5_=a322e345fb86c0552d607ba3d49ae24b
