@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=4
-inherit eutils flag-o-matic pam user
+EAPI=6
+inherit autotools flag-o-matic pam user
 
 DESCRIPTION="Console-based application to efficiently save raw partition data to image file"
 HOMEPAGE="http://www.partimage.org/"
@@ -16,8 +16,8 @@ IUSE="nls nologin pam ssl static"
 LIBS_DEPEND="app-arch/bzip2
 	>=dev-libs/newt-0.52
 	>=sys-libs/slang-2
-	sys-libs/zlib
-	ssl? ( dev-libs/openssl )"
+	sys-libs/zlib:=
+	ssl? ( dev-libs/openssl:0= )"
 PAM_DEPEND="!static? ( pam? ( virtual/pam ) )"
 RDEPEND="${PAM_DEPEND}
 	!static? ( ${LIBS_DEPEND} )"
@@ -31,8 +31,13 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-zlib-1.2.5.2.patch #405323
-	epatch "${FILESDIR}"/${P}-minor-typo.patch #580290
+	eapply -p0 "${FILESDIR}"/${P}-zlib-1.2.5.2.patch #405323
+	eapply "${FILESDIR}"/${P}-minor-typo.patch #580290
+	eapply "${FILESDIR}"/${P}-openssl-1.1-compatibility.patch
+
+	eapply_user
+
+	eautoreconf
 }
 
 src_configure() {
@@ -49,13 +54,13 @@ src_configure() {
 	fi
 
 	econf \
-		--docdir="${EPREFIX}"/usr/share/doc/${PF} \
-		--sysconfdir="${EPREFIX}"/etc \
+		--docdir="${EPREFIX%/}"/usr/share/doc/${PF} \
+		--sysconfdir="${EPREFIX%/}"/etc \
 		$(use_enable nls) \
 		$(use_enable ssl) \
 		--disable-pam \
 		$(use_enable static all-static) \
-		--with-log-dir="${EPREFIX}"/var/log/partimage \
+		--with-log-dir="${EPREFIX%/}"/var/log/partimage \
 		${myconf}
 }
 
@@ -78,7 +83,7 @@ src_install() {
 	fi
 }
 
-confdir=${EROOT}/etc/partimaged
+confdir=${EROOT%/}/etc/partimaged
 privkey=${confdir}/partimaged.key
 cnf=${confdir}/servercert.cnf
 csr=${confdir}/partimaged.csr
@@ -135,5 +140,5 @@ pkg_postinst() {
 		partimagesslperms
 		return 0
 	fi
-	chown partimag:0 "${EROOT}"/etc/partimaged/partimagedusers || die
+	chown partimag:0 "${EROOT%/}"/etc/partimaged/partimagedusers || die
 }

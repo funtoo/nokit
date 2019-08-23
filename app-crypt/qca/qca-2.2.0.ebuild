@@ -1,23 +1,26 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit cmake-utils qmake-utils
 
 DESCRIPTION="Qt Cryptographic Architecture (QCA)"
 HOMEPAGE="https://userbase.kde.org/QCA"
-SRC_URI="mirror://kde/stable/${PN}/${PV}/src/${P}.tar.xz"
+SRC_URI="mirror://kde/stable/${PN}/${PV}/${P}.tar.xz"
 
 LICENSE="LGPL-2.1"
 SLOT="2"
-KEYWORDS="amd64 ~arm ~arm64 ~hppa ~ppc ~ppc64 ~sparc x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~sparc-solaris"
+KEYWORDS="~amd64 ~arm ~arm64 ~hppa ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~sparc-solaris"
 
 IUSE="botan debug doc examples gcrypt gpg libressl logger nss pkcs11 sasl softstore +ssl test"
 
-COMMON_DEPEND="
+BDEPEND="
+	doc? ( app-doc/doxygen )
+"
+RDEPEND="
 	dev-qt/qtcore:5
-	botan? ( dev-libs/botan:0 )
+	botan? ( dev-libs/botan:= )
 	gcrypt? ( dev-libs/libgcrypt:= )
 	gpg? ( app-crypt/gnupg )
 	nss? ( dev-libs/nss )
@@ -32,25 +35,16 @@ COMMON_DEPEND="
 		libressl? ( dev-libs/libressl:= )
 	)
 "
-DEPEND="${COMMON_DEPEND}
-	doc? ( app-doc/doxygen )
+DEPEND="${RDEPEND}
 	test? (
 		dev-qt/qtnetwork:5
 		dev-qt/qttest:5
 	)
 "
-RDEPEND="${COMMON_DEPEND}
-	!app-crypt/qca-cyrus-sasl
-	!app-crypt/qca-gnupg
-	!app-crypt/qca-logger
-	!app-crypt/qca-ossl
-	!app-crypt/qca-pkcs11
-"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-disable-pgp-test.patch"
-	"${FILESDIR}/${P}-c++11.patch"
-	"${FILESDIR}/${P}-deps.patch"
+	"${FILESDIR}/${P}-libressl.patch"
 )
 
 qca_plugin_use() {

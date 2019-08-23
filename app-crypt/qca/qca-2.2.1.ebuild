@@ -1,13 +1,13 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit cmake-utils qmake-utils
 
 DESCRIPTION="Qt Cryptographic Architecture (QCA)"
 HOMEPAGE="https://userbase.kde.org/QCA"
-SRC_URI="https://dev.gentoo.org/~asturm/distfiles/${P}.tar.xz"
+SRC_URI="mirror://kde/stable/${PN}/${PV}/${P}.tar.xz"
 
 LICENSE="LGPL-2.1"
 SLOT="2"
@@ -15,6 +15,9 @@ KEYWORDS="~amd64 ~arm ~arm64 ~hppa ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~x86-fbsd
 
 IUSE="botan debug doc examples gcrypt gpg libressl logger nss pkcs11 sasl softstore +ssl test"
 
+BDEPEND="
+	doc? ( app-doc/doxygen )
+"
 RDEPEND="
 	dev-qt/qtcore:5
 	botan? ( dev-libs/botan:= )
@@ -33,14 +36,16 @@ RDEPEND="
 	)
 "
 DEPEND="${RDEPEND}
-	doc? ( app-doc/doxygen )
 	test? (
 		dev-qt/qtnetwork:5
 		dev-qt/qttest:5
 	)
 "
 
-PATCHES=( "${FILESDIR}/${PN}-disable-pgp-test.patch" )
+PATCHES=(
+	"${FILESDIR}/${PN}-disable-pgp-test.patch"
+	"${FILESDIR}/${PN}-2.2.0-libressl.patch"
+)
 
 qca_plugin_use() {
 	echo -DWITH_${2:-$1}_PLUGIN=$(usex "$1")
