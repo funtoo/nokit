@@ -945,13 +945,6 @@ sys-apps/flashrom:tools - Install additional tools
 sys-apps/flashrom:usbblaster - Enable support for Altera USB-Blaster dongles
 sys-apps/flashrom:usbblaster_spi - Enable support for Altera USB-Blaster dongles
 sys-apps/flashrom:wiki - Enable wiki informations, like supported devices etc.
-sys-apps/fwupd:colorhug - Enable ColorHug support through x11-misc/colord package.
-sys-apps/fwupd:dell - Enable Dell-specific support.
-sys-apps/fwupd:gpg - Enable GPG support.
-sys-apps/fwupd:man - Build and install man pages
-sys-apps/fwupd:pkcs7 - Enable PKCS7 verification support via net-libs/gnutls.
-sys-apps/fwupd:uefi - Enable UEFI support
-sys-apps/fwupd:uefi_labels - Enable UEFI labels support
 sys-apps/hwdata-gentoo:binary-drivers - Adds support for ATI/NVIDIA binary drivers
 sys-apps/hwloc:cuda - Enable CUDA device discovery
 sys-apps/hwloc:gl - Enable GL display device discovery (NVCtrl)

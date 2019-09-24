@@ -1,12 +1,10 @@
 # Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 FORTRAN_NEEDED=fortran
-#PYTHON_COMPAT=( python3_{5,6,7} )
 
-# 4.3.4 will need python-single-r1
 inherit fcaps fortran-2 linux-info toolchain-funcs
 
 DESCRIPTION="A performance-oriented tool suite for x86 multicore environments"
@@ -37,18 +35,11 @@ IUSE="fortran" # ${PYTHON_REQUIRED_USE}
 # The build system bundles some Perl modules, that are not removed at this time:
 # Parse-RecDescent
 # Template
-#
-# Python:
-# Python3 is used for one helper script, filter/json, added after 4.3.3
 CDEPEND="dev-lang/perl
-	dev-lang/lua:5.3"
+	dev-lua/lua:5.3"
 
-# filter/json uses Python3
 RDEPEND="${CDEPEND}"
-	#${PYTHON_DEPS}"
 
-# Part of the build process depends on Data::Dumper
-#	perl-core/Data-Dumper"
 DEPEND="${CDEPEND}"
 
 CONFIG_CHECK="~X86_MSR"
@@ -61,14 +52,10 @@ FILECAPS=(
 
 PATCHES=(
 	"${FILESDIR}/${PN}-4.3.1-fix-gnustack.patch"
-	# Old patches are obsolete:
-	#"${FILESDIR}/${PN}-4.3.1-Makefile.patch"
-	#"${FILESDIR}/${PN}-4.3.1-config.mk.patch"
 )
 
 pkg_setup() {
 	fortran-2_pkg_setup
-	#python-single-r1_pkg_setup
 }
 
 src_prepare() {
@@ -149,9 +136,6 @@ src_install () {
 		install || die 'emake install failed'
 
 	use fortran && doheader likwid.mod
-
-	# Fix Python filter added shortly after 4.3.3
-	#python_fix_shebang "${D}"/usr/share/likwid/filter/
 
 	# Do NOT use 'doman'! The upstream 'make install' target does a sed as it's
 	# generating the final manpage to the real install dir; and the copies in
