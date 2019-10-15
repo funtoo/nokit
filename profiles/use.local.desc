@@ -130,14 +130,6 @@ app-admin/salt:raet - Add support for the new RAET transport.
 app-admin/salt:redis - Support returning data to a redis database.
 app-admin/salt:timelib - Use timelib to parse english textual date descriptions.
 app-admin/salt:zeromq - Add support for the zeromq transport.
-app-admin/sudo:gcrypt - Use message digest functions from dev-libs/libgcrypt instead of sudo's
-app-admin/sudo:libressl - Use message digest functions from dev-libs/libressl instead of sudo's
-app-admin/sudo:offensive - Let sudo print insults when the user types the wrong password
-app-admin/sudo:openssl - Use message digest functions from dev-libs/openssl instead of sudo's
-app-admin/sudo:secure-path - Replace PATH variable with compile time secure paths
-app-admin/sudo:sendmail - Allow sudo to send emails with sendmail
-app-admin/sudo:sssd - Add System Security Services Daemon support
-app-admin/sudo:system-digest - Use message digest functions from dev-libs/libgcrypt, dev-libs/libressl or dev-libs/openssl instead of sudo's internal SHA2 implementation
 app-admin/sysklogd:logrotate - use app-admin/logrotate for rotating logs rather than custom cron scripts
 app-admin/sysstat:isag - Install isag, the Interactive System Activity Graph tool
 app-admin/systemrescuecd-x86:isohybrid - Pass downloaded images through isohybrid in order to make it possible to copy them directly to USB media and boot (requires sys-boot/syslinux at build time).
