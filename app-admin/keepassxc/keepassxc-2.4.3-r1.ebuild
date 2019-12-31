@@ -15,7 +15,7 @@ if [[ "${PV}" != 9999 ]] ; then
 	else
 		#SRC_URI="https://github.com/keepassxreboot/keepassxc/archive/${PV}.tar.gz -> ${P}.tar.gz"
 		SRC_URI="https://github.com/keepassxreboot/keepassxc/releases/download/${PV}/${P}-src.tar.xz"
-		KEYWORDS="~amd64 ~x86"
+		KEYWORDS="amd64 x86"
 	fi
 else
 	inherit git-r3
@@ -25,6 +25,7 @@ fi
 LICENSE="LGPL-2.1 GPL-2 GPL-3"
 SLOT="0"
 IUSE="autotype browser debug keeshare +network test yubikey"
+RESTRICT="!test? ( test )"
 
 RDEPEND="
 	app-crypt/argon2:=
@@ -74,7 +75,7 @@ src_configure() {
 		-DWITH_TESTS="$(usex test)"
 		-DWITH_XC_AUTOTYPE="$(usex autotype)"
 		-DWITH_XC_BROWSER="$(usex browser)"
-		-DWITH_XC_KEESHARE_SECURE="$(usex keeshare)"
+		-DWITH_XC_KEESHARE="$(usex keeshare)"
 		-DWITH_XC_NETWORKING="$(usex network)"
 		-DWITH_XC_SSHAGENT=ON
 		-DWITH_XC_UPDATECHECK=OFF

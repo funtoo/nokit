@@ -38,6 +38,7 @@ RDEPEND="
 	dev-qt/qtsvg:5
 	dev-qt/qtwidgets:5
 	media-gfx/qrencode:=
+	sys-libs/readline:0=
 	sys-libs/zlib:=
 	autotype? (
 		dev-qt/qtx11extras:5
@@ -45,7 +46,6 @@ RDEPEND="
 		x11-libs/libXi
 		x11-libs/libXtst
 	)
-	browser? ( >=dev-libs/libsodium-1.0.12 )
 	keeshare? ( dev-libs/quazip )
 	yubikey? ( sys-auth/ykpers )
 "
@@ -61,6 +61,8 @@ PDEPEND="
 	x11-misc/xsel
 "
 
+RESTRICT="!test? ( test )"
+
 src_prepare() {
 	 use test || \
 		sed -e "/^find_package(Qt5Test/d" -i CMakeLists.txt || die
@@ -74,7 +76,8 @@ src_configure() {
 		-DWITH_TESTS="$(usex test)"
 		-DWITH_XC_AUTOTYPE="$(usex autotype)"
 		-DWITH_XC_BROWSER="$(usex browser)"
-		-DWITH_XC_KEESHARE_SECURE="$(usex keeshare)"
+		-DWITH_XC_FDOSECRETS=ON
+		-DWITH_XC_KEESHARE="$(usex keeshare)"
 		-DWITH_XC_NETWORKING="$(usex network)"
 		-DWITH_XC_SSHAGENT=ON
 		-DWITH_XC_UPDATECHECK=OFF
