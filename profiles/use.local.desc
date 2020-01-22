@@ -288,13 +288,6 @@ app-emulation/cri-o:device-mapper - Enables dependencies for the "devicemapper" 
 app-emulation/cri-o:ostree - Enables dependencies for handling of OSTree images.
 app-emulation/crossover-bin:capi - Enable ISDN support via CAPI
 app-emulation/crossover-bin:opencl - Enable OpenCL support
-app-emulation/docker:apparmor - Enable AppArmor support.
-app-emulation/docker:aufs - Enables dependencies for the "aufs" graph driver, including necessary kernel flags.
-app-emulation/docker:btrfs - Enables dependencies for the "btrfs" graph driver, including necessary kernel flags.
-app-emulation/docker:container-init - Makes the a staticly-linked init system tini available inside a container.
-app-emulation/docker:device-mapper - Enables dependencies for the "devicemapper" graph driver, including necessary kernel flags.
-app-emulation/docker:overlay - Enables dependencies for the "overlay" graph driver, including necessary kernel flags.
-app-emulation/docker:pkcs11 - Enables pkcs-11 support.
 app-emulation/docker-credential-helpers:gnome-keyring - Build secretservice helper which works with gnome-keyring or kwallet using D-Bus.
 app-emulation/docker-credential-helpers:pass - Build pass helper for the pass utility.
 app-emulation/docker-runc:ambient - Enable support for ambient capability
