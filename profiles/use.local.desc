@@ -41,6 +41,7 @@ app-admin/hddtemp:network-cron - Monthly cronjob to update hddtemp.db.
 app-admin/keepass:aot - Generate native code at build time, rather than runtime.
 app-admin/keepassxc:autotype - Add support to autotype the passwords into other applications
 app-admin/keepassxc:browser - Enables browser plugin support
+app-admin/keepassxc:ccache - Use dev-util/ccache to build keepassxc
 app-admin/keepassxc:keeshare - Enable KeeShare sharing integration
 app-admin/keepassxc:network - Enable network support
 app-admin/keepassxc:yubikey - Enable database unlocking via YubiKey.
@@ -115,21 +116,6 @@ app-admin/sagan:pcap - Add support for network packet capture via net-libs/libpc
 app-admin/sagan:smtp - Build witch SMTP (E-Mail) support
 app-admin/sagan:snort - Add support to interact with Snort IDE using net-analyzer/snortsam'
 app-admin/sagan-rules:lognorm - Install normalize rules support with dev-libs/liblognorm
-app-admin/salt:cherrypy - Enable support for using cherrypy.
-app-admin/salt:gnupg - Enable support for gnupg via python-gnupg.
-app-admin/salt:keyring - Enable support for keyrings via python-keyring.
-app-admin/salt:libcloud - Enable salt-cloud support via libcloud.
-app-admin/salt:libvirt - Support managing virtual machines with app-emulation/libvirt.
-app-admin/salt:mako - Add support for using the mako template engine for parsing salt states.
-app-admin/salt:mongodb - Support returning data to a mongodb server.
-app-admin/salt:neutron - Support the OpenStack neutron network service.
-app-admin/salt:nova - Enable support for the OpenStack Nova API
-app-admin/salt:openssl - Add support for using TLS via OpenSSL.
-app-admin/salt:portage - Add support for package state enforcement using sys-apps/portage
-app-admin/salt:raet - Add support for the new RAET transport.
-app-admin/salt:redis - Support returning data to a redis database.
-app-admin/salt:timelib - Use timelib to parse english textual date descriptions.
-app-admin/salt:zeromq - Add support for the zeromq transport.
 app-admin/sysklogd:logrotate - use app-admin/logrotate for rotating logs rather than custom cron scripts
 app-admin/sysstat:isag - Install isag, the Interactive System Activity Graph tool
 app-admin/systemrescuecd-x86:isohybrid - Pass downloaded images through isohybrid in order to make it possible to copy them directly to USB media and boot (requires sys-boot/syslinux at build time).
@@ -288,13 +274,6 @@ app-emulation/cri-o:device-mapper - Enables dependencies for the "devicemapper" 
 app-emulation/cri-o:ostree - Enables dependencies for handling of OSTree images.
 app-emulation/crossover-bin:capi - Enable ISDN support via CAPI
 app-emulation/crossover-bin:opencl - Enable OpenCL support
-app-emulation/docker:apparmor - Enable AppArmor support.
-app-emulation/docker:aufs - Enables dependencies for the "aufs" graph driver, including necessary kernel flags.
-app-emulation/docker:btrfs - Enables dependencies for the "btrfs" graph driver, including necessary kernel flags.
-app-emulation/docker:container-init - Makes the a staticly-linked init system tini available inside a container.
-app-emulation/docker:device-mapper - Enables dependencies for the "devicemapper" graph driver, including necessary kernel flags.
-app-emulation/docker:overlay - Enables dependencies for the "overlay" graph driver, including necessary kernel flags.
-app-emulation/docker:pkcs11 - Enables pkcs-11 support.
 app-emulation/docker-credential-helpers:gnome-keyring - Build secretservice helper which works with gnome-keyring or kwallet using D-Bus.
 app-emulation/docker-credential-helpers:pass - Build pass helper for the pass utility.
 app-emulation/docker-runc:ambient - Enable support for ambient capability
