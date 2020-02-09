@@ -8,5 +8,5 @@ LICENSE=|| ( Artistic GPL-1+ )
 RDEPEND=dev-lang/perl:=
 SLOT=0
 SRC_URI=mirror://cpan/authors/id/R/RU/RURBAN/B-Debug-1.26.tar.gz
-_eclasses_=alternatives	6c575717515f030736d1b718d507d2f9	multiprocessing	cac3169468f893670dac3e7cb940e045	perl-functions	f2e3420aed32cf1abe33b4129b842636	perl-module	71c828c354a4cddced2641dda2695de5
+_eclasses_=alternatives	6c575717515f030736d1b718d507d2f9	multiprocessing	cac3169468f893670dac3e7cb940e045	perl-functions	d0d18687b96ee3d2307b88eefdd1735b	perl-module	768f1dfc0a27ff40f1ece5cb8c22714a
 _md5_=07abffe157296800d7a3d76c0d041e11
