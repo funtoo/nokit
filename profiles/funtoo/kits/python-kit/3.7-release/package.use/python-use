@@ -67,8 +67,6 @@
 =app-misc/trash-cli-0.12.9.14-r2 python_single_target_python2_7
 =app-misc/trash-cli-0.17.1.14_p20170816 python_single_target_python2_7
 =app-misc/yq-2.7.1-r1 python_single_target_python2_7
-=app-portage/chuse-1.0.2 python_single_target_python3_4 python_targets_python3_4
-=app-portage/chuse-1.2-r1 python_single_target_python3_4 python_targets_python3_4
 =app-portage/elogv-0.7.6.1-r1 python_single_target_python2_7
 =app-portage/elogv-0.7.6.2 python_single_target_python2_7
 =app-portage/elogv-0.7.6.3 python_single_target_python2_7
