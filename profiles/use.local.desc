@@ -57,11 +57,6 @@ app-admin/packagekit-base:consolekit - Use sys-auth/consolekit to get user sessi
 app-admin/packagekit-base:cron - Install cron script for auto-update
 app-admin/packagekit-base:elogind - Enable sys-auth/elogind support to get user session
 app-admin/packagekit-base:entropy - Enable Entropy backend
-app-admin/pass:X - Use x11-misc/xclip to copy passwords to the clipboard.
-app-admin/pass:dmenu - Add support for x11-misc/dmenu with the 'passmenu' program.
-app-admin/pass:fish-completion - Enable fish completion support.
-app-admin/pass:git - Use dev-vcs/git for password revisions.
-app-admin/pass:importers - Allow importing passwords from other password managers using various contributed scripts.
 app-admin/pass-otp:qrcode - Add support for qrcodes using media-gfx/qrencode
 app-admin/prelude-manager:dbx - Enables Prelude Manager storing Prelude alerts into database through dev-libs/libpreludedb .
 app-admin/prelude-manager:tcpwrapper - Enables Prelude Manager using tcp wrapper. It requires sys-apps/tcp-wrappers .
