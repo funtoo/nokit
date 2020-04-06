@@ -1,14 +1,14 @@
 DEFINED_PHASES=compile configure install postinst postrm
-DEPEND=python_targets_python3_5? ( dev-lang/python:3.5 ) python_targets_python3_6? ( dev-lang/python:3.6 ) >=dev-lang/python-exec-2:=[python_targets_python3_5(-)?,python_targets_python3_6(-)?,-python_single_target_python3_5(-),-python_single_target_python3_6(-)] app-i18n/ibus[python(+),python_targets_python3_5(-)?,python_targets_python3_6(-)?,-python_single_target_python3_5(-),-python_single_target_python3_6(-)] app-i18n/libcangjie dev-python/cangjie[python_targets_python3_5(-)?,python_targets_python3_6(-)?,-python_single_target_python3_5(-),-python_single_target_python3_6(-)] nls? ( virtual/libintl ) dev-util/intltool nls? ( sys-devel/gettext )
+DEPEND=python_targets_python3_7? ( dev-lang/python:3.7 ) >=dev-lang/python-exec-2:=[python_targets_python3_7(-)?,-python_single_target_python3_7(-)] app-i18n/ibus[python(+),python_targets_python3_7(-)?,-python_single_target_python3_7(-)] app-i18n/libcangjie dev-python/cangjie[python_targets_python3_7(-)?,-python_single_target_python3_7(-)] nls? ( virtual/libintl ) dev-util/intltool nls? ( sys-devel/gettext )
 DESCRIPTION=Chinese Cangjie and Quick engines for IBus
 EAPI=6
 HOMEPAGE=http://cangjians.github.io/
-IUSE=nls python_targets_python3_5 python_targets_python3_6
+IUSE=nls python_targets_python3_7
 KEYWORDS=amd64 x86
 LICENSE=GPL-3+
-RDEPEND=python_targets_python3_5? ( dev-lang/python:3.5 ) python_targets_python3_6? ( dev-lang/python:3.6 ) >=dev-lang/python-exec-2:=[python_targets_python3_5(-)?,python_targets_python3_6(-)?,-python_single_target_python3_5(-),-python_single_target_python3_6(-)] app-i18n/ibus[python(+),python_targets_python3_5(-)?,python_targets_python3_6(-)?,-python_single_target_python3_5(-),-python_single_target_python3_6(-)] app-i18n/libcangjie dev-python/cangjie[python_targets_python3_5(-)?,python_targets_python3_6(-)?,-python_single_target_python3_5(-),-python_single_target_python3_6(-)] nls? ( virtual/libintl )
-REQUIRED_USE=|| ( python_targets_python3_5 python_targets_python3_6 )
+RDEPEND=python_targets_python3_7? ( dev-lang/python:3.7 ) >=dev-lang/python-exec-2:=[python_targets_python3_7(-)?,-python_single_target_python3_7(-)] app-i18n/ibus[python(+),python_targets_python3_7(-)?,-python_single_target_python3_7(-)] app-i18n/libcangjie dev-python/cangjie[python_targets_python3_7(-)?,-python_single_target_python3_7(-)] nls? ( virtual/libintl )
+REQUIRED_USE=|| ( python_targets_python3_7 )
 SLOT=0
 SRC_URI=https://github.com/Cangjians/ibus-cangjie/releases/download/v2.4/ibus-cangjie-2.4.tar.xz
-_eclasses_=desktop	b1d22ac8bdd4679ab79c71aca235009d	epatch	a1bf4756dba418a7238f3be0cb010c54	estack	43ddf5aaffa7a8d0482df54d25a66a1f	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	gnome2-utils	532371cfcba45b2ab0d2950547c97d95	ltprune	2729691420b6deeda2a90b1f1183fb55	multibuild	40fe59465edacd730c644ec2bc197809	multilib	1d91b03d42ab6308b5f4f6b598ed110e	preserve-libs	ef207dc62baddfddfd39a164d9797648	python-r1	ce1cd23cfdc1848e8e32743efe34f299	python-utils-r1	0ccf24dbef2b7722ad46689d6feebe37	toolchain-funcs	8c7f9d80beedd16f2e5a7f612c609529	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf	xdg-utils	14d00d009167652b1fa363e55effe213
+_eclasses_=desktop	b1d22ac8bdd4679ab79c71aca235009d	epatch	a1bf4756dba418a7238f3be0cb010c54	estack	43ddf5aaffa7a8d0482df54d25a66a1f	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	gnome2-utils	532371cfcba45b2ab0d2950547c97d95	ltprune	2729691420b6deeda2a90b1f1183fb55	multibuild	40fe59465edacd730c644ec2bc197809	multilib	1d91b03d42ab6308b5f4f6b598ed110e	preserve-libs	ef207dc62baddfddfd39a164d9797648	python-r1	6ae4f9eb4881e5c5489344ee122e05d0	python-utils-r1	14441f0119be627922cac018d9e04c7a	toolchain-funcs	8c7f9d80beedd16f2e5a7f612c609529	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf	xdg-utils	14d00d009167652b1fa363e55effe213
 _md5_=54f5be7e8dd0bdf401100d23bd1424f2

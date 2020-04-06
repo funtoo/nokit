@@ -1,6 +1,6 @@
 BDEPEND=virtual/pkgconfig virtual/pkgconfig
 DEFINED_PHASES=compile configure install postinst setup
-DEPEND=dev-libs/glib || ( dev-lang/python:3.6 dev-lang/python:3.5 >=dev-lang/python-2.7.5-r2:2.7 )
+DEPEND=dev-libs/glib || ( >=dev-lang/python-2.7.5-r2:2.7 dev-lang/python:3.7 )
 DESCRIPTION=QEMU Guest Agent (qemu-ga) for use when running inside a VM
 EAPI=7
 HOMEPAGE=https://wiki.qemu.org/Features/GuestAgent
@@ -9,5 +9,5 @@ LICENSE=GPL-2 BSD-2
 RDEPEND=dev-libs/glib
 SLOT=0
 SRC_URI=http://wiki.qemu.org/download/qemu-4.0.0.tar.xz
-_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	multilib	1d91b03d42ab6308b5f4f6b598ed110e	python-any-r1	4900ae970f827a22d33d41bd8b8f9ace	python-utils-r1	0ccf24dbef2b7722ad46689d6feebe37	systemd	71fd8d2065d102753fb9e4d20eaf3e9f	toolchain-funcs	8c7f9d80beedd16f2e5a7f612c609529	udev	7752f306eec7b286d00bdb47b763e7ac
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	multilib	1d91b03d42ab6308b5f4f6b598ed110e	python-any-r1	4900ae970f827a22d33d41bd8b8f9ace	python-utils-r1	14441f0119be627922cac018d9e04c7a	systemd	71fd8d2065d102753fb9e4d20eaf3e9f	toolchain-funcs	8c7f9d80beedd16f2e5a7f612c609529	udev	7752f306eec7b286d00bdb47b763e7ac
 _md5_=864fef0a17d9214e0d63135b492e11bf
