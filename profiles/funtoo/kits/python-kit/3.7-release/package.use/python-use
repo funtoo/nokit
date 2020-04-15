@@ -12,9 +12,6 @@
 =app-emulation/diskimage-builder-9999 python_single_target_python2_7
 =app-emulation/virt-manager-1.4.3-r1 python_single_target_python2_7
 =app-emulation/virt-manager-1.5.1-r1 python_single_target_python2_7
-=app-emulation/virtualbox-5.2.26 python_single_target_python2_7
-=app-emulation/virtualbox-5.2.28-r1 python_single_target_python2_7
-=app-emulation/virtualbox-5.2.30 python_single_target_python2_7
 =app-i18n/nkf-2.1.3-r2 python_single_target_python2_7
 =app-misc/gcalcli-3.2 python_single_target_python2_7
 =app-misc/gcalcli-3.3.2 python_single_target_python2_7
@@ -89,7 +86,6 @@ app-emulation/crossover-bin python_single_target_python2_7
 app-emulation/ganeti python_single_target_python2_7
 app-emulation/openstack-guest-agents-unix python_single_target_python2_7
 app-emulation/playonlinux python_single_target_python2_7
-app-emulation/virtualbox-bin python_single_target_python2_7
 app-emulation/xen python_single_target_python2_7
 app-emulation/xen-pvgrub python_single_target_python2_7
 app-emulation/xen-tools python_single_target_python2_7
