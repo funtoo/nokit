@@ -1265,3 +1265,4 @@ sys-process/tini:args - Enable argument parsing.
 virtual/mpi:romio - Enable romio, a high-performance portable MPI-IO
 virtual/wine:d3d9 - Enable Ixit's Gallium Nine Patchset
 virtual/wine:staging - Enable Wine-Staging's Patchset
+x11-drivers/xf86-video-openchrome:viaregtool - Install registers dumper tool
