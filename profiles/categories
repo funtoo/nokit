@@ -26,8 +26,6 @@ gui-apps
 gui-libs
 gui-wm
 media-sound
-media-video
-net-misc
 perl-core
 ros-meta
 sys-apps
