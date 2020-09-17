@@ -1,7 +1,8 @@
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
-inherit eutils flag-o-matic linux-info pax-utils toolchain-funcs wxwidgets
+inherit eutils linux-info pax-utils toolchain-funcs wxwidgets
 
 DESCRIPTION="Disk encryption with strong security based on TrueCrypt"
 HOMEPAGE="https://www.veracrypt.fr/en/Home.html"
@@ -9,7 +10,7 @@ SRC_URI="https://github.com/${PN}/VeraCrypt/archive/VeraCrypt_${PV}.tar.gz"
 
 LICENSE="Apache-2.0 truecrypt-3.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="amd64"
 IUSE="+asm cpu_flags_x86_sse2 cpu_flags_x86_sse4_1 cpu_flags_x86_ssse3 doc X"
 RESTRICT="bindist mirror"
 
@@ -38,7 +39,6 @@ pkg_setup() {
 }
 
 src_compile() {
-	filter-flags -mno-aes
 	local myemakeargs=(
 		NOSTRIP=1
 		NOTEST=1
