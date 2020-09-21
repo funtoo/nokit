@@ -3,12 +3,12 @@ DEPEND=app-text/recode sys-apps/grep sys-apps/sed virtual/awk || ( net-misc/wget
 DESCRIPTION=Library to check account numbers and bank codes of German banks
 EAPI=6
 HOMEPAGE=http://ktoblzcheck.sourceforge.net/
-IUSE=python python_targets_python2_7
+IUSE=python python_single_target_python2_7 python_targets_python2_7
 KEYWORDS=amd64 ~ppc ~ppc64 ~sparc x86
 LICENSE=LGPL-2.1
 RDEPEND=app-text/recode sys-apps/grep sys-apps/sed virtual/awk || ( net-misc/wget www-client/lynx ) python? ( python_single_target_python2_7? ( >=dev-lang/python-2.7.5-r2:2.7 >=dev-lang/python-exec-2:=[python_targets_python2_7] ) )
 REQUIRED_USE=^^ ( python_single_target_python2_7 )
 SLOT=0
 SRC_URI=mirror://sourceforge/ktoblzcheck/ktoblzcheck-1.49.tar.gz
-_eclasses_=multilib	1d91b03d42ab6308b5f4f6b598ed110e	python-single-r1	a811e2c445a5fb40db1a1eba728dca7f	python-utils-r1	263e4bbfa6a84be6dc6272a6702aedca	toolchain-funcs	8c7f9d80beedd16f2e5a7f612c609529
+_eclasses_=multilib	1d91b03d42ab6308b5f4f6b598ed110e	python-single-r1	ce99dfba1cad0514af51a32b2b6964af	python-utils-r1	263e4bbfa6a84be6dc6272a6702aedca	toolchain-funcs	8c7f9d80beedd16f2e5a7f612c609529
 _md5_=8436677df8cb6827604af6ac9d296139
