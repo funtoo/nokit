@@ -93,7 +93,6 @@ app-misc/ktoblzcheck python_single_target_python2_7
 app-misc/lcd4linux python_single_target_python2_7
 app-misc/lfm python_single_target_python2_7
 app-misc/metromap python_single_target_python2_7
-app-misc/mosquitto python_single_target_python2_7
 app-misc/mswinurl_launcher python_single_target_python2_7
 app-misc/mtail python_single_target_python2_7
 app-misc/pysmssend python_single_target_python2_7
