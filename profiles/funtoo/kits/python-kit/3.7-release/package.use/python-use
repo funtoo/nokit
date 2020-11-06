@@ -30,6 +30,7 @@ app-admin/bcfg2 python_single_target_python2_7
 app-admin/clustershell python_single_target_python2_7
 app-admin/conkyforecast python_single_target_python2_7
 app-admin/diamond python_single_target_python2_7
+app-admin/equo python_single_target_python2_7
 app-admin/github-backup-utils python_single_target_python2_7
 app-admin/matter python_single_target_python2_7
 app-admin/supernova python_single_target_python2_7
