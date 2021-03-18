@@ -6,5 +6,5 @@ HOMEPAGE=https://github.com/barnybug/cli53
 LICENSE=MIT
 RESTRICT=strip
 SLOT=0
-_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	golang-base	c57d2c3f9e1a02d0feb8b87c7b689892	golang-vcs	8a25f35316654b44cae8d63717b1bf36
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	golang-base	e62ea82a4485a73fb191120f7aad958e	golang-vcs	8a25f35316654b44cae8d63717b1bf36
 _md5_=2cebd88c9997534ca8a9d2392840adaa
