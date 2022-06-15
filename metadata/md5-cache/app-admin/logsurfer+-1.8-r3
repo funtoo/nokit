@@ -1,4 +1,5 @@
 DEFINED_PHASES=compile configure install postinst
+DEPEND=sys-apps/shadow
 DESCRIPTION=Real Time Log Monitoring and Alerting
 EAPI=6
 HOMEPAGE=https://www.crypt.gen.nz/logsurfer/
@@ -7,5 +8,5 @@ LICENSE=freedist GPL-2+
 RESTRICT=bindist
 SLOT=0
 SRC_URI=mirror://sourceforge/logsurfer/logsurfer-1.8.tar.gz
-_eclasses_=multilib	d410501a125f99ffb560b0c523cd3d1e	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	user	e68863263b1e8611dacf381bec5c8b2b
+_eclasses_=multilib	d410501a125f99ffb560b0c523cd3d1e	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	user	875055ddd565382c728563992ae3abf7
 _md5_=38b43bdb88cbb21a00fdba34d9c3ca06
