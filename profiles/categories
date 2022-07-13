@@ -19,9 +19,6 @@ app-shells
 dev-perl
 dev-ruby
 gnome-extra
-gnustep-apps
-gnustep-base
-gnustep-libs
 gui-apps
 gui-libs
 gui-wm
