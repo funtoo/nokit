@@ -70,7 +70,6 @@ app-emulation/xen python_single_target_python2_7
 app-emulation/xen-pvgrub python_single_target_python2_7
 app-forensics/openscap python_single_target_python2_7
 app-forensics/volatility python_single_target_python2_7
-app-i18n/ibus-pinyin python_single_target_python2_7
 app-i18n/ibus-sunpinyin python_single_target_python2_7
 app-i18n/libkkc python_single_target_python2_7
 app-i18n/mozc python_single_target_python2_7
