@@ -1,5 +1,5 @@
 DEFINED_PHASES=config configure install postinst setup
-DEPEND=>=dev-libs/bglibs-2.04 sys-apps/ucspi-unix sys-process/cronbase virtual/daemontools virtual/mta || ( dev-lang/python:3.10 >=dev-lang/python-2.7.5-r2:2.7 dev-lang/python:3.8 dev-lang/python:3.9 dev-lang/python:3.7 ) >=sys-apps/sed-4.0.5
+DEPEND=>=dev-libs/bglibs-2.04 sys-apps/ucspi-unix sys-process/cronbase virtual/daemontools virtual/mta || ( >=dev-lang/python-2.7.5-r2:2.7 dev-lang/python:3.8 dev-lang/python:3.9 dev-lang/python:3.7 dev-lang/python:3.10 ) >=sys-apps/sed-4.0.5
 DESCRIPTION=A new cron system designed with secure operations in mind by Bruce Guenter
 EAPI=7
 HOMEPAGE=https://untroubled.org/bcron/

@@ -1,5 +1,5 @@
 DEFINED_PHASES=compile install postinst prepare setup test unpack
-DEPEND=dev-go/go-bindata || ( dev-lang/python:3.10 >=dev-lang/python-2.7.5-r2:2.7 dev-lang/python:3.8 dev-lang/python:3.9 dev-lang/python:3.7 ) libvirt? ( app-emulation/libvirt[qemu] ) >=dev-lang/go-1.10
+DEPEND=dev-go/go-bindata || ( >=dev-lang/python-2.7.5-r2:2.7 dev-lang/python:3.8 dev-lang/python:3.9 dev-lang/python:3.7 dev-lang/python:3.10 ) libvirt? ( app-emulation/libvirt[qemu] ) >=dev-lang/go-1.10
 DESCRIPTION=Single Node Kubernetes Cluster
 EAPI=6
 HOMEPAGE=https://github.com/kubernetes/minikube https://kubernetes.io

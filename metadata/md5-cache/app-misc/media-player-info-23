@@ -1,5 +1,5 @@
 DEFINED_PHASES=postinst setup
-DEPEND=>=virtual/udev-208 || ( dev-lang/python:3.10 dev-lang/python:3.8 dev-lang/python:3.9 dev-lang/python:3.7 ) virtual/pkgconfig
+DEPEND=>=virtual/udev-208 || ( dev-lang/python:3.8 dev-lang/python:3.9 dev-lang/python:3.7 dev-lang/python:3.10 ) virtual/pkgconfig
 DESCRIPTION=A repository of data files describing media player capabilities
 EAPI=7
 HOMEPAGE=https://cgit.freedesktop.org/media-player-info/

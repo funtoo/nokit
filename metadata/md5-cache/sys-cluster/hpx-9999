@@ -1,6 +1,6 @@
 BDEPEND=virtual/pkgconfig doc? ( >=dev-libs/boost-1.56.0-r1[tools] ) >=dev-vcs/git-1.8.2.1[curl] dev-util/ninja >=dev-util/cmake-3.9.6
 DEFINED_PHASES=compile configure install prepare setup test unpack
-DEPEND=>=dev-libs/boost-1.49:= >=sys-apps/hwloc-1.8 >=sys-libs/libunwind-1 sys-libs/zlib papi? ( dev-libs/papi ) perftools? ( >=dev-util/google-perftools-1.7.1 ) tbb? ( dev-cpp/tbb ) test? ( || ( dev-lang/python:3.10 >=dev-lang/python-2.7.5-r2:2.7 dev-lang/python:3.8 dev-lang/python:3.9 dev-lang/python:3.7 ) ) virtual/fortran
+DEPEND=>=dev-libs/boost-1.49:= >=sys-apps/hwloc-1.8 >=sys-libs/libunwind-1 sys-libs/zlib papi? ( dev-libs/papi ) perftools? ( >=dev-util/google-perftools-1.7.1 ) tbb? ( dev-cpp/tbb ) test? ( || ( >=dev-lang/python-2.7.5-r2:2.7 dev-lang/python:3.8 dev-lang/python:3.9 dev-lang/python:3.7 dev-lang/python:3.10 ) ) virtual/fortran
 DESCRIPTION=C++ runtime system for parallel and distributed applications
 EAPI=7
 HOMEPAGE=https://stellar.cct.lsu.edu/tag/hpx/
