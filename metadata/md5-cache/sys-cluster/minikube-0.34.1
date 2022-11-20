@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile install postinst prepare setup test unpack
+DEPEND=dev-go/go-bindata || ( >=dev-lang/python-2.7.5-r2:2.7 dev-lang/python:3.8 dev-lang/python:3.9 dev-lang/python:3.7 dev-lang/python:3.10 ) libvirt? ( app-emulation/libvirt[qemu] ) >=dev-lang/go-1.10
+DESCRIPTION=Single Node Kubernetes Cluster
+EAPI=6
+HOMEPAGE=https://github.com/kubernetes/minikube https://kubernetes.io
+IUSE=hardened libvirt
+KEYWORDS=~amd64
+LICENSE=Apache-2.0
+RDEPEND=>=sys-cluster/kubectl-1.10.0
+RESTRICT=test
+SLOT=0
+SRC_URI=https://github.com/kubernetes/minikube/archive/v0.34.1.tar.gz -> minikube-0.34.1.tar.gz
+_eclasses_=eapi8-dosym	cd7d420bb5be5ee079f27239ce76b8f5	golang-base	e62ea82a4485a73fb191120f7aad958e	golang-build	2ecd6011551701f98dd49a0341318936	golang-vcs-snapshot	12177e83bede6f7fb87eae383864b40b	multilib	d410501a125f99ffb560b0c523cd3d1e	multiprocessing	cac3169468f893670dac3e7cb940e045	python-any-r1	54a3178500786b0a7ede4a23b7f2a6ad	python-utils-r1	32393cac272daca4c136cc44e6005b67	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	xdg-utils	14d00d009167652b1fa363e55effe213
+_md5_=5c4047e2b48f3fb38f3e70ec4dca63a0

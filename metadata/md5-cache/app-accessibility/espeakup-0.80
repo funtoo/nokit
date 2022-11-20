@@ -9,5 +9,5 @@ LICENSE=GPL-3
 RDEPEND=|| ( app-accessibility/espeak[portaudio] app-accessibility/espeak[pulseaudio] )
 SLOT=0
 SRC_URI=https://github.com/williamh/espeakup/archive/v0.80.tar.gz -> espeakup-0.80.tar.gz
-_eclasses_=eapi7-ver	d97a56a62c7df8614afddcb25f5ff00f	linux-info	953c3b1c472dcadbf62098a9301327f2	multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	vcs-snapshot	80ddf8e42aad3fa1cdc08166f446f632
+_eclasses_=eapi7-ver	756b3f27d8e46131d5cf3c51bd876446	linux-info	c90a203b1c14cfa77bd3e37a0e96c955	multilib	d410501a125f99ffb560b0c523cd3d1e	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
 _md5_=60b78cdd982f72a42c1d740bdcbc6ff4

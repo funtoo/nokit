@@ -1,5 +1,5 @@
 DEFINED_PHASES=compile install prepare setup test
-DEPEND=dev-util/promu >=dev-lang/go-1.8
+DEPEND=dev-util/promu >=dev-lang/go-1.10 sys-apps/shadow
 DESCRIPTION=Prometheus exporter for memcached
 EAPI=6
 HOMEPAGE=https://github.com/prometheus/memcached_exporter
@@ -8,5 +8,5 @@ LICENSE=Apache-2.0
 RESTRICT=strip
 SLOT=0
 SRC_URI=https://github.com/prometheus/memcached_exporter/archive/v0.5.0.tar.gz -> memcached_exporter-0.5.0.tar.gz
-_eclasses_=golang-base	e3b49d3365185b0b0e29f2713b094420	golang-build	e7df0915974352579de1da5d1f8ad692	user	8bc2845510e2109af75e3eeac607ec81
+_eclasses_=golang-base	e62ea82a4485a73fb191120f7aad958e	golang-build	2ecd6011551701f98dd49a0341318936	user	875055ddd565382c728563992ae3abf7	xdg-utils	14d00d009167652b1fa363e55effe213
 _md5_=640f863420e23d2e5480e6258740a600

@@ -1,10 +1,11 @@
 DEFINED_PHASES=configure postinst prepare unpack
-DEPEND=dev-util/confix >=dev-vcs/git-1.8.2.1
+DEPEND=dev-util/confix >=app-portage/elt-patches-20170815 !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.16.1:1.16 >=sys-devel/automake-1.15.1:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4 >=dev-vcs/git-1.8.2.1[curl]
 DESCRIPTION=A POSIX to native Win32 Cross-Compiler Tool (requires Visual Studio)
 EAPI=6
 HOMEPAGE=https://github.com/haubi/parity
 IUSE=+vc_x86 +vc7_0 +vc7_1 +vc8_0 +vc9_0 +vc10_0 +vc11_0 +vc12_0 +vc14_0 +vc15_0
 LICENSE=LGPL-3
+PROPERTIES=live
 SLOT=0
-_eclasses_=git-r3	18aed4252aebae08e3db185e684ee37c
-_md5_=c9b8c94e5b2d0c442a7f034c0fd4bf8b
+_eclasses_=autotools	1bf086cdd7356f5c9a4acd9727bd2065	git-r3	7dcb8a92f5a091f13e82494fa317ca4b	libtool	f143db5a74ccd9ca28c1234deffede96	multilib	d410501a125f99ffb560b0c523cd3d1e	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
+_md5_=b31337a13cfeba2d179166ed446a4274

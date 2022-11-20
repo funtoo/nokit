@@ -1,0 +1,15 @@
+DEFINED_PHASES=compile configure install prepare setup test unpack
+DEPEND=test? ( ruby_targets_ruby26? ( ~dev-ruby/colored-1.2[ruby_targets_ruby26(-)] =dev-ruby/cri-2.15*[ruby_targets_ruby26(-)] >=dev-ruby/gettext-setup-0.24:0[ruby_targets_ruby26(-)] ~dev-ruby/log4r-1.1.10[ruby_targets_ruby26(-)] >=dev-ruby/multi_json-1.10:0[ruby_targets_ruby26(-)] >=dev-ruby/puppet_forge-2.2.8[ruby_targets_ruby26(-)] =dev-ruby/puppet_forge-2.2*[ruby_targets_ruby26(-)] ) ) ruby_targets_ruby26? ( test? ( dev-ruby/archive-tar-minitar[ruby_targets_ruby26(-)] ) ) ruby_targets_ruby26? ( dev-lang/ruby:2.6 ) ruby_targets_ruby26? ( test? ( dev-ruby/rspec:3[ruby_targets_ruby26(-)] ) ) ruby_targets_ruby26? ( virtual/rubygems[ruby_targets_ruby26(-)] !!dev-ruby/psych[ruby_targets_ruby26(-)] ) test? ( ruby_targets_ruby26? ( virtual/rubygems[ruby_targets_ruby26(-)] ) )
+DESCRIPTION=Puppet environment and module deployment
+EAPI=5
+HOMEPAGE=https://github.com/puppetlabs/r10k
+IUSE=+git test ruby_targets_ruby23 ruby_targets_ruby24 ruby_targets_ruby25 test test
+KEYWORDS=~amd64
+LICENSE=Apache-2.0
+RDEPEND=ruby_targets_ruby26? ( ~dev-ruby/colored-1.2[ruby_targets_ruby26(-)] =dev-ruby/cri-2.15*[ruby_targets_ruby26(-)] >=dev-ruby/gettext-setup-0.24:0[ruby_targets_ruby26(-)] ~dev-ruby/log4r-1.1.10[ruby_targets_ruby26(-)] >=dev-ruby/multi_json-1.10:0[ruby_targets_ruby26(-)] >=dev-ruby/puppet_forge-2.2.8[ruby_targets_ruby26(-)] =dev-ruby/puppet_forge-2.2*[ruby_targets_ruby26(-)] ) git? ( >=dev-vcs/git-1.6.6 ) ruby_targets_ruby26? ( dev-lang/ruby:2.6 ) ruby_targets_ruby26? ( virtual/rubygems[ruby_targets_ruby26(-)] )
+REQUIRED_USE=|| ( ruby_targets_ruby26 )
+RESTRICT=!test? ( test ) !test? ( test ) !test? ( test )
+SLOT=0
+SRC_URI=https://rubygems.org/gems/r10k-3.1.0.gem
+_eclasses_=desktop	b1d22ac8bdd4679ab79c71aca235009d	epatch	a1bf4756dba418a7238f3be0cb010c54	estack	43ddf5aaffa7a8d0482df54d25a66a1f	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ltprune	22f9f14d105434e9c400ccac3bbb64ae	multilib	d410501a125f99ffb560b0c523cd3d1e	preserve-libs	ef207dc62baddfddfd39a164d9797648	ruby-fakegem	6ee14a23a169409059ed36d4dddc3197	ruby-ng	e4c24e1cfe474d5ec2e5836fdc26973f	ruby-utils	daabb2a420d9b5dd405eb5474382f47b	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf
+_md5_=c46aa29fc30404b85c60e7e65cde2c01

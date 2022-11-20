@@ -1,5 +1,5 @@
 DEFINED_PHASES=compile install postinst postrm preinst setup
-DEPEND=virtual/linux-sources >=app-portage/elt-patches-20170317 kernel_linux? ( virtual/modutils ) sys-apps/sed kernel_linux? ( virtual/linux-sources virtual/libelf )
+DEPEND=virtual/linux-sources kernel_linux? ( virtual/modutils ) sys-apps/sed kernel_linux? ( virtual/linux-sources virtual/libelf )
 DESCRIPTION=PCI-E RTS5209 card reader driver for Linux
 EAPI=7
 HOMEPAGE=https://github.com/gexplorer/RTS5209-linux-driver
@@ -9,5 +9,5 @@ LICENSE=GPL-2+
 RDEPEND=kernel_linux? ( virtual/modutils )
 SLOT=0
 SRC_URI=https://github.com/gexplorer/RTS5209-linux-driver/archive/c8313abffe083ac63bf76d2cc90d3edf5b2d1188.tar.gz -> rts_pstor-1.10_p20160103.tar.gz
-_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	e99babeaa7d98c1caaa6a61a79902210	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	1fb064d93b3ffd05c2fb19ef430a4aa1	linux-info	953c3b1c472dcadbf62098a9301327f2	linux-mod	41e466560e45df55e9f2ff16d0ae7a7b	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
-_md5_=a7630b37c8c9033738a4db489cc0bbec
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	linux-info	c90a203b1c14cfa77bd3e37a0e96c955	linux-mod	6c7b3e7b9d39bd049bf23a991c16315e	multilib	d410501a125f99ffb560b0c523cd3d1e	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
+_md5_=33aa3ccd360bf1d4e11f1507bf8b7ec6

@@ -1,0 +1,12 @@
+DEFINED_PHASES=configure install postinst prepare setup
+DEPEND=>=app-portage/elt-patches-20170815 !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.16.1:1.16 >=sys-devel/automake-1.15.1:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4 sys-apps/shadow virtual/pkgconfig
+DESCRIPTION=System uptime record daemon that keeps track of your highest uptimes
+EAPI=6
+HOMEPAGE=https://github.com/rpodgorny/uptimed/
+IUSE=static-libs
+KEYWORDS=alpha amd64 ~arm hppa ~mips ppc ppc64 sparc x86 ~x86-fbsd
+LICENSE=GPL-2
+SLOT=0
+SRC_URI=https://github.com/rpodgorny/uptimed/archive/v0.4.1.tar.gz -> uptimed-0.4.1.tar.gz
+_eclasses_=autotools	1bf086cdd7356f5c9a4acd9727bd2065	libtool	f143db5a74ccd9ca28c1234deffede96	multilib	d410501a125f99ffb560b0c523cd3d1e	systemd	71fd8d2065d102753fb9e4d20eaf3e9f	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	user	875055ddd565382c728563992ae3abf7
+_md5_=12122c6db97ea10df55f1094c9ef2f93

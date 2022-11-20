@@ -1,5 +1,5 @@
 DEFINED_PHASES=configure prepare
-DEPEND=>=sys-devel/make-3.81 static? ( >=dev-lang/execline-2.3.0.4[static-libs] >=dev-libs/skalibs-2.6.3.0[static-libs] ) !static? ( >=dev-lang/execline-2.3.0.4[static=] >=dev-libs/skalibs-2.6.3.0 ) >=app-portage/elt-patches-20170317
+DEPEND=>=sys-devel/make-3.81 static? ( >=dev-lang/execline-2.3.0.4[static-libs] >=dev-libs/skalibs-2.6.3.0[static-libs] ) !static? ( >=dev-lang/execline-2.3.0.4[static=] >=dev-libs/skalibs-2.6.3.0 )
 DESCRIPTION=skarnet.org's small and secure supervision software suite
 EAPI=6
 HOMEPAGE=https://www.skarnet.org/software/s6/
@@ -9,5 +9,5 @@ LICENSE=ISC
 RDEPEND=>=dev-lang/execline-2.3.0.4:=[!static?] !static? ( >=dev-libs/skalibs-2.6.3.0:= )
 SLOT=0/2.7
 SRC_URI=https://www.skarnet.org/software/s6/s6-2.7.0.0.tar.gz
-_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	e99babeaa7d98c1caaa6a61a79902210	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	1fb064d93b3ffd05c2fb19ef430a4aa1	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	versionator	c80ccf29e90adea7c5cae94b42eb76d0
+_eclasses_=estack	43ddf5aaffa7a8d0482df54d25a66a1f	versionator	2352c3fc97241f6a02042773c8287748
 _md5_=867c668e5d81b5ed2459d3e35a3be80a

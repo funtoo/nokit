@@ -1,4 +1,5 @@
 DEFINED_PHASES=install postinst postrm preinst prepare
+DEPEND=sys-apps/shadow
 DESCRIPTION=distributed.net client
 EAPI=2
 HOMEPAGE=http://www.distributed.net
@@ -8,5 +9,5 @@ RDEPEND=net-dns/bind-tools
 RESTRICT=mirror
 SLOT=0
 SRC_URI=amd64? ( http://http.distributed.net/pub/dcti/v2.9108/dnetc517-linux-amd64.tar.gz ) x86? ( http://http.distributed.net/pub/dcti/v2.9108/dnetc517-linux-x86-elf-uclibc.tar.gz )
-_eclasses_=user	8bc2845510e2109af75e3eeac607ec81
+_eclasses_=user	875055ddd565382c728563992ae3abf7
 _md5_=e56d6ad90f3bda87fc81463f17dcbcb7

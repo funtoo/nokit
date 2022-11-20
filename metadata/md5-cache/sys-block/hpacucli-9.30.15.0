@@ -1,5 +1,5 @@
 DEFINED_PHASES=install postinst unpack
-DEPEND=>=app-portage/elt-patches-20170317 >=app-arch/rpm2targz-9.0.0.3g
+DEPEND=>=app-arch/rpm2targz-9.0.0.3g
 DESCRIPTION=HP Array Config Utility Command Line Interface (HPACUCLI, formerly CPQACUXE)
 EAPI=5
 HOMEPAGE=http://h18000.www1.hp.com/products/servers/linux/documentation.html
@@ -8,5 +8,5 @@ LICENSE=hp-proliant-essentials
 RDEPEND=sys-apps/coreutils sys-process/procps >=sys-apps/util-linux-2.20.1
 SLOT=0
 SRC_URI=amd64? ( ftp://ftp.hp.com/pub/softlib2/software1/pubsw-linux/p1257348637/v77370/hpacucli-9.30-15.0.x86_64.rpm ) x86? ( ftp://ftp.hp.com/pub/softlib2/software1/pubsw-linux/p414707558/v77371/hpacucli-9.30-15.0.i386.rpm )
-_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	e99babeaa7d98c1caaa6a61a79902210	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	1fb064d93b3ffd05c2fb19ef430a4aa1	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	pax-utils	4f95120230a315c8caaabeb2307b7eee	rpm	f52cfa3a435468d86d3b49c357b9cb35	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	versionator	c80ccf29e90adea7c5cae94b42eb76d0
+_eclasses_=desktop	b1d22ac8bdd4679ab79c71aca235009d	epatch	a1bf4756dba418a7238f3be0cb010c54	estack	43ddf5aaffa7a8d0482df54d25a66a1f	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ltprune	22f9f14d105434e9c400ccac3bbb64ae	multilib	d410501a125f99ffb560b0c523cd3d1e	pax-utils	db85a3c508cf82c45f24b2723791cc93	preserve-libs	ef207dc62baddfddfd39a164d9797648	rpm	f52cfa3a435468d86d3b49c357b9cb35	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf	versionator	2352c3fc97241f6a02042773c8287748
 _md5_=16e2666efaaffdca8ffa6e9bcdfda432

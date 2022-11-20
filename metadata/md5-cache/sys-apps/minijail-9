@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install pretend setup test
+DEPEND=sys-libs/libcap-ng:= test? ( virtual/pkgconfig >=dev-cpp/gtest-1.8.0:= )
+DESCRIPTION=helper binary and library for sandboxing & restricting privs of service
+EAPI=7
+HOMEPAGE=https://android.googlesource.com/platform/external/minijail
+IUSE=+seccomp test kernel_linux
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=sys-libs/libcap-ng:=
+SLOT=0
+SRC_URI=https://github.com/google/minijail/archive/linux-v9.tar.gz -> minijail-9.tar.gz
+_eclasses_=linux-info	c90a203b1c14cfa77bd3e37a0e96c955	multilib	d410501a125f99ffb560b0c523cd3d1e	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
+_md5_=b605d9da44456b32f34e5d2abd16d818

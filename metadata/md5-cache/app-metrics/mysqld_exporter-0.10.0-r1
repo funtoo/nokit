@@ -1,11 +1,12 @@
 DEFINED_PHASES=compile install postinst prepare setup test unpack
-DEPEND=dev-util/promu >=dev-lang/go-1.8
+DEPEND=dev-util/promu sys-apps/shadow >=dev-lang/go-1.10
 DESCRIPTION=Prometheus exporter for MySQL server metrics
 EAPI=6
 HOMEPAGE=https://github.com/prometheus/mysqld_exporter
 KEYWORDS=~amd64
 LICENSE=Apache-2.0
+RESTRICT=strip
 SLOT=0
 SRC_URI=https://github.com/prometheus/mysqld_exporter/archive/v0.10.0.tar.gz -> mysqld_exporter-0.10.0.tar.gz
-_eclasses_=golang-base	e3b49d3365185b0b0e29f2713b094420	golang-build	e7df0915974352579de1da5d1f8ad692	golang-vcs-snapshot	f92d5438a012f5e6665f8e7ffb1427a2	user	8bc2845510e2109af75e3eeac607ec81
+_eclasses_=golang-base	e62ea82a4485a73fb191120f7aad958e	golang-build	2ecd6011551701f98dd49a0341318936	golang-vcs-snapshot	12177e83bede6f7fb87eae383864b40b	user	875055ddd565382c728563992ae3abf7	xdg-utils	14d00d009167652b1fa363e55effe213
 _md5_=6db75fad5554436a70f7ef3eb17ef894

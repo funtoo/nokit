@@ -1,11 +1,12 @@
 DEFINED_PHASES=compile install prepare setup test unpack
-DEPEND=dev-util/promu >=dev-lang/go-1.8
+DEPEND=dev-util/promu sys-apps/shadow >=dev-lang/go-1.10
 DESCRIPTION=Nginx virtual host traffic stats exporter for Prometheus
 EAPI=6
 HOMEPAGE=https://github.com/hnlq715/nginx-vts-exporter
 KEYWORDS=~amd64
 LICENSE=MIT
+RESTRICT=strip
 SLOT=0
 SRC_URI=https://github.com/hnlq715/nginx-vts-exporter/archive/v0.10.0.tar.gz -> nginx-vts-exporter-0.10.0.tar.gz
-_eclasses_=golang-base	e3b49d3365185b0b0e29f2713b094420	golang-build	e7df0915974352579de1da5d1f8ad692	golang-vcs-snapshot	f92d5438a012f5e6665f8e7ffb1427a2	user	8bc2845510e2109af75e3eeac607ec81
+_eclasses_=golang-base	e62ea82a4485a73fb191120f7aad958e	golang-build	2ecd6011551701f98dd49a0341318936	golang-vcs-snapshot	12177e83bede6f7fb87eae383864b40b	user	875055ddd565382c728563992ae3abf7	xdg-utils	14d00d009167652b1fa363e55effe213
 _md5_=6b2167245cac20507b830f4f5f6de00f

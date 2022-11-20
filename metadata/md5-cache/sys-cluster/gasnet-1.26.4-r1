@@ -1,13 +1,13 @@
 DEFINED_PHASES=configure install prepare
-DEPEND=mpi? ( virtual/mpi ) >=app-portage/elt-patches-20170317 !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.15:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4
+DEPEND=mpi? ( virtual/mpi ) >=app-portage/elt-patches-20170815 !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.16.1:1.16 >=sys-devel/automake-1.15.1:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4
 DESCRIPTION=Networking middleware for partitioned global address space (PGAS) language
 EAPI=6
-HOMEPAGE=http://gasnet.lbl.gov/
+HOMEPAGE=https://gasnet.lbl.gov/
 IUSE=mpi static-libs threads
 KEYWORDS=~amd64
 LICENSE=BSD
 RDEPEND=mpi? ( virtual/mpi )
 SLOT=0/1
-SRC_URI=http://gasnet.lbl.gov/GASNet-1.26.4.tar.gz
-_eclasses_=autotools	dc412f38566b91012efd58b9c203e6c3	libtool	e32ea84bf82cf8987965b574672dba93	multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
-_md5_=3d4b3ea83c6b744d7ac1037ab55f989b
+SRC_URI=https://gasnet.lbl.gov/download/GASNet-1.26.4.tar.gz
+_eclasses_=autotools	1bf086cdd7356f5c9a4acd9727bd2065	libtool	f143db5a74ccd9ca28c1234deffede96	multilib	d410501a125f99ffb560b0c523cd3d1e	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
+_md5_=1b62944a3d9195863f7b1b58c0d66917

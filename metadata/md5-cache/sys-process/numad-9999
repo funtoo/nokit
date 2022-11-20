@@ -1,10 +1,11 @@
+BDEPEND=virtual/pkgconfig >=dev-vcs/git-1.8.2.1[curl]
 DEFINED_PHASES=compile install prepare setup unpack
-DEPEND=virtual/pkgconfig >=dev-vcs/git-1.8.2.1
 DESCRIPTION=The NUMA daemon that manages application locality
 EAPI=7
 HOMEPAGE=http://fedoraproject.org/wiki/Features/numad
 IUSE=kernel_linux
 LICENSE=LGPL-2.1
+PROPERTIES=live
 SLOT=0
-_eclasses_=git-r3	18aed4252aebae08e3db185e684ee37c	linux-info	953c3b1c472dcadbf62098a9301327f2	multilib	97f470f374f2e94ccab04a2fb21d811e	systemd	1caaa6bdb6e41b2920a203d6b45f2f99	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
+_eclasses_=git-r3	7dcb8a92f5a091f13e82494fa317ca4b	linux-info	c90a203b1c14cfa77bd3e37a0e96c955	multilib	d410501a125f99ffb560b0c523cd3d1e	systemd	71fd8d2065d102753fb9e4d20eaf3e9f	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
 _md5_=c2009f3fae08613b2c9545eefa97d457

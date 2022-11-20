@@ -1,5 +1,5 @@
 DEFINED_PHASES=install pretend setup unpack
-DEPEND=app-arch/xz-utils >=app-portage/elt-patches-20170317
+DEPEND=app-arch/xz-utils
 DESCRIPTION=VM appliance disk image used in libguestfs package
 EAPI=5
 HOMEPAGE=http://libguestfs.org/
@@ -8,5 +8,5 @@ LICENSE=GPL-2 LGPL-2
 RDEPEND=!<app-emulation/libguestfs-1.38.0
 SLOT=0
 SRC_URI=http://libguestfs.org/download/binaries/appliance/appliance-1.38.0.tar.xz
-_eclasses_=check-reqs	422543dd49baab3cfb70e3219a53957a	epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	e99babeaa7d98c1caaa6a61a79902210	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	1fb064d93b3ffd05c2fb19ef430a4aa1	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
+_eclasses_=check-reqs	2c6f909675083dce8430b648bf737cb0
 _md5_=620c84be8dd5e26fc666fa152a4ec8a5

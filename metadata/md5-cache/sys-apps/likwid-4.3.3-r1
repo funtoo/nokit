@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install postinst preinst prepare setup
+DEPEND=dev-lang/perl dev-lua/lua:5.3 filecaps? ( sys-libs/libcap ) fortran? ( virtual/fortran )
+DESCRIPTION=A performance-oriented tool suite for x86 multicore environments
+EAPI=7
+HOMEPAGE=https://github.com/rrze-likwid/likwid
+IUSE=fortran +filecaps kernel_linux
+KEYWORDS=~amd64
+LICENSE=GPL-3+ BSD
+RDEPEND=dev-lang/perl dev-lua/lua:5.3 fortran? ( virtual/fortran )
+SLOT=0
+SRC_URI=https://ftp.fau.de/pub/likwid/likwid-4.3.3.tar.gz
+_eclasses_=fcaps	9445d60c1eb084a91c38ef4c070b2f16	fortran-2	f75a2d9321053acf424991e805f32ede	linux-info	c90a203b1c14cfa77bd3e37a0e96c955	multilib	d410501a125f99ffb560b0c523cd3d1e	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
+_md5_=76d42e9cd271570427e3266265f8a626

@@ -1,0 +1,14 @@
+BDEPEND=>=dev-lang/go-1.10 virtual/pkgconfig
+DEFINED_PHASES=compile install postinst prepare setup unpack
+DEPEND=>=dev-lang/go-1.11:= dev-go/gox filecaps? ( sys-libs/libcap ) sys-apps/shadow
+DESCRIPTION=A tool for managing secrets
+EAPI=7
+HOMEPAGE=https://vaultproject.io/
+IUSE=+webui +filecaps
+KEYWORDS=~amd64
+LICENSE=MPL-2.0
+RESTRICT=test
+SLOT=0
+SRC_URI=https://github.com/hashicorp/vault/archive/v1.1.2.tar.gz -> vault-1.1.2.tar.gz webui? ( mirror://gentoo/vault-1.1.2-webui.tar.xz https://dev.gentoo.org/~zmedico/dist/vault-1.1.2-webui.tar.xz )
+_eclasses_=fcaps	9445d60c1eb084a91c38ef4c070b2f16	golang-base	e62ea82a4485a73fb191120f7aad958e	golang-vcs-snapshot	12177e83bede6f7fb87eae383864b40b	multilib	d410501a125f99ffb560b0c523cd3d1e	systemd	71fd8d2065d102753fb9e4d20eaf3e9f	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	user	875055ddd565382c728563992ae3abf7
+_md5_=87a70111df03c885d375c719b20624a8

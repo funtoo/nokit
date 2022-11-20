@@ -1,11 +1,12 @@
 DEFINED_PHASES=install postinst setup unpack
-DEPEND=|| ( app-accessibility/espeak[portaudio] app-accessibility/espeak[pulseaudio] ) >=dev-vcs/git-1.8.2.1
+DEPEND=|| ( app-accessibility/espeak[portaudio] app-accessibility/espeak[pulseaudio] ) >=dev-vcs/git-1.8.2.1[curl]
 DESCRIPTION=espeakup is a small lightweight connector for espeak and speakup
 EAPI=6
 HOMEPAGE=https://github.com/williamh/espeakup
 IUSE=kernel_linux
 LICENSE=GPL-3
+PROPERTIES=live
 RDEPEND=|| ( app-accessibility/espeak[portaudio] app-accessibility/espeak[pulseaudio] )
 SLOT=0
-_eclasses_=eapi7-ver	d97a56a62c7df8614afddcb25f5ff00f	git-r3	18aed4252aebae08e3db185e684ee37c	linux-info	953c3b1c472dcadbf62098a9301327f2	multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
+_eclasses_=eapi7-ver	756b3f27d8e46131d5cf3c51bd876446	git-r3	7dcb8a92f5a091f13e82494fa317ca4b	linux-info	c90a203b1c14cfa77bd3e37a0e96c955	multilib	d410501a125f99ffb560b0c523cd3d1e	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
 _md5_=60b78cdd982f72a42c1d740bdcbc6ff4
