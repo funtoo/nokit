@@ -163,7 +163,6 @@ ros-meta/vision_opencv python_single_target_python2_7
 ros-meta/vision_visp python_single_target_python2_7
 ros-meta/visualization_tutorials python_single_target_python2_7
 ros-meta/viz python_single_target_python2_7
-sys-apps/dstat python_single_target_python2_7
 sys-apps/entropy python_single_target_python2_7
 sys-apps/entropy-server python_single_target_python2_7
 sys-apps/gcp python_single_target_python2_7
